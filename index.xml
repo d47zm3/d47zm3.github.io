@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SECURI(TTY)</title>
+    <link>/</link>
+    <description>Recent content on SECURI(TTY)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Nov 2018 20:15:35 +0100</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cheatsheets</title>
+      <link>/cheatsheets/</link>
+      <pubDate>Mon, 12 Nov 2018 20:15:35 +0100</pubDate>
+      
+      <guid>/cheatsheets/</guid>
+      <description>XSS
+SQLi</description>
+    </item>
+    
+    <item>
+      <title>Bookmarks</title>
+      <link>/bookmarks/</link>
+      <pubDate>Thu, 08 Nov 2018 18:24:10 +0100</pubDate>
+      
+      <guid>/bookmarks/</guid>
+      <description>A collection of interesting links/repositories I found around web.
+exploit writing corelan tutorials
+linux (x86) exploit development series
+learning exploitation with offensive computer security 2.0
+modern binary exploitation
+reverse engineering 101
+stack buffer overflows: linux - chapter 1
+smashing the stack for fun and profit
+courses and labs labs for the computer and network security class
+sans cyber aces
+pentest training
+hacking lab
+learn burp suite
+books the best security books to have in your library</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Wed, 31 Oct 2018 10:04:43 +0100</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Name: Damian
+Age: 27
+Job: DevOps Engineer
+Interests:  Psychology DIY Cooking IT (Security, System Administration, Reverse Engineering, Networks)  Accomplishments:  Offensive Security Certified Professional CTF Winner @ x33fcon 2018
+
+I treat people same way they treat me, most important thing in my life is to stay true to myself. I never give up, I do not tolerate half measures, I know what I do, what else do you want to know?</description>
+    </item>
+    
+    <item>
+      <title>Hello Infosec!</title>
+      <link>/post/first-post/</link>
+      <pubDate>Wed, 31 Oct 2018 10:00:42 +0100</pubDate>
+      
+      <guid>/post/first-post/</guid>
+      <description>Trying to keep up with infosec, saving all valuable knowledge&amp;hellip;</description>
+    </item>
+    
+  </channel>
+</rss>
