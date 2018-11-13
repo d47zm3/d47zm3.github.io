@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on securi(tty)</title>
-    <link>/post/</link>
-    <description>Recent content in Posts on securi(tty)</description>
+    <title>Devsecops on securi(tty)</title>
+    <link>/categories/devsecops/</link>
+    <description>Recent content in Devsecops on securi(tty)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 13 Nov 2018 09:53:23 +0100</lastBuildDate>
     
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/devsecops/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>/post/dvna/</guid>
       <description>As a project for upcoming company&amp;rsquo;s internal hackday I choose to make workshops for secure coding in JavaScript, based on OWASP TOP 10 and Damn Vulnerable NodeJS Application. While I&amp;rsquo;m no coder by myself, I thought I might prepare as much I can from security perspective and use some feeback from more knowledgeable collegue in terms of code itself. The idea came when I stumbled upon &amp;ldquo;solution&amp;rdquo; book to DVNA itself from AppSeco.</description>
-    </item>
-    
-    <item>
-      <title>Hello Infosec!</title>
-      <link>/post/first-post/</link>
-      <pubDate>Wed, 31 Oct 2018 10:00:42 +0100</pubDate>
-      
-      <guid>/post/first-post/</guid>
-      <description>Trying to keep up with infosec, saving all valuable knowledge&amp;hellip;</description>
     </item>
     
   </channel>

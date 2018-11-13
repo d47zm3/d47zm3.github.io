@@ -6,10 +6,19 @@
     <description>Recent content on securi(tty)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Nov 2018 20:15:35 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 13 Nov 2018 09:53:23 +0100</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Dvna</title>
+      <link>/post/dvna/</link>
+      <pubDate>Tue, 13 Nov 2018 09:53:23 +0100</pubDate>
+      
+      <guid>/post/dvna/</guid>
+      <description>As a project for upcoming company&amp;rsquo;s internal hackday I choose to make workshops for secure coding in JavaScript, based on OWASP TOP 10 and Damn Vulnerable NodeJS Application. While I&amp;rsquo;m no coder by myself, I thought I might prepare as much I can from security perspective and use some feeback from more knowledgeable collegue in terms of code itself. The idea came when I stumbled upon &amp;ldquo;solution&amp;rdquo; book to DVNA itself from AppSeco.</description>
+    </item>
     
     <item>
       <title>Cheatsheets</title>
