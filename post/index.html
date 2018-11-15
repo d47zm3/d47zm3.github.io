@@ -12,7 +12,7 @@
 <meta property="og:description" content="security, networks, devops and such..." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/post/" />
-<meta property="og:updated_time" content="2018-11-13T09:53:23&#43;01:00"/>
+<meta property="og:updated_time" content="2018-11-15T08:33:20&#43;01:00"/>
 
 	
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -49,6 +49,9 @@
 			<a class="menu__link" href="/cheatsheets/">Cheatsheets</a>
 		</li>
 		<li class="menu__item">
+			<a class="menu__link" href="/projects/">Projects</a>
+		</li>
+		<li class="menu__item">
 			<a class="menu__link" href="/about/">About</a>
 		</li>
 	</ul>
@@ -64,6 +67,31 @@
 	<header class="main__header">
 		<h1 class="main__title">Posts</h1>
 	</header><article class="list__item post">
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/post/dip/" rel="bookmark">
+			D.I.P.
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 16 16"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+	<time class="meta__text" datetime="2018-11-15T08:33:20">November 15, 2018</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/devsecops" rel="category">DevSecOps</a></span>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Changed my mind to make D.I.P. instead of doing presentation during the Hack Day for workshops (which is still valid idea). This project is named after DevSecOps In A Pill, basically shell wrapper to include in development pipeline that for now has three basic functions:
+ scan remote web target for vulnerabilities and misconfigurations
+look for vupnerable dependencies used in project (OWASP Dependency Check)
+search for sensitive exposed secrets in git repositories
+	</div>
+</article><article class="list__item post">
 	<header class="list__header">
 		<h3 class="list__title post__title ">
 			<a href="/post/dvna/" rel="bookmark">
@@ -83,7 +111,7 @@
 </div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		As a project for upcoming company&rsquo;s internal hackday I choose to make workshops for secure coding in JavaScript, based on OWASP TOP 10 and Damn Vulnerable NodeJS Application. While I&rsquo;m no coder by myself, I thought I might prepare as much I can from security perspective and use some feeback from more knowledgeable collegue in terms of code itself. The idea came when I stumbled upon &ldquo;solution&rdquo; book to DVNA itself from AppSeco.
+		As a project for upcoming company&rsquo;s internal hackday I chose to make workshops for secure coding in JavaScript, based on OWASP TOP 10 and Damn Vulnerable NodeJS Application. While I&rsquo;m no coder by myself, I thought I might prepare as much I can from security perspective and use some feeback from more knowledgeable collegue in terms of code itself. The idea came when I stumbled upon &ldquo;solution&rdquo; book to DVNA itself from AppSeco.
 	</div>
 </article><article class="list__item post">
 	<header class="list__header">
@@ -121,6 +149,7 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/dip/">D.I.P.</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dvna/">DVNA</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/first-post/">Hello Infosec!</a></li>
 		</ul>
@@ -139,6 +168,7 @@
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
 		<a class="widget-taglist__link widget__link btn" href="/tags/dvna" title="Dvna">Dvna</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hack-day" title="Hack day">Hack day</a>
 	</div>
 </div>
 </aside>
