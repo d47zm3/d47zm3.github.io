@@ -6,6 +6,7 @@
     <description>Recent content in Hack Day on securi(tty)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>test</copyright>
     <lastBuildDate>Thu, 15 Nov 2018 08:33:20 +0100</lastBuildDate>
     
 	<atom:link href="/tags/hack-day/index.xml" rel="self" type="application/rss+xml" />
