@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Security on securi(tty)</title>
-    <link>/categories/security/</link>
-    <description>Recent content in Security on securi(tty)</description>
+    <title>Security on d47zm3</title>
+    <link>http://www.example.com/categories/security/</link>
+    <description>Recent content in Security on d47zm3</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>test</copyright>
+    <language>en</language>
     <lastBuildDate>Tue, 13 Nov 2018 09:53:23 +0100</lastBuildDate>
     
-	<atom:link href="/categories/security/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.example.com/categories/security/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>DVNA</title>
-      <link>/post/dvna/</link>
+      <link>http://www.example.com/post/dvna/</link>
       <pubDate>Tue, 13 Nov 2018 09:53:23 +0100</pubDate>
       
-      <guid>/post/dvna/</guid>
+      <guid>http://www.example.com/post/dvna/</guid>
       <description>As a project for upcoming company&amp;rsquo;s internal hackday I chose to make workshops for secure coding in JavaScript, based on OWASP TOP 10 and Damn Vulnerable NodeJS Application. While I&amp;rsquo;m no coder by myself, I thought I might prepare as much I can from security perspective and use some feeback from more knowledgeable collegue in terms of code itself. The idea came when I stumbled upon &amp;ldquo;solution&amp;rdquo; book to DVNA itself from AppSeco.</description>
     </item>
     
