@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on d47zm3</title>
-    <link>http://www.example.com/tags/</link>
+    <link>https://d47zm3.github.io/tags/</link>
     <description>Recent content in Tags on d47zm3</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 13 Nov 2018 09:53:23 +0100</lastBuildDate>
     
-	<atom:link href="http://www.example.com/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://d47zm3.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Dvna</title>
-      <link>http://www.example.com/tags/dvna/</link>
+      <link>https://d47zm3.github.io/tags/dvna/</link>
       <pubDate>Tue, 13 Nov 2018 09:53:23 +0100</pubDate>
       
-      <guid>http://www.example.com/tags/dvna/</guid>
+      <guid>https://d47zm3.github.io/tags/dvna/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hack Day</title>
-      <link>http://www.example.com/tags/hack-day/</link>
+      <link>https://d47zm3.github.io/tags/hack-day/</link>
       <pubDate>Thu, 15 Nov 2018 08:33:20 +0100</pubDate>
       
-      <guid>http://www.example.com/tags/hack-day/</guid>
+      <guid>https://d47zm3.github.io/tags/hack-day/</guid>
       <description></description>
     </item>
     

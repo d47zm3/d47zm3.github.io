@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hack Day on d47zm3</title>
-    <link>http://www.example.com/tags/hack-day/</link>
+    <link>https://d47zm3.github.io/tags/hack-day/</link>
     <description>Recent content in Hack Day on d47zm3</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 15 Nov 2018 08:33:20 +0100</lastBuildDate>
     
-	<atom:link href="http://www.example.com/tags/hack-day/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://d47zm3.github.io/tags/hack-day/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>DIP</title>
-      <link>http://www.example.com/post/dip/</link>
+      <link>https://d47zm3.github.io/post/dip/</link>
       <pubDate>Thu, 15 Nov 2018 08:33:20 +0100</pubDate>
       
-      <guid>http://www.example.com/post/dip/</guid>
+      <guid>https://d47zm3.github.io/post/dip/</guid>
       <description>Changed my mind to make DIP instead of doing presentation during the Hack Day for workshops (which is still valid idea). This project is named after DevSecOps In A Pill, basically shell wrapper to include in development pipeline that for now has three basic functions:
  scan remote web target for vulnerabilities and misconfigurations
 look for vulnerable dependencies used in project (OWASP Dependency Check)

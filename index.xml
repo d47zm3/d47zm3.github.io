@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>d47zm3</title>
-    <link>http://www.example.com/</link>
+    <link>https://d47zm3.github.io/</link>
     <description>Recent content on d47zm3</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 15 Nov 2018 08:40:18 +0100</lastBuildDate>
     
-	<atom:link href="http://www.example.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://d47zm3.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Projects</title>
-      <link>http://www.example.com/projects/</link>
+      <link>https://d47zm3.github.io/projects/</link>
       <pubDate>Thu, 15 Nov 2018 08:40:18 +0100</pubDate>
       
-      <guid>http://www.example.com/projects/</guid>
+      <guid>https://d47zm3.github.io/projects/</guid>
       <description>I keep my code/notes opensourced here:
  GitHub GitBook  </description>
     </item>
     
     <item>
       <title>DIP</title>
-      <link>http://www.example.com/post/dip/</link>
+      <link>https://d47zm3.github.io/post/dip/</link>
       <pubDate>Thu, 15 Nov 2018 08:33:20 +0100</pubDate>
       
-      <guid>http://www.example.com/post/dip/</guid>
+      <guid>https://d47zm3.github.io/post/dip/</guid>
       <description>Changed my mind to make DIP instead of doing presentation during the Hack Day for workshops (which is still valid idea). This project is named after DevSecOps In A Pill, basically shell wrapper to include in development pipeline that for now has three basic functions:
  scan remote web target for vulnerabilities and misconfigurations
 look for vulnerable dependencies used in project (OWASP Dependency Check)
@@ -35,29 +35,29 @@ search for sensitive exposed secrets in git repositories</description>
     
     <item>
       <title>DVNA</title>
-      <link>http://www.example.com/post/dvna/</link>
+      <link>https://d47zm3.github.io/post/dvna/</link>
       <pubDate>Tue, 13 Nov 2018 09:53:23 +0100</pubDate>
       
-      <guid>http://www.example.com/post/dvna/</guid>
+      <guid>https://d47zm3.github.io/post/dvna/</guid>
       <description>As a project for upcoming company&amp;rsquo;s internal hackday I chose to make workshops for secure coding in JavaScript, based on OWASP TOP 10 and Damn Vulnerable NodeJS Application. While I&amp;rsquo;m no coder by myself, I thought I might prepare as much I can from security perspective and use some feeback from more knowledgeable collegue in terms of code itself. The idea came when I stumbled upon &amp;ldquo;solution&amp;rdquo; book to DVNA itself from AppSeco.</description>
     </item>
     
     <item>
       <title>Cheatsheets</title>
-      <link>http://www.example.com/cheatsheets/</link>
+      <link>https://d47zm3.github.io/cheatsheets/</link>
       <pubDate>Mon, 12 Nov 2018 20:15:35 +0100</pubDate>
       
-      <guid>http://www.example.com/cheatsheets/</guid>
+      <guid>https://d47zm3.github.io/cheatsheets/</guid>
       <description>XSS
 SQLi</description>
     </item>
     
     <item>
       <title>Bookmarks</title>
-      <link>http://www.example.com/bookmarks/</link>
+      <link>https://d47zm3.github.io/bookmarks/</link>
       <pubDate>Thu, 08 Nov 2018 18:24:10 +0100</pubDate>
       
-      <guid>http://www.example.com/bookmarks/</guid>
+      <guid>https://d47zm3.github.io/bookmarks/</guid>
       <description>A collection of interesting links/repositories I found around web.
 exploit writing corelan tutorials
 linux (x86) exploit development series
@@ -76,10 +76,10 @@ books the best security books to have in your library</description>
     
     <item>
       <title>About</title>
-      <link>http://www.example.com/about/</link>
+      <link>https://d47zm3.github.io/about/</link>
       <pubDate>Wed, 31 Oct 2018 10:04:43 +0100</pubDate>
       
-      <guid>http://www.example.com/about/</guid>
+      <guid>https://d47zm3.github.io/about/</guid>
       <description>Name: Damian
 Age: 27
 Job: DevOps Engineer
@@ -90,10 +90,10 @@ I treat people same way they treat me, most important thing in my life is to sta
     
     <item>
       <title>Hello Infosec!</title>
-      <link>http://www.example.com/post/first-post/</link>
+      <link>https://d47zm3.github.io/post/first-post/</link>
       <pubDate>Wed, 31 Oct 2018 10:00:42 +0100</pubDate>
       
-      <guid>http://www.example.com/post/first-post/</guid>
+      <guid>https://d47zm3.github.io/post/first-post/</guid>
       <description>Trying to keep up with infosec, saving all valuable knowledge&amp;hellip;</description>
     </item>
     

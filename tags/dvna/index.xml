@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dvna on d47zm3</title>
-    <link>http://www.example.com/tags/dvna/</link>
+    <link>https://d47zm3.github.io/tags/dvna/</link>
     <description>Recent content in Dvna on d47zm3</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 13 Nov 2018 09:53:23 +0100</lastBuildDate>
     
-	<atom:link href="http://www.example.com/tags/dvna/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://d47zm3.github.io/tags/dvna/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>DVNA</title>
-      <link>http://www.example.com/post/dvna/</link>
+      <link>https://d47zm3.github.io/post/dvna/</link>
       <pubDate>Tue, 13 Nov 2018 09:53:23 +0100</pubDate>
       
-      <guid>http://www.example.com/post/dvna/</guid>
+      <guid>https://d47zm3.github.io/post/dvna/</guid>
       <description>As a project for upcoming company&amp;rsquo;s internal hackday I chose to make workshops for secure coding in JavaScript, based on OWASP TOP 10 and Damn Vulnerable NodeJS Application. While I&amp;rsquo;m no coder by myself, I thought I might prepare as much I can from security perspective and use some feeback from more knowledgeable collegue in terms of code itself. The idea came when I stumbled upon &amp;ldquo;solution&amp;rdquo; book to DVNA itself from AppSeco.</description>
     </item>
     
