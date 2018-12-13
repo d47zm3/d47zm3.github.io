@@ -3,83 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://d47zm3.github.io/projects/</loc>
+    <loc>https://d47zm3.me/projects/</loc>
     <lastmod>2018-11-15T08:40:18+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://d47zm3.github.io/post/dip/</loc>
-    <lastmod>2018-11-15T08:33:20+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.github.io/post/dvna/</loc>
-    <lastmod>2018-11-13T09:53:23+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.github.io/cheatsheets/</loc>
-    <lastmod>2018-11-12T20:15:35+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.github.io/bookmarks/</loc>
-    <lastmod>2018-11-08T18:24:10+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.github.io/about/</loc>
+    <loc>https://d47zm3.me/about/</loc>
     <lastmod>2018-10-31T10:04:43+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://d47zm3.github.io/post/first-post/</loc>
-    <lastmod>2018-10-31T10:00:42+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.github.io/categories/</loc>
+    <loc>https://d47zm3.me/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://d47zm3.github.io/categories/devsecops/</loc>
-    <lastmod>2018-11-15T08:33:20+01:00</lastmod>
+    <loc>https://d47zm3.me/tags/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://d47zm3.github.io/tags/dvna/</loc>
-    <lastmod>2018-11-13T09:53:23+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.github.io/tags/hack-day/</loc>
-    <lastmod>2018-11-15T08:33:20+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.github.io/post/</loc>
-    <lastmod>2018-11-15T08:33:20+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.github.io/categories/security/</loc>
-    <lastmod>2018-11-13T09:53:23+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.github.io/tags/</loc>
-    <lastmod>2018-11-13T09:53:23+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.github.io/</loc>
+    <loc>https://d47zm3.me/</loc>
     <lastmod>2018-11-15T08:40:18+01:00</lastmod>
     <priority>0</priority>
   </url>
