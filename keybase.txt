@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/d47zm3
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://d47zm3.me
+  * I am d47zm3 (https://keybase.io/d47zm3) on keybase.
+  * I have a public key ASAQUp3-j_rLHUGYBefUGdkW7KCujwqQ42HVp-HLiYvOngo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "012010529dfe8ffacb1d419805e7d419d916eca0ae8f0a90e361d5a7e1cb898bce9e0a",
+      "host": "keybase.io",
+      "kid": "012010529dfe8ffacb1d419805e7d419d916eca0ae8f0a90e361d5a7e1cb898bce9e0a",
+      "uid": "fced90bc47e1efaefe9cebc709646319",
+      "username": "d47zm3"
+    },
+    "merkle_root": {
+      "ctime": 1547024906,
+      "hash": "fc9cc1aea186a8695747f2601d0ad68e13983fb41c1e8d0f141bfcb4efb3768cb2a415932061b8612fa29b6afd9d2eb521896061c87a93847d704b099c3c550d",
+      "hash_meta": "f560618bf3d24dcbc6909b18a805ecaf06c42156f446bc7750972a710254a06a",
+      "seqno": 4257675
+    },
+    "service": {
+      "entropy": "W5UUqIjyDbnOfr60+Rg0mNL1",
+      "hostname": "d47zm3.me",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "2.12.6"
+  },
+  "ctime": 1547024927,
+  "expire_in": 504576000,
+  "prev": "11c0fcc05c257ca76d5e309ff62d9769e4b6fdc9d5dd05b7f61ae5e492fc5d5b",
+  "seqno": 9,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgEFKd/o/6yx1BmAXn1BnZFuygro8KkONh1afhy4mLzp4Kp3BheWxvYWTESpcCCcQgEcD8wFwlfKdtXjCf9i2XaeS2/cnV3QW39hrl5JL8XVvEIAnFV7sUOcmHPahPpXMH6Xaw5yPnAhUMH5JkbQ5J0F60AgHCo3NpZ8RAmL1KHMmqUuNkbaehHR/NhJ1xN2b2MbjZ2+Xd9ze6F3Y4qkUICh3wNk/0sr2v6jvTO0Q9AymNtLEDgI3Nf2VaA6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEII/m/vTW71WCpYwcwOR8PXYZPQsy8vpVcAe6zWlU/Oz7o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/d47zm3
+
+==================================================================
