@@ -11,10 +11,10 @@
 
     <base href="https://d47zm3.me">
     <title>
-  Projects · d47zm3
+  Protecting Remote Server · d47zm3
 </title>
 
-    <link rel="canonical" href="https://d47zm3.me/projects/">
+    <link rel="canonical" href="https://d47zm3.me/resources/environment/protecting-remote-server/">
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Merriweather:300,700|Source+Code+Pro:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
@@ -86,15 +86,38 @@
   <section class="container page">
   <article>
     <header>
-      <h1>Projects</h1>
+      <h1>Protecting Remote Server</h1>
     </header>
 
-    <p>I keep my code/notes opensourced here:</p>
-
-<ul>
-<li><a href="https://github.com/d47zm3">GitHub</a></li>
-<li><a href="http://docs.d47zm3.me">GitBook</a></li>
-</ul>
+    <p>Tips to protect remote server after fresh install, first thing you want to do is to update all packages and reboot system to apply kernel patches.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~&gt; apt update <span style="color:#f92672">&amp;&amp;</span> apt upgrade -y</code></pre></div>
+<p>Then disable logging in with cleartext passwords</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~&gt; vi /etc/ssh/sshd_config
+<span style="color:#75715e"># PermitRootLogin (yes) =&gt; (without-password|no)</span>
+<span style="color:#75715e"># PasswordAuthentication no</span> 
+~&gt; systemctl restart sshd</code></pre></div>
+<p>Install Fail2Ban and create SSHD jail</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~&gt; apt install fail2ban
+~&gt; cat /etc/fail2ban/jail.d/defaults-debian.conf                                                                                                                                                                     <span style="color:#f92672">[</span><span style="color:#ae81ff">11</span>:22:10<span style="color:#f92672">]</span>
+<span style="color:#f92672">[</span>sshd<span style="color:#f92672">]</span>
+enabled <span style="color:#f92672">=</span> true
+port <span style="color:#f92672">=</span> ssh
+filter <span style="color:#f92672">=</span> sshd
+logpath <span style="color:#f92672">=</span> /var/log/auth.log
+maxretry <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+bantime <span style="color:#f92672">=</span> <span style="color:#ae81ff">600</span>
+~&gt;systemctl restart fail2ban
+~&gt; fail2ban-client status sshd                                                                                                                                                                                       <span style="color:#f92672">[</span><span style="color:#ae81ff">11</span>:23:10<span style="color:#f92672">]</span>
+Status <span style="color:#66d9ef">for</span> the jail: sshd
+|- Filter
+|  |- Currently failed: <span style="color:#ae81ff">3</span>
+|  |- Total failed:     <span style="color:#ae81ff">508</span>
+|  <span style="color:#e6db74">`</span>- File list:        /var/log/auth.log
+<span style="color:#e6db74">`</span>- Actions
+   |- Currently banned: <span style="color:#ae81ff">15</span>
+   |- Total banned:     <span style="color:#ae81ff">15</span>
+   ...</code></pre></div>
+<p>That&rsquo;s it, remember to update your system frequently, make backups and reboot it from time to time.</p>
 
   </article>
 </section>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Environment on d47zm3</title>
+    <link>https://d47zm3.me/resources/environment/</link>
+    <description>Recent content in Environment on d47zm3</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://d47zm3.me/resources/environment/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GPG</title>
+      <link>https://d47zm3.me/resources/environment/gpg/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/environment/gpg/</guid>
+      <description>Set up GPG on computer to encrypt data &amp;amp; sign commits etc.
+MacOS Guide ~&amp;gt; brew install gnupg pinentry-mac ~&amp;gt; cat ~/.gnupg/gpg-agent.conf # Connects gpg-agent to the OSX keychain via the brew-installed # pinentry program from GPGtools. This is the OSX &amp;#39;magic sauce&amp;#39;, # allowing the gpg key&amp;#39;s passphrase to be stored in the login # keychain, enabling automatic key signing. pinentry-program /usr/local/bin/pinentry-mac ~&amp;gt; cat ~/.gnupg/gpg.conf # Uncomment within config (or add this line) use-agent no-tty # This silences the &amp;#34;you need a passphrase&amp;#34; message once the passphrase handling is all set.</description>
+    </item>
+    
+    <item>
+      <title>Protecting Remote Server</title>
+      <link>https://d47zm3.me/resources/environment/protecting-remote-server/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/environment/protecting-remote-server/</guid>
+      <description>Tips to protect remote server after fresh install, first thing you want to do is to update all packages and reboot system to apply kernel patches.
+~&amp;gt; apt update &amp;amp;&amp;amp; apt upgrade -y Then disable logging in with cleartext passwords
+~&amp;gt; vi /etc/ssh/sshd_config # PermitRootLogin (yes) =&amp;gt; (without-password|no) # PasswordAuthentication no ~&amp;gt; systemctl restart sshd Install Fail2Ban and create SSHD jail
+~&amp;gt; apt install fail2ban ~&amp;gt; cat /etc/fail2ban/jail.d/defaults-debian.conf [11:22:10] [sshd] enabled = true port = ssh filter = sshd logpath = /var/log/auth.</description>
+    </item>
+    
+    <item>
+      <title>Shells</title>
+      <link>https://d47zm3.me/resources/environment/shells/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/environment/shells/</guid>
+      <description>From my experience two shells that are worth notice are
+ ZSH Fish  In practice though, you can achieve Fish features installing particular plugins for ZSH, and yet, ZSH will still be more compatible with Bash, while Fish introduces it&amp;rsquo;s own syntax and quirks, which may be hard to adapt after long years with Bash/ZSH. Yet, still I find it very nice as out-of-box solution. Two very well known plugin packages for ZSH are</description>
+    </item>
+    
+    <item>
+      <title>TMUX</title>
+      <link>https://d47zm3.me/resources/environment/tmux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/environment/tmux/</guid>
+      <description>Another tool I can&amp;rsquo;t live without. Available here and in various package repositories on most distribtuons. Where do I start&amp;hellip; Maintain multiple terminals with ease, split screen in as many parts, as you want, make nice toolbars with information, and most motable, attach and detach your work from any place (assuming you work on remote machine). It also supports plugins, but again, I&amp;rsquo;m using very little of them and just roll with my configuration and some plugin to help me see battery status in terminal and for logging, maintained by TPM.</description>
+    </item>
+    
+    <item>
+      <title>VIM</title>
+      <link>https://d47zm3.me/resources/environment/vim/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/environment/vim/</guid>
+      <description>It&amp;rsquo;s commonly available on hosts, has lots of potential, it&amp;rsquo;s fast, tons of plugins, master it to save your time (and life sometimes). While there are frameworks like this one, I found it too slow after installing all the bloat and running on pure VIM with .vimrc, no plugins though for now (no time to check these out), but maybe will expand this section in future. My base .vimrc is below:</description>
+    </item>
+    
+    <item>
+      <title>VPN</title>
+      <link>https://d47zm3.me/resources/environment/vpn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/environment/vpn/</guid>
+      <description>How to run your own VPN, and be able to switch IP when needed, also automate it! You will need some Cloud Provider which has API/CLI available to automate VM creation and then you will set up VPN server using ready scripts. Let&amp;rsquo;s roll with Digital Ocean for instance&amp;hellip; We will use :
+ automatic VPN setup on fresh instance
+ Digital Ocean provisioned Ubuntu instance
+  I made wrapper around well known solution to set up your own VPN instance, that allows you to quickly (5 minutes) spin new instance for your usage.</description>
+    </item>
+    
+  </channel>
+</rss>

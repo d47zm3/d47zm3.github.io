@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="d47zm3">
+    <meta name="description" content="Personal DevOps &amp; Security Site">
+    <meta name="keywords" content="blog,devops,personal,security">
+
+    <base href="https://d47zm3.me">
+    <title>
+  Linux Network Monitoring Tools · d47zm3
+</title>
+
+    <link rel="canonical" href="https://d47zm3.me/resources/devops/linux-network-monitoring-tools/">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Merriweather:300,700|Source+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://d47zm3.me/css/coder.min.42b57c75b1d9e2f7bcc89c4031716ec188e0a0e63dbde8150859ed6ad58763ec.css" integrity="sha256-QrV8dbHZ4ve8yJxAMXFuwYjgoOY9vegVCFntatWHY&#43;w=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+      <link rel="stylesheet" href="https://d47zm3.me/css/custom.css">
+    
+
+    <link rel="icon" type="image/png" href="https://d47zm3.me/img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://d47zm3.me/img/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.53" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://d47zm3.me">
+      
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://d47zm3.me/">Home</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://d47zm3.me/projects/">Projects</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://d47zm3.me/resources/">Resources</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://d47zm3.me/bookmarks/">Bookmarks</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://d47zm3.me/about/">About</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Linux Network Monitoring Tools</h1>
+    </header>
+
+    <p>Original Link: <a href="https://haydenjames.io/linux-networking-commands-scripts/">https://haydenjames.io/linux-networking-commands-scripts/</a></p>
+
+<ol>
+<li>arpwatch – ethernet activity monitor.</li>
+<li>bmon – bandwidth monitor and rate estimator.</li>
+<li>bwm-ng – live network bandwidth monitor.</li>
+<li>curl – transferring data with urls.</li>
+<li>darkstat – captures network traffic, usage statistics.</li>
+<li>dhclient – dynamic host configuration protocol client</li>
+<li>dig – query dns servers for information.</li>
+<li>dstat – replacement for vmstat, iostat, mpstat, netstat and ifstat.</li>
+<li>ethtool – utility for controlling network drivers and hardware.</li>
+<li>ftp – simplest file transfer protocol.</li>
+<li>gated – gateway routing daemon.</li>
+<li>host – dns lookup utility.</li>
+<li>hping – tcp/ip packet assembler/analyzer.</li>
+<li>ibmonitor – shows bandwidth and total data transferred.</li>
+<li>ifstat –  report network interfaces bandwidth.</li>
+<li>iftop – display bandwidth usage.</li>
+<li>ip (pdf file) – a command with more features that ifconfig (net-tools).</li>
+<li>iperf3 – network bandwidth measurement tool. (above screenshot stacklinux vps)</li>
+<li>iproute2 – collection of utilities for controlling tcp/ip.</li>
+<li>iptraf – an ip network monitor.</li>
+<li>iputils – set of small useful utilities for linux networking.</li>
+<li>jwhois (whois) – client for the whois service.</li>
+<li>mtr – network diagnostic tool.</li>
+<li>net-tools – utilities include: arp, hostname, ifconfig, netstat, rarp, route, plipconfig, slattach, mii-tool, iptunnel and ipmaddr.</li>
+<li>ncat – improved re-implementation of the venerable netcat.</li>
+<li>netcat – networking utility for reading/writing network connections.</li>
+<li>nethogs – a small ‘net top’ tool.</li>
+<li>netperf – network bandwidth testing.</li>
+<li>netsniff-ng – swiss army knife for daily linux network plumbing.</li>
+<li>netstat – print network connections, routing tables, statistics, etc.</li>
+<li>netwatch – monitoring network connections.</li>
+<li>nload – display network usage.</li>
+<li>nmap – network discovery and security auditing.</li>
+<li>nslookup – query internet name servers interactively.</li>
+<li>ping – send icmp echo_request to network hosts.</li>
+<li>route – show / manipulate the ip routing table.</li>
+<li>slurm – network load monitor.</li>
+<li>smokeping –  keeps track of your network latency.</li>
+<li>speedometer – measure and display the rate of data across a network.</li>
+<li>speedtest-cli – test internet bandwidth using speedtest.net</li>
+<li>ss – utility to investigate sockets.</li>
+<li>ssh –  secure system administration and file transfers over insecure networks.</li>
+<li>tcpdump – command-line packet analyzer.</li>
+<li>tcptrack – displays information about tcp connections on a network interface.</li>
+<li>telnet – user interface to the telnet protocol.</li>
+<li>tracepath – very similar function to traceroute.</li>
+<li>traceroute – print the route packets trace to network host.</li>
+<li>vnstat – network traffic monitor.</li>
+<li>wget –  retrieving files using http, https, ftp and ftps.</li>
+<li>wireless tools for linux – includes iwconfig, iwlist, iwspy, iwpriv and ifrename.</li>
+<li>wireshark – network protocol analyzer.</li>
+</ol>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+     © 2019
+    
+       · 
+      Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

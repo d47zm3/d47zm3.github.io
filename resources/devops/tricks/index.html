@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="d47zm3">
+    <meta name="description" content="Personal DevOps &amp; Security Site">
+    <meta name="keywords" content="blog,devops,personal,security">
+
+    <base href="https://d47zm3.me">
+    <title>
+  Tricks · d47zm3
+</title>
+
+    <link rel="canonical" href="https://d47zm3.me/resources/devops/tricks/">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Merriweather:300,700|Source+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://d47zm3.me/css/coder.min.42b57c75b1d9e2f7bcc89c4031716ec188e0a0e63dbde8150859ed6ad58763ec.css" integrity="sha256-QrV8dbHZ4ve8yJxAMXFuwYjgoOY9vegVCFntatWHY&#43;w=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+      <link rel="stylesheet" href="https://d47zm3.me/css/custom.css">
+    
+
+    <link rel="icon" type="image/png" href="https://d47zm3.me/img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://d47zm3.me/img/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.53" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://d47zm3.me">
+      
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://d47zm3.me/">Home</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://d47zm3.me/projects/">Projects</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://d47zm3.me/resources/">Resources</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://d47zm3.me/bookmarks/">Bookmarks</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://d47zm3.me/about/">About</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Tricks</h1>
+    </header>
+
+    
+
+<p>Miscellaneous tricks that did not made it into other categories.</p>
+
+<h3 id="find-real-ips-behind-cloudflare">Find Real IPs behind CloudFlare</h3>
+
+<p>I&rsquo;m using <a href="http://www.crimeflare.info:82/cfs.html">CrimeFlare</a> for it.</p>
+
+<h3 id="expose-local-server-behind-nat-via-public-vps">Expose Local Server behind NAT via public VPS</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># run from machine which has access to private site</span>
+ssh -R <span style="color:#ae81ff">8443</span>:private-site:443 user@public_vps</code></pre></div>
+<p>Now add new /etc/hosts entry reflecting vhost of private website pointing to public VPS IP and access it via <a href="https://private-site:8443/">https://private-site:8443/</a></p>
+
+<h3 id="debugging-on-container-os-using-docker">Debugging on Container OS using Docker</h3>
+
+<p>Actually it boils down to running Docker container which shares namespaces with host, installing tools there and debugging.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run --rm --privileged --net<span style="color:#f92672">=</span>host --pid<span style="color:#f92672">=</span>host --ipc<span style="color:#f92672">=</span>host  --name debugging -it debian:latest
+apt-get install htop
+apt-get install sysstat
+apt-get install vim
+apt-get install atop
+apt-get install procps</code></pre></div>
+<h3 id="mount-google-bucket-under-linux-using-fuse">Mount Google Bucket under Linux using FUSE</h3>
+
+<p>Create service account</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud iam service-accounts create offsite-backup --display-name <span style="color:#e6db74">&#34;Offsite Backup&#34;</span>
+gcloud iam service-accounts list
+PROJECT_ID<span style="color:#f92672">=</span>my-web
+SERVICE_ACCOUNT_EMAIL<span style="color:#f92672">=</span>offsite-backup@my-web.iam.gserviceaccount.com
+gcloud projects add-iam-policy-binding $PROJECT_ID --member serviceAccount:$SERVICE_ACCOUNT_EMAIL --role roles/storage.admin
+gcloud iam service-accounts keys create credentials-offsite --iam-account $SERVICE_ACCOUNT_EMAIL</code></pre></div>
+<p>On remote host</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export GCSFUSE_REPO<span style="color:#f92672">=</span>gcsfuse-<span style="color:#e6db74">`</span>lsb_release -c -s<span style="color:#e6db74">`</span>
+echo <span style="color:#e6db74">&#34;deb http://packages.cloud.google.com/apt </span>$GCSFUSE_REPO<span style="color:#e6db74"> main&#34;</span> | sudo tee /etc/apt/sources.list.d/gcsfuse.list
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install gcsfuse
+mkdir /mnt/google-offsite-bucket
+GOOGLE_APPLICATION_CREDENTIALS<span style="color:#f92672">=</span>/root/credentials-offsite gcsfuse my-web-offsite-backup /mnt/google-offsite-bucket/</code></pre></div>
+<h3 id="adding-asynchronous-slave-to-galera-cluster-using-docker-image">Adding Asynchronous Slave to Galera Cluster using Docker image</h3>
+
+<p>Short description what is going on:
+– we want to have offsite asynchronous backup that is restored from backup last night and missing parts are replayed
+– we don’t want to have any downtime for master cluster during this
+– we take on-line backup using either mysqldump/innobackupex and we use GTID data (global transaction id) from there to set mark where we should start replication
+– we restore inital state, set master data and start data</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># take backup using either innobackupex or mysqldump</span>
+innobackupex --no-timestamp --no-lock --host<span style="color:#f92672">=</span>localhost /root/galera_backup/
+<span style="color:#75715e"># or mysqldump with extra flags</span>
+mysqldump --all-databases --single-transaction --triggers --routines --host<span style="color:#f92672">=</span><span style="color:#ae81ff">127</span>.0.0.1 --gtid --master-data &gt; dump.sql</code></pre></div>
+<p>If you took innobackupex way, remember to prepare backup before restore with –apply-log. This will replay uncommited transactions from files on disks (location where you made backup) and it might be time-consuming, you can run it whenever you want, it does not has to do anything with SQL server running.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">innobackupex --no-timestamp --no-lock --host<span style="color:#f92672">=</span>localhost --apply-log /root/galera_backup/</code></pre></div>
+<p>Dockerfile is below, used files are explained beneath it.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">FROM mariadb:10.0
+COPY slave.cnf /etc/mysql/conf.d/
+COPY replication-entrypoint.sh /usr/local/bin/
+# COPY dump.sql /docker-entrypoint-initdb.d/ - optional, if using MySQL dump tool you copy dump here
+ENTRYPOINT [&#34;/usr/local/bin/replication-entrypoint.sh&#34;]
+CMD [&#34;mysqld&#34;]</pre></div>
+<p>File slave.cnf contains GTID domain and Server ID which has to be different across all nodes.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">[root@galera01 ~]# cat slave.cnf
+[mysqld]
+server-id=169
+gtid_domain_id=1</pre></div>
+<p>File replication-entrypoint.sh contains commands that are run when Docker image starts, it will create bash script inside /docker-entrypoint-initdb.d/ – this is special location, all SQLs/Scripts/dumps there will be applied on MySQL server startup.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>set -eo pipefail
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> -z <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>MASTER_USER<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">||</span> <span style="color:#f92672">[[</span> -z <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>MASTER_PASSWORD<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">||</span> <span style="color:#f92672">[[</span> -z <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>MASTER_HOST<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]]</span>
+<span style="color:#66d9ef">then</span>
+        echo <span style="color:#e6db74">&#34;PLEASE PROVIDE MASTER_USER, MASTER_PASSWORD AND MASTER_HOST ENVS ON DOCKER RUN COMMAND!&#34;</span>
+        exit <span style="color:#ae81ff">1</span>
+<span style="color:#66d9ef">fi</span>
+
+cat &gt;/docker-entrypoint-initdb.d/init-slave.sh  <span style="color:#e6db74">&lt;&lt;&#39;EOF&#39;
+</span><span style="color:#e6db74">#!/bin/bash
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">sleep 5
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">echo Set slave position...
+</span><span style="color:#e6db74"># optional - when using mysqldump
+</span><span style="color:#e6db74"># cat /docker-entrypoint-initdb.d/dump.sql | egrep -i &#34;set global gtid_slave_pos&#34; | mysql -uroot -p$MYSQL_ROOT_PASSWORD
+</span><span style="color:#e6db74"># below is version for innobackupex 
+</span><span style="color:#e6db74">last_gtid=$( cat /var/lib/mysql/xtrabackup_info | grep GTID | awk &#39;{ print $NF }&#39; | tr -d \&#39; )
+</span><span style="color:#e6db74">gtid_query=&#34;SET GLOBAL gtid_slave_pos=&#39;${last_gtid}&#39;;&#34;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">echo Setting master info on slave...
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">echo ${gtid_query} | mysql -u root -p$MYSQL_ROOT_PASSWORD
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">mysql -u root -p$MYSQL_ROOT_PASSWORD -e &#34;\
+</span><span style="color:#e6db74">CHANGE MASTER TO master_host=&#39;$MASTER_HOST&#39;, master_port=3306, master_password=&#39;$MASTER_PASSWORD&#39;, master_user=&#39;$MASTER_USER&#39;, master_use_gtid=slave_pos; \
+</span><span style="color:#e6db74">&#34;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">echo Start slave...
+</span><span style="color:#e6db74">mysql -u root -p$MYSQL_ROOT_PASSWORD -e &#34;\
+</span><span style="color:#e6db74">start slave;
+</span><span style="color:#e6db74">&#34;
+</span><span style="color:#e6db74">sleep 10
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">echo Show slave status...
+</span><span style="color:#e6db74">mysql -u root -p$MYSQL_ROOT_PASSWORD  -e &#34;\
+</span><span style="color:#e6db74">show slave status \G;
+</span><span style="color:#e6db74">&#34;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">EOF</span>
+
+exec docker-entrypoint.sh <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span></code></pre></div>
+<p>And here are missing parts in script to run it all together
+- even though in the end root user on mysql database will be replicated from master database, we start with random root password, which is held inside environmental variable $MYSQL_ROOT_PASSWORD so we can run initial queries
+- we specify master user/password/host via envs too, so they are used in initial query later
+- option to mount volume (-v) is optional, it is used to mount innobackupex backup to docker container, you don&rsquo;t need it to restore slave from mysqldump backup</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker stop slave;
+docker rm slave;
+docker build -t slave:latest .
+docker run -itd --name slave -e MYSQL_RANDOM_ROOT_PASSWORD<span style="color:#f92672">=</span>yes -e MASTER_USER<span style="color:#f92672">=</span>root -e MASTER_PASSWORD<span style="color:#f92672">=</span>password -e MASTER_HOST<span style="color:#f92672">=</span><span style="color:#ae81ff">172</span>.17.0.1 -v /root/galera_backup/:/var/lib/mysql/ slave
+docker logs -f slave</code></pre></div>
+<h3 id="adding-asynchronous-slave-to-galera-cluster">Adding asynchronous slave to Galera cluster</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"># add settings on master nodes to server.cnf
+[mysqld]
+gtid_domain_id=1
+server_id=1
+binlog_format=ROW
+log_slave_updates=1
+log_bin=binlog
+# restart all nodes
+# create replication user
+
+MariaDB [(none)]&gt; create user &#39;repl&#39;@&#39;%&#39; identified by &#39;secret&#39;;
+MariaDB [(none)]&gt; grant all on *.* to &#39;repl&#39;@&#39;%&#39;;
+# make backup of current state
+
+mysqldump --all-databases --single-transaction --triggers --routines --host=127.0.0.1 --user=root --password=secret &gt; dump.sql
+# copy it to slave
+# configure new slave
+
+# install same packages
+# server.cnf
+[mysqld]
+server-id=2 # different!
+log-bin=mysql-bin
+binlog_format=ROW
+relay_log=relay-log
+gtid_domain_id=1
+log_slave_updates=1
+# start service, set root password
+
+service mysql start
+mysql_secure_installation
+# check master position 
+
+MariaDB [(none)]&gt;  SHOW MASTER STATUS\G
+*************************** 1. row ***************************
+            File: binlog.000002
+        Position: 846
+    Binlog_Do_DB:
+Binlog_Ignore_DB:
+1 row in set (0.00 sec)
+​
+MariaDB [(none)]&gt; SELECT BINLOG_GTID_POS(&#39;binlog.00002&#39;, 846);
++--------------------------------------+
+| BINLOG_GTID_POS(&#39;binlog.00002&#39;, 846) |
++--------------------------------------+
+| NULL                                 |
++--------------------------------------+
+1 row in set (0.00 sec)
+# now on slave
+
+MariaDB [(none)]&gt; SET GLOBAL gtid_slave_pos = &#39;&#39;; # since it was null...
+MariaDB [(none)]&gt; CHANGE MASTER TO master_use_gtid=slave_pos;
+MariaDB [(none)]&gt; change master to master_host=&#39;192.168.56.111&#39;, master_port=3306, master_user=&#39;repl&#39;, master_password=&#39;secret&#39;;
+MariaDB [(none)]&gt; start slave;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+​
+MariaDB [(none)]&gt; show slave status\G;
+*************************** 1. row ***************************
+               Slave_IO_State: Waiting for master to send event
+                  Master_Host: 192.168.56.111
+                  Master_User: repl
+                  Master_Port: 3306
+                Connect_Retry: 60
+              Master_Log_File: binlog.000002
+          Read_Master_Log_Pos: 846
+               Relay_Log_File: relay-log.000002
+                Relay_Log_Pos: 1052
+        Relay_Master_Log_File: binlog.000002
+             Slave_IO_Running: Yes
+            Slave_SQL_Running: Yes
+              Replicate_Do_DB:
+          Replicate_Ignore_DB:
+           Replicate_Do_Table:
+       Replicate_Ignore_Table:
+      Replicate_Wild_Do_Table:
+  Replicate_Wild_Ignore_Table:
+                   Last_Errno: 0
+                   Last_Error:
+                 Skip_Counter: 0
+          Exec_Master_Log_Pos: 846
+              Relay_Log_Space: 1343
+              Until_Condition: None
+               Until_Log_File:
+                Until_Log_Pos: 0
+           Master_SSL_Allowed: No
+           Master_SSL_CA_File:
+           Master_SSL_CA_Path:
+              Master_SSL_Cert:
+            Master_SSL_Cipher:
+               Master_SSL_Key:
+        Seconds_Behind_Master: 0
+Master_SSL_Verify_Server_Cert: No
+                Last_IO_Errno: 0
+                Last_IO_Error:
+               Last_SQL_Errno: 0
+               Last_SQL_Error:
+  Replicate_Ignore_Server_Ids:
+             Master_Server_Id: 1
+               Master_SSL_Crl:
+           Master_SSL_Crlpath:
+                   Using_Gtid: Slave_Pos
+                  Gtid_IO_Pos: 1-1-4
+1 row in set (0.00 sec)</pre></div>
+<h3 id="galera-cluster-10-0-on-centos-7">Galera Cluster (10.0) on CentOS 7</h3>
+
+<p>Some notes from installation:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># prepare repo</span>
+<span style="color:#f92672">[</span>root@galera01 vagrant<span style="color:#f92672">]</span><span style="color:#75715e"># cat /etc/yum.repos.d/maria.repo</span>
+<span style="color:#f92672">[</span>mariadb<span style="color:#f92672">]</span>
+name <span style="color:#f92672">=</span> MariaDB
+baseurl <span style="color:#f92672">=</span> http://yum.mariadb.org/10.0/centos7-amd64
+gpgkey<span style="color:#f92672">=</span>https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+<span style="color:#75715e"># install all necessary packages on all nodes</span>
+<span style="color:#75715e"># install all necessary packages on all nodes</span>
+
+yum install socat
+rpm --import https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+yum install mariadb-server
+yum install https://www.percona.com/downloads/XtraBackup/Percona-XtraBackup-2.4.1/binary/redhat/7/x86_64/percona-xtrabackup-24-2.4.1-1.el7.x86_64.rpm
+<span style="color:#75715e"># configure server.cnf on all servers (important, add it in server.cnf not new extra file or it won’t be parsed!)</span>
+
+<span style="color:#f92672">[</span>galera<span style="color:#f92672">]</span>
+<span style="color:#75715e"># Mandatory settings</span>
+wsrep_provider<span style="color:#f92672">=</span>/usr/lib64/galera/libgalera_smm.so
+wsrep_cluster_address<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gcomm://192.168.56.111,192.168.56.112,192.168.56.113&#34;</span> <span style="color:#75715e"># IPs of nodes</span>
+​
+binlog_format<span style="color:#f92672">=</span>row
+default_storage_engine<span style="color:#f92672">=</span>InnoDB
+innodb_autoinc_lock_mode<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
+bind-address<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>.0.0.0
+​
+<span style="color:#75715e">#Cluster Settings</span>
+wsrep_cluster_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Test_Cluster&#34;</span>
+wsrep_node_address<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;192.168.56.111&#34;</span> <span style="color:#75715e"># own IP address</span>
+wsrep_node_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;galera01&#34;</span> <span style="color:#75715e">#hostname / node name</span>
+​
+<span style="color:#75715e"># replication provider</span>
+wsrep_sst_method<span style="color:#f92672">=</span>xtrabackup
+wsrep_sst_auth<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sstuser:s3cretPass&#34;</span>
+​
+<span style="color:#75715e"># Optional setting</span>
+wsrep_slave_threads<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+wsrep_certify_nonPK<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+wsrep_max_ws_rows<span style="color:#f92672">=</span><span style="color:#ae81ff">131072</span>
+wsrep_max_ws_size<span style="color:#f92672">=</span><span style="color:#ae81ff">1073741824</span>
+wsrep_debug<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+wsrep_convert_LOCK_to_trx<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+wsrep_retry_autocommit<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+wsrep_auto_increment_control<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+wsrep_drupal_282555_workaround<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+wsrep_causal_reads<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+Other Node
+
+<span style="color:#f92672">[</span>root@galera02 my.cnf.d<span style="color:#f92672">]</span><span style="color:#75715e"># cat server.cnf</span>
+#
+<span style="color:#75715e"># These groups are read by MariaDB server.</span>
+<span style="color:#75715e"># Use it for options that only the server (but not clients) should see</span>
+#
+<span style="color:#75715e"># See the examples of server my.cnf files in /usr/share/mysql/</span>
+#
+
+<span style="color:#75715e"># this is read by the standalone daemon and embedded servers</span>
+<span style="color:#f92672">[</span>server<span style="color:#f92672">]</span>
+
+<span style="color:#75715e"># this is only for the mysqld standalone daemon</span>
+<span style="color:#f92672">[</span>mysqld<span style="color:#f92672">]</span>
+
+#
+<span style="color:#75715e"># * Galera-related settings</span>
+#
+<span style="color:#f92672">[</span>galera<span style="color:#f92672">]</span>
+<span style="color:#75715e"># Mandatory settings</span>
+wsrep_provider<span style="color:#f92672">=</span>/usr/lib64/galera/libgalera_smm.so
+wsrep_cluster_address<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gcomm://192.168.56.111,192.168.56.112,192.168.56.113&#34;</span>
+
+binlog_format<span style="color:#f92672">=</span>row
+default_storage_engine<span style="color:#f92672">=</span>InnoDB
+innodb_autoinc_lock_mode<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
+bind-address<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>.0.0.0
+
+bind-address<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>.0.0.0
+
+<span style="color:#75715e">#Cluster Settings</span>
+wsrep_cluster_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Test_Cluster&#34;</span>
+wsrep_node_address<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;192.168.56.112&#34;</span> <span style="color:#75715e"># own IP address</span>
+wsrep_node_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;galera02&#34;</span> <span style="color:#75715e">#hostname / node name</span>
+
+<span style="color:#75715e"># replication provider</span>
+wsrep_sst_method<span style="color:#f92672">=</span>xtrabackup
+wsrep_sst_auth<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sstuser:s3cretPass&#34;</span>
+
+<span style="color:#75715e"># Optional setting</span>
+wsrep_slave_threads<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+wsrep_certify_nonPK<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+wsrep_max_ws_rows<span style="color:#f92672">=</span><span style="color:#ae81ff">131072</span>
+wsrep_max_ws_size<span style="color:#f92672">=</span><span style="color:#ae81ff">1073741824</span>
+wsrep_debug<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+wsrep_convert_LOCK_to_trx<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+wsrep_retry_autocommit<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+wsrep_auto_increment_control<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+wsrep_drupal_282555_workaround<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+wsrep_causal_reads<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+Bootstrap inital node
+
+service mysql bootstrap
+If you need to restart password <span style="color:#66d9ef">for</span> ‘root’ user…
+
+<span style="color:#75715e"># due to some bug you need to copy this file</span> 
+mkdir /share/mysql
+cp /usr/share/mysql/english/errmsg.sys /share/mysql/
+mysqld_safe --skip-grant-tables &amp;
+mysql -uroot mysql
+MariaDB <span style="color:#f92672">[(</span>none<span style="color:#f92672">)]</span>&gt; UPDATE mysql.user SET password <span style="color:#f92672">=</span> PASSWORD<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;secret&#39;</span><span style="color:#f92672">)</span> WHERE user <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;root&#39;</span> and host <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;localhost&#39;</span>;
+MariaDB <span style="color:#f92672">[(</span>none<span style="color:#f92672">)]</span>&gt; flush privileges;
+<span style="color:#75715e"># kill all mysqld process</span>
+ps -ef | grep mysql 
+<span style="color:#75715e"># boot up again</span>
+service mysql start
+<span style="color:#75715e"># now on another node to join cluster simply start MySQL service (assuming you have server.cnf configured)</span>
+
+<span style="color:#f92672">[</span>root@galera03 my.cnf.d<span style="color:#f92672">]</span><span style="color:#75715e"># service mysql start</span>
+Starting MySQL.171010 <span style="color:#ae81ff">16</span>:13:16 mysqld_safe Logging to <span style="color:#e6db74">&#39;/var/lib/mysql/galera03.err&#39;</span>.
+<span style="color:#ae81ff">171010</span> <span style="color:#ae81ff">16</span>:13:16 mysqld_safe Starting mysqld daemon with databases from /var/lib/mysql
+..SST in progress, setting sleep higher. SUCCESS!
+Done!</code></pre></div>
+<h3 id="update-old-ubuntu-release">Update Old Ubuntu Release</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># add to /etc/apt/sources.list, replace code_name with actual value</span>
+deb http://old-releases.ubuntu.com/ubuntu code_name main restricted universe multiverse</code></pre></div>
+<h3 id="elasticsearch-and-graylog-free-up-some-space">Elasticsearch and Graylog – free up some space</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>root@syslog01 ~<span style="color:#f92672">]</span><span style="color:#75715e"># curl http://localhost:9200/_cat/indices</span>
+green open graylog2_12 <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">20000033</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">6</span>.5gb <span style="color:#ae81ff">6</span>.5gb
+green open graylog2_6  <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">20001103</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">4</span>.4gb <span style="color:#ae81ff">4</span>.4gb
+green open graylog2_10 <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">20000054</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">4</span>.2gb <span style="color:#ae81ff">4</span>.2gb
+green open graylog2_1  <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">20000134</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">6</span>.2gb <span style="color:#ae81ff">6</span>.2gb
+green open graylog2_11 <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">20000146</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">6</span>.6gb <span style="color:#ae81ff">6</span>.6gb
+green open graylog2_13 <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">20000022</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">4</span>.6gb <span style="color:#ae81ff">4</span>.6gb
+green open graylog2_8  <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">20000040</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">5</span>.7gb <span style="color:#ae81ff">5</span>.7gb
+green open graylog2_14 <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">13228556</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">4</span>.6gb <span style="color:#ae81ff">4</span>.6gb
+green open graylog2_7  <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">20000915</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">4</span>.2gb <span style="color:#ae81ff">4</span>.2gb
+green open graylog2_3  <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">20000457</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">4</span>.5gb <span style="color:#ae81ff">4</span>.5gb
+green open graylog2_0  <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">20000017</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">6</span>.5gb <span style="color:#ae81ff">6</span>.5gb
+green open graylog2_5  <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">20000489</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">4</span>.5gb <span style="color:#ae81ff">4</span>.5gb
+green open graylog2_4  <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">20000113</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">4</span>.5gb <span style="color:#ae81ff">4</span>.5gb
+green open graylog2_9  <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">20001312</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">4</span>.6gb <span style="color:#ae81ff">4</span>.6gb
+green open graylog2_2  <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">20000368</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">4</span>.7gb <span style="color:#ae81ff">4</span>.7gb
+<span style="color:#f92672">[</span>root@syslog01 ~<span style="color:#f92672">]</span><span style="color:#75715e"># curl -XDELETE http://localhost:9200/graylog2_0</span>
+<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;acknowledged&#34;</span>:true<span style="color:#f92672">}</span>
+<span style="color:#f92672">[</span>root@syslog01 ~<span style="color:#f92672">]</span><span style="color:#75715e"># curl -XDELETE http://localhost:9200/graylog2_1</span>
+<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;acknowledged&#34;</span>:true<span style="color:#f92672">}</span>
+<span style="color:#f92672">[</span>root@syslog01 ~<span style="color:#f92672">]</span><span style="color:#75715e"># curl -XDELETE http://localhost:9200/graylog2_2</span>
+<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;acknowledged&#34;</span>:true<span style="color:#f92672">}</span>
+<span style="color:#f92672">[</span>root@syslog01 ~<span style="color:#f92672">]</span><span style="color:#75715e"># curl -XDELETE http://localhost:9200/graylog2_3</span></code></pre></div>
+<h3 id="scp-transfer-stalled">SCP – transfer stalled</h3>
+
+<p>I’ve had problems with copying files over network, transfer was being stalled, what has helped me were setting system settings (TCP Selective Acknowledgment) and -l option in scp.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo sysctl -w net.ipv4.tcp_sack<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+scp -l <span style="color:#ae81ff">64192</span> </code></pre></div>
+<h3 id="yum-metadata-file-does-not-match-checksum">YUM: metadata file does not match checksum</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">http://yum.oracle.com/repo/OracleLinux/OL6/UEKR4/x86_64/repodata/filelists.xml.gz: [Errno -1] Metadata file does not match checksum</pre></div>
+<p>Add</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">http_caching=none</pre></div>
+<p>to /etc/yum.conf and run</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">yum clean metadata</pre></div>
+<h3 id="urlopen-error-ssl-certificate-verify-failed-certificate-verify-failed">URLOpen Error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">export PYTHONHTTPSVERIFY=0</pre></div>
+<h3 id="vmware-converter-p2v-partition-number-must-be-set-for-the-boot-volume">VMWare Converter – P2V – partition number must be set for the boot volume</h3>
+
+<p>I was trying to archive old machine running RHEL 6.4 on physical server. First idea was to P2V it and then export virtual machine… BUT of course there was some obstacles. At first I’ve tried to use REAR (Relax and Recover) tool to make P2V, then when restoring I discovered, /boot volume comes from multipath and it didn’t really play well… Then I’ve tried Veeam Agent for Linux, however it couldn’t handle that server either, it wasn’t correctly recognizing disk layout. So last bastion, VMWare Converter. Alas it failed as well as it had troubles with /boot volume. I’ve tried to get into rescue mode, recreate /boot volume from scratch but I couldn’t install damn GRUB loader there. Luckily I had original install DVD so I installed OS from scratch and wanted to migrated data from old disk, and then it came to me… I could take /boot volume from fresh install and use VGs from migrated disks! So quickly made minimum 10GB OS install, mounted old VGs, made neccessary changes to etc/fstab and GRUB and it did work with minimal overhead of space (10GB). So here are steps:</p>
+
+<p>1) Clone over disks from old machine onto new VM until it fails with error</p>
+
+<p>2) Get same OS install disk (or atleast similar?)</p>
+
+<p>3) Make fresh, minimal install</p>
+
+<p>4) Mount disk from non-finished machine to new VM</p>
+
+<p>5) Mount migrated VGs in new VM, edit /boot/grub/grub.cfg and /mnt/sysimage/etc/fstab, remember to copy /boot line form current fresh VM /etc/fstab</p>
+
+<p>6) pbase – new VM,  pzuadm – migrated machine</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>root@pbase ~<span style="color:#f92672">]</span><span style="color:#75715e"># df -h</span>
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/vg_pbase-lv_root
+                      <span style="color:#ae81ff">5</span>.5G  <span style="color:#ae81ff">1</span>.8G  <span style="color:#ae81ff">3</span>.5G  <span style="color:#ae81ff">34</span>% /
+tmpfs                 939M     <span style="color:#ae81ff">0</span>  939M   <span style="color:#ae81ff">0</span>% /dev/shm
+/dev/sda1             485M   37M  423M   <span style="color:#ae81ff">9</span>% /boot
+<span style="color:#f92672">[</span>root@pbase ~<span style="color:#f92672">]</span><span style="color:#75715e"># ls -l /dev/mapper/</span>
+total <span style="color:#ae81ff">0</span>
+crw-rw----. <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">58</span> Mar  <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">09</span>:42 control
+lrwxrwxrwx. <span style="color:#ae81ff">1</span> root root      <span style="color:#ae81ff">7</span> Mar  <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">09</span>:42 vg_pbase-lv_root -&gt; ../dm-0
+lrwxrwxrwx. <span style="color:#ae81ff">1</span> root root      <span style="color:#ae81ff">7</span> Mar  <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">09</span>:42 vg_pbase-lv_swap -&gt; ../dm-1
+<span style="color:#75715e"># after attaching disk</span>
+<span style="color:#f92672">[</span>root@pbase ~<span style="color:#f92672">]</span><span style="color:#75715e"># ls -l /dev/mapper/</span>
+total <span style="color:#ae81ff">0</span>
+crw-rw----. <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">58</span> Mar  <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">09</span>:46 control
+lrwxrwxrwx. <span style="color:#ae81ff">1</span> root root      <span style="color:#ae81ff">7</span> Mar  <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">09</span>:46 vg_pbase-lv_root -&gt; ../dm-0
+lrwxrwxrwx. <span style="color:#ae81ff">1</span> root root      <span style="color:#ae81ff">7</span> Mar  <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">09</span>:46 vg_pbase-lv_swap -&gt; ../dm-1
+lrwxrwxrwx. <span style="color:#ae81ff">1</span> root root      <span style="color:#ae81ff">7</span> Mar  <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">09</span>:46 vg_pzuadm-lv_home -&gt; ../dm-3
+lrwxrwxrwx. <span style="color:#ae81ff">1</span> root root      <span style="color:#ae81ff">7</span> Mar  <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">09</span>:46 vg_pzuadm-lv_root -&gt; ../dm-2
+lrwxrwxrwx. <span style="color:#ae81ff">1</span> root root      <span style="color:#ae81ff">7</span> Mar  <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">09</span>:46 vg_pzuadm-lv_swap -&gt; ../dm-4
+<span style="color:#f92672">[</span>root@pbase ~<span style="color:#f92672">]</span><span style="color:#75715e"># mkdir /mnt/sysimage</span>
+<span style="color:#f92672">[</span>root@pbase ~<span style="color:#f92672">]</span><span style="color:#75715e"># mount /dev/mapper/vg_pzuadm-lv_root /mnt/sysimage/</span>
+<span style="color:#f92672">[</span>root@pbase ~<span style="color:#f92672">]</span><span style="color:#75715e"># cat /etc/fstab | grep boot</span>
+UUID<span style="color:#f92672">=</span>64d2336b-93cf-454a-8f25-8fc5fc8ba69a /boot                   ext4    defaults        <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span>
+<span style="color:#75715e"># before edit</span>
+<span style="color:#f92672">[</span>root@pbase ~<span style="color:#f92672">]</span><span style="color:#75715e"># cat /boot/grub/grub.conf</span>
+<span style="color:#75715e"># grub.conf generated by anaconda</span>
+#
+<span style="color:#75715e"># Note that you do not have to rerun grub after making changes to this file</span>
+<span style="color:#75715e"># NOTICE:  You have a /boot partition.  This means that</span>
+<span style="color:#75715e">#          all kernel and initrd paths are relative to /boot/, eg.</span>
+<span style="color:#75715e">#          root (hd0,0)</span>
+<span style="color:#75715e">#          kernel /vmlinuz-version ro root=/dev/mapper/vg_pbase-lv_root</span>
+<span style="color:#75715e">#          initrd /initrd-[generic-]version.img</span>
+<span style="color:#75715e">#boot=/dev/sda</span>
+default<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>
+splashimage<span style="color:#f92672">=(</span>hd0,0<span style="color:#f92672">)</span>/grub/splash.xpm.gz
+hiddenmenu
+title Red Hat Enterprise Linux <span style="color:#f92672">(</span><span style="color:#ae81ff">2</span>.6.32-358.el6.x86_64<span style="color:#f92672">)</span>
+        root <span style="color:#f92672">(</span>hd0,0<span style="color:#f92672">)</span>
+        kernel /vmlinuz-2.6.32-358.el6.x86_64 ro root<span style="color:#f92672">=</span>/dev/mapper/vg_pbase-lv_root rd_NO_LUKS LANG<span style="color:#f92672">=</span>en_US.UTF-8 rd_NO_MD rd_LVM_LV<span style="color:#f92672">=</span>vg_pbase/lv_swap SYSFONT<span style="color:#f92672">=</span>latarcyrheb-sun16 crashkernel<span style="color:#f92672">=</span>auto  KEYBOARDTYPE<span style="color:#f92672">=</span>pc KEYTABLE<span style="color:#f92672">=</span>pl2 rd_LVM_LV<span style="color:#f92672">=</span>vg_pbase/lv_root rd_NO_DM rhgb quiet
+        initrd /initramfs-2.6.32-358.el6.x86_64.img
+<span style="color:#75715e"># after edit</span>
+<span style="color:#f92672">[</span>root@pbase ~<span style="color:#f92672">]</span><span style="color:#75715e"># cat /boot/grub/grub.conf</span>
+<span style="color:#75715e"># grub.conf generated by anaconda</span>
+#
+<span style="color:#75715e"># Note that you do not have to rerun grub after making changes to this file</span>
+<span style="color:#75715e"># NOTICE:  You have a /boot partition.  This means that</span>
+<span style="color:#75715e">#          all kernel and initrd paths are relative to /boot/, eg.</span>
+<span style="color:#75715e">#          root (hd0,0)</span>
+<span style="color:#75715e">#          kernel /vmlinuz-version ro root=/dev/mapper/vg_pzuadm-lv_root</span>
+<span style="color:#75715e">#          initrd /initrd-[generic-]version.img</span>
+<span style="color:#75715e">#boot=/dev/sda</span>
+default<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>
+splashimage<span style="color:#f92672">=(</span>hd0,0<span style="color:#f92672">)</span>/grub/splash.xpm.gz
+hiddenmenu
+title Red Hat Enterprise Linux <span style="color:#f92672">(</span><span style="color:#ae81ff">2</span>.6.32-358.el6.x86_64<span style="color:#f92672">)</span>
+        root <span style="color:#f92672">(</span>hd0,0<span style="color:#f92672">)</span>
+        kernel /vmlinuz-2.6.32-358.el6.x86_64 ro root<span style="color:#f92672">=</span>/dev/mapper/vg_pzuadm-lv_root rd_NO_LUKS LANG<span style="color:#f92672">=</span>en_US.UTF-8 rd_NO_MD rd_LVM_LV<span style="color:#f92672">=</span>vg_pzuadm/lv_swap SYSFONT<span style="color:#f92672">=</span>latarcyrheb-sun16 crashkernel<span style="color:#f92672">=</span>auto  KEYBOARDTYPE<span style="color:#f92672">=</span>pc KEYTABLE<span style="color:#f92672">=</span>pl2 rd_LVM_LV<span style="color:#f92672">=</span>vg_pzuadm/lv_root rd_NO_DM rhgb quiet
+        initrd /initramfs-2.6.32-358.el6.x86_64.img
+<span style="color:#75715e"># before edit</span>
+<span style="color:#f92672">[</span>root@pbase ~<span style="color:#f92672">]</span><span style="color:#75715e"># cd /mnt/sysimage/etc/</span>
+<span style="color:#f92672">[</span>root@pbase etc<span style="color:#f92672">]</span><span style="color:#75715e"># cat fstab</span>
+​
+#
+<span style="color:#75715e"># /etc/fstab</span>
+<span style="color:#75715e"># Created by anaconda on Tue Feb 11 16:38:25 2014</span>
+#
+<span style="color:#75715e"># Accessible filesystems, by reference, are maintained under &#39;/dev/disk&#39;</span>
+<span style="color:#75715e"># See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info</span>
+#
+/dev/mapper/vg_pzuadm-lv_root /                       ext4    defaults        <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span>
+/dev/sdb1 /boot                   ext4    defaults        <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span>
+/dev/mapper/vg_pzuadm-lv_home /home                   ext4    defaults        <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span>
+/dev/mapper/vg_pzuadm-lv_swap swap                    swap    defaults        <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>
+tmpfs                   /dev/shm                tmpfs   defaults        <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>
+devpts                  /dev/pts                devpts  gid<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>,mode<span style="color:#f92672">=</span><span style="color:#ae81ff">620</span>  <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>
+sysfs                   /sys                    sysfs   defaults        <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>
+proc                    /proc                   proc    defaults        <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>
+<span style="color:#75715e"># after edit</span>
+<span style="color:#f92672">[</span>root@pbase etc<span style="color:#f92672">]</span><span style="color:#75715e"># cd</span>
+<span style="color:#f92672">[</span>root@pbase ~<span style="color:#f92672">]</span><span style="color:#75715e"># umount /mnt/sysimage/</span>
+<span style="color:#f92672">[</span>root@pbase ~<span style="color:#f92672">]</span><span style="color:#75715e"># reboot</span>
+<span style="color:#f92672">[</span>root@pzuadm ~<span style="color:#f92672">]</span><span style="color:#75715e"># df -h</span>
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/vg_pzuadm-lv_root
+                       50G   24G   24G  <span style="color:#ae81ff">50</span>% /
+tmpfs                 939M     <span style="color:#ae81ff">0</span>  939M   <span style="color:#ae81ff">0</span>% /dev/shm
+/dev/sda1             485M   37M  423M   <span style="color:#ae81ff">9</span>% /boot
+/dev/mapper/vg_pzuadm-lv_home                       44G  181M   41G   <span style="color:#ae81ff">1</span>% /home</code></pre></div>
+<h3 id="windows-the-user-name-being-used-for-accessing-the-remote-share-folder-is-not-recognized-by-the-local-computer">Windows: The user name being used for accessing the remote share folder is not recognized by the local computer</h3>
+
+<p>When configuring Windows Server backup to shared network drive I had issue with not accepting credentials due to this message. Solution was to create exact same username/password combination locally on the server and re-entering them again.</p>
+
+<h3 id="cleanup-of-mongodb-datafiles">Cleanup of MongoDB datafiles</h3>
+
+<p>After you delete data from database, database files do not shrink, so you have to cope using workaround</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mongodump -d databasename
+echo <span style="color:#e6db74">&#39;db.dropDatabase()&#39;</span> | mongo databasename
+mongorestore dump/databasename</code></pre></div>
+<h3 id="lc-ctype-cannot-change-locale-en-us-utf8-8">LC_CTYPE: cannot change locale (en_us.utf8-8)</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">-bash: warning: setlocale: LC_CTYPE: cannot change locale <span style="color:#f92672">(</span>en_US.UTF-8<span style="color:#f92672">)</span>: No such file or directory
+-bash: warning: setlocale: LC_COLLATE: cannot change locale <span style="color:#f92672">(</span>en_US.UTF-8<span style="color:#f92672">)</span>: No such file or directory
+-bash: warning: setlocale: LC_MESSAGES: cannot change locale <span style="color:#f92672">(</span>en_US.UTF-8<span style="color:#f92672">)</span>: No such file or directory
+-bash: warning: setlocale: LC_NUMERIC: cannot change locale <span style="color:#f92672">(</span>en_US.UTF-8<span style="color:#f92672">)</span>: No such file or directory
+-bash: warning: setlocale: LC_TIME: cannot change locale <span style="color:#f92672">(</span>en_US.UTF-8<span style="color:#f92672">)</span>: No such file or directory</code></pre></div>
+<p>This weird messages were appearing as I logged into host…. really strange since I was following normal installation procedure and other VMs were working properly. Anyway what has fixed it was:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>root@bastion01 ~<span style="color:#f92672">]</span><span style="color:#75715e"># localedef --no-archive -i en_US -f UTF-8 en_US.UTF-8</span></code></pre></div>
+<h3 id="sealert-another-handy-tool-for-selinux">SEAlert – another handy tool for SELinux</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">[root@dc-zabbix01 ~]# sealert -a /var/log/audit/audit.log
+100% done
+found 1 alerts in /var/log/audit/audit.log
+--------------------------------------------------------------------------------
+
+SELinux is preventing /usr/sbin/logrotate from write access on the directory logs.
+
+*****  Plugin catchall_labels (83.8 confidence) suggests   *******************
+
+If you want to allow logrotate to have write access on the logs directory
+Then you need to change the label on logs
+Do
+# semanage fcontext -a -t FILE_TYPE &#39;logs&#39;
+where FILE_TYPE is one of the following: NetworkManager_log_t, abrt_var_cache_t, abrt_var_log_t, acct_data_t, afs_logfile_t, aide_log_t, amanda_log_t, antivirus_log_t, apcupsd_log_t, apmd_log_t, asterisk_log_t, auth_cache_t, bacula_log_t, bitlbee_log_t, boinc_log_t, brltty_
+...
+Then execute:
+restorecon -v &#39;logs&#39;
+
+
+*****  Plugin catchall (17.1 confidence) suggests   **************************
+
+If you believe that logrotate should be allowed write access on the logs directory by default.
+Then you should report this as a bug.
+You can generate a local policy module to allow this access.
+Do
+allow this access for now by executing:
+# ausearch -c &#39;logrotate&#39; --raw | audit2allow -M my-logrotate
+# semodule -i my-logrotate.pp
+
+
+Additional Information:
+Source Context                system_u:system_r:logrotate_t:s0-s0:c0.c1023
+Target Context                system_u:object_r:var_t:s0
+Target Objects                logs [ dir ]
+Source                        logrotate
+Source Path                   /usr/sbin/logrotate
+Port                          
+Host                          
+Source RPM Packages           logrotate-3.8.6-12.el7.x86_64
+Target RPM Packages
+Policy RPM                    selinux-policy-3.13.1-102.el7_3.13.noarch
+Selinux Enabled               True
+Policy Type                   targeted
+Enforcing Mode                Enforcing
+Host Name                     
+Platform                      Linux 
+                              3.10.0-514.6.1.el7.x86_64 #1 SMP Wed Jan 18
+                              13:06:36 UTC 2017 x86_64 x86_64
+Alert Count                   1
+First Seen                    2017-04-10 03:38:02 CEST
+Last Seen                     2017-04-10 03:38:02 CEST
+Local ID                      5935f971-70c9-4d10-8fcd-5e4154796a7b
+
+Raw Audit Messages
+type=AVC msg=audit(1491788282.38:800089): avc:  denied  { write } for  pid=16994 comm=&#34;logrotate&#34; name=&#34;logs&#34; dev=&#34;dm-4&#34; ino=14307 scontext=system_u:system_r:logrotate_t:s0-s0:c0.c1023 tcontext=system_u:object_r:var_t:s0 tclass=dir
+
+type=SYSCALL msg=audit(1491788282.38:800089): arch=x86_64 syscall=rename success=no exit=EACCES a0=1de3e50 a1=1decc70 a2=1de3e50 a3=e items=0 ppid=16992 pid=16994 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=25451 comm=logrotate exe=/usr/sbi
+n/logrotate subj=system_u:system_r:logrotate_t:s0-s0:c0.c1023 key=(null)
+
+Hash: logrotate,logrotate_t,var_t,dir,write</pre></div>
+<h3 id="edit-remote-file-using-vim">Edit Remote File using VIM</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">vim scp://user@server1//etc/httpd/httpd.conf </pre></div>
+<h3 id="second-argument-of-last-command">Second Argument Of Last Command</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">!!:2 # return the 2nd argument of the last command
+!2145:2 # Return the second argument of the command 2145 in history.</pre></div>
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+     © 2019
+    
+       · 
+      Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

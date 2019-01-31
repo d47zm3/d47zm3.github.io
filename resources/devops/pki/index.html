@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="d47zm3">
+    <meta name="description" content="Personal DevOps &amp; Security Site">
+    <meta name="keywords" content="blog,devops,personal,security">
+
+    <base href="https://d47zm3.me">
+    <title>
+  PKI · d47zm3
+</title>
+
+    <link rel="canonical" href="https://d47zm3.me/resources/devops/pki/">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Merriweather:300,700|Source+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://d47zm3.me/css/coder.min.42b57c75b1d9e2f7bcc89c4031716ec188e0a0e63dbde8150859ed6ad58763ec.css" integrity="sha256-QrV8dbHZ4ve8yJxAMXFuwYjgoOY9vegVCFntatWHY&#43;w=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+      <link rel="stylesheet" href="https://d47zm3.me/css/custom.css">
+    
+
+    <link rel="icon" type="image/png" href="https://d47zm3.me/img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://d47zm3.me/img/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.53" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://d47zm3.me">
+      
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://d47zm3.me/">Home</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://d47zm3.me/projects/">Projects</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://d47zm3.me/resources/">Resources</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://d47zm3.me/bookmarks/">Bookmarks</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://d47zm3.me/about/">About</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>PKI</h1>
+    </header>
+
+    <p>Based on great article here, just my notes and highlighted fragments.
+Taken from article <a href="https://smallstep.com/blog/everything-pki.html">https://smallstep.com/blog/everything-pki.html</a></p>
+
+<p><strong>TLDR: The goal of certificates and PKI is to bind names to public keys.</strong></p>
+
+<p>Terms like entity, identity, identifier, name, subscriber, end entity, certificate authority, root certificates, leaf certificates (these belong to end entities), relying party (  a certificate user that verifies and trusts certificates issued by a CA )</p>
+
+<p>A message authentication code (MAC) is a bit of data that’s used to verify which entity sent a message, and to ensure that a message hasn’t been modified. The basic idea is to feed a shared secret (a password) along with a message through a hash function. The hash output is a MAC. You send the MAC along with the message to some recipient. Hash function is one way. Signature is like hashed password, but it&rsquo;s using key pair.</p>
+
+<p>A signature can be verified using a public key but can only be generated with a corresponding private key. Thus, a recipient that only has a public key can verify signatures, but can’t generate them. This gives you tighter control over who can sign stuff. If only one entity knows the private key you get a property called non-repudiation: the private key holder can’t deny (repudiate) the fact that they signed some data.
+You can encrypt data with public key and then decrypt it with private key, but reverse is possible too, you can encrypt data with private key, then decrypt with public key.</p>
+
+<p>Usually when people talk about certificates without additional qualification they’re referring to X.509 v3 certificates. More specifically, they’re usually talking about the PKIX variant described in RFC 5280 and further refined by the CA/Browser Forum’s Baseline Requirements. In other words, they’re referring to the sort of certificates that browsers understand and use for HTTPS (HTTP over TLS). There are other certificate formats. Notably, SSH and PGP both have their own.</p>
+
+<p>X.509 was first standardized in 1988 as part of the broader X.500 project under the auspices of the ITU-T (the International Telecommunications Union’s standards body). X.500 was an effort by the telcos to build a global telephone book. That never happened, but vestiges remain. If you’ve ever looked at an X.509 certificate and wondered why something designed for the web encodes a locality, state, and country here’s your answer: X.509 wasn’t designed for the web. It was designed thirty years ago to build a phone book.</p>
+
+<p>X.509 builds on ASN.1, another ITU-T standard (defined by X.208 and X.680). ASN stands for Abstract Syntax Notation (1 stands for One). ASN.1 is a notation for defining data types. (like JSON)
+ASN.1 has normal data types like integers, strings, sets, and sequences. It also has an unusual type that’s important to understand: object identifiers (OIDs). An OID is like a URI, but more annoying. They’re (supposed to be) universally unique identifiers. Structurally, OIDs are a sequence of integers in a hierarchical namespace. You can use an OID to tag a bit of data with a type. A string is just a string, but if I tag a string with OID 2.5.4.3 then it’s no longer an ordinary string – it’s an X.509 common name.
+There are a <a href="https://en.wikipedia.org/wiki/Abstract_Syntax_Notation_One#Encodings">bunch of encoding rules</a> for ASN.1, but there’s only one that’s commonly used for X.509 certificates and other crypto stuff: distinguished encoding rules or DER (though the non-canonical basic encoding rules (BER) are also occasionally used).</p>
+
+<p>Starting with the former dimension, DER is straight binary, and binary data is hard to copy-paste and otherwise shunt around the web. So most certificates are packaged up in <a href="https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail">PEM</a> files (which stands for Privacy Enhanced EMail, another weird historical vestige). If you’ve ever worked with <a href="https://en.wikipedia.org/wiki/MIME">MIME</a>, PEM is similar: a base64 encoded payload sandwiched between a header and a footer.
+PEM-encoded certificates will usually carry a .pem, .crt, or .cer extension. A raw certificate encoded using DER will usually carry a .der extension. Again, there’s not much consistency here, so your mileage may vary.</p>
+
+<p>The envelope formats you’re likely to encounter are part of a suite of standards called  PKCS (Public Key Cryptography Standards) in addition to fancier encoding using PEM, a certificate might be wrapped up in fancier packaging. Several envelope formats define larger data structures (still using ASN.1) that can contain certificates, keys, and other stuff.</p>
+
+<p>The first is <a href="https://tools.ietf.org/html/rfc2315">PKCS#7</a>, rebranded <a href="https://tools.ietf.org/html/rfc5652">Cryptographic Message Syntax</a> (CMS) by IETF, which can contain one or more certificates (encoding a full certificate chain, described shortly). PKCS#7 is commonly used by Java. Common extensions are .p7b and .p7c. The other common envelope format is <a href="https://tools.ietf.org/html/rfc7292">PKCS#12</a> which can contain a certificate chain (like PKCS#7) along with an (encrypted) private key. PKCS#12 is commonly used by Microsoft products. Common extensions are .pfx and .p12</p>
+
+<p>Quick summary. ASN.1 is used to define data types like certificates and keys. DER is a set of encoding rules for turning ASN.1 into bits and bytes. X.509 is defined in ASN.1. PKCS#7 and PKCS#12 are bigger data structures, also defined using ASN.1, that can contain certificates and other stuff. They’re commonly used by Java and Microsoft, respectively. Since raw binary DER is hard to shunt around the web most certificates are PEM-encoded, which base64 encodes the DER and labels it. Private keys are usually represented as PEM-encoded PKCS#8 objects. Sometimes they’re also encrypted with a password.
+Public key infrastructure (PKI) is the umbrella term for all of the stuff we need in order to issue, distribute, store, use, verify, revoke, and otherwise manage and interact with certificates and keys. It’s an intentionally vague term, like “database infrastructure”. Certificates are the building blocks of most PKIs, and certificate authorities are the foundation. That said, PKI is so much more. It includes libraries, cron jobs, protocols, conventions, clients, servers, people, processes, names, discovery mechanisms, and all the other stuff you’ll need to use public key cryptography effectively.</p>
+
+<p>There is Web PKI and Internal PKI.</p>
+
+<p>Web PKI is mostly defined by <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a> and refined by the <a href="https://cabforum.org/">CA/Browser Forum</a> (a.k.a., CA/B or CAB Forum). It’s sometimes called “Internet PKI” or PKIX (after the working group that created it). You interact with Web PKI via your browser whenever you access an HTTPS URL — like when you loaded this website. This is the only PKI many people are (at least vaguely) familiar with.
+Internal PKI is PKI you run yourself, for your own stuff: production infrastructure like services, containers, and VMs; enterprise IT applications; corporate endpoints like laptops and phones; and any other code or device you want to identify. It allows you to authenticate and establish cryptographic channels so your stuff can run anywhere and securely communicate, even across the public internet.
+The answer is simple, if not satisfying: relying parties are pre-configured with a list of trusted root certificates (or trust anchors) in a trust store.
+So where do trust stores come from? For Web PKI the most important relying parties are browsers. The trust stores used by default by the major browsers – and pretty much everything else that uses TLS – are maintained by four organizations:</p>
+
+<ul>
+<li><p><a href="http://www.apple.com/certificateauthority/ca_program.html">Apple’s root certificate program</a> used by iOS and macOS</p></li>
+
+<li><p><a href="https://social.technet.microsoft.com/wiki/contents/articles/31633.microsoft-trusted-root-program-requirements.aspx">Microsoft’s root certificate</a> program used by Windows</p></li>
+
+<li><p><a href="https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/">Mozilla’s root certificate program</a> used by their products and, because of its open and transparent process, used as the basis for many other trust stores (e.g., for many Linux distributions)</p></li>
+
+<li><p>Google, which <a href="https://www.chromium.org/Home/chromium-security/root-ca-policy">doesn’t run a root certificate program</a> (Chrome usually uses the host operating system’s trust store) but maintains its own blacklist of roots and specific certificates that it doesn’t trust. (<a href="https://chromium.googlesource.com/chromiumos/docs/+/master/ca_certs.md">ChromeOS builds off of Mozilla’s certificate program.</a>)</p></li>
+</ul>
+
+<p>How to mitigate risk of so many CAs for certificates? <a href="https://tools.ietf.org/html/rfc6844">Certificate Authority Authorization (CAA)</a> allows you to restrict which CAs can issue certificates for your domain using a special DNS record. <a href="https://www.certificate-transparency.org/">Certificate Transparency (CT)</a> (<a href="https://tools.ietf.org/html/rfc6962">RFC 6962</a>) mandates that CAs submit every certificate they issue to an impartial observer that maintains a public certificate log to detect fraudulently issued certificates. Cryptographic proof of CT submission is included in issued certificates. <a href="https://tools.ietf.org/html/rfc7469">HTTP Public Key Pinning</a> (HPKP or just “pinning”) lets a subscriber (a website) tell an RP (a browser) to only accept certain public keys in certificates for a particular domain.</p>
+
+<p>The <a href="https://cabforum.org/wp-content/uploads/CA-Browser-Forum-BR-1.6.1.pdf">CAB Forum Baseline Requirements</a> stipulate that a root private key belonging to a Web PKI root CA can only be used to sign a certificate by issuing a direct command (see section 4.3.1). In other words, Web PKI root CAs can’t automate certificate signing. They can’t be online. This is a problem for any large scale CA operation. You can’t have someone manually type a command into a machine to fulfill every certificate order.</p>
+
+<p>To make certificate issuance scalable (i.e., to make automation possible) when the root CA isn’t online, the root private key is only used infrequently to sign a few intermediate certificates. The corresponding intermediate private keys are used by intermediate CAs (also called subordinate CAs) to sign and issue leaf certificates to subscribers. Intermediates aren’t generally included in trust stores, making them easier to revoke and rotate, so certificate issuance from an intermediate typically is online and automated.
+This bundle of certificates – leaf, intermediate, root – forms a chain (called a certificate chain). The leaf is signed by the intermediate, the intermediate is signed by the root, and the root signs itself.
+PKIX originally specified that the DNS hostname of a website should be bound in the the DN common name. More recently, the CAB Forum has deprecated this practice and made the entire DN optional (see sections 7.1.4.2 of the <a href="https://cabforum.org/wp-content/uploads/CA-Browser-Forum-BR-1.6.1.pdf">Baseline Requirements</a>). Instead, the modern best practices is to leverage the <a href="https://tools.ietf.org/html/rfc5280#section-4.2.1.6">subject alternative name (SAN) X.509</a> extension to bind a name in a certificate.There are four sorts of SANs in common use, all of which bind names that are broadly used and understood: domain names (DNS), email addresses, IP addresses, and URIs. These are already supposed to be unique in the contexts we’re interested in, and they map pretty well to the things we’re interested in identifying: email addresses for people, domain names and IP addresses for machines and code, URIs if you want to get fancy. Use SANs.</p>
+
+<p>You’ll need to decide what type of key you want to use. That’s another post entirely, but here’s some quick guidance (as of December 2018). There’s a slow but ongoing transition from RSA to elliptic curve keys (<a href="https://blog.cloudflare.com/ecdsa-the-digital-signature-algorithm-of-a-better-internet/">ECDSA</a> or <a href="https://tools.ietf.org/html/rfc8032">EdDSA</a>). If you decide to use RSA keys make them at least 2048 bits, and don’t bother with anything bigger than 4096 bits. If you use ECDSA, the P-256 curve is probably best (secp256k1 or prime256v1 in openssl)… unless you’re worried about the NSA in which case you may opt to use something fancier like EdDSA with Curve25519 (though support for these keys is not great).Here’s an example of generating a elliptic curve P-256 key pair using openssl:Here’s an example of generating the same sort of key pair using step:
+Identity proofFor Web PKI there are three kinds of certificates and the biggest differences are how they identify subscribers and the sort of identity proofing that’s employed. They are: domain validation (DV), organization validation (OV), and extended validation (EV) certificates.DV - DNS (TXT record) and HTTP challengeOV and EV certificates build on DV certificates and include the name and location of the organization that owns the bound domain name. They connect a certificate not just to a domain name, but to the legal entity that controls it. The verification process for OV certificates is not consistent across CAs. To address this, CAB Forum introduced EV certificates. They include the same basic information but mandate strict verification (identity proofing) requirements. The EV process can take days or weeks and can include public records searches and attestations (on paper) signed by corporate officers (with pens). After all this, when you visit a website that uses an EV certificate some browsers display the name of the organization in the URL bar. Outside this limited use in browsers, EV certificates aren’t widely leveraged or required by Web PKI relying parties.</p>
+
+<p>In other words, by default, most TLS implementations will happily accept revoked certificates.</p>
+
+<p>For internal PKI the trend is towards accepting this reality and using passive revocation. That is, issuing certificates that expire quickly enough that revocation isn’t necessary.</p>
+
+<p>For the web and other scenarios where passive revocation won’t work, the first thing you should do is stop and reconsider passive revocation. If you really must have revocation you have two options:
+Certificate Revocation Lists (CRLs)
+Online Certificate Signing Protocol (OCSP)</p>
+
+<p>CRLs are defined along with a million other things in RFC 5280. They’re simply a signed list of serial numbers identifying revoked certificates. The list is served from a CRL distribution point: a URL that’s included in the certificate.</p>
+
+<p>If you don’t like CRL your other option is <a href="https://www.ietf.org/rfc/rfc2560.txt">OCSP</a>, which allows RPs to query an OCSP responder with a certificate serial number to obtain the revocation status of a particular certificate. Like the CRL distribution point, the OCSP responder URL is included in the certificate.</p>
+
+<p>Public key infrastructure is the umbrella term for all the stuff you need to build and agree on in order to use public keys effectively: names, key types, certificates, CAs, cron jobs, libraries, etc. Web PKI is the public PKI that’s used by default by web browsers and pretty much everything else that uses TLS. Web PKI CAs are trusted but not trustworthy. Internal PKI is your own PKI that you build and run yourself. You want one because Web PKI wasn’t designed for internal use cases, and because internal PKI is easier to automate, easier to scale, and gives you more control over a lot of important stuff like naming and certificate lifetime. Use Web PKI for public stuff. Use your own internal PKI for internal stuff (e.g., to use TLS to replace VPNs). <a href="https://github.com/smallstep/certificates">smallstep/certificates</a> makes building an internal PKI pretty easy.
+To get a certificate you need to name stuff and generate keys. Use SANs for names: DNS SANs for code and machines, EMAIL SANs for people. Use URI SANs if these won’t work. Key type is a big topic that’s mostly unimportant: you can change key types and the actual crypto won’t be the weakest link in your PKI. To get a certificate from a CA you submit a CSR and prove your identity. Use short-lived certificates and passive revocation. Automate certificate renewal. Don’t disable certificate path validation.</p>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+     © 2019
+    
+       · 
+      Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

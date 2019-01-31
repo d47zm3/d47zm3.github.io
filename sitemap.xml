@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://d47zm3.me/bookmarks/</loc>
+    <lastmod>2019-01-25T15:11:00+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://d47zm3.me/projects/</loc>
     <lastmod>2018-11-15T08:40:18+01:00</lastmod>
   </url>
@@ -13,18 +18,140 @@
   </url>
   
   <url>
-    <loc>https://d47zm3.me/categories/</loc>
+    <loc>https://d47zm3.me/tags/</loc>
+    <lastmod>2019-01-25T15:11:00+01:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/categories/</loc>
+    <lastmod>2019-01-25T15:11:00+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/code/golang-courses/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/code/python-ide/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/code/styling-guide/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/devops/aws/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/categories/</loc>
+    <lastmod>2019-01-25T15:11:00+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/code/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/code/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/infosec/cryptography/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/devops/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/devops/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/environment/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/environment/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/environment/gpg/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/infosec/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/infosec/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/devops/kubernetes/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/devops/linux-network-monitoring-tools/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/infosec/linux-privilege-escalation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/devops/pki/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/environment/protecting-remote-server/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/environment/shells/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/environment/tmux/</loc>
   </url>
   
   <url>
     <loc>https://d47zm3.me/tags/</loc>
+    <lastmod>2019-01-25T15:11:00+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://d47zm3.me/resources/devops/tools/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/devops/tricks/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/environment/vim/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/environment/vpn/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/devops/wordpress/</loc>
+  </url>
+  
+  <url>
     <loc>https://d47zm3.me/</loc>
-    <lastmod>2018-11-15T08:40:18+01:00</lastmod>
+    <lastmod>2019-01-25T15:11:00+01:00</lastmod>
     <priority>0</priority>
   </url>
   
