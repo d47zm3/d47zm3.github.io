@@ -10,9 +10,11 @@
     <meta name="keywords" content="blog,devops,personal,security">
 
     <base href="https://d47zm3.me">
-    <title>:  · d47zm3</title>
+    <title>
+  Static Code Analysis · d47zm3
+</title>
 
-    <link rel="canonical" href="https://d47zm3.me/tags/">
+    <link rel="canonical" href="https://d47zm3.me/resources/infosec/static-code-analysis/">
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Merriweather:300,700|Source+Code+Pro:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
@@ -35,9 +37,6 @@
     <link rel="icon" type="image/png" href="https://d47zm3.me/img/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://d47zm3.me/img/favicon-16x16.png" sizes="16x16">
 
-    
-      <link href="https://d47zm3.me/tags/index.xml" rel="alternate" type="application/rss+xml" title="d47zm3" />
-      <link href="https://d47zm3.me/tags/index.xml" rel="feed" type="application/rss+xml" title="d47zm3" />
     
 
     <meta name="generator" content="Hugo 0.53" />
@@ -84,101 +83,45 @@
 
       <div class="content">
         
-  <section class="container list">
-  <h1 class="title">: </h1>
-  <ul>
-    
-    <li>
-      <a href="https://d47zm3.me/resources/infosec/padding-oracle-attack/">Padding Oracle Attack</a><br /><div id="description"></div>
-    </li>
-    
-    <li>
-      <a href="https://d47zm3.me/resources/infosec/personal-security-checklist/">Personal Security Checklist</a><br /><div id="description"></div>
-    </li>
-    
-    <li>
-      <a href="https://d47zm3.me/resources/environment/protecting-remote-server/">Protecting Remote Server</a><br /><div id="description"></div>
-    </li>
-    
-    <li>
-      <a href="https://d47zm3.me/resources/">Resources</a><br /><div id="description"></div>
-    </li>
-    
-    <li>
-      <a href="https://d47zm3.me/resources/environment/shells/">Shells</a><br /><div id="description"></div>
-    </li>
-    
-    <li>
-      <a href="https://d47zm3.me/resources/infosec/static-code-analysis/">Static Code Analysis</a><br /><div id="description"></div>
-    </li>
-    
-    <li>
-      <a href="https://d47zm3.me/resources/environment/tmux/">TMUX</a><br /><div id="description"></div>
-    </li>
-    
-    <li>
-      <a href="https://d47zm3.me/resources/devops/tools/">Tools</a><br /><div id="description"></div>
-    </li>
-    
-    <li>
-      <a href="https://d47zm3.me/resources/devops/tricks/">Tricks</a><br /><div id="description"></div>
-    </li>
-    
-    <li>
-      <a href="https://d47zm3.me/resources/environment/vim/">VIM</a><br /><div id="description"></div>
-    </li>
-    
-    <li>
-      <a href="https://d47zm3.me/resources/environment/vpn/">VPN</a><br /><div id="description"></div>
-    </li>
-    
-    <li>
-      <a href="https://d47zm3.me/resources/devops/wordpress/">Wordpress</a><br /><div id="description"></div>
-    </li>
-    
-    <li>
-      <a href="https://d47zm3.me/resources/infosec/xss/">XSS</a><br /><div id="description"></div>
-    </li>
-    
-  </ul>
-  
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Static Code Analysis</h1>
+    </header>
 
+    
 
+<p>Performing static code analysis in order to find weak points.</p>
 
+<h3 id="articles">Articles</h3>
 
+<ul>
+<li><p><a href="https://medium.com/@_bl4de/how-to-perform-the-static-analysis-of-website-source-code-with-the-browser-the-beginners-bug-d674828c8d9a">great article from @bl4de on that subject</a></p></li>
 
-<ul class="pagination">
-  
-    
-    <li><a href="https://d47zm3.me/tags/">&laquo;</a></li>
-    
-    <li class="hidden"><a href="https://d47zm3.me/tags/">&lsaquo;</a></li>
-  
-  
-    
-    
-      
-    
-    
-      
-      <li><a href="https://d47zm3.me/tags/">1</a></li>
-      
-    
-  
-    
-    
-      
-    
-    
-      
-      <li>2</li>
-      
-    
-  
-  
+<li><p><a href="https://blog.appsecco.com/static-analysis-of-client-side-javascript-for-pen-testers-and-bug-bounty-hunters-f1cb1a5d5288">another article from AppSecco</a></p></li>
 </ul>
 
+<h3 id="tools">Tools</h3>
 
+<ul>
+<li><p><a href="https://github.com/jobertabma/relative-url-extractor">relative-url-extractor</a></p></li>
+
+<li><p><a href="https://github.com/tomnomnom/waybackurls">waybackurls</a></p></li>
+
+<li><p><a href="https://github.com/dxa4481/truffleHog">trufflehog</a></p></li>
+
+<li><p><a href="https://github.com/eslint/eslint">eslint</a> + security rules (<a href="https://github.com/nodesecurity/eslint-plugin-security">node</a> for example or <a href="https://github.com/LewisArdern/eslint-plugin-angularjs-security-rules">angular</a>)</p></li>
+
+<li><p><a href="https://github.com/GerbenJavado/LinkFinder">linkfinder</a></p></li>
+
+<li><p><a href="https://github.com/ajinabraham/NodeJsScan">nodejsscan</a></p></li>
+
+<li><p><a href="https://github.com/RetireJS/retire.js">retire.js</a></p></li>
+
+<li><p><a href="https://github.com/mre/awesome-static-analysis">awesome-static-analysis</a></p></li>
+</ul>
+
+  </article>
 </section>
 
 

@@ -131,6 +131,25 @@ MacOS Guide ~&amp;gt; brew install gnupg pinentry-mac ~&amp;gt; cat ~/.gnupg/gpg
     </item>
     
     <item>
+      <title>Hacking Learning Platforms</title>
+      <link>https://d47zm3.me/resources/infosec/hacking-learning-platforms/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/hacking-learning-platforms/</guid>
+      <description> Things you can hack for (free) &amp;amp; legally
+Online Labs  Hack The Box
+ Hacking Lab
+ Pwnable.KR
+ Root-Me
+ Practical Pentest Labs
+ Rozwal.To
+  Vulnerable Applications To Deploy Yourself] OWASP Juice Shop
+Miscellaneous  Mind Map - lots of links
+ List of Hacking - source: https://www.blackroomsec.com/updated-hacking-challenge-site-links/
+  </description>
+    </item>
+    
+    <item>
       <title>Infosec</title>
       <link>https://d47zm3.me/resources/infosec/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -196,6 +215,25 @@ A message authentication code (MAC) is a bit of data that’s used to verify whi
     </item>
     
     <item>
+      <title>Padding Oracle Attack</title>
+      <link>https://d47zm3.me/resources/infosec/padding-oracle-attack/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/padding-oracle-attack/</guid>
+      <description>Performing Padding Oracle Attack using padBuster.
+Stage 1: decrypt cookie root@bethebeast: ~ » padbuster http://hacker.com/profile.php vy7pPWXNdloJI%2BnkkaiRUNSmX6M5GmH9XcN3sA%2FSVRgXEjzt1hMOFw== -cookies &amp;#34;secret=vy7pPWXNdloJI%2BnkkaiRUNSmX6M5GmH9XcN3sA%2FSVRgXEjzt1hMOFw==; PHPSESSID=g2ea7aeakie1fvlff44rv456p2&amp;#34; 8 +-------------------------------------------+ | PadBuster - v0.3.3 | | Brian Holyfield - Gotham Digital Science | | labs@gdssecurity.com | +-------------------------------------------+ INFO: The original request returned the following [+] Status: 200 [+] Location: N/A [+] Content Length: 3854 INFO: Starting PadBuster Decrypt Mode *** Starting Block 1 of 4 *** INFO: No error string was provided.</description>
+    </item>
+    
+    <item>
+      <title>Personal Security Checklist</title>
+      <link>https://d47zm3.me/resources/infosec/personal-security-checklist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/personal-security-checklist/</guid>
+      <description>Be safe on the internet - An open source checklist of resources designed to improve your online privacy and security. Check things off to keep track as you go.</description>
+    </item>
+    
+    <item>
       <title>Protecting Remote Server</title>
       <link>https://d47zm3.me/resources/environment/protecting-remote-server/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -224,6 +262,26 @@ A message authentication code (MAC) is a bit of data that’s used to verify whi
       <guid>https://d47zm3.me/resources/environment/shells/</guid>
       <description>From my experience two shells that are worth notice are
  ZSH Fish  In practice though, you can achieve Fish features installing particular plugins for ZSH, and yet, ZSH will still be more compatible with Bash, while Fish introduces it&amp;rsquo;s own syntax and quirks, which may be hard to adapt after long years with Bash/ZSH. Yet, still I find it very nice as out-of-box solution. Two very well known plugin packages for ZSH are</description>
+    </item>
+    
+    <item>
+      <title>Static Code Analysis</title>
+      <link>https://d47zm3.me/resources/infosec/static-code-analysis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/static-code-analysis/</guid>
+      <description> Performing static code analysis in order to find weak points.
+Articles  great article from @bl4de on that subject
+ another article from AppSecco
+  Tools  relative-url-extractor
+ waybackurls
+ trufflehog
+ eslint + security rules (node for example or angular)
+ linkfinder
+ nodejsscan
+ retire.js
+ awesome-static-analysis
+  </description>
     </item>
     
     <item>
@@ -287,6 +345,19 @@ Debugging on Container OS using Docker Actually it boils down to running Docker 
       <description>Update mutli-site primary URL In order to update main blog URL update these tables in database:
 wp_options: change “siteurl” and “home” to the new URL (http://blog/) wp_sitemeta: there’s a “siteurl” field you’ll need to change here wp_site: change the only value here to your new domain wp_blogs: each subsite will have an entry here, you’ll need to update the domain column for each row Also, update wp-config.php file:
 define( &amp;#39;DOMAIN_CURRENT_SITE&amp;#39;, &amp;#39;newblog.</description>
+    </item>
+    
+    <item>
+      <title>XSS</title>
+      <link>https://d47zm3.me/resources/infosec/xss/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/xss/</guid>
+      <description>Everything related to XSS, tools, links, payloads, etc.
+Tools  ezXSS - self hosted dashboard and server for your payloads
+ bXSS - blind XSS application, had not played with it yet
+  Sites  XSS Payloads - site with JavaScript code that can actually hurt, keyloggers, data stealing etc.
+ XSS Hunter - site that helps you by serving prepared scripts and generates some basic payloads, helps finding blind injections.</description>
     </item>
     
   </channel>

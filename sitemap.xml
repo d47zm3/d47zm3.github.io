@@ -84,6 +84,10 @@
   </url>
   
   <url>
+    <loc>https://d47zm3.me/resources/infosec/hacking-learning-platforms/</loc>
+  </url>
+  
+  <url>
     <loc>https://d47zm3.me/resources/infosec/</loc>
   </url>
   
@@ -108,6 +112,14 @@
   </url>
   
   <url>
+    <loc>https://d47zm3.me/resources/infosec/padding-oracle-attack/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/infosec/personal-security-checklist/</loc>
+  </url>
+  
+  <url>
     <loc>https://d47zm3.me/resources/environment/protecting-remote-server/</loc>
   </url>
   
@@ -117,6 +129,10 @@
   
   <url>
     <loc>https://d47zm3.me/resources/environment/shells/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/infosec/static-code-analysis/</loc>
   </url>
   
   <url>
@@ -147,6 +163,10 @@
   
   <url>
     <loc>https://d47zm3.me/resources/devops/wordpress/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/infosec/xss/</loc>
   </url>
   
   <url>
