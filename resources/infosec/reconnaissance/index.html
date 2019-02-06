@@ -10,9 +10,11 @@
     <meta name="keywords" content="blog,devops,personal,security">
 
     <base href="https://d47zm3.me">
-    <title>Environment · d47zm3</title>
+    <title>
+  Reconnaissance · d47zm3
+</title>
 
-    <link rel="canonical" href="https://d47zm3.me/resources/environment/">
+    <link rel="canonical" href="https://d47zm3.me/resources/infosec/reconnaissance/">
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Merriweather:300,700|Source+Code+Pro:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
@@ -35,9 +37,6 @@
     <link rel="icon" type="image/png" href="https://d47zm3.me/img/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://d47zm3.me/img/favicon-16x16.png" sizes="16x16">
 
-    
-      <link href="https://d47zm3.me/resources/environment/index.xml" rel="alternate" type="application/rss+xml" title="d47zm3" />
-      <link href="https://d47zm3.me/resources/environment/index.xml" rel="feed" type="application/rss+xml" title="d47zm3" />
     
 
     <meta name="generator" content="Hugo 0.53" />
@@ -84,42 +83,39 @@
 
       <div class="content">
         
-  <section class="container list">
-  <h1 class="title">Environment</h1>
-  <ul>
-    
-    <li>
-      <a href="https://d47zm3.me/resources/environment/gpg/">GPG</a><br /><div id="description"></div>
-    </li>
-    
-    <li>
-      <a href="https://d47zm3.me/resources/environment/protecting-remote-server/">Protecting Remote Server</a><br /><div id="description"></div>
-    </li>
-    
-    <li>
-      <a href="https://d47zm3.me/resources/environment/shells/">Shells</a><br /><div id="description"></div>
-    </li>
-    
-    <li>
-      <a href="https://d47zm3.me/resources/environment/tmux/">TMUX</a><br /><div id="description"></div>
-    </li>
-    
-    <li>
-      <a href="https://d47zm3.me/resources/environment/vim/">VIM</a><br /><div id="description"></div>
-    </li>
-    
-    <li>
-      <a href="https://d47zm3.me/resources/environment/vpn/">VPN</a><br /><div id="description"></div>
-    </li>
-    
-  </ul>
-  
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Reconnaissance</h1>
+    </header>
 
+    
 
+<p>Everything from port scanning, to service mapping, passive OSINT etc.</p>
 
+<h3 id="presentations">Presentations</h3>
 
+<ul>
+<li><a href="https://bugbountytuts.files.wordpress.com/2018/02/dirty-recon.pdf">Recon Like a Boss</a></li>
+</ul>
 
+<h3 id="links">Links</h3>
 
+<ul>
+<li><a href="https://github.com/dsopas/assessment-mindset">Assesments Mindset</a></li>
+</ul>
+
+<h3 id="dns">DNS</h3>
+
+<p>Checking who can issue certificate for domain</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">dig @nameserver record.com CAA</pre></div>
+<p>GeoIP Lookup</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">geoiplookup 1.2.3.4</pre></div>
+<p>Reverse DNS Discovery</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">dig axfr @192.43.14.3 168.192.in-addr.arpa</pre></div>
+<p>DNSSEC records</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">dig +multi @192.10.51.3 witrap.com RRSIGdig +multi @192.10.51.3 witrap.com DNSKEY</pre></div>
+  </article>
 </section>
 
 

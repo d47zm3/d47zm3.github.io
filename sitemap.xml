@@ -50,6 +50,10 @@
   </url>
   
   <url>
+    <loc>https://d47zm3.me/resources/infosec/bugbounty/</loc>
+  </url>
+  
+  <url>
     <loc>https://d47zm3.me/resources/infosec/burp-suite-proxy/</loc>
   </url>
   
@@ -132,6 +136,10 @@
   </url>
   
   <url>
+    <loc>https://d47zm3.me/resources/infosec/no-sql-injection/</loc>
+  </url>
+  
+  <url>
     <loc>https://d47zm3.me/resources/infosec/osint/</loc>
   </url>
   
@@ -160,7 +168,15 @@
   </url>
   
   <url>
+    <loc>https://d47zm3.me/resources/infosec/reconnaissance/</loc>
+  </url>
+  
+  <url>
     <loc>https://d47zm3.me/resources/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/infosec/reverse-shells/</loc>
   </url>
   
   <url>
@@ -215,6 +231,10 @@
   
   <url>
     <loc>https://d47zm3.me/resources/infosec/wapt-online-courses/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/infosec/windows-privilege-escalation/</loc>
   </url>
   
   <url>

