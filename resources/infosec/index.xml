@@ -26,8 +26,17 @@ Links  https://rastamouse.me - hacking Windows  </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/bugbounty/</guid>
-      <description> Communities Bug Bounty Notes - founded by zseano, challenges, writeups, etc.
-Bug Bounty Tips </description>
+      <description>Communities Bug Bounty Notes - founded by zseano, challenges, writeups, etc.
+Bug Bounty Tips  nmap --script &amp;quot;http-*&amp;quot; IP/target - will run 30+ scripts related to HTTP, SQLInjection, config backup checks, checkout more at the docs http://nmap.org/nsedoc  Files To Look Out For  .git/config
+ .travis.yml
+ Makefile
+ Dockerfile
+ package.json
+ gulpfile.js
+ composer.json
+ web.config
+ .env
+  Need execute some command but &amp;ldquo;space&amp;rdquo; is blocked?</description>
     </item>
     
     <item>
@@ -38,6 +47,15 @@ Bug Bounty Tips </description>
       <guid>https://d47zm3.me/resources/infosec/burp-suite-proxy/</guid>
       <description> Famous tool for Web Application Security.
 Links  Burp Suite Pro Tricks &amp;amp; Tips  </description>
+    </item>
+    
+    <item>
+      <title>CTFs</title>
+      <link>https://d47zm3.me/resources/infosec/ctfs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/ctfs/</guid>
+      <description> Links  https://github.com/ctfs/ - lots of writeups  </description>
     </item>
     
     <item>
@@ -158,6 +176,17 @@ Search Engines  censys
     </item>
     
     <item>
+      <title>Online Courses</title>
+      <link>https://d47zm3.me/resources/infosec/online-courses/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/online-courses/</guid>
+      <description> Google Docs Sheet with lots of links
+ The Big List Of Infosec Resources
+  </description>
+    </item>
+    
+    <item>
       <title>Padding Oracle Attack</title>
       <link>https://d47zm3.me/resources/infosec/padding-oracle-attack/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -176,6 +205,12 @@ Stage 1: decrypt cookie root@bethebeast: ~ » padbuster http://hacker.com/profil
       <description> Password Search Engines  gotcha.pw
  haveibeenpwned.com
  vigilante.pw
+  Wordlists and Weak Password  https://github.com/berzerk0/Probable-Wordlists
+ https://github.com/danielmiessler/SecLists
+ https://hashes.org
+ https://weakpass.com
+  Cracking Hashes Online  https://crackstation.net
+ https://hashkiller.co.uk/md5-decrypter.aspx
   </description>
     </item>
     
@@ -194,7 +229,11 @@ Stage 1: decrypt cookie root@bethebeast: ~ » padbuster http://hacker.com/profil
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/personal-security-checklist/</guid>
-      <description>Be safe on the internet - An open source checklist of resources designed to improve your online privacy and security. Check things off to keep track as you go.</description>
+      <description>Be safe on the internet - An open source checklist of resources designed to improve your online privacy and security. Check things off to keep track as you go.
+Protect Yourself @StartPageSearch @MyStartMail @DuckDuckGo @ProtonMail
+@torproject @TorTorbrowser
+@expressvpn @NordVPN @ProtonVPN
+@HTTPSEverywhere @uMatrix @ublockorigin</description>
     </item>
     
     <item>
@@ -203,12 +242,34 @@ Stage 1: decrypt cookie root@bethebeast: ~ » padbuster http://hacker.com/profil
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/reconnaissance/</guid>
-      <description> Everything from port scanning, to service mapping, passive OSINT etc.
-Presentations  Recon Like a Boss  Links  Assesments Mindset  DNS Checking who can issue certificate for domain
-dig @nameserver record.com CAA GeoIP Lookup
-geoiplookup 1.2.3.4 Reverse DNS Discovery
-dig axfr @192.43.14.3 168.192.in-addr.arpa DNSSEC records
-dig +multi @192.10.51.3 witrap.com RRSIGdig +multi @192.10.51.3 witrap.com DNSKEY</description>
+      <description>Everything from port scanning, to service mapping, passive OSINT etc.
+Presentations  Recon Like a Boss
+ Visual Guide to Recon
+  Links  Assesments Mindset  Subdomain Discovery  curl &#39;https://crt.sh/?q=%.example.org&#39; | grep &amp;quot;http://example.org &amp;quot; | cut -d &#39;&amp;gt;&#39; -f2 | cut -d &#39;&amp;lt;&#39; -f1 | grep -v &amp;quot; &amp;quot; | sort -u  DNS Checking who can issue certificate for domain
+dig @nameserver record.com CAA GeoIP Lookup</description>
+    </item>
+    
+    <item>
+      <title>Red Team</title>
+      <link>https://d47zm3.me/resources/infosec/redteam/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/redteam/</guid>
+      <description> Articles  Obfuscation Techniques used in Phishing Attacks  </description>
+    </item>
+    
+    <item>
+      <title>Reverse Engineering</title>
+      <link>https://d47zm3.me/resources/infosec/reverse-engineering/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/reverse-engineering/</guid>
+      <description> Challenges  https://crackmes.one
+ https://challenges.re
+   Training  https://recon.cx/2015/training.html
+ http://index-of.es
+ https://github.com/wtsxDev/reverse-engineering
+  </description>
     </item>
     
     <item>
@@ -283,15 +344,6 @@ rdesktop -uname -peasypassword -r disk:share=exploits/ 10.2.2.1 etcd - fetch key
       
       <guid>https://d47zm3.me/resources/infosec/wpa-wpa-2-security/</guid>
       <description> Articles  new attack using PMKID  </description>
-    </item>
-    
-    <item>
-      <title>Web Application Penetration Testing Online Courses</title>
-      <link>https://d47zm3.me/resources/infosec/wapt-online-courses/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://d47zm3.me/resources/infosec/wapt-online-courses/</guid>
-      <description> Google Docs Sheet with lots of links  </description>
     </item>
     
     <item>

@@ -18,27 +18,15 @@
   </url>
   
   <url>
-    <loc>https://d47zm3.me/tags/</loc>
-    <lastmod>2019-01-25T15:11:00+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://d47zm3.me/categories/</loc>
     <lastmod>2019-01-25T15:11:00+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://d47zm3.me/resources/code/golang-courses/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/code/python-ide/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/code/styling-guide/</loc>
+    <loc>https://d47zm3.me/tags/</loc>
+    <lastmod>2019-01-25T15:11:00+01:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -55,6 +43,10 @@
   
   <url>
     <loc>https://d47zm3.me/resources/infosec/burp-suite-proxy/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/infosec/ctfs/</loc>
   </url>
   
   <url>
@@ -104,6 +96,10 @@
   </url>
   
   <url>
+    <loc>https://d47zm3.me/resources/code/golang/</loc>
+  </url>
+  
+  <url>
     <loc>https://d47zm3.me/resources/infosec/google-dorks/</loc>
   </url>
   
@@ -144,6 +140,10 @@
   </url>
   
   <url>
+    <loc>https://d47zm3.me/resources/infosec/online-courses/</loc>
+  </url>
+  
+  <url>
     <loc>https://d47zm3.me/resources/devops/pki/</loc>
   </url>
   
@@ -168,11 +168,23 @@
   </url>
   
   <url>
+    <loc>https://d47zm3.me/resources/code/python/</loc>
+  </url>
+  
+  <url>
     <loc>https://d47zm3.me/resources/infosec/reconnaissance/</loc>
   </url>
   
   <url>
+    <loc>https://d47zm3.me/resources/infosec/redteam/</loc>
+  </url>
+  
+  <url>
     <loc>https://d47zm3.me/resources/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/infosec/reverse-engineering/</loc>
   </url>
   
   <url>
@@ -214,6 +226,10 @@
   </url>
   
   <url>
+    <loc>https://d47zm3.me/resources/environment/tricks/</loc>
+  </url>
+  
+  <url>
     <loc>https://d47zm3.me/resources/infosec/tricks/</loc>
   </url>
   
@@ -227,10 +243,6 @@
   
   <url>
     <loc>https://d47zm3.me/resources/infosec/wpa-wpa-2-security/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/wapt-online-courses/</loc>
   </url>
   
   <url>

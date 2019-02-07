@@ -56,34 +56,6 @@ I treat people same way they treat me, most important thing in my life is to sta
     </item>
     
     <item>
-      <title>(Golang) Golang Courses</title>
-      <link>https://d47zm3.me/resources/code/golang-courses/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://d47zm3.me/resources/code/golang-courses/</guid>
-      <description>Links Gopher Guides - nice site with free video courses</description>
-    </item>
-    
-    <item>
-      <title>(Python) Creating your IDE (in VIM)</title>
-      <link>https://d47zm3.me/resources/code/python-ide/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://d47zm3.me/resources/code/python-ide/</guid>
-      <description>TODO</description>
-    </item>
-    
-    <item>
-      <title>(Python) Styling Guide (PEP8)</title>
-      <link>https://d47zm3.me/resources/code/styling-guide/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://d47zm3.me/resources/code/styling-guide/</guid>
-      <description>You can read it here. To start following it, install locally pycodestyle package and run it through your code.
-~&amp;gt; pip install pycodestyle ~&amp;gt; pycodestyle --ignore=E501 run.py run.py:15:1: E302 expected 2 blank lines, found 1# main parser = argparse.ArgumentParser() parser.add_argument(&amp;#34;action&amp;#34;, choices=[&amp;#39;list&amp;#39;, &amp;#39;add&amp;#39;, &amp;#39;search&amp;#39;, &amp;#39;import&amp;#39;], help=&amp;#34;list local repositories, add new one or search by tags&amp;#34;) parser.add_argument(&amp;#34;--url&amp;#34;, nargs=&amp;#39;?&amp;#39;, help=&amp;#34;url of repository to add&amp;#34;) parser.add_argument(&amp;#34;--note&amp;#34;, nargs=&amp;#39;?&amp;#39;, help=&amp;#34;personal note about repository&amp;#34;) parser.add_argument(&amp;#34;--tags&amp;#34;, nargs=&amp;#39;?&amp;#39;, help=&amp;#34;tags for repository&amp;#34;) parser.</description>
-    </item>
-    
-    <item>
       <title>AWS</title>
       <link>https://d47zm3.me/resources/devops/aws/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -108,8 +80,17 @@ Links  https://rastamouse.me - hacking Windows  </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/bugbounty/</guid>
-      <description> Communities Bug Bounty Notes - founded by zseano, challenges, writeups, etc.
-Bug Bounty Tips </description>
+      <description>Communities Bug Bounty Notes - founded by zseano, challenges, writeups, etc.
+Bug Bounty Tips  nmap --script &amp;quot;http-*&amp;quot; IP/target - will run 30+ scripts related to HTTP, SQLInjection, config backup checks, checkout more at the docs http://nmap.org/nsedoc  Files To Look Out For  .git/config
+ .travis.yml
+ Makefile
+ Dockerfile
+ package.json
+ gulpfile.js
+ composer.json
+ web.config
+ .env
+  Need execute some command but &amp;ldquo;space&amp;rdquo; is blocked?</description>
     </item>
     
     <item>
@@ -120,6 +101,15 @@ Bug Bounty Tips </description>
       <guid>https://d47zm3.me/resources/infosec/burp-suite-proxy/</guid>
       <description> Famous tool for Web Application Security.
 Links  Burp Suite Pro Tricks &amp;amp; Tips  </description>
+    </item>
+    
+    <item>
+      <title>CTFs</title>
+      <link>https://d47zm3.me/resources/infosec/ctfs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/ctfs/</guid>
+      <description> Links  https://github.com/ctfs/ - lots of writeups  </description>
     </item>
     
     <item>
@@ -193,6 +183,16 @@ Links  InfoCon  </description>
       <guid>https://d47zm3.me/resources/environment/gpg/</guid>
       <description>Set up GPG on computer to encrypt data &amp;amp; sign commits etc.
 MacOS Guide ~&amp;gt; brew install gnupg pinentry-mac ~&amp;gt; cat ~/.gnupg/gpg-agent.conf # Connects gpg-agent to the OSX keychain via the brew-installed # pinentry program from GPGtools. This is the OSX &amp;#39;magic sauce&amp;#39;, # allowing the gpg key&amp;#39;s passphrase to be stored in the login # keychain, enabling automatic key signing. pinentry-program /usr/local/bin/pinentry-mac ~&amp;gt; cat ~/.gnupg/gpg.conf # Uncomment within config (or add this line) use-agent no-tty # This silences the &amp;#34;you need a passphrase&amp;#34; message once the passphrase handling is all set.</description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>https://d47zm3.me/resources/code/golang/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/code/golang/</guid>
+      <description>Golang Courses Gopher Guides - nice site with free video courses
+Tricks  Shrink Go Binaries Up to 7 times!  # -s and -w flags $ GOOS=linux go build cmd/go $ ls -l go -rwxr-xr-x 1 filippo staff 12493536 Apr 16 16:58 go $ GOOS=linux go build -ldflags=&amp;#34;-s -w&amp;#34; cmd/go $ ls -l go -rwxr-xr-x 1 filippo staff 8941952 Apr 16 17:08 go # upx $ GOOS=linux go build cmd/go $ ls -l go -rwxr-xr-x 1 filippo staff 12493536 Apr 16 16:58 go $ upx --brute go Ultimate Packer for eXecutables Copyright (C) 1996 - 2013 UPX 3.</description>
     </item>
     
     <item>
@@ -311,6 +311,17 @@ Search Engines  censys
     </item>
     
     <item>
+      <title>Online Courses</title>
+      <link>https://d47zm3.me/resources/infosec/online-courses/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/online-courses/</guid>
+      <description> Google Docs Sheet with lots of links
+ The Big List Of Infosec Resources
+  </description>
+    </item>
+    
+    <item>
       <title>PKI</title>
       <link>https://d47zm3.me/resources/devops/pki/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -341,6 +352,12 @@ Stage 1: decrypt cookie root@bethebeast: ~ » padbuster http://hacker.com/profil
       <description> Password Search Engines  gotcha.pw
  haveibeenpwned.com
  vigilante.pw
+  Wordlists and Weak Password  https://github.com/berzerk0/Probable-Wordlists
+ https://github.com/danielmiessler/SecLists
+ https://hashes.org
+ https://weakpass.com
+  Cracking Hashes Online  https://crackstation.net
+ https://hashkiller.co.uk/md5-decrypter.aspx
   </description>
     </item>
     
@@ -359,7 +376,11 @@ Stage 1: decrypt cookie root@bethebeast: ~ » padbuster http://hacker.com/profil
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/personal-security-checklist/</guid>
-      <description>Be safe on the internet - An open source checklist of resources designed to improve your online privacy and security. Check things off to keep track as you go.</description>
+      <description>Be safe on the internet - An open source checklist of resources designed to improve your online privacy and security. Check things off to keep track as you go.
+Protect Yourself @StartPageSearch @MyStartMail @DuckDuckGo @ProtonMail
+@torproject @TorTorbrowser
+@expressvpn @NordVPN @ProtonVPN
+@HTTPSEverywhere @uMatrix @ublockorigin</description>
     </item>
     
     <item>
@@ -375,17 +396,49 @@ Stage 1: decrypt cookie root@bethebeast: ~ » padbuster http://hacker.com/profil
     </item>
     
     <item>
+      <title>Python</title>
+      <link>https://d47zm3.me/resources/code/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/code/python/</guid>
+      <description>Styling Guide (PEP8) You can read it here. To start following it, install locally pycodestyle package and run it through your code.
+~&amp;gt; pip install pycodestyle ~&amp;gt; pycodestyle --ignore=E501 run.py run.py:15:1: E302 expected 2 blank lines, found 1# main parser = argparse.ArgumentParser() parser.add_argument(&amp;#34;action&amp;#34;, choices=[&amp;#39;list&amp;#39;, &amp;#39;add&amp;#39;, &amp;#39;search&amp;#39;, &amp;#39;import&amp;#39;], help=&amp;#34;list local repositories, add new one or search by tags&amp;#34;) parser.add_argument(&amp;#34;--url&amp;#34;, nargs=&amp;#39;?&amp;#39;, help=&amp;#34;url of repository to add&amp;#34;) parser.add_argument(&amp;#34;--note&amp;#34;, nargs=&amp;#39;?&amp;#39;, help=&amp;#34;personal note about repository&amp;#34;) parser.</description>
+    </item>
+    
+    <item>
       <title>Reconnaissance</title>
       <link>https://d47zm3.me/resources/infosec/reconnaissance/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/reconnaissance/</guid>
-      <description> Everything from port scanning, to service mapping, passive OSINT etc.
-Presentations  Recon Like a Boss  Links  Assesments Mindset  DNS Checking who can issue certificate for domain
-dig @nameserver record.com CAA GeoIP Lookup
-geoiplookup 1.2.3.4 Reverse DNS Discovery
-dig axfr @192.43.14.3 168.192.in-addr.arpa DNSSEC records
-dig +multi @192.10.51.3 witrap.com RRSIGdig +multi @192.10.51.3 witrap.com DNSKEY</description>
+      <description>Everything from port scanning, to service mapping, passive OSINT etc.
+Presentations  Recon Like a Boss
+ Visual Guide to Recon
+  Links  Assesments Mindset  Subdomain Discovery  curl &#39;https://crt.sh/?q=%.example.org&#39; | grep &amp;quot;http://example.org &amp;quot; | cut -d &#39;&amp;gt;&#39; -f2 | cut -d &#39;&amp;lt;&#39; -f1 | grep -v &amp;quot; &amp;quot; | sort -u  DNS Checking who can issue certificate for domain
+dig @nameserver record.com CAA GeoIP Lookup</description>
+    </item>
+    
+    <item>
+      <title>Red Team</title>
+      <link>https://d47zm3.me/resources/infosec/redteam/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/redteam/</guid>
+      <description> Articles  Obfuscation Techniques used in Phishing Attacks  </description>
+    </item>
+    
+    <item>
+      <title>Reverse Engineering</title>
+      <link>https://d47zm3.me/resources/infosec/reverse-engineering/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/reverse-engineering/</guid>
+      <description> Challenges  https://crackmes.one
+ https://challenges.re
+   Training  https://recon.cx/2015/training.html
+ http://index-of.es
+ https://github.com/wtsxDev/reverse-engineering
+  </description>
     </item>
     
     <item>
@@ -485,6 +538,21 @@ Debugging on Container OS using Docker Actually it boils down to running Docker 
     
     <item>
       <title>Tricks</title>
+      <link>https://d47zm3.me/resources/environment/tricks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/environment/tricks/</guid>
+      <description> All kinds of tricks.
+VIM  :r filename will read file into buffer  SSH  ~ . - close hanged ssh session
+ ~C - open simple interpreter
+ ~^Z - hang ssh client
+ ~# - show established connections
+ ~&amp;amp; - end session
+  </description>
+    </item>
+    
+    <item>
+      <title>Tricks</title>
       <link>https://d47zm3.me/resources/infosec/tricks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -522,15 +590,6 @@ rdesktop -uname -peasypassword -r disk:share=exploits/ 10.2.2.1 etcd - fetch key
       
       <guid>https://d47zm3.me/resources/infosec/wpa-wpa-2-security/</guid>
       <description> Articles  new attack using PMKID  </description>
-    </item>
-    
-    <item>
-      <title>Web Application Penetration Testing Online Courses</title>
-      <link>https://d47zm3.me/resources/infosec/wapt-online-courses/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://d47zm3.me/resources/infosec/wapt-online-courses/</guid>
-      <description> Google Docs Sheet with lots of links  </description>
     </item>
     
     <item>

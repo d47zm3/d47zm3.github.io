@@ -11,10 +11,10 @@
 
     <base href="https://d47zm3.me">
     <title>
-  Bug Bounty · d47zm3
+  Golang · d47zm3
 </title>
 
-    <link rel="canonical" href="https://d47zm3.me/resources/infosec/bugbounty/">
+    <link rel="canonical" href="https://d47zm3.me/resources/code/golang/">
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Merriweather:300,700|Source+Code+Pro:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
@@ -86,50 +86,46 @@
   <section class="container page">
   <article>
     <header>
-      <h1>Bug Bounty</h1>
+      <h1>Golang</h1>
     </header>
 
     
 
-<h3 id="communities">Communities</h3>
+<h2 id="golang-courses">Golang Courses</h2>
 
-<p><a href="https://www.bugbountynotes.com">Bug Bounty Notes</a> - founded by zseano, challenges, writeups, etc.</p>
+<p><a href="https://www.gopherguides.com/">Gopher Guides</a> - nice site with free video courses</p>
 
-<h2 id="bug-bounty-tips">Bug Bounty Tips</h2>
-
-<ul>
-<li><code>nmap --script &quot;http-*&quot; IP/target</code> - will run 30+ scripts related to HTTP, SQLInjection, config backup checks, checkout more at the docs <a href="http://nmap.org/nsedoc">http://nmap.org/nsedoc</a></li>
-</ul>
-
-<h3 id="files-to-look-out-for">Files To Look Out For</h3>
+<h2 id="tricks">Tricks</h2>
 
 <ul>
-<li><p>.git/config</p></li>
-
-<li><p>.travis.yml</p></li>
-
-<li><p>Makefile</p></li>
-
-<li><p>Dockerfile</p></li>
-
-<li><p>package.json</p></li>
-
-<li><p>gulpfile.js</p></li>
-
-<li><p>composer.json</p></li>
-
-<li><p>web.config</p></li>
-
-<li><p>.env</p></li>
+<li><a href="https://blog.filippo.io/shrink-your-go-binaries-with-this-one-weird-trick/">Shrink Go Binaries Up to 7 times!</a></li>
 </ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"># -s and -w flags
 
-<h3 id="need-execute-some-command-but-space-is-blocked-try-with">Need execute some command but &ldquo;space&rdquo; is blocked? Try with:</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">IFS=,;`cat&lt;&lt;&lt;cat,/etc/passwd`
-cat$IFS/etc/passwd
-cat${IFS}/etc/passwd
-cat&lt;/etc/passwd                 
-{cat,/etc/passwd} OR {ls,-las,/var} with args
-X=$&#39;cat\x20/etc/passwd&#39;&amp;&amp;$X</pre></div>
+$ GOOS=linux go build cmd/go
+$ ls -l go
+-rwxr-xr-x  1 filippo  staff  12493536 Apr 16 16:58 go
+$ GOOS=linux go build -ldflags=&#34;-s -w&#34; cmd/go
+$ ls -l go
+-rwxr-xr-x  1 filippo  staff  8941952 Apr 16 17:08 go
+
+# upx
+
+$ GOOS=linux go build cmd/go
+$ ls -l go
+-rwxr-xr-x  1 filippo  staff  12493536 Apr 16 16:58 go
+$ upx --brute go
+                       Ultimate Packer for eXecutables
+                          Copyright (C) 1996 - 2013
+UPX 3.91        Markus Oberhumer, Laszlo Molnar &amp; John Reiser   Sep 30th 2013
+
+        File size         Ratio      Format      Name
+   --------------------   ------   -----------   -----------
+  12493536 -&gt;   2554140   20.44%  linux/ElfAMD   go
+
+Packed 1 file.  
+$ ls -l go
+-rwxr-xr-x  1 filippo  staff  2554140 Apr 16 16:58 go.upx</pre></div>
   </article>
 </section>
 

@@ -11,31 +11,23 @@
     
     
     <item>
-      <title>(Golang) Golang Courses</title>
-      <link>https://d47zm3.me/resources/code/golang-courses/</link>
+      <title>Golang</title>
+      <link>https://d47zm3.me/resources/code/golang/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://d47zm3.me/resources/code/golang-courses/</guid>
-      <description>Links Gopher Guides - nice site with free video courses</description>
+      <guid>https://d47zm3.me/resources/code/golang/</guid>
+      <description>Golang Courses Gopher Guides - nice site with free video courses
+Tricks  Shrink Go Binaries Up to 7 times!  # -s and -w flags $ GOOS=linux go build cmd/go $ ls -l go -rwxr-xr-x 1 filippo staff 12493536 Apr 16 16:58 go $ GOOS=linux go build -ldflags=&amp;#34;-s -w&amp;#34; cmd/go $ ls -l go -rwxr-xr-x 1 filippo staff 8941952 Apr 16 17:08 go # upx $ GOOS=linux go build cmd/go $ ls -l go -rwxr-xr-x 1 filippo staff 12493536 Apr 16 16:58 go $ upx --brute go Ultimate Packer for eXecutables Copyright (C) 1996 - 2013 UPX 3.</description>
     </item>
     
     <item>
-      <title>(Python) Creating your IDE (in VIM)</title>
-      <link>https://d47zm3.me/resources/code/python-ide/</link>
+      <title>Python</title>
+      <link>https://d47zm3.me/resources/code/python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://d47zm3.me/resources/code/python-ide/</guid>
-      <description>TODO</description>
-    </item>
-    
-    <item>
-      <title>(Python) Styling Guide (PEP8)</title>
-      <link>https://d47zm3.me/resources/code/styling-guide/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://d47zm3.me/resources/code/styling-guide/</guid>
-      <description>You can read it here. To start following it, install locally pycodestyle package and run it through your code.
-~&amp;gt; pip install pycodestyle ~&amp;gt; pycodestyle --ignore=E501 run.py run.py:15:1: E302 expected 2 blank lines, found 1# main parser = argparse.ArgumentParser() parser.add_argument(&amp;#34;action&amp;#34;, choices=[&amp;#39;list&amp;#39;, &amp;#39;add&amp;#39;, &amp;#39;search&amp;#39;, &amp;#39;import&amp;#39;], help=&amp;#34;list local repositories, add new one or search by tags&amp;#34;) parser.add_argument(&amp;#34;--url&amp;#34;, nargs=&amp;#39;?&amp;#39;, help=&amp;#34;url of repository to add&amp;#34;) parser.add_argument(&amp;#34;--note&amp;#34;, nargs=&amp;#39;?&amp;#39;, help=&amp;#34;personal note about repository&amp;#34;) parser.add_argument(&amp;#34;--tags&amp;#34;, nargs=&amp;#39;?&amp;#39;, help=&amp;#34;tags for repository&amp;#34;) parser.</description>
+      <guid>https://d47zm3.me/resources/code/python/</guid>
+      <description>Styling Guide (PEP8) You can read it here. To start following it, install locally pycodestyle package and run it through your code.
+~&amp;gt; pip install pycodestyle ~&amp;gt; pycodestyle --ignore=E501 run.py run.py:15:1: E302 expected 2 blank lines, found 1# main parser = argparse.ArgumentParser() parser.add_argument(&amp;#34;action&amp;#34;, choices=[&amp;#39;list&amp;#39;, &amp;#39;add&amp;#39;, &amp;#39;search&amp;#39;, &amp;#39;import&amp;#39;], help=&amp;#34;list local repositories, add new one or search by tags&amp;#34;) parser.add_argument(&amp;#34;--url&amp;#34;, nargs=&amp;#39;?&amp;#39;, help=&amp;#34;url of repository to add&amp;#34;) parser.add_argument(&amp;#34;--note&amp;#34;, nargs=&amp;#39;?&amp;#39;, help=&amp;#34;personal note about repository&amp;#34;) parser.</description>
     </item>
     
   </channel>

@@ -557,6 +557,12 @@ spec:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">kubectl get cm app-configmap -o jsonpath=&#39;{.data.config\.yml}&#39;</pre></div>
 <h3 id="re-apply-secret-from-file">Re-Apply Secret From File</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">kubectl create secret generic citygate-config --from-file=./config.js --dry-run -o yaml | kubectl apply -f -</pre></div>
+<h3 id="kubernetes-failure-horror-stories">Kubernetes Failure Horror Stories</h3>
+
+<ul>
+<li><a href="https://github.com/hjacobs/kubernetes-failure-stories">https://github.com/hjacobs/kubernetes-failure-stories</a></li>
+</ul>
+
   </article>
 </section>
 

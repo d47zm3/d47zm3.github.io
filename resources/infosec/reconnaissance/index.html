@@ -96,13 +96,21 @@
 <h3 id="presentations">Presentations</h3>
 
 <ul>
-<li><a href="https://bugbountytuts.files.wordpress.com/2018/02/dirty-recon.pdf">Recon Like a Boss</a></li>
+<li><p><a href="https://bugbountytuts.files.wordpress.com/2018/02/dirty-recon.pdf">Recon Like a Boss</a></p></li>
+
+<li><p><a href="https://docs.google.com/presentation/d/1xgvEScGZ_ukNY0rmfKz1JN0sn-CgZY_rTp2B_SZvijk/edit#slide=id.g4052c4692d_0_0">Visual Guide to Recon</a></p></li>
 </ul>
 
 <h3 id="links">Links</h3>
 
 <ul>
 <li><a href="https://github.com/dsopas/assessment-mindset">Assesments Mindset</a></li>
+</ul>
+
+<h3 id="subdomain-discovery">Subdomain Discovery</h3>
+
+<ul>
+<li><code>curl 'https://crt.sh/?q=%.example.org' | grep &quot;http://example.org &quot; | cut -d '&gt;' -f2 | cut -d '&lt;' -f1 | grep -v &quot; &quot; | sort -u</code></li>
 </ul>
 
 <h3 id="dns">DNS</h3>

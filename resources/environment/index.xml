@@ -52,6 +52,21 @@ MacOS Guide ~&amp;gt; brew install gnupg pinentry-mac ~&amp;gt; cat ~/.gnupg/gpg
     </item>
     
     <item>
+      <title>Tricks</title>
+      <link>https://d47zm3.me/resources/environment/tricks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/environment/tricks/</guid>
+      <description> All kinds of tricks.
+VIM  :r filename will read file into buffer  SSH  ~ . - close hanged ssh session
+ ~C - open simple interpreter
+ ~^Z - hang ssh client
+ ~# - show established connections
+ ~&amp;amp; - end session
+  </description>
+    </item>
+    
+    <item>
       <title>VIM</title>
       <link>https://d47zm3.me/resources/environment/vim/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
