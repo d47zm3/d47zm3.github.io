@@ -179,6 +179,16 @@ Links  InfoCon  </description>
     </item>
     
     <item>
+      <title>Exploits</title>
+      <link>https://d47zm3.me/resources/infosec/exploits/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/exploits/</guid>
+      <description> Write-ups and such of more famous exploits.
+dity_sock  https://shenaniganslabs.io/2019/02/13/Dirty-Sock.html  runc - cve-2019-5736  https://blog.dragonsector.pl/2019/02/cve-2019-5736-escape-from-docker-and.html  </description>
+    </item>
+    
+    <item>
       <title>GPG</title>
       <link>https://d47zm3.me/resources/environment/gpg/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -330,6 +340,21 @@ Search Engines  censys
       <guid>https://d47zm3.me/resources/infosec/online-courses/</guid>
       <description> Google Docs Sheet with lots of links
  The Big List Of Infosec Resources
+ NetSecFocus Resources
+  </description>
+    </item>
+    
+    <item>
+      <title>Open Redirects</title>
+      <link>https://d47zm3.me/resources/infosec/open-redirects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/open-redirects/</guid>
+      <description> Same Open Redirect vulnerability won&amp;rsquo;t make it.
+Links  Open URL redirects to grab FB OAuth Tokens
+ Full Account Takeover via Referer Header (OAuth token Steal, Open Redirect Vulnerability Chaining)
+ Open Redirect on central.uber.com allows for account takeover
+ hackerone.com/reports/206591
   </description>
     </item>
     
@@ -470,6 +495,7 @@ dig @nameserver record.com CAA GeoIP Lookup</description>
    Training  https://recon.cx/2015/training.html
  http://index-of.es
  https://github.com/wtsxDev/reverse-engineering
+ intro to ctf reverse engineering
   </description>
     </item>
     
@@ -621,7 +647,9 @@ rdesktop -uname -peasypassword -r disk:share=exploits/ 10.2.2.1 etcd - fetch key
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/wpa-wpa-2-security/</guid>
-      <description> Articles  new attack using PMKID  </description>
+      <description> Articles  new attack using pmkid
+ pwning wpa/wpa2 networks with bettercap and the pmkid client-less attack
+  </description>
     </item>
     
     <item>
@@ -673,6 +701,15 @@ Links  https://web-in-security.blogspot.com/2016/03/xxe-cheat-sheet.html
  https://isc.sans.edu/diary/Blindly+confirming+XXE/19257
  https://vsecurity.com//download/papers/XMLDTDEntityAttacks.pdf
   </description>
+    </item>
+    
+    <item>
+      <title>YouTube resources</title>
+      <link>https://d47zm3.me/resources/infosec/youtube/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/youtube/</guid>
+      <description> Recon Video from Derek Rook - his whole channel is worth subscription  </description>
     </item>
     
   </channel>
