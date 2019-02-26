@@ -265,7 +265,8 @@ Stage 1: decrypt cookie root@bethebeast: ~ » padbuster http://hacker.com/profil
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/personal-security-checklist/</guid>
-      <description>Be safe on the internet - An open source checklist of resources designed to improve your online privacy and security. Check things off to keep track as you go.
+      <description>Be Safe On The Internet - an open source checklist of resources designed to improve your online privacy and security, check things off to keep track as you go.
+Privacy Tools IO - VPN ranking and other tips like best browsers
 Protect Yourself @StartPageSearch @MyStartMail @DuckDuckGo @ProtonMail
 @torproject @TorTorbrowser
 @expressvpn @NordVPN @ProtonVPN
@@ -281,8 +282,10 @@ Protect Yourself @StartPageSearch @MyStartMail @DuckDuckGo @ProtonMail
       <description>Everything from port scanning, to service mapping, passive OSINT etc.
 Presentations  Recon Like a Boss
  Visual Guide to Recon
-  Links  Assesments Mindset  Subdomain Discovery  curl &#39;https://crt.sh/?q=%.example.org&#39; | grep &amp;quot;http://example.org &amp;quot; | cut -d &#39;&amp;gt;&#39; -f2 | cut -d &#39;&amp;lt;&#39; -f1 | grep -v &amp;quot; &amp;quot; | sort -u  DNS Checking who can issue certificate for domain
-dig @nameserver record.com CAA GeoIP Lookup</description>
+  Links  Assesments Mindset
+ DNS/Web Enumeration Reference
+ Basic Recon - Guide
+  Subdomain Discovery  curl &#39;https://crt.sh/?q=%.example.org&#39; | grep &amp;quot;http://example.org &amp;quot; | cut -d &#39;&amp;gt;&#39; -f2 | cut -d &#39;&amp;lt;&#39; -f1 | grep -v &amp;quot; &amp;quot; | sort -u  DNS Checking who can issue certificate for domain</description>
     </item>
     
     <item>

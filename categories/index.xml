@@ -17,18 +17,19 @@
       <pubDate>Fri, 25 Jan 2019 15:11:00 +0100</pubDate>
       
       <guid>https://d47zm3.me/bookmarks/</guid>
-      <description>Exploit Writing  Corelan Tutorials
+      <description>Reverse Engineering/Exploit Writing  Corelan Tutorials
  Linux (x86) Exploit Development Series
  Learning Exploitation with Offensive Computer Security 2.0
  Modern Binary Exploitation
  Reverse Engineering 101
  Stack Buffer Overflows: Linux - Chapter 1
  Smashing The Stack For Fun And Profit
-  Courses and Labs  Labs for the Computer and Network Security Class
- SANS Cyber Aces
- Pentest Training
- Hacking Lab
- Learn Burp Suite</description>
+ RE for Beginners
+ Exploit Tutorials
+ Exploit Education
+ Exploit Database
+ Reverse.It - free malware analysis service
+  Courses and Labs  Labs for the Computer and Network Security Class</description>
     </item>
     
     <item>
@@ -37,7 +38,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/devops/aws/</guid>
-      <description> Grant acces to your S3 bucket for other AWS account. { &amp;#34;Id&amp;#34;: &amp;#34;Policy1519815897918&amp;#34;, &amp;#34;Version&amp;#34;: &amp;#34;2012-10-17&amp;#34;, &amp;#34;Statement&amp;#34;: [ { &amp;#34;Sid&amp;#34;: &amp;#34;Stmt1519815367664&amp;#34;, &amp;#34;Action&amp;#34;: &amp;#34;s3:*&amp;#34;, &amp;#34;Effect&amp;#34;: &amp;#34;Allow&amp;#34;, &amp;#34;Resource&amp;#34;: &amp;#34;arn:aws:s3:::private-multimedia/*&amp;#34;, &amp;#34;Principal&amp;#34;: { &amp;#34;CanonicalUser&amp;#34;: &amp;#34;01b2fc158a01666bfb1b56da6ad958d3c6fe8702540de3af517106f9aca37766&amp;#34; } } ] }</description>
+      <description> Links  AWS Certifications - Curated List
+ AWS - Cheatsheets For Exam
+  Grant acces to your S3 bucket for other AWS account. { &amp;#34;Id&amp;#34;: &amp;#34;Policy1519815897918&amp;#34;, &amp;#34;Version&amp;#34;: &amp;#34;2012-10-17&amp;#34;, &amp;#34;Statement&amp;#34;: [ { &amp;#34;Sid&amp;#34;: &amp;#34;Stmt1519815367664&amp;#34;, &amp;#34;Action&amp;#34;: &amp;#34;s3:*&amp;#34;, &amp;#34;Effect&amp;#34;: &amp;#34;Allow&amp;#34;, &amp;#34;Resource&amp;#34;: &amp;#34;arn:aws:s3:::private-multimedia/*&amp;#34;, &amp;#34;Principal&amp;#34;: { &amp;#34;CanonicalUser&amp;#34;: &amp;#34;01b2fc158a01666bfb1b56da6ad958d3c6fe8702540de3af517106f9aca37766&amp;#34; } } ] }</description>
     </item>
     
     <item>
@@ -215,6 +218,7 @@ MacOS Guide ~&amp;gt; brew install gnupg pinentry-mac ~&amp;gt; cat ~/.gnupg/gpg
       
       <guid>https://d47zm3.me/resources/code/golang/</guid>
       <description>Golang Courses Gopher Guides - nice site with free video courses
+Practical Go - Real World Advices
 Tricks  Shrink Go Binaries Up to 7 times!  # -s and -w flags $ GOOS=linux go build cmd/go $ ls -l go -rwxr-xr-x 1 filippo staff 12493536 Apr 16 16:58 go $ GOOS=linux go build -ldflags=&amp;#34;-s -w&amp;#34; cmd/go $ ls -l go -rwxr-xr-x 1 filippo staff 8941952 Apr 16 17:08 go # upx $ GOOS=linux go build cmd/go $ ls -l go -rwxr-xr-x 1 filippo staff 12493536 Apr 16 16:58 go $ upx --brute go Ultimate Packer for eXecutables Copyright (C) 1996 - 2013 UPX 3.</description>
     </item>
     
@@ -434,7 +438,8 @@ Stage 1: decrypt cookie root@bethebeast: ~ » padbuster http://hacker.com/profil
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/personal-security-checklist/</guid>
-      <description>Be safe on the internet - An open source checklist of resources designed to improve your online privacy and security. Check things off to keep track as you go.
+      <description>Be Safe On The Internet - an open source checklist of resources designed to improve your online privacy and security, check things off to keep track as you go.
+Privacy Tools IO - VPN ranking and other tips like best browsers
 Protect Yourself @StartPageSearch @MyStartMail @DuckDuckGo @ProtonMail
 @torproject @TorTorbrowser
 @expressvpn @NordVPN @ProtonVPN
@@ -472,8 +477,10 @@ Protect Yourself @StartPageSearch @MyStartMail @DuckDuckGo @ProtonMail
       <description>Everything from port scanning, to service mapping, passive OSINT etc.
 Presentations  Recon Like a Boss
  Visual Guide to Recon
-  Links  Assesments Mindset  Subdomain Discovery  curl &#39;https://crt.sh/?q=%.example.org&#39; | grep &amp;quot;http://example.org &amp;quot; | cut -d &#39;&amp;gt;&#39; -f2 | cut -d &#39;&amp;lt;&#39; -f1 | grep -v &amp;quot; &amp;quot; | sort -u  DNS Checking who can issue certificate for domain
-dig @nameserver record.com CAA GeoIP Lookup</description>
+  Links  Assesments Mindset
+ DNS/Web Enumeration Reference
+ Basic Recon - Guide
+  Subdomain Discovery  curl &#39;https://crt.sh/?q=%.example.org&#39; | grep &amp;quot;http://example.org &amp;quot; | cut -d &#39;&amp;gt;&#39; -f2 | cut -d &#39;&amp;lt;&#39; -f1 | grep -v &amp;quot; &amp;quot; | sort -u  DNS Checking who can issue certificate for domain</description>
     </item>
     
     <item>

@@ -16,7 +16,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/devops/aws/</guid>
-      <description> Grant acces to your S3 bucket for other AWS account. { &amp;#34;Id&amp;#34;: &amp;#34;Policy1519815897918&amp;#34;, &amp;#34;Version&amp;#34;: &amp;#34;2012-10-17&amp;#34;, &amp;#34;Statement&amp;#34;: [ { &amp;#34;Sid&amp;#34;: &amp;#34;Stmt1519815367664&amp;#34;, &amp;#34;Action&amp;#34;: &amp;#34;s3:*&amp;#34;, &amp;#34;Effect&amp;#34;: &amp;#34;Allow&amp;#34;, &amp;#34;Resource&amp;#34;: &amp;#34;arn:aws:s3:::private-multimedia/*&amp;#34;, &amp;#34;Principal&amp;#34;: { &amp;#34;CanonicalUser&amp;#34;: &amp;#34;01b2fc158a01666bfb1b56da6ad958d3c6fe8702540de3af517106f9aca37766&amp;#34; } } ] }</description>
+      <description> Links  AWS Certifications - Curated List
+ AWS - Cheatsheets For Exam
+  Grant acces to your S3 bucket for other AWS account. { &amp;#34;Id&amp;#34;: &amp;#34;Policy1519815897918&amp;#34;, &amp;#34;Version&amp;#34;: &amp;#34;2012-10-17&amp;#34;, &amp;#34;Statement&amp;#34;: [ { &amp;#34;Sid&amp;#34;: &amp;#34;Stmt1519815367664&amp;#34;, &amp;#34;Action&amp;#34;: &amp;#34;s3:*&amp;#34;, &amp;#34;Effect&amp;#34;: &amp;#34;Allow&amp;#34;, &amp;#34;Resource&amp;#34;: &amp;#34;arn:aws:s3:::private-multimedia/*&amp;#34;, &amp;#34;Principal&amp;#34;: { &amp;#34;CanonicalUser&amp;#34;: &amp;#34;01b2fc158a01666bfb1b56da6ad958d3c6fe8702540de3af517106f9aca37766&amp;#34; } } ] }</description>
     </item>
     
     <item>
