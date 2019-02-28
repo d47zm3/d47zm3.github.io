@@ -17,19 +17,20 @@
       <pubDate>Fri, 25 Jan 2019 15:11:00 +0100</pubDate>
       
       <guid>https://d47zm3.me/bookmarks/</guid>
-      <description>Reverse Engineering/Exploit Writing  Corelan Tutorials
- Linux (x86) Exploit Development Series
- Learning Exploitation with Offensive Computer Security 2.0
- Modern Binary Exploitation
- Reverse Engineering 101
- Stack Buffer Overflows: Linux - Chapter 1
- Smashing The Stack For Fun And Profit
- RE for Beginners
- Exploit Tutorials
- Exploit Education
- Exploit Database
- Reverse.It - free malware analysis service
-  Courses and Labs  Hack The Box</description>
+      <description>AWS  AWS Certifications - Curated List
+ AWS - Cheatsheets For Exam
+  Courses and Labs  Hack The Box
+ Attack &amp;amp; Defense
+ Cybrary
+ Labs for the Computer and Network Security Class
+ SANS Cyber Aces
+ Pentest Training
+ Hacking Lab
+ Learn Burp Suite
+ Offensive Computer Security Spring 2014
+ Infosec Institute Resources
+ Microsoft Virtual Academy
+ Reddit - Ultimate Guide To Start</description>
     </item>
     
     <item>
@@ -38,19 +39,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/devops/aws/</guid>
-      <description> Links  AWS Certifications - Curated List
- AWS - Cheatsheets For Exam
-  Grant acces to your S3 bucket for other AWS account. { &amp;#34;Id&amp;#34;: &amp;#34;Policy1519815897918&amp;#34;, &amp;#34;Version&amp;#34;: &amp;#34;2012-10-17&amp;#34;, &amp;#34;Statement&amp;#34;: [ { &amp;#34;Sid&amp;#34;: &amp;#34;Stmt1519815367664&amp;#34;, &amp;#34;Action&amp;#34;: &amp;#34;s3:*&amp;#34;, &amp;#34;Effect&amp;#34;: &amp;#34;Allow&amp;#34;, &amp;#34;Resource&amp;#34;: &amp;#34;arn:aws:s3:::private-multimedia/*&amp;#34;, &amp;#34;Principal&amp;#34;: { &amp;#34;CanonicalUser&amp;#34;: &amp;#34;01b2fc158a01666bfb1b56da6ad958d3c6fe8702540de3af517106f9aca37766&amp;#34; } } ] }</description>
-    </item>
-    
-    <item>
-      <title>Becoming DevOps</title>
-      <link>https://d47zm3.me/resources/devops/becoming-devops/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://d47zm3.me/resources/devops/becoming-devops/</guid>
-      <description>A series of articles, how to become DevOps
- https://medium.com/@devfire/how-to-become-a-devops-engineer-in-six-months-or-less-366097df7737  </description>
+      <description> Grant acces to your S3 bucket for other AWS account. { &amp;#34;Id&amp;#34;: &amp;#34;Policy1519815897918&amp;#34;, &amp;#34;Version&amp;#34;: &amp;#34;2012-10-17&amp;#34;, &amp;#34;Statement&amp;#34;: [ { &amp;#34;Sid&amp;#34;: &amp;#34;Stmt1519815367664&amp;#34;, &amp;#34;Action&amp;#34;: &amp;#34;s3:*&amp;#34;, &amp;#34;Effect&amp;#34;: &amp;#34;Allow&amp;#34;, &amp;#34;Resource&amp;#34;: &amp;#34;arn:aws:s3:::private-multimedia/*&amp;#34;, &amp;#34;Principal&amp;#34;: { &amp;#34;CanonicalUser&amp;#34;: &amp;#34;01b2fc158a01666bfb1b56da6ad958d3c6fe8702540de3af517106f9aca37766&amp;#34; } } ] }</description>
     </item>
     
     <item>
@@ -217,9 +206,7 @@ MacOS Guide ~&amp;gt; brew install gnupg pinentry-mac ~&amp;gt; cat ~/.gnupg/gpg
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/code/golang/</guid>
-      <description>Golang Courses Gopher Guides - nice site with free video courses
-Practical Go - Real World Advices
-Tricks  Shrink Go Binaries Up to 7 times!  # -s and -w flags $ GOOS=linux go build cmd/go $ ls -l go -rwxr-xr-x 1 filippo staff 12493536 Apr 16 16:58 go $ GOOS=linux go build -ldflags=&amp;#34;-s -w&amp;#34; cmd/go $ ls -l go -rwxr-xr-x 1 filippo staff 8941952 Apr 16 17:08 go # upx $ GOOS=linux go build cmd/go $ ls -l go -rwxr-xr-x 1 filippo staff 12493536 Apr 16 16:58 go $ upx --brute go Ultimate Packer for eXecutables Copyright (C) 1996 - 2013 UPX 3.</description>
+      <description>Tricks  Shrink Go Binaries Up to 7 times!  # -s and -w flags $ GOOS=linux go build cmd/go $ ls -l go -rwxr-xr-x 1 filippo staff 12493536 Apr 16 16:58 go $ GOOS=linux go build -ldflags=&amp;#34;-s -w&amp;#34; cmd/go $ ls -l go -rwxr-xr-x 1 filippo staff 8941952 Apr 16 17:08 go # upx $ GOOS=linux go build cmd/go $ ls -l go -rwxr-xr-x 1 filippo staff 12493536 Apr 16 16:58 go $ upx --brute go Ultimate Packer for eXecutables Copyright (C) 1996 - 2013 UPX 3.</description>
     </item>
     
     <item>
