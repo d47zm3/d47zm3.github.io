@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>d47zm3</title>
+    <title>Tags on d47zm3</title>
     <link>https://d47zm3.me/tags/</link>
-    <description>Recent content on d47zm3</description>
+    <description>Recent content in Tags on d47zm3</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 25 Jan 2019 15:11:00 +0100</lastBuildDate>
@@ -12,13 +12,16 @@
     
     
     <item>
-      <title>Bookmarks</title>
-      <link>https://d47zm3.me/bookmarks/</link>
+      <title></title>
+      <link>https://d47zm3.me/tags/</link>
       <pubDate>Fri, 25 Jan 2019 15:11:00 +0100</pubDate>
       
-      <guid>https://d47zm3.me/bookmarks/</guid>
-      <description>AWS  AWS Certifications - Curated List
- AWS - Cheatsheets For Exam
+      <guid>https://d47zm3.me/tags/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>eatsheets For Exam
   Courses and Labs  Hack The Box
  Attack &amp;amp; Defense
  Cybrary
