@@ -106,7 +106,7 @@ filter <span style="color:#f92672">=</span> sshd
 logpath <span style="color:#f92672">=</span> /var/log/auth.log
 maxretry <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
 bantime <span style="color:#f92672">=</span> <span style="color:#ae81ff">600</span>
-~&gt;systemctl restart fail2ban
+~&gt; systemctl restart fail2ban
 ~&gt; fail2ban-client status sshd                                                                                                                                                                                       <span style="color:#f92672">[</span><span style="color:#ae81ff">11</span>:23:10<span style="color:#f92672">]</span>
 Status <span style="color:#66d9ef">for</span> the jail: sshd
 |- Filter
@@ -117,6 +117,35 @@ Status <span style="color:#66d9ef">for</span> the jail: sshd
    |- Currently banned: <span style="color:#ae81ff">15</span>
    |- Total banned:     <span style="color:#ae81ff">15</span>
    ...</code></pre></div>
+<p>BONUS: NGINX Fail for spamming <sup>403</sup>&frasl;<sub>404</sub> attempts (Nikto?)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~&gt; cat /etc/fail2ban/filter.d/nginx-403.conf
+<span style="color:#f92672">[</span>Definition<span style="color:#f92672">]</span>
+failregex <span style="color:#f92672">=</span> ^&lt;HOST&gt; -.*<span style="color:#e6db74">&#34;(GET|POST|HEAD).*HTTP.*&#34;</span> <span style="color:#ae81ff">403</span>
+ignoreregex <span style="color:#f92672">=</span>
+~&gt; cat /etc/fail2ban/filter.d/nginx-404.conf
+<span style="color:#f92672">[</span>Definition<span style="color:#f92672">]</span>
+failregex <span style="color:#f92672">=</span> ^&lt;HOST&gt; -.*<span style="color:#e6db74">&#34;(GET|POST|HEAD).*HTTP.*&#34;</span> <span style="color:#ae81ff">404</span>
+ignoreregex <span style="color:#f92672">=</span>
+~&gt; cat /etc/fail2ban/jail.d/nginx.conf
+<span style="color:#f92672">[</span>nginx-403<span style="color:#f92672">]</span>
+
+enabled <span style="color:#f92672">=</span> true
+port    <span style="color:#f92672">=</span> http,https
+filter  <span style="color:#f92672">=</span> nginx-403
+logpath <span style="color:#f92672">=</span> /var/log/nginx/access.log
+maxretry <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+findtime <span style="color:#f92672">=</span> <span style="color:#ae81ff">300</span>
+bantime <span style="color:#f92672">=</span> <span style="color:#ae81ff">1800</span>
+
+<span style="color:#f92672">[</span>nginx-404<span style="color:#f92672">]</span>
+
+enabled <span style="color:#f92672">=</span> true
+port    <span style="color:#f92672">=</span> http,https
+filter  <span style="color:#f92672">=</span> nginx-404
+logpath <span style="color:#f92672">=</span> /var/log/nginx/access.log
+maxretry <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+findtime <span style="color:#f92672">=</span> <span style="color:#ae81ff">300</span>
+bantime <span style="color:#f92672">=</span> <span style="color:#ae81ff">1800</span></code></pre></div>
 <p>That&rsquo;s it, remember to update your system frequently, make backups and reboot it from time to time.</p>
 
   </article>
