@@ -103,6 +103,8 @@
 <li><p><a href="https://www.inguardians.com/labs/">Inguardians</a> - blog from redteamers about hacking &amp; securing kubernetes</p></li>
 
 <li><p><a href="https://caylent.com/50-useful-kubernetes-tools/">50 useful Kubernetes tools</a></p></li>
+
+<li><p><a href="https://github.com/Aracki/toolnetes">Toolnetes</a> - useful Kubernetes tools, tested in battle</p></li>
 </ul>
 
 <h2 id="customization-service-mesh-grpc-more-advanced-stuff">Customization, Service Mesh, gRPC (more advanced stuff)</h2>
@@ -573,6 +575,21 @@ spec:
 <li><a href="https://github.com/hjacobs/kubernetes-failure-stories">https://github.com/hjacobs/kubernetes-failure-stories</a></li>
 </ul>
 
+<h3 id="easier-kubernetes-secrets">Easier Kubernetes Secrets</h3>
+
+<p>This one doesn&rsquo;t need Base64 encoding</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: my-special-secret
+type: Opaque
+stringData:
+  key: [REDACTED]</pre></div>
+<p>And this is CLI version for literal strings:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">kubectl create secret generic my-special-secret \
+    --from-literal=key0=barf \
+    --from-literal=key1=frab</pre></div>
   </article>
 </section>
 
