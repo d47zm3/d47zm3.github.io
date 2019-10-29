@@ -39,7 +39,7 @@
 
     
 
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.57.2" />
   </head>
 
   <body class=" ">
@@ -94,8 +94,7 @@
 <h2 id="tricks">Tricks</h2>
 
 <ul>
-<li><a href="https://blog.filippo.io/shrink-your-go-binaries-with-this-one-weird-trick/">Shrink Go Binaries Up to 7 times!</a></li>
-</ul>
+<li><p><a href="https://blog.filippo.io/shrink-your-go-binaries-with-this-one-weird-trick/">Shrink Go Binaries Up to 7 times!</a></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"># -s and -w flags
 
 $ GOOS=linux go build cmd/go
@@ -111,17 +110,19 @@ $ GOOS=linux go build cmd/go
 $ ls -l go
 -rwxr-xr-x  1 filippo  staff  12493536 Apr 16 16:58 go
 $ upx --brute go
-                       Ultimate Packer for eXecutables
-                          Copyright (C) 1996 - 2013
+                   Ultimate Packer for eXecutables
+                      Copyright (C) 1996 - 2013
 UPX 3.91        Markus Oberhumer, Laszlo Molnar &amp; John Reiser   Sep 30th 2013
 
-        File size         Ratio      Format      Name
-   --------------------   ------   -----------   -----------
-  12493536 -&gt;   2554140   20.44%  linux/ElfAMD   go
+    File size         Ratio      Format      Name
+--------------------   ------   -----------   -----------
+12493536 -&gt;   2554140   20.44%  linux/ElfAMD   go
 
 Packed 1 file.  
 $ ls -l go
--rwxr-xr-x  1 filippo  staff  2554140 Apr 16 16:58 go.upx</pre></div>
+-rwxr-xr-x  1 filippo  staff  2554140 Apr 16 16:58 go.upx</pre></div></li>
+</ul>
+
   </article>
 </section>
 

@@ -39,7 +39,7 @@
 
     
 
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.57.2" />
   </head>
 
   <body class=" ">
@@ -114,19 +114,19 @@
 <h3 id="subdomain-discovery">Subdomain Discovery</h3>
 
 <ul>
-<li><code>curl 'https://crt.sh/?q=%.example.org' | grep &quot;http://example.org &quot; | cut -d '&gt;' -f2 | cut -d '&lt;' -f1 | grep -v &quot; &quot; | sort -u</code></li>
+<li><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-curl 'https://crt.sh/?q=%.example.org' | grep "http://example.org " | cut -d '>' -f2 | cut -d '<' -f1 | grep -v " " | sort -u```" data-lang="curl 'https://crt.sh/?q=%.example.org' | grep "http://example.org " | cut -d '>' -f2 | cut -d '<' -f1 | grep -v " " | sort -u```">### DNS
+Checking who can issue certificate for domain</code></pre></div></li>
 </ul>
 
-<h3 id="dns">DNS</h3>
+<p>dig @nameserver record.com CAA</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">GeoIP Lookup</pre></div>
+<p>geoiplookup 1.2.3.4</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Reverse DNS Discovery</pre></div>
+<p>dig axfr @192.43.14.3 168.192.in-addr.arpa</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">DNSSEC records</pre></div>
+<p>dig +multi @192.10.51.3 witrap.com RRSIGdig +multi @192.10.51.3 witrap.com DNSKEY
+```</p>
 
-<p>Checking who can issue certificate for domain</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">dig @nameserver record.com CAA</pre></div>
-<p>GeoIP Lookup</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">geoiplookup 1.2.3.4</pre></div>
-<p>Reverse DNS Discovery</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">dig axfr @192.43.14.3 168.192.in-addr.arpa</pre></div>
-<p>DNSSEC records</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">dig +multi @192.10.51.3 witrap.com RRSIGdig +multi @192.10.51.3 witrap.com DNSKEY</pre></div>
   </article>
 </section>
 

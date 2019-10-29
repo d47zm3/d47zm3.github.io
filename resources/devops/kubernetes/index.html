@@ -39,7 +39,7 @@
 
     
 
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.57.2" />
   </head>
 
   <body class=" ">
@@ -230,7 +230,7 @@ metadata:
   namespace: default
   resourceVersion: <span style="color:#e6db74">&#34;359707&#34;</span>
   selfLink: /api/v1/namespaces/default/serviceaccounts/default
-  uid: 1fbefd4a-59a5-<span style="color:#ae81ff">11e8</span>-b126-080027111f13</code></pre></div>
+  uid: 1fbefd4a-59a5<span style="color:#ae81ff">-11e8</span>-b126-080027111f13</code></pre></div>
 <p>Security Context</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">securityContext:
   allowPrivilegeEscalation: <span style="color:#66d9ef">false</span>
@@ -421,8 +421,8 @@ spec:
 
 <p>– KOPS client (binary) – available in repository as release/download using package manager</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># set up new IAM account for KOPS (using master IAM)</span>
-<span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#!/bin/bash</span>
+
 USER<span style="color:#f92672">=</span>kops-btb
 GROUP<span style="color:#f92672">=</span>kops-btb
 CLUSTER<span style="color:#f92672">=</span>bethebeast.be
@@ -459,8 +459,8 @@ aws iam add-user-to-group --user-name <span style="color:#e6db74">${</span>USER<
 
 decho <span style="color:#e6db74">&#34;Create Access Key for IAM user...&#34;</span>
 aws iam create-access-key --user-name <span style="color:#e6db74">${</span>USER<span style="color:#e6db74">}</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># switch to new IAM account</span>
-<span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#!/bin/bash</span>
+
 unset AWS_ACCESS_KEY_ID
 unset AWS_SECRET_ACCESS_KEY
 unset KOPS_CLUSTER

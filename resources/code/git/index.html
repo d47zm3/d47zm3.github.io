@@ -11,10 +11,10 @@
 
     <base href="https://d47zm3.me">
     <title>
-  Cryptography · d47zm3
+  Git · d47zm3
 </title>
 
-    <link rel="canonical" href="https://d47zm3.me/resources/infosec/cryptography/">
+    <link rel="canonical" href="https://d47zm3.me/resources/code/git/">
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Merriweather:300,700|Source+Code+Pro:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
@@ -86,17 +86,61 @@
   <section class="container page">
   <article>
     <header>
-      <h1>Cryptography</h1>
+      <h1>Git</h1>
     </header>
 
     
 
-<h3 id="courses">Courses</h3>
+<h2 id="useful-commands">Useful Commands</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">git config -l # list your config
+git config --global user.name &#34;Your Name&#34;
+git config --global user.email &#34;user@example.com&#34;
 
-<ul>
-<li><a href="https://www.youtube.com/channel/UC1usFRN4LCMcfIV7UjHNuQg/videos?flow=grid&amp;view=0&amp;sort=da">Introduction to Cryptography by Christof Paar</a></li>
-</ul>
+git init # start new repository
 
+git log --oneline (--stat) # show commit log (and stats for changed files)
+git log --patch-with-stat # show diffs on commits
+git log --since=&#34;2019-10-10&#34;
+git log --since=&#34;2 days ago&#34;
+git log --until=&#34;2019-10-10&#34;
+
+git diff 60888d6941635a659197682efc369d47c1a09530 -- chart/values.yaml # show changes in file comparing to commit
+git diff --staged # show changes in staged area
+
+git commit -m &#34;example commit message&#34; # commit directly from command line
+git branch (-a) # list branches (along with remote ones)
+git fetch # download changes but do not merge them yet
+git pull # git fetch + git merge
+
+git merge develop # while on master branch, merge changes from develop branch
+
+git rebase master # while on feature branch, rebase (re-apply) it&#39;s changes to master branch (add new nodes after current head of master)
+
+git cherry-pick &lt;commit id&gt; # get commit id from feature branch (git log feature) and pick that commit and insert to current master branch
+
+git commit --amend # fix last commit, change commit message or add forgotten file
+
+git reset &lt;file&gt; # remove added file from staged area
+
+git reset HEAD~ # reset to commit (HEAD~1 is default) removing commit and unstaging file (mixed mode, reset repo changes and stage area)
+git reset --soft HEAD~ # remove commit but leave changes in current directory
+git reset --hard HEAD~ # remove commit, do not leave any local changes
+
+git reflog # show log of all git operations, merge, commits, checkout, pull...
+git reset --hard HEAD@{3} # apply reset with identifier from reflog
+
+git revert HEAD~ # reverts last commit and commit change
+
+git rebase -i # interactive rebase, great tool to re-write commits
+
+git stash # place current unstaged changes to stash
+git stash ls # show all stashed list
+git stash save refactor_func # save with comment
+git stash show -p stash@{0} # show diff with stashed changes
+git stash apply stash@{1}
+git stash drop stash@{1}
+git stash pop # apply last stash and remove it from stash
+git stash clear # clear everything in stash</pre></div>
   </article>
 </section>
 

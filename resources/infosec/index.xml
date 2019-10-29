@@ -27,16 +27,8 @@ Links  https://rastamouse.me - hacking Windows  </description>
       
       <guid>https://d47zm3.me/resources/infosec/bugbounty/</guid>
       <description>Communities Bug Bounty Notes - founded by zseano, challenges, writeups, etc.
-Blogs  zseano blog with tutorials  Bug Bounty Tips  nmap --script &amp;quot;http-*&amp;quot; IP/target - will run 30+ scripts related to HTTP, SQLInjection, config backup checks, checkout more at the docs http://nmap.org/nsedoc  Files To Look Out For  .git/config
- .travis.yml
- Makefile
- Dockerfile
- package.json
- gulpfile.js
- composer.json
- web.config
- .env
-  Need execute some command but &amp;ldquo;space&amp;rdquo; is blocked?</description>
+Blogs  zseano blog with tutorials  Bug Bounty Tips  ### Files To Look Out For - .git/config - .travis.yml - Makefile - Dockerfile - package.json - gulpfile.js - composer.json - web.config - .env ### Need execute some command but &amp;#34;space&amp;#34; is blocked? Try with:  IFS=,;cat&amp;lt;&amp;lt;&amp;lt;cat,/etc/passwd cat$IFS/etc/passwd cat${IFS}/etc/passwd cat&amp;lt;/etc/passwd
+{cat,/etc/passwd} OR {ls,-las,/var} with args X=$&amp;lsquo;cat\x20/etc/passwd&amp;rsquo;&amp;amp;&amp;amp;$X ```</description>
     </item>
     
     <item>
@@ -47,15 +39,6 @@ Blogs  zseano blog with tutorials  Bug Bounty Tips  nmap --script &amp;quot;http
       <guid>https://d47zm3.me/resources/infosec/burp-suite-proxy/</guid>
       <description> Famous tool for Web Application Security.
 Links  Burp Suite Pro Tricks &amp;amp; Tips  </description>
-    </item>
-    
-    <item>
-      <title>CTFs</title>
-      <link>https://d47zm3.me/resources/infosec/ctfs/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://d47zm3.me/resources/infosec/ctfs/</guid>
-      <description> Links  https://github.com/ctfs/ - lots of writeups  </description>
     </item>
     
     <item>
@@ -92,6 +75,15 @@ Links  InfoCon  </description>
       
       <guid>https://d47zm3.me/resources/infosec/cryptography/</guid>
       <description> Courses  Introduction to Cryptography by Christof Paar  </description>
+    </item>
+    
+    <item>
+      <title>CTFs</title>
+      <link>https://d47zm3.me/resources/infosec/ctfs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/ctfs/</guid>
+      <description> Links  https://github.com/ctfs/ - lots of writeups  </description>
     </item>
     
     <item>
@@ -165,27 +157,6 @@ MongoDB injections true, $where: &amp;#39;1 == 1&amp;#39; , $where: &amp;#39;1 =
     </item>
     
     <item>
-      <title>OSINT</title>
-      <link>https://d47zm3.me/resources/infosec/osint/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://d47zm3.me/resources/infosec/osint/</guid>
-      <description> Everything related to Open Source Intelligence.
-Search Engines  censys
- shodan
- greynoise
- zoomeye
- grayhatwarfare
- hunter.io
- binaryedge
- crt.sh
- dnsdumpster
- onyphe.io
- fofa.so
-  </description>
-    </item>
-    
-    <item>
       <title>Online Courses</title>
       <link>https://d47zm3.me/resources/infosec/online-courses/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -208,6 +179,27 @@ Links  Open URL redirects to grab FB OAuth Tokens
  Full Account Takeover via Referer Header (OAuth token Steal, Open Redirect Vulnerability Chaining)
  Open Redirect on central.uber.com allows for account takeover
  hackerone.com/reports/206591
+  </description>
+    </item>
+    
+    <item>
+      <title>OSINT</title>
+      <link>https://d47zm3.me/resources/infosec/osint/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/osint/</guid>
+      <description> Everything related to Open Source Intelligence.
+Search Engines  censys
+ shodan
+ greynoise
+ zoomeye
+ grayhatwarfare
+ hunter.io
+ binaryedge
+ crt.sh
+ dnsdumpster
+ onyphe.io
+ fofa.so
   </description>
     </item>
     
@@ -285,7 +277,8 @@ Presentations  Recon Like a Boss
   Links  Assesments Mindset
  DNS/Web Enumeration Reference
  Basic Recon - Guide
-  Subdomain Discovery  curl &#39;https://crt.sh/?q=%.example.org&#39; | grep &amp;quot;http://example.org &amp;quot; | cut -d &#39;&amp;gt;&#39; -f2 | cut -d &#39;&amp;lt;&#39; -f1 | grep -v &amp;quot; &amp;quot; | sort -u  DNS Checking who can issue certificate for domain</description>
+  Subdomain Discovery  &#39; -f2 | cut -d &#39;&#39; -f2 | cut -d &#39;### DNS Checking who can issue certificate for domain  dig @nameserver record.com CAA
+GeoIP Lookup geoiplookup 1.2.3.4</description>
     </item>
     
     <item>
@@ -387,17 +380,6 @@ rdesktop -uname -peasypassword -r disk:share=exploits/ 10.2.2.1 etcd - fetch key
     </item>
     
     <item>
-      <title>WPA/WPA2 Security</title>
-      <link>https://d47zm3.me/resources/infosec/wpa-wpa-2-security/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://d47zm3.me/resources/infosec/wpa-wpa-2-security/</guid>
-      <description> Articles  new attack using pmkid
- pwning wpa/wpa2 networks with bettercap and the pmkid client-less attack
-  </description>
-    </item>
-    
-    <item>
       <title>Windows Privilege Escalation</title>
       <link>https://d47zm3.me/resources/infosec/windows-privilege-escalation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -410,6 +392,17 @@ rdesktop -uname -peasypassword -r disk:share=exploits/ 10.2.2.1 etcd - fetch key
  AD Security Blog
  Dumping Windows Credentials
   Kernel Exploits  systeminfo -&amp;gt; look up missing kb&amp;rsquo;s systeminfo | findstr /B /C:&amp;ldquo;OS Name&amp;rdquo; /C:&amp;ldquo;OS * Version&amp;rdquo; sherlock -&amp;gt; Find-AllVulns powershell  Common Kernel Exploits  MS16-014 - applies to: Windows 7 SP1 x86 MS16-016 - &amp;lsquo;WebDAV&amp;rsquo; applies to Windows 7 SP1 x86 (Build 7601) MS16-032 - applies to: Windows 7 x86/x64, Windows 8 x86/64, Windows 10, Windows Server 2008-2012 R2  Config Files Credentials in ClearText or Base64 -&amp;gt; once Windows in installed</description>
+    </item>
+    
+    <item>
+      <title>WPA/WPA2 Security</title>
+      <link>https://d47zm3.me/resources/infosec/wpa-wpa-2-security/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/resources/infosec/wpa-wpa-2-security/</guid>
+      <description> Articles  new attack using pmkid
+ pwning wpa/wpa2 networks with bettercap and the pmkid client-less attack
+  </description>
     </item>
     
     <item>

@@ -8,6 +8,21 @@
   </url>
   
   <url>
+    <loc>https://d47zm3.me/categories/</loc>
+    <lastmod>2019-01-25T15:11:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/</loc>
+    <lastmod>2019-01-25T15:11:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/tags/</loc>
+    <lastmod>2019-01-25T15:11:00+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://d47zm3.me/projects/</loc>
     <lastmod>2018-11-15T08:40:18+01:00</lastmod>
   </url>
@@ -15,18 +30,6 @@
   <url>
     <loc>https://d47zm3.me/about/</loc>
     <lastmod>2018-10-31T10:04:43+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/tags/</loc>
-    <lastmod>2019-01-25T15:11:00+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/categories/</loc>
-    <lastmod>2019-01-25T15:11:00+01:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -43,16 +46,6 @@
   
   <url>
     <loc>https://d47zm3.me/resources/infosec/burp-suite-proxy/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/ctfs/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/categories/</loc>
-    <lastmod>2019-01-25T15:11:00+01:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -76,6 +69,10 @@
   </url>
   
   <url>
+    <loc>https://d47zm3.me/resources/infosec/ctfs/</loc>
+  </url>
+  
+  <url>
     <loc>https://d47zm3.me/resources/devops/</loc>
   </url>
   
@@ -96,7 +93,7 @@
   </url>
   
   <url>
-    <loc>https://d47zm3.me/resources/environment/gpg/</loc>
+    <loc>https://d47zm3.me/resources/code/git/</loc>
   </url>
   
   <url>
@@ -105,6 +102,10 @@
   
   <url>
     <loc>https://d47zm3.me/resources/infosec/google-dorks/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/environment/gpg/</loc>
   </url>
   
   <url>
@@ -140,10 +141,6 @@
   </url>
   
   <url>
-    <loc>https://d47zm3.me/resources/infosec/osint/</loc>
-  </url>
-  
-  <url>
     <loc>https://d47zm3.me/resources/infosec/online-courses/</loc>
   </url>
   
@@ -152,7 +149,7 @@
   </url>
   
   <url>
-    <loc>https://d47zm3.me/resources/devops/pki/</loc>
+    <loc>https://d47zm3.me/resources/infosec/osint/</loc>
   </url>
   
   <url>
@@ -173,6 +170,10 @@
   
   <url>
     <loc>https://d47zm3.me/resources/infosec/personal-security-checklist/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/devops/pki/</loc>
   </url>
   
   <url>
@@ -228,12 +229,6 @@
   </url>
   
   <url>
-    <loc>https://d47zm3.me/tags/</loc>
-    <lastmod>2019-01-25T15:11:00+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://d47zm3.me/resources/devops/tools/</loc>
   </url>
   
@@ -258,15 +253,15 @@
   </url>
   
   <url>
-    <loc>https://d47zm3.me/resources/infosec/wpa-wpa-2-security/</loc>
-  </url>
-  
-  <url>
     <loc>https://d47zm3.me/resources/infosec/windows-privilege-escalation/</loc>
   </url>
   
   <url>
     <loc>https://d47zm3.me/resources/devops/wordpress/</loc>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/infosec/wpa-wpa-2-security/</loc>
   </url>
   
   <url>
@@ -279,12 +274,6 @@
   
   <url>
     <loc>https://d47zm3.me/resources/infosec/youtube/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/</loc>
-    <lastmod>2019-01-25T15:11:00+01:00</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>
