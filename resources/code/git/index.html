@@ -112,6 +112,8 @@ git branch (-a) # list branches (along with remote ones)
 git fetch # download changes but do not merge them yet
 git pull # git fetch + git merge
 
+git add -p # preview added files
+
 git merge develop # while on master branch, merge changes from develop branch
 
 git rebase master # while on feature branch, rebase (re-apply) it&#39;s changes to master branch (add new nodes after current head of master)
@@ -140,7 +142,18 @@ git stash show -p stash@{0} # show diff with stashed changes
 git stash apply stash@{1}
 git stash drop stash@{1}
 git stash pop # apply last stash and remove it from stash
-git stash clear # clear everything in stash</pre></div>
+git stash clear # clear everything in stash
+
+git log -S &#39;release&#39; # filter log with commits that have files with release or release is commit message
+git tag -a 1.4 -m &#34;Release 1.4&#34; # long tag
+
+git remote -v # list all remotes
+git remote set-url origin http//github.com/repo.git
+
+git push --delete origin tagname
+git push origin :tagname
+git clean -x -d -f # clean repository to initial stage
+git reset --hard origin/master # revert local repository to state of remote one</pre></div>
   </article>
 </section>
 
