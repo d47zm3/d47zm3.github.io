@@ -4,26 +4,47 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
 
     <meta name="author" content="d47zm3">
-    <meta name="description" content="Personal DevOps &amp; Security Site">
+    <meta name="description" content="Set up GPG on computer to encrypt data &amp; sign commits etc.
+MacOS Guide ~&gt; brew install gnupg pinentry-mac ~&gt; cat ~/.gnupg/gpg-agent.conf # Connects gpg-agent to the OSX keychain via the brew-installed # pinentry program from GPGtools. This is the OSX &#39;magic sauce&#39;, # allowing the gpg key&#39;s passphrase to be stored in the login # keychain, enabling automatic key signing. pinentry-program /usr/local/bin/pinentry-mac ~&gt; cat ~/.gnupg/gpg.conf # Uncomment within config (or add this line) use-agent no-tty # This silences the &#34;you need a passphrase&#34; message once the passphrase handling is all set.">
     <meta name="keywords" content="blog,devops,personal,security">
 
-    <base href="https://d47zm3.me">
+    
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GPG"/>
+<meta name="twitter:description" content="Set up GPG on computer to encrypt data &amp; sign commits etc.
+MacOS Guide ~&gt; brew install gnupg pinentry-mac ~&gt; cat ~/.gnupg/gpg-agent.conf # Connects gpg-agent to the OSX keychain via the brew-installed # pinentry program from GPGtools. This is the OSX &#39;magic sauce&#39;, # allowing the gpg key&#39;s passphrase to be stored in the login # keychain, enabling automatic key signing. pinentry-program /usr/local/bin/pinentry-mac ~&gt; cat ~/.gnupg/gpg.conf # Uncomment within config (or add this line) use-agent no-tty # This silences the &#34;you need a passphrase&#34; message once the passphrase handling is all set."/>
+
+    <meta property="og:title" content="GPG" />
+<meta property="og:description" content="Set up GPG on computer to encrypt data &amp; sign commits etc.
+MacOS Guide ~&gt; brew install gnupg pinentry-mac ~&gt; cat ~/.gnupg/gpg-agent.conf # Connects gpg-agent to the OSX keychain via the brew-installed # pinentry program from GPGtools. This is the OSX &#39;magic sauce&#39;, # allowing the gpg key&#39;s passphrase to be stored in the login # keychain, enabling automatic key signing. pinentry-program /usr/local/bin/pinentry-mac ~&gt; cat ~/.gnupg/gpg.conf # Uncomment within config (or add this line) use-agent no-tty # This silences the &#34;you need a passphrase&#34; message once the passphrase handling is all set." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://d47zm3.me/resources/environment/gpg/" />
+
+
+
+    
+      <base href="https://d47zm3.me/resources/environment/gpg/">
+    
     <title>
   GPG · d47zm3
 </title>
 
-    <link rel="canonical" href="https://d47zm3.me/resources/environment/gpg/">
+    
+      <link rel="canonical" href="https://d47zm3.me/resources/environment/gpg/">
+    
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Merriweather:300,700|Source+Code+Pro:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
 
     
       
       
-      <link rel="stylesheet" href="https://d47zm3.me/css/coder.min.42b57c75b1d9e2f7bcc89c4031716ec188e0a0e63dbde8150859ed6ad58763ec.css" integrity="sha256-QrV8dbHZ4ve8yJxAMXFuwYjgoOY9vegVCFntatWHY&#43;w=" crossorigin="anonymous" media="screen" />
+      <link rel="stylesheet" href="https://d47zm3.me/css/coder.min.3219ef62ae52679b7a9c19043171c3cd9f523628c2a65f3ef247ee18836bc90b.css" integrity="sha256-MhnvYq5SZ5t6nBkEMXHDzZ9SNijCpl8&#43;8kfuGINryQs=" crossorigin="anonymous" media="screen" />
     
 
     
@@ -31,24 +52,29 @@
     
 
     
-      <link rel="stylesheet" href="https://d47zm3.me/css/custom.css">
+      <link rel="stylesheet" href="https://d47zm3.me/css/custom.css" />
+    
+
     
 
     <link rel="icon" type="image/png" href="https://d47zm3.me/img/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://d47zm3.me/img/favicon-16x16.png" sizes="16x16">
 
-    
-
-    <meta name="generator" content="Hugo 0.57.2" />
+    <meta name="generator" content="Hugo 0.65.3" />
   </head>
 
-  <body class=" ">
+  
+  
+  <body class="colorscheme-light"
+        onload=""
+  >
     <main class="wrapper">
       <nav class="navigation">
   <section class="container">
-    <a class="navigation-title" href="https://d47zm3.me">
-      
+    <a class="navigation-title" href="https://d47zm3.me/">
+      d47zm3
     </a>
+    
     <input type="checkbox" id="menu-toggle" />
     <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
     <ul class="navigation-list">
@@ -59,15 +85,7 @@
           </li>
         
           <li class="navigation-item">
-            <a class="navigation-link" href="https://d47zm3.me/projects/">Projects</a>
-          </li>
-        
-          <li class="navigation-item">
             <a class="navigation-link" href="https://d47zm3.me/resources/">Resources</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://d47zm3.me/bookmarks/">Bookmarks</a>
           </li>
         
           <li class="navigation-item">
@@ -77,6 +95,7 @@
       
       
     </ul>
+    
   </section>
 </nav>
 
@@ -89,10 +108,7 @@
       <h1>GPG</h1>
     </header>
 
-    
-
-<p>Set up GPG on computer to encrypt data &amp; sign commits etc.</p>
-
+    <p>Set up GPG on computer to encrypt data &amp; sign commits etc.</p>
 <h3 id="macos-guide">MacOS Guide</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~&gt; brew install gnupg pinentry-mac
 ~&gt; cat ~/.gnupg/gpg-agent.conf
@@ -114,10 +130,10 @@ batch
 ~&gt; gpg --list-secret-keys --keyid-format LONG
 /Users/d47zm3/.gnupg/pubring.kbx
 --------------------------------
-sec   rsa4096/DD1D600D4228ED66 <span style="color:#ae81ff">2018</span>-07-26 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span>
+sec   rsa4096/DD1D600D4228ED66 2018-07-26 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span>
       0E009BC498144699D6A01581DD1D600D4228ED66
 uid                 <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> Damian Tykalowski &lt;d47zm3@gmail.com&gt;
-ssb   rsa4096/F358A65C36799440 <span style="color:#ae81ff">2018</span>-07-26 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span>
+ssb   rsa4096/F358A65C36799440 2018-07-26 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span>
 
 &gt; git config --global user.signingkey DD1D600D4228ED66 
 &gt; git config --global commit.gpgsign true 
@@ -131,33 +147,57 @@ PGP Identities:
 
 ~&gt; keybase pgp export -q 0101440c... | pbcopy
 ~&gt; killall gpg-agent
-~&gt; git commit -S -m <span style="color:#e6db74">&#34;gpg works!&#34;</span></code></pre></div>
-<p>For various commands, check cheatsheet <a href="https://devhints.io/gnupg">here</a>.</p>
-
+~&gt; git commit -S -m <span style="color:#e6db74">&#34;gpg works!&#34;</span>
+</code></pre></div><p>For various commands, check cheatsheet <a href="https://devhints.io/gnupg">here</a>.</p>
 <p>Sample commands to encrypt &amp; decrypt files for use in script (batch mode):</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># encrypt</span>
 gpg --output /mnt/offsite/<span style="color:#e6db74">${</span>database<span style="color:#e6db74">}</span>_<span style="color:#e6db74">${</span>backup_date<span style="color:#e6db74">}</span>.sql.gpg --passphrase<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>passphrase<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> --batch --symmetric /mnt/offsite/<span style="color:#e6db74">${</span>database<span style="color:#e6db74">}</span>_<span style="color:#e6db74">${</span>backup_date<span style="color:#e6db74">}</span>.sql
 <span style="color:#75715e"># decrypt</span>
-gpg --output /mnt/offsite/<span style="color:#e6db74">${</span>database<span style="color:#e6db74">}</span>_<span style="color:#e6db74">${</span>backup_date<span style="color:#e6db74">}</span>.sql --decrypt --passphrase<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>passphrase<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> --batch --symmetric /mnt/offsite/<span style="color:#e6db74">${</span>database<span style="color:#e6db74">}</span>_<span style="color:#e6db74">${</span>backup_date<span style="color:#e6db74">}</span>.sql.gpg</code></pre></div>
+gpg --output /mnt/offsite/<span style="color:#e6db74">${</span>database<span style="color:#e6db74">}</span>_<span style="color:#e6db74">${</span>backup_date<span style="color:#e6db74">}</span>.sql --decrypt --passphrase<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>passphrase<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> --batch --symmetric /mnt/offsite/<span style="color:#e6db74">${</span>database<span style="color:#e6db74">}</span>_<span style="color:#e6db74">${</span>backup_date<span style="color:#e6db74">}</span>.sql.gpg
+</code></pre></div>
   </article>
 </section>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
 
       </div>
 
-      <footer class="footer">
-  <section class="container">
-    
-     © 2019
-    
-       · 
-      Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
-    
-    
-  </section>
-</footer>
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+        ©
+        
+        2020
+         d47zm3 
+      
+      
+      
+    </section>
+  </footer>
 
     </main>
+
+    
+
+    
 
     
 

@@ -1,30 +1,46 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://d47zm3.me/bookmarks/</loc>
-    <lastmod>2019-01-25T15:11:00+01:00</lastmod>
+    <loc>https://d47zm3.me/resources/</loc>
+    <lastmod>2020-06-19T13:13:16+02:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://d47zm3.me/categories/</loc>
-    <lastmod>2019-01-25T15:11:00+01:00</lastmod>
+    <loc>https://d47zm3.me/resources/python/formatting-code/</loc>
+    <lastmod>2020-06-19T13:13:16+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://d47zm3.me/</loc>
-    <lastmod>2019-01-25T15:11:00+01:00</lastmod>
+    <loc>https://d47zm3.me/resources/go/</loc>
+    <lastmod>2020-06-19T13:13:16+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://d47zm3.me/tags/</loc>
-    <lastmod>2019-01-25T15:11:00+01:00</lastmod>
+    <loc>https://d47zm3.me/resources/python/argument-parser/</loc>
+    <lastmod>2020-06-19T13:13:16+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://d47zm3.me/projects/</loc>
-    <lastmod>2018-11-15T08:40:18+01:00</lastmod>
+    <loc>https://d47zm3.me/resources/python/</loc>
+    <lastmod>2020-06-19T13:13:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/go/shrinking-binaries/</loc>
+    <lastmod>2020-06-19T13:13:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/devops/github-pages-helm-repository/</loc>
+    <lastmod>2020-06-18T15:15:54+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://d47zm3.me/resources/devops/</loc>
+    <lastmod>2020-06-18T15:15:54+02:00</lastmod>
   </url>
   
   <url>
@@ -33,43 +49,12 @@
   </url>
   
   <url>
-    <loc>https://d47zm3.me/resources/devops/aws/</loc>
+    <loc>https://d47zm3.me/</loc>
+    <lastmod>2018-10-31T10:04:43+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://d47zm3.me/resources/infosec/blogs/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/bugbounty/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/burp-suite-proxy/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/cloud-security/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/code/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/code/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/conference-video-archives/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/cryptography/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/ctfs/</loc>
+    <loc>https://d47zm3.me/categories/</loc>
   </url>
   
   <url>
@@ -77,203 +62,15 @@
   </url>
   
   <url>
-    <loc>https://d47zm3.me/resources/devops/</loc>
+    <loc>https://d47zm3.me/resources/go/</loc>
   </url>
   
   <url>
-    <loc>https://d47zm3.me/resources/environment/</loc>
+    <loc>https://d47zm3.me/resources/python/</loc>
   </url>
   
   <url>
-    <loc>https://d47zm3.me/resources/environment/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/exploits/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/code/git/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/code/golang/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/google-dorks/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/environment/gpg/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/hacking-learning-platforms/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/devops/kubernetes/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/devops/linux-network-monitoring-tools/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/linux-privilege-escalation/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/mobile-pentesting/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/no-sql-injection/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/online-courses/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/open-redirects/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/osint/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/padding-oracle-attack/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/passwords/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/payloads/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/hacking-lab/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/personal-security-checklist/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/devops/pki/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/environment/protecting-remote-server/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/code/python/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/reconnaissance/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/redteam/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/reverse-engineering/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/reverse-shells/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/secrets-dumping/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/serverless/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/environment/shells/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/social-engineering/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/static-code-analysis/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/environment/tmux/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/devops/tools/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/devops/tricks/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/environment/tricks/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/tricks/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/environment/vim/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/environment/vpn/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/windows-privilege-escalation/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/devops/wordpress/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/wpa-wpa-2-security/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/xss/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/xxe/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/infosec/youtube/</loc>
+    <loc>https://d47zm3.me/tags/</loc>
   </url>
   
 </urlset>

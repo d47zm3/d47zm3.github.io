@@ -1,43 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Code on d47zm3</title>
     <link>https://d47zm3.me/resources/code/</link>
     <description>Recent content in Code on d47zm3</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 19 Jun 2020 13:13:16 +0200</lastBuildDate>
     
 	<atom:link href="https://d47zm3.me/resources/code/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Git</title>
-      <link>https://d47zm3.me/resources/code/git/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://d47zm3.me/resources/code/git/</guid>
-      <description>Useful Commands git config -l # list your config git config --global user.name &amp;#34;Your Name&amp;#34; git config --global user.email &amp;#34;user@example.com&amp;#34; git init # start new repository git log --oneline (--stat) # show commit log (and stats for changed files) git log --patch-with-stat # show diffs on commits git log --since=&amp;#34;2019-10-10&amp;#34; git log --since=&amp;#34;2 days ago&amp;#34; git log --until=&amp;#34;2019-10-10&amp;#34; git diff 60888d6941635a659197682efc369d47c1a09530 -- chart/values.yaml # show changes in file comparing to commit git diff --staged # show changes in staged area git commit -m &amp;#34;example commit message&amp;#34; # commit directly from command line git branch (-a) # list branches (along with remote ones) git fetch # download changes but do not merge them yet git pull # git fetch + git merge git add -p # preview added files git merge develop # while on master branch, merge changes from develop branch git rebase master # while on feature branch, rebase (re-apply) it&amp;#39;s changes to master branch (add new nodes after current head of master) git cherry-pick &amp;lt;commit id&amp;gt; # get commit id from feature branch (git log feature) and pick that commit and insert to current master branch git commit --amend # fix last commit, change commit message or add forgotten file git reset &amp;lt;file&amp;gt; # remove added file from staged area git reset HEAD~ # reset to commit (HEAD~1 is default) removing commit and unstaging file (mixed mode, reset repo changes and stage area) git reset --soft HEAD~ # remove commit but leave changes in current directory git reset --hard HEAD~ # remove commit, do not leave any local changes git reflog # show log of all git operations, merge, commits, checkout, pull.</description>
-    </item>
-    
-    <item>
-      <title>Golang</title>
-      <link>https://d47zm3.me/resources/code/golang/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://d47zm3.me/resources/code/golang/</guid>
-      <description>Tricks  Shrink Go Binaries Up to 7 times!
-# -s and -w flags $ GOOS=linux go build cmd/go $ ls -l go -rwxr-xr-x 1 filippo staff 12493536 Apr 16 16:58 go $ GOOS=linux go build -ldflags=&amp;#34;-s -w&amp;#34; cmd/go $ ls -l go -rwxr-xr-x 1 filippo staff 8941952 Apr 16 17:08 go # upx $ GOOS=linux go build cmd/go $ ls -l go -rwxr-xr-x 1 filippo staff 12493536 Apr 16 16:58 go $ upx --brute go Ultimate Packer for eXecutables Copyright (C) 1996 - 2013 UPX 3.</description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://d47zm3.me/resources/code/python/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://d47zm3.me/resources/code/python/</guid>
-      <description>Styling Guide (PEP8) You can read it here. To start following it, install locally pycodestyle package and run it through your code.
-~&amp;gt; pip install pycodestyle ~&amp;gt; pycodestyle --ignore=E501 run.py run.py:15:1: E302 expected 2 blank lines, found 1# main parser = argparse.ArgumentParser() parser.add_argument(&amp;#34;action&amp;#34;, choices=[&amp;#39;list&amp;#39;, &amp;#39;add&amp;#39;, &amp;#39;search&amp;#39;, &amp;#39;import&amp;#39;], help=&amp;#34;list local repositories, add new one or search by tags&amp;#34;) parser.add_argument(&amp;#34;--url&amp;#34;, nargs=&amp;#39;?&amp;#39;, help=&amp;#34;url of repository to add&amp;#34;) parser.add_argument(&amp;#34;--note&amp;#34;, nargs=&amp;#39;?&amp;#39;, help=&amp;#34;personal note about repository&amp;#34;) parser.</description>
-    </item>
     
   </channel>
 </rss>

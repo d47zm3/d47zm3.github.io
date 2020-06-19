@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on d47zm3</title>
     <link>https://d47zm3.me/categories/</link>
     <description>Recent content in Categories on d47zm3</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Fri, 25 Jan 2019 15:11:00 +0100</lastBuildDate>
+    <language>en-us</language>
     
 	<atom:link href="https://d47zm3.me/categories/index.xml" rel="self" type="application/rss+xml" />
     

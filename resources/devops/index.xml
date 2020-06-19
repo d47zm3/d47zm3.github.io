@@ -1,92 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DevOps on d47zm3</title>
     <link>https://d47zm3.me/resources/devops/</link>
     <description>Recent content in DevOps on d47zm3</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 Jun 2020 15:15:54 +0200</lastBuildDate>
     
 	<atom:link href="https://d47zm3.me/resources/devops/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>AWS</title>
-      <link>https://d47zm3.me/resources/devops/aws/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Create Github Pages Helm Repository</title>
+      <link>https://d47zm3.me/resources/devops/github-pages-helm-repository/</link>
+      <pubDate>Thu, 18 Jun 2020 15:15:54 +0200</pubDate>
       
-      <guid>https://d47zm3.me/resources/devops/aws/</guid>
-      <description> Grant acces to your S3 bucket for other AWS account. { &amp;#34;Id&amp;#34;: &amp;#34;Policy1519815897918&amp;#34;, &amp;#34;Version&amp;#34;: &amp;#34;2012-10-17&amp;#34;, &amp;#34;Statement&amp;#34;: [ { &amp;#34;Sid&amp;#34;: &amp;#34;Stmt1519815367664&amp;#34;, &amp;#34;Action&amp;#34;: &amp;#34;s3:*&amp;#34;, &amp;#34;Effect&amp;#34;: &amp;#34;Allow&amp;#34;, &amp;#34;Resource&amp;#34;: &amp;#34;arn:aws:s3:::private-multimedia/*&amp;#34;, &amp;#34;Principal&amp;#34;: { &amp;#34;CanonicalUser&amp;#34;: &amp;#34;01b2fc158a01666bfb1b56da6ad958d3c6fe8702540de3af517106f9aca37766&amp;#34; } } ] }</description>
-    </item>
-    
-    <item>
-      <title>Kubernetes</title>
-      <link>https://d47zm3.me/resources/devops/kubernetes/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://d47zm3.me/resources/devops/kubernetes/</guid>
-      <description>Everything related to Kubernetes.
-Interesting Sites  Official Docs - best resource for Kubernetes
- Kubedex - great blog with posts on Kubernetes subjects, comparing solutions etc.
- Inguardians - blog from redteamers about hacking &amp;amp; securing kubernetes
- 50 useful Kubernetes tools
- Toolnetes - useful Kubernetes tools, tested in battle
-  Customization, Service Mesh, gRPC (more advanced stuff) Kustomization  Kustomize: Deploy Your App with Template Free YAML - Ryan Cox, Lyft</description>
-    </item>
-    
-    <item>
-      <title>Linux Network Monitoring Tools</title>
-      <link>https://d47zm3.me/resources/devops/linux-network-monitoring-tools/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://d47zm3.me/resources/devops/linux-network-monitoring-tools/</guid>
-      <description>Original Link: https://haydenjames.io/linux-networking-commands-scripts/
- arpwatch – ethernet activity monitor. bmon – bandwidth monitor and rate estimator. bwm-ng – live network bandwidth monitor. curl – transferring data with urls. darkstat – captures network traffic, usage statistics. dhclient – dynamic host configuration protocol client dig – query dns servers for information. dstat – replacement for vmstat, iostat, mpstat, netstat and ifstat. ethtool – utility for controlling network drivers and hardware. ftp – simplest file transfer protocol.</description>
-    </item>
-    
-    <item>
-      <title>PKI</title>
-      <link>https://d47zm3.me/resources/devops/pki/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://d47zm3.me/resources/devops/pki/</guid>
-      <description>Based on great article here, just my notes and highlighted fragments. Taken from article https://smallstep.com/blog/everything-pki.html
-TLDR: The goal of certificates and PKI is to bind names to public keys.
-Terms like entity, identity, identifier, name, subscriber, end entity, certificate authority, root certificates, leaf certificates (these belong to end entities), relying party ( a certificate user that verifies and trusts certificates issued by a CA )
-A message authentication code (MAC) is a bit of data that’s used to verify which entity sent a message, and to ensure that a message hasn’t been modified.</description>
-    </item>
-    
-    <item>
-      <title>Tools</title>
-      <link>https://d47zm3.me/resources/devops/tools/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://d47zm3.me/resources/devops/tools/</guid>
-      <description>Generic page for interesting, useful tools, not really fitting into other category:
- mkcert - local TLS certificates with green lock via your own CA installed on system  </description>
-    </item>
-    
-    <item>
-      <title>Tricks</title>
-      <link>https://d47zm3.me/resources/devops/tricks/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://d47zm3.me/resources/devops/tricks/</guid>
-      <description>Miscellaneous tricks that did not made it into other categories.
-Find Real IPs behind CloudFlare I&amp;rsquo;m using CrimeFlare for it.
-Expose Local Server behind NAT via public VPS # run from machine which has access to private site ssh -R 8443:private-site:443 user@public_vps Now add new /etc/hosts entry reflecting vhost of private website pointing to public VPS IP and access it via https://private-site:8443/
-Debugging on Container OS using Docker Actually it boils down to running Docker container which shares namespaces with host, installing tools there and debugging.</description>
-    </item>
-    
-    <item>
-      <title>Wordpress</title>
-      <link>https://d47zm3.me/resources/devops/wordpress/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://d47zm3.me/resources/devops/wordpress/</guid>
-      <description>Update mutli-site primary URL In order to update main blog URL update these tables in database:
-wp_options: change “siteurl” and “home” to the new URL (http://blog/) wp_sitemeta: there’s a “siteurl” field you’ll need to change here wp_site: change the only value here to your new domain wp_blogs: each subsite will have an entry here, you’ll need to update the domain column for each row Also, update wp-config.php file:
-define( &amp;#39;DOMAIN_CURRENT_SITE&amp;#39;, &amp;#39;newblog.</description>
+      <guid>https://d47zm3.me/resources/devops/github-pages-helm-repository/</guid>
+      <description>$ git clone git@github.com:d47zm3/helm-charts.git $ cd helm-charts $ mkdir src $ helm create src/test-chart $ helm package src/* $ helm repo index --url https://d47zm3.me/helm-charts/ . $ git add -A . &amp;amp;&amp;amp; git commit -m &amp;#34;creating chart repository&amp;#34; &amp;amp;&amp;amp; git push origin master $ # set up github pages from master branch $ helm repo add d47zm3 https://d47zm3.me/helm-charts/ $ # make changes $ helm repo index --url https://d47zm3.me/helm-charts/ --merge index.yaml . $ helm search repo test-chart </description>
     </item>
     
   </channel>

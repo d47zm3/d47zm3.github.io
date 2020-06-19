@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on d47zm3</title>
+    <link>https://d47zm3.me/resources/go/</link>
+    <description>Recent content in Go on d47zm3</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 19 Jun 2020 13:13:16 +0200</lastBuildDate>
+    
+	<atom:link href="https://d47zm3.me/resources/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Shrinking Go Binaries</title>
+      <link>https://d47zm3.me/resources/go/shrinking-binaries/</link>
+      <pubDate>Fri, 19 Jun 2020 13:13:16 +0200</pubDate>
+      
+      <guid>https://d47zm3.me/resources/go/shrinking-binaries/</guid>
+      <description># -s and -w flags $ GOOS=linux go build cmd/go $ ls -l go -rwxr-xr-x 1 filippo staff 12493536 Apr 16 16:58 go $ GOOS=linux go build -ldflags=&amp;#34;-s -w&amp;#34; cmd/go $ ls -l go -rwxr-xr-x 1 filippo staff 8941952 Apr 16 17:08 go # upx $ GOOS=linux go build cmd/go $ ls -l go -rwxr-xr-x 1 filippo staff 12493536 Apr 16 16:58 go $ upx --brute go Ultimate Packer for eXecutables Copyright (C) 1996 - 2013 UPX 3.</description>
+    </item>
+    
+  </channel>
+</rss>

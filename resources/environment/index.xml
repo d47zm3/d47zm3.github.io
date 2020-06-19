@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Environment on d47zm3</title>
     <link>https://d47zm3.me/resources/environment/</link>
     <description>Recent content in Environment on d47zm3</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-us</language>
     
 	<atom:link href="https://d47zm3.me/resources/environment/index.xml" rel="self" type="application/rss+xml" />
     
@@ -57,8 +57,13 @@ MacOS Guide ~&amp;gt; brew install gnupg pinentry-mac ~&amp;gt; cat ~/.gnupg/gpg
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/resources/environment/tricks/</guid>
-      <description> All kinds of tricks.
-VIM  :r filename will read file into buffer ### SSH - ~ . - close hanged ssh session - ~C - open simple interpreter - ~^Z - hang ssh client - ~# - show established connections - ~&amp;amp; - end session  </description>
+      <description>All kinds of tricks.
+VIM  :r filename will read file into buffer  SSH   ~ . - close hanged ssh session
+  ~C - open simple interpreter
+  ~^Z - hang ssh client
+  ~# - show established connections
+  ~&amp;amp; - end session
+  </description>
     </item>
     
     <item>
@@ -77,8 +82,8 @@ VIM  :r filename will read file into buffer ### SSH - ~ . - close hanged ssh ses
       
       <guid>https://d47zm3.me/resources/environment/vpn/</guid>
       <description>How to run your own VPN, and be able to switch IP when needed, also automate it! You will need some Cloud Provider which has API/CLI available to automate VM creation and then you will set up VPN server using ready scripts. Let&amp;rsquo;s roll with Digital Ocean for instance&amp;hellip; We will use :
- automatic VPN setup on fresh instance
- Digital Ocean provisioned Ubuntu instance
+  automatic VPN setup on fresh instance
+  Digital Ocean provisioned Ubuntu instance
   I made wrapper around well known solution to set up your own VPN instance, that allows you to quickly (5 minutes) spin new instance for your usage.</description>
     </item>
     
