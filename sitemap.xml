@@ -3,12 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://d47zm3.me/resources/</loc>
-    <lastmod>2021-03-04T12:44:05+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://d47zm3.me/</loc>
     <lastmod>2021-03-04T12:44:05+01:00</lastmod>
   </url>
@@ -19,13 +13,13 @@
   </url>
   
   <url>
-    <loc>https://d47zm3.me/resources/workspace-environment/</loc>
-    <lastmod>2021-03-04T12:42:47+01:00</lastmod>
+    <loc>https://d47zm3.me/resources/</loc>
+    <lastmod>2021-03-04T12:44:05+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://d47zm3.me/resources/</loc>
-    <priority>0</priority>
+    <loc>https://d47zm3.me/resources/workspace-environment/</loc>
+    <lastmod>2021-03-04T12:42:47+01:00</lastmod>
   </url>
   
   <url>

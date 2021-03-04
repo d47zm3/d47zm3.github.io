@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>d47zm3</title>
+    <title>Resources on d47zm3</title>
     <link>https://d47zm3.me/resources/</link>
-    <description>Recent content on d47zm3</description>
+    <description>Recent content in Resources on d47zm3</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 04 Mar 2021 12:44:05 +0100</lastBuildDate><atom:link href="https://d47zm3.me/resources/index.xml" rel="self" type="application/rss+xml" />
@@ -23,15 +23,6 @@
       
       <guid>https://d47zm3.me/resources/workspace-environment/</guid>
       <description>Will write about my workspace, tools, terminal and so on.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://d47zm3.me/resources/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://d47zm3.me/resources/</guid>
-      <description></description>
     </item>
     
   </channel>
