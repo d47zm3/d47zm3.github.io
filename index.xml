@@ -5,87 +5,18 @@
     <link>https://d47zm3.me/</link>
     <description>Recent content on d47zm3</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 31 Oct 2018 10:04:43 +0100</lastBuildDate>
-    
-	<atom:link href="https://d47zm3.me/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Formatting Python Code</title>
-      <link>https://d47zm3.me/resources/python/formatting-code/</link>
-      <pubDate>Fri, 19 Jun 2020 13:13:16 +0200</pubDate>
-      
-      <guid>https://d47zm3.me/resources/python/formatting-code/</guid>
-      <description>Styling Guide (PEP8) You can read it here. To start following it, install locally pycodestyle package and run it through your code.
-$ pip install pycodestyle $ pycodestyle --ignore=E501 run.py run.py:15:1: E302 expected 2 blank lines, found 1 </description>
-    </item>
-    
-    <item>
-      <title>Parsing Arguments</title>
-      <link>https://d47zm3.me/resources/python/argument-parser/</link>
-      <pubDate>Fri, 19 Jun 2020 13:13:16 +0200</pubDate>
-      
-      <guid>https://d47zm3.me/resources/python/argument-parser/</guid>
-      <description># main parser = argparse.ArgumentParser() parser.add_argument(&amp;#34;action&amp;#34;, choices=[&amp;#39;list&amp;#39;, &amp;#39;add&amp;#39;, &amp;#39;search&amp;#39;, &amp;#39;import&amp;#39;], help=&amp;#34;list local repositories, add new one or search by tags&amp;#34;) parser.add_argument(&amp;#34;--url&amp;#34;, nargs=&amp;#39;?&amp;#39;, help=&amp;#34;url of repository to add&amp;#34;) parser.add_argument(&amp;#34;--note&amp;#34;, nargs=&amp;#39;?&amp;#39;, help=&amp;#34;personal note about repository&amp;#34;) parser.add_argument(&amp;#34;--tags&amp;#34;, nargs=&amp;#39;?&amp;#39;, help=&amp;#34;tags for repository&amp;#34;) parser.add_argument(&amp;#34;--clone&amp;#34;, nargs=&amp;#39;?&amp;#39;, choices=[&amp;#39;yes&amp;#39;, &amp;#39;no&amp;#39;], default=&amp;#34;no&amp;#34;, help=&amp;#34;clone repository locally&amp;#34;) parser.add_argument(&amp;#34;--user&amp;#34;, nargs=&amp;#39;?&amp;#39;, help=&amp;#34;user to download stars from&amp;#34;) args = parser.parse_args() setup_yaml() if args.action == &amp;#34;list&amp;#34;: read_all() elif args.action == &amp;#34;add&amp;#34;: if args.url is None or args.</description>
-    </item>
-    
-    <item>
-      <title>Shrinking Go Binaries</title>
-      <link>https://d47zm3.me/resources/go/shrinking-binaries/</link>
-      <pubDate>Fri, 19 Jun 2020 13:13:16 +0200</pubDate>
-      
-      <guid>https://d47zm3.me/resources/go/shrinking-binaries/</guid>
-      <description># -s and -w flags $ GOOS=linux go build cmd/go $ ls -l go -rwxr-xr-x 1 filippo staff 12493536 Apr 16 16:58 go $ GOOS=linux go build -ldflags=&amp;#34;-s -w&amp;#34; cmd/go $ ls -l go -rwxr-xr-x 1 filippo staff 8941952 Apr 16 17:08 go # upx $ GOOS=linux go build cmd/go $ ls -l go -rwxr-xr-x 1 filippo staff 12493536 Apr 16 16:58 go $ upx --brute go Ultimate Packer for eXecutables Copyright (C) 1996 - 2013 UPX 3.</description>
-    </item>
-    
-    <item>
-      <title>Create Github Pages Helm Repository</title>
-      <link>https://d47zm3.me/resources/devops/github-pages-helm-repository/</link>
-      <pubDate>Thu, 18 Jun 2020 15:15:54 +0200</pubDate>
-      
-      <guid>https://d47zm3.me/resources/devops/github-pages-helm-repository/</guid>
-      <description>$ git clone git@github.com:d47zm3/helm-charts.git $ cd helm-charts $ mkdir src $ helm create src/test-chart $ helm package src/* $ helm repo index --url https://d47zm3.me/helm-charts/ . $ git add -A . &amp;amp;&amp;amp; git commit -m &amp;#34;creating chart repository&amp;#34; &amp;amp;&amp;amp; git push origin master $ # set up github pages from master branch $ helm repo add d47zm3 https://d47zm3.me/helm-charts/ $ # make changes $ helm repo index --url https://d47zm3.me/helm-charts/ --merge index.yaml . $ helm search repo test-chart </description>
-    </item>
-    
+    <language>en</language><atom:link href="https://d47zm3.me/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
       <link>https://d47zm3.me/about/</link>
-      <pubDate>Wed, 31 Oct 2018 10:04:43 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/about/</guid>
-      <description>
-Name: Damian
+      <description>Name: Damian
 Age: 29
 Job: DevOps Engineer
-Interests:  Psychology DIY Cooking IT (Security, System Administration, Reverse Engineering, Networks)  Accomplishments:  Offensive Security Certified Professional Certified Kubernetes Administrator Google Cloud Associate Engineer  </description>
-    </item>
-    
-    <item>
-      <title>DevOps</title>
-      <link>https://d47zm3.me/resources/devops/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://d47zm3.me/resources/devops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Go</title>
-      <link>https://d47zm3.me/resources/go/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://d47zm3.me/resources/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://d47zm3.me/resources/python/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://d47zm3.me/resources/python/</guid>
-      <description></description>
+Certifications:
+ Offensive Security Certified Professional Certified Kubernetes Administrator Google Cloud Associate Engineer Amazon Certified Solutions Architect  </description>
     </item>
     
   </channel>

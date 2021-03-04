@@ -3,54 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://d47zm3.me/resources/</loc>
-    <lastmod>2020-06-19T13:13:16+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/python/formatting-code/</loc>
-    <lastmod>2020-06-19T13:13:16+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/go/</loc>
-    <lastmod>2020-06-19T13:13:16+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/python/argument-parser/</loc>
-    <lastmod>2020-06-19T13:13:16+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/python/</loc>
-    <lastmod>2020-06-19T13:13:16+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/go/shrinking-binaries/</loc>
-    <lastmod>2020-06-19T13:13:16+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/devops/github-pages-helm-repository/</loc>
-    <lastmod>2020-06-18T15:15:54+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/devops/</loc>
-    <lastmod>2020-06-18T15:15:54+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://d47zm3.me/about/</loc>
-    <lastmod>2018-10-31T10:04:43+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://d47zm3.me/</loc>
-    <lastmod>2018-10-31T10:04:43+01:00</lastmod>
+    <loc>https://d47zm3.me/authors/</loc>
   </url>
   
   <url>
@@ -58,15 +15,11 @@
   </url>
   
   <url>
-    <loc>https://d47zm3.me/resources/devops/</loc>
+    <loc>https://d47zm3.me/</loc>
   </url>
   
   <url>
-    <loc>https://d47zm3.me/resources/go/</loc>
-  </url>
-  
-  <url>
-    <loc>https://d47zm3.me/resources/python/</loc>
+    <loc>https://d47zm3.me/series/</loc>
   </url>
   
   <url>
