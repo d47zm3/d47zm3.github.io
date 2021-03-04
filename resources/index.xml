@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>d47zm3</title>
-    <link>https://d47zm3.me/</link>
+    <link>https://d47zm3.me/resources/</link>
     <description>Recent content on d47zm3</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 04 Mar 2021 12:44:05 +0100</lastBuildDate><atom:link href="https://d47zm3.me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Mar 2021 12:44:05 +0100</lastBuildDate><atom:link href="https://d47zm3.me/resources/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Personal Cybersecurity Checklist</title>
       <link>https://d47zm3.me/resources/personal-cybersecurity-list/</link>
@@ -32,19 +32,6 @@
       
       <guid>https://d47zm3.me/resources/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://d47zm3.me/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://d47zm3.me/about/</guid>
-      <description>Name: Damian
-Age: 29
-Job: DevOps Engineer
-Certifications:
- Offensive Security Certified Professional Certified Kubernetes Administrator Google Cloud Associate Engineer Amazon Certified Solutions Architect  </description>
     </item>
     
   </channel>
