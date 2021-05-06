@@ -22,7 +22,9 @@
       <pubDate>Thu, 04 Mar 2021 12:42:47 +0100</pubDate>
       
       <guid>https://d47zm3.me/resources/workspace-environment/</guid>
-      <description>Will write about my workspace, tools, terminal and so on.</description>
+      <description>Will write about my workspace, tools, terminal and so on.
+CLI Applications That You Should Know!
+ usql - is a universal command-line interface for PostgreSQL, MySQL, Oracle Database, SQLite3, Microsoft SQL Server, and many other databases including NoSQL and non-relational databases! exa - exa is a modern replacement for the venerable file-listing command-line program ls that ships with Unix and Linux operating systems, giving it more features and better defaults  </description>
     </item>
     
   </channel>
