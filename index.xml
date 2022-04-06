@@ -13,7 +13,8 @@
       <pubDate>Thu, 04 Mar 2021 12:44:05 +0100</pubDate>
       
       <guid>https://d47zm3.me/resources/personal-cybersecurity-list/</guid>
-      <description>Tips how to stay safe on-line.</description>
+      <description>HOW TO STAY SECURE IN DANGEROUS TIMES (2021 EDITION)    This guide has few areas, where one can improve his security standards.
+HUMAN FACTOR     each protection can be broken by human and cause of human mistake verify who are you talking to, callback to your bank to check if it&amp;rsquo;s their employee asking suspicious questions your friend on Facebook needs some money urgently, call his mobile and confirm it your real inbox can also be a target of attack, someone can try to trick you into some payment end-user education is a must in your company  VPN     can make tracking you harder, assuming provider itself is not some malicious actor allows to bypass restrictions like geographic or law ones if you&amp;rsquo;re using hotspot, encrypts your traffic so other cannot spy on you in this public network do not trust completely VPN providers, they aren&amp;rsquo;t always honest about &amp;ldquo;zero logs policy&amp;rdquo; and [https://techcrunch.</description>
     </item>
     
     <item>
@@ -34,10 +35,10 @@ CLI Applications That You Should Know!
       
       <guid>https://d47zm3.me/about/</guid>
       <description>Name: Damian
-Age: 29
+Age: 30
 Job: DevOps Engineer
 Certifications:
- Offensive Security Certified Professional Certified Kubernetes Administrator Google Cloud Associate Engineer Amazon Certified Solutions Architect  </description>
+ Offensive Security Certified Professional Certified Kubernetes Administrator Certified Kubernetes Security Specialist Google Cloud Associate Engineer Amazon Certified Solutions Architect  </description>
     </item>
     
     <item>
@@ -50,6 +51,15 @@ Certifications:
  DevOps Newsletters DevOps README Oh Shit, Git! Beginners Guide To Git Bisect HashiCorp Learn Technology Radar How to do a Code Review? HTOP Explained Project Awesome  Kubernetes:
  Kubernetes README ClusterAPI Network Policy Editor for Kubernetes Kubernetes Failure Stories The Kubernetes Learning Resources List 33+ Kubernetes Security Tools Kube Academy GKE - Hardening Your&amp;rsquo;s Cluster Security Deep Dive into Real-World Kubernetes Threats  AWS:
  AWS Endgame Whitepapers &amp;amp; Guides AWS Well-Architected Labs  Google Cloud:</description>
+    </item>
+    
+    <item>
+      <title>Linkbase</title>
+      <link>https://d47zm3.me/linkbase/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://d47zm3.me/linkbase/</guid>
+      <description>22.03.2022     10 real stories, how CI/CD was hacked Threat matrix for CI/CD, how can they attack you on each stage Notify on AWS manual actions taken by monitoring CloudTrail Monitoring Kubernetes x509 certificates with Prometheus How to integrate AWS IAM and Google Workspace Starboard - Kubernetes-native Security Toolkit Operator to provision Wireguard VPN in a Kubernetes Cluster Container Security Checklist Identify privilege escalation paths within and across different clouds Awesome collection of awesome security hardening guides, tools and other resources  17.</description>
     </item>
     
   </channel>

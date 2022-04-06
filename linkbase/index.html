@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="color-scheme" content="light dark">
+    
+    
+      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; prefetch-src 'self';">
+    
+
+    <meta name="author" content="Damian Tykałowski">
+    <meta name="description" content="22.03.2022     10 real stories, how CI/CD was hacked Threat matrix for CI/CD, how can they attack you on each stage Notify on AWS manual actions taken by monitoring CloudTrail Monitoring Kubernetes x509 certificates with Prometheus How to integrate AWS IAM and Google Workspace Starboard - Kubernetes-native Security Toolkit Operator to provision Wireguard VPN in a Kubernetes Cluster Container Security Checklist Identify privilege escalation paths within and across different clouds Awesome collection of awesome security hardening guides, tools and other resources  17.">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linkbase"/>
+<meta name="twitter:description" content="22.03.2022     10 real stories, how CI/CD was hacked Threat matrix for CI/CD, how can they attack you on each stage Notify on AWS manual actions taken by monitoring CloudTrail Monitoring Kubernetes x509 certificates with Prometheus How to integrate AWS IAM and Google Workspace Starboard - Kubernetes-native Security Toolkit Operator to provision Wireguard VPN in a Kubernetes Cluster Container Security Checklist Identify privilege escalation paths within and across different clouds Awesome collection of awesome security hardening guides, tools and other resources  17."/>
+
+    <meta property="og:title" content="Linkbase" />
+<meta property="og:description" content="22.03.2022     10 real stories, how CI/CD was hacked Threat matrix for CI/CD, how can they attack you on each stage Notify on AWS manual actions taken by monitoring CloudTrail Monitoring Kubernetes x509 certificates with Prometheus How to integrate AWS IAM and Google Workspace Starboard - Kubernetes-native Security Toolkit Operator to provision Wireguard VPN in a Kubernetes Cluster Container Security Checklist Identify privilege escalation paths within and across different clouds Awesome collection of awesome security hardening guides, tools and other resources  17." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://d47zm3.me/linkbase/" /><meta property="article:section" content="" />
+
+
+
+
+
+    <title>
+  Linkbase · d47zm3
+</title>
+
+    
+      <link rel="canonical" href="https://d47zm3.me/linkbase/">
+    
+
+    
+    
+    <link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.1.7" as="font" type="font/woff2" integrity="sha256-hEIt6X6xzye8ubyk8/uxjz68cRZHsJxoKS9fQ8idUGQ=" crossorigin>
+
+    
+      
+      
+      <link rel="stylesheet" href="/css/coder.min.7845183269a9eb35f70d63bb7521ad5e9470a140d020e12172e0b5d3ed3ec9a3.css" integrity="sha256-eEUYMmmp6zX3DWO7dSGtXpRwoUDQIOEhcuC10&#43;0&#43;yaM=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    
+
+    <meta name="generator" content="Hugo 0.83.1" />
+  </head>
+
+  
+  
+  <body class="colorscheme-light"
+        onload=""
+  >
+    
+
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      d47zm3
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/resources/">Resources</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/bookmarks/">Bookmarks</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/linkbase/">Linkbase</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://d47zm3.me/linkbase/">
+          Linkbase
+        </a>
+      </h1>
+    </header>
+
+    <h3 id="22032022">
+  22.03.2022
+  <a class="heading-link" href="#22032022">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<ul>
+<li><a href="https://research.nccgroup.com/2022/01/13/10-real-world-stories-of-how-weve-compromised-ci-cd-pipelines/">10 real stories, how CI/CD was hacked</a></li>
+<li><a href="https://github.com/rung/threat-matrix-cicd">Threat matrix for CI/CD, how can they attack you on each stage</a></li>
+<li><a href="https://medium.com/cloudandthings/aws-clickoops-1b8cabc9b8e3">Notify on AWS manual actions taken by monitoring CloudTrail</a></li>
+<li><a href="https://github.com/enix/x509-certificate-exporter">Monitoring Kubernetes x509 certificates with Prometheus</a></li>
+<li><a href="https://aws.amazon.com/blogs/security/how-to-set-up-federated-single-sign-on-to-aws-using-google-workspace/">How to integrate AWS IAM and Google Workspace</a></li>
+<li><a href="https://github.com/aquasecurity/starboard">Starboard - Kubernetes-native Security Toolkit</a></li>
+<li><a href="https://github.com/jodevsa/wireguard-operator">Operator to provision Wireguard VPN in a Kubernetes Cluster</a></li>
+<li><a href="https://github.com/krol3/container-security-checklist">Container Security Checklist</a></li>
+<li><a href="https://github.com/carlospolop/PurplePanda">Identify privilege escalation paths within and across different clouds</a></li>
+<li><a href="https://github.com/decalage2/awesome-security-hardening">Awesome collection of awesome security hardening guides, tools and other resources</a></li>
+</ul>
+<h3 id="17022022">
+  17.02.2022
+  <a class="heading-link" href="#17022022">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p>Free Labs To Learn Cloud Pentesting:</p>
+<ul>
+<li><a href="http://flaws.cloud">Flaws</a></li>
+<li><a href="http://flaws2.cloud">Flaws2</a></li>
+<li><a href="https://github.com/OWASP/Serverless-Goat">Serverless Goat</a></li>
+<li><a href="https://n0j.github.io/2017/10/02/aws-s3-ctf.html">AWS S3 CTF Challenge</a></li>
+<li><a href="https://github.com/torque59/AWS-Vulnerable-Lambda">AWS Vulnerable Lambda</a></li>
+<li><a href="https://github.com/wickett/lambhack">Lambhack</a></li>
+<li><a href="https://github.com/BishopFox/iam-vulnerable">IAM Vulnerable</a></li>
+<li><a href="https://github.com/RhinoSecurityLabs/cloudgoat">CloudGoat</a></li>
+<li><a href="https://github.com/appsecco/attacking-cloudgoat2">Attacking CloudGoat 2</a></li>
+<li><a href="https://github.com/m6a-UdS/dvca">Damn Vulnerable Cloud Application</a></li>
+<li><a href="https://github.com/OWASP/DVSA">Damn Vulnerable Serverless Application</a></li>
+<li><a href="https://github.com/nccgroup/sadcloud">Sadcloud</a></li>
+<li><a href="https://github.com/appsecco/breaking-and-pwning-apps-and-servers-aws-azure-training">Breaking and Pwning Apps and Servers on AWS and Azure - Free Training Courseware and Labs</a></li>
+</ul>
+<p>Others:</p>
+<ul>
+<li><a href="https://github.com/nosarthur/gita">Manage many Git repositories with sanity</a></li>
+<li><a href="https://github.com/weaveworks/tf-controller">A GitOps Terraform controller for Kubernetes</a></li>
+<li><a href="https://github.com/ncc-erik-steringer/Aerides">An implementation of infrastructure-as-code scanning using dynamic tooling. However, by deploying IaC (Terraform HCL in this case) against an instance of LocalStack, then pointing the tools at LocalStack, we can still perform scanning/testing to identify risks before they make it to production infrastructure</a></li>
+<li><a href="https://github.com/marco-lancini/utils/tree/main/terraform/aws-oidc-ci">Terraform + GitHub + AWS + OIDC</a></li>
+<li><a href="https://github.com/int128/kubelogin">Access Kubernetes via OIDC e.g. Keycloak</a></li>
+<li><a href="https://grafana.com/blog/2022/02/02/announcing-grafana-incident-smart-incident-management-for-your-teams/">OpsGenie in Grafana</a></li>
+<li><a href="https://github.com/mpalmer/action-validator">Validate GihubAction YAMLs</a></li>
+<li><a href="https://github.com/awslabs/amazon-ecr-credential-helper">AWS ECR Docker Credentials Helper</a></li>
+<li><a href="https://github.com/PaulJuliusMartinez/jless">A command-line pager for JSON data. User friendly JQ</a></li>
+<li><a href="https://github.com/lirantal/dockly">k9 for Docker</a></li>
+<li><a href="https://github.com/kubernetes-simulator/simulator">Kubernetes Security Training Platform</a></li>
+<li><a href="https://github.com/komodorio/validkube">ValidKube combines the best open-source tools to help ensure Kubernetes YAML best practices, hygiene &amp; security</a></li>
+<li><a href="https://zwischenzugs.com/2021/07/31/a-hello-world-gitops-example-walkthrough/">Hello World GitOps</a></li>
+<li><a href="https://www.jeli.io/incident-analysis-101-which-incidents-should-you-investigate/">Incident Analysis 101</a></li>
+<li><a href="https://tech.deliveryhero.com/our-reliability-manifesto/">The Delivery Hero Reliability Manifesto</a></li>
+<li><a href="https://incident.io/blog/the-startup-guide-to-sensible-incident-management">Startup Guide To Incident Management</a></li>
+</ul>
+<h3 id="31012022">
+  31.01.2022
+  <a class="heading-link" href="#31012022">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<ul>
+<li><a href="https://docs.google.com/presentation/d/1muXf4IAkM5xrJ2esq1-9zcp_TI1oALSSdQIi3cBPz3U/edit#slide=id.p">IaaC security scanning, why, flaws, etc.</a></li>
+<li><a href="https://aws.amazon.com/blogs/security/2021-aws-security-focused-workshops/">Free workshops for AWS security services</a></li>
+<li><a href="https://aws.amazon.com/blogs/containers/gitops-model-for-provisioning-and-bootstrapping-amazon-eks-clusters-using-crossplane-and-flux/">EKS + Crossplane + Flux on AWS</a></li>
+<li><a href="https://github.com/watchexec/watchexec">Watchexec - simple, standalone tool that watches a path and runs a command whenever it detects modifications</a></li>
+<li><a href="https://swimm.io/">Swimm - Documentation as a Code</a></li>
+<li><a href="https://github.com/mattermost/focalboard">Focalboard is an open source, self-hosted alternative to Trello, Notion, and Asana</a></li>
+<li><a href="https://github.com/khuedoan/homelab">Self-hosted infrastructure, fully automated from empty disk to operating services</a></li>
+<li><a href="https://github.com/opsdisk/the_cyber_plumbers_handbook">The definitive guide to Secure Shell (SSH) tunneling, port redirection, and bending traffic like a boss</a></li>
+<li><a href="https://github.com/AdminTurnedDevOps/DevOps-The-Hard-Way-AWS">DevOps The Hard Way - AWS</a></li>
+<li><a href="https://nextlinklabs.com/insights/handling-authentication-in-EKS-clusters-kubernetes-AWS-IAM">IAM on EKS done right</a></li>
+<li><a href="https://www.hashicorp.com/blog/kubernetes-vault-integration-via-sidecar-agent-injector-vs-csi-provider">Comparing two methods for integrating Vault with Kubernetes</a></li>
+</ul>
+<h3 id="30122021">
+  30.12.2021
+  <a class="heading-link" href="#30122021">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<ul>
+<li><a href="https://github.com/SummitRoute/csp_security_mistakes">This page lists security mistakes by cloud service providers (AWS, GCP, and Azure)</a></li>
+<li><a href="https://aws.amazon.com/blogs/aws/introducing-karpenter-an-open-source-high-performance-kubernetes-cluster-autoscaler/">Kubernetes autoscaler, that aims to scale using machine learning</a></li>
+<li><a href="https://aws.amazon.com/blogs/aws/new-amazon-devops-guru-for-rds-to-detect-diagnose-and-resolve-amazon-aurora-related-issues-using-ml/">DevOps Guru for RDS</a></li>
+<li><a href="https://github.com/zoph-io/awscon-onepager/blob/master/reinvent/reinvent-2021.md">AWS re:Invent summary on one page</a></li>
+<li><a href="https://github.com/ksoclabs/awesome-kubernetes-security">Awesome Kubernetes Security</a></li>
+<li><a href="https://learn.sysdig.com/falco-101">Falco on Kubernetes - basics</a></li>
+<li><a href="https://blog.styra.com/blog/zero-trust-with-envoy-spire-and-open-policy-agent-opa">Zero Trust Architecture (Envoy, SPIRE, OPA)</a></li>
+<li>[How To Make IAM Right]<a href="https://dev.to/prince_of_pasta/achieving-least-privilege-with-aws-iam-10i">https://dev.to/prince_of_pasta/achieving-least-privilege-with-aws-iam-10i</a></li>
+<li><a href="https://cloud.google.com/blog/topics/developers-practitioners/using-google-cloud-service-account-impersonation-your-terraform-code">GCP &amp; Terraform - short-lived credentials</a></li>
+<li><a href="https://stop.lying.cloud/">Honest AWS Dashboard</a></li>
+<li><a href="https://privacy.sexy">Improve your security posture on Windows/MacOS using prepared scripts</a></li>
+<li><a href="https://netflixtechblog.com/snaring-the-bad-folks-66726a1f4c80">SNARE, a Netflix automated security solution</a></li>
+<li><a href="https://www.cloudquery.io/blog/running-aws-pci-dss-with-cloudquery-policies">CloudQuery policies gives you a powerful way to automate, customize, codify, and run your cloud security &amp; compliance continuously with HCL and SQL</a></li>
+<li><a href="https://thenewstack.io/gitops-on-kubernetes-deciding-between-argo-cd-and-flux/">Argo vs Flux</a></li>
+<li><a href="https://jimangel.io/post/dockershim-kubernetes-v1.24/">What happens after Kubernetes upgrade to 1.24 (Dockershim removal)</a></li>
+<li><a href="https://www.jetstack.io/blog/istio-oidc/">Istio + OIDC</a></li>
+<li><a href="https://rytisbiel.com/2021/03/06/darker-corners-of-go/">Go, lessons learned</a></li>
+<li><a href="https://changelog.com/posts/on-go-application-structure">Thoughts on how to structure Go code</a></li>
+<li><a href="https://github.com/DataDog/go-profiler-notes/blob/main/guide/README.md">The Busy Developer&rsquo;s Guide to Go Profiling, Tracing and Observability</a></li>
+<li><a href="https://five9s.substack.com/p/rundown-of-netflixs-sre-practice">Rundown on Netflix SRE practices</a></li>
+<li><a href="https://www.squadcast.com/blog/upcoming-trends-in-devops-and-sre">Upcoming trends in DevOps and SRE</a></li>
+<li><a href="https://github.com/up9inc/mizu">The API traffic viewer for Kubernetes, think TCPDump for Kubernetes</a></li>
+<li><a href="https://github.com/Qovery/pleco">Pleco - automatically removes Cloud managed services and Kubernetes resources based on tags with TTL</a></li>
+<li><a href="https://github.com/twpayne/chezmoi">Chezmoi - dotfile manager</a></li>
+</ul>
+
+  </article>
+</section>
+
+  
+
+      </div>
+
+      
+
+    </main>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  </body>
+
+</html>
