@@ -38,7 +38,7 @@ CLI Applications That You Should Know!
 Age: 30
 Job: DevOps Engineer
 Certifications:
- Offensive Security Certified Professional Certified Kubernetes Administrator Certified Kubernetes Security Specialist Google Cloud Associate Engineer Amazon Certified Solutions Architect  </description>
+ Offensive Security Certified Professional Certified Kubernetes Administrator Certified Kubernetes Security Specialist Google Cloud Associate Engineer AWS Certified Solutions Architect AWS Certified Security - Specialty  </description>
     </item>
     
     <item>
@@ -59,7 +59,7 @@ Certifications:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/linkbase/</guid>
-      <description>22.03.2022     10 real stories, how CI/CD was hacked Threat matrix for CI/CD, how can they attack you on each stage Notify on AWS manual actions taken by monitoring CloudTrail Monitoring Kubernetes x509 certificates with Prometheus How to integrate AWS IAM and Google Workspace Starboard - Kubernetes-native Security Toolkit Operator to provision Wireguard VPN in a Kubernetes Cluster Container Security Checklist Identify privilege escalation paths within and across different clouds Awesome collection of awesome security hardening guides, tools and other resources  17.</description>
+      <description>06.04.2022     Extendable version manager with support for Ruby, Node.js, Elixir, Erlang &amp;amp; more Learn anything with Mind-Maps Lazygit Hacking The Cloud - CICD/GitLab/AWS/CTF How To Burp Good Network Infrastructure Security Guidance by NSA Magic Eraser - remove unwanted things from images in seconds AWS - Automated Incident Response and Forensics Framework BotKube - messaging bot for monitoring and debugging Kubernetes clusters AWS Controllers for Kubernetes (ACK) lets you define and use AWS service resources directly from Kubernetes Kubernetes Security through GitOps Best Practices: ArgoCD and Starboard Your pocket-sized cloud with a Raspberry Pi 10 Must-Have Kubernetes Tools Why We Selected Thanos for Long Term Metrics Storage How We Discovered Vulnerabilities in CI/CD Pipelines of Popular Open-Source Projects Fantastic AWS Hacks and Where to Find Them Access Undenied - Access Undenied parses AWS AccessDenied CloudTrail events, explains the reasons for them, and offers actionable remediation steps  22.</description>
     </item>
     
   </channel>
