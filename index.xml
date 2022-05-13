@@ -59,7 +59,7 @@ Certifications:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/linkbase/</guid>
-      <description>12.04.2022     Digital Forensics &amp;amp; Incident Response on Kubernetes What to look for when reviewing a company&amp;rsquo;s infrastructure Diff that understands syntax Compose with Markdown in Google Docs on web - after 16 years Managing Pod Scheduling Constraints and Groupless Node Upgrades with Karpenter in Amazon EKS Kubectl plugin for detecting Dockershim usage which is being removed Kubernetes Infrastructure the GitOps Way Charm - we build tools to make the command line glamorous Kaar - Kubernetes Application Archive SA-Hunter - correlates serviceaccounts, pods and nodes to the permissions granted to them via rolebindings and clusterrolesbindings A curated checklist of 300+ tips for protecting digital security and privacy in 2022 The StackRox Kubernetes Security Platform performs a risk analysis of the container environment, delivers visibility and runtime alerts TruffleHog v3 - improved secrets detection Find and fight image theft PacketStreamer - distributed tcpdump for cloud native environments Kubernetes native testing with TestKube  06.</description>
+      <description>07.05.2022     GitHub CLI extension to display a dashboard of PRs and issues - configurable with a beautiful UI GitOps Article Series from Giant Swarm The secret gems behind building container images, Enter: BuildKit &amp;amp; Docker Buildx Dagger - A portable devkit for CI/CD pipelines Automated Dependency Updates for Flux using Renovate Terraform: Up &amp;amp; Running, 3rd edition Early Release is now available! How Terraform changed with 1.</description>
     </item>
     
   </channel>
