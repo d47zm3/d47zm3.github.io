@@ -59,7 +59,7 @@ Certifications:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/linkbase/</guid>
-      <description>28.09.2022     Cloud DNS Security – How to protect DNS in the Cloud Exploring Kubernetes Operator Pattern Why You Should Avoid Sealed Secrets in Your GitOps Deployment Terralist - a private Terraform registry Cloud Audit Academy How To Hack Web Applications in 2022: Part 1 Error handling with Go tooling GitOps: A Simple Approach to using AWS Secrets Manager with Kubernetes Kubernetes Removals and Major Changes In 1.</description>
+      <description>27.10.2022     Istio - Introducing Ambient Mesh The Complete Guide to AWS KMS Matano - the open-source security lake platform for AWS AWS Self-Service Security Assessment tool Plumber - A swiss army knife CLI tool for interacting with Kafka, RabbitMQ and other messaging systems Understanding basic networking in GKE - Networking basics Transitioning to multiple AWS accounts Scaling cross-account AWS KMS–encrypted Amazon S3 bucket access using ABAC JQP - a TUI playground to experiment with jq OpenTelemetry in various environments Automate All the Boring Kubernetes Operations with Python On Amazon EKS and FIS (Chaos Engineering) K8s Troubleshooting — Namespace Stuck in Terminating State VSCode Draw.</description>
     </item>
     
   </channel>
