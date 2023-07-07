@@ -48,9 +48,8 @@ Offensive Security Certified Professional Certified Kubernetes Administrator Cer
       
       <guid>https://d47zm3.me/bookmarks/</guid>
       <description>DevOps:
-DevOps Newsletters DevOps README Oh Shit, Git! Beginners Guide To Git Bisect HashiCorp Learn Technology Radar How to do a Code Review? HTOP Explained Project Awesome Kubernetes:
-Kubernetes README ClusterAPI Network Policy Editor for Kubernetes Kubernetes Failure Stories The Kubernetes Learning Resources List 33+ Kubernetes Security Tools Kube Academy GKE - Hardening Your&amp;rsquo;s Cluster Security Deep Dive into Real-World Kubernetes Threats AWS:
-AWS Endgame Whitepapers &amp;amp; Guides AWS Well-Architected Labs Google Cloud:</description>
+DevOps Newsletters DevOps README Oh Shit, Git! Beginners Guide To Git Bisect HashiCorp Learn Technology Radar How to do a Code Review? HTOP Explained Project Awesome Automated Github Backups with ECS and S3 Kubernetes:
+Kubernetes README ClusterAPI Network Policy Editor for Kubernetes Kubernetes Failure Stories The Kubernetes Learning Resources List 33+ Kubernetes Security Tools Kube Academy GKE - Hardening Your&amp;rsquo;s Cluster Security Deep Dive into Real-World Kubernetes Threats AWS:</description>
     </item>
     
     <item>
@@ -59,7 +58,7 @@ AWS Endgame Whitepapers &amp;amp; Guides AWS Well-Architected Labs Google Cloud:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://d47zm3.me/linkbase/</guid>
-      <description>13.06.2023 AWS IAM Actions Awesome Cloud Security Labs An operator to manage ephemeral Kubernetes resources Privilege escalation in AWS Elastic Kubernetes Service Building a Red Team Infrastructure in 2023 The beginner&amp;rsquo;s guide to eBPF Visualize call graph of a Go program using Graphviz Move over, Dockerfiles! The new way to craft containers Starting today, you can create and use passkeys on your personal Google Account CLI tool to perform cost analysis on your Azure subscription AWS Verified Access is now generally available Get details on security finding changes with the new Finding History feature in Security Hub ATT&amp;amp;CK v13 Enters the Room: Pseudocode, Swifter Search, and Mobile Data Sources Cloud Security Jobs An AWS IAM Wishlist Manage multiple Terraform projects in monorepo Start Pods faster by prefetching images Connect your local process and your cloud environment, and run local code in cloud conditions KubeStellar - a flexible solution for challenges associated with multicluster configuration management for edge, multi-cloud, and hybrid cloud A K8s operator to reduce CO2 footprint of your clusters The global home for Platform Engineers Go Programming – Golang Course with Bonus Projects Tunnel via Cloudflare to any TCP Service CloudNativeSecurityCon 2023 - Seattle Cloud Native Security Talks All-in-one auditing toolkit for identifying common security issues in managed Kubernetes environments.</description>
+      <description>06.07.2023 A curated list of Awesome Security Challenges Introducing CloudFoxable: A Gamified Cloud Hacking Sandbox Collection of PoC and offensive techniques used by the BlackArrow Red Team Breaking down Reverse shell commands Kubernetes Grey Zone: Risks in Managed Cluster Middleware My AWS Pentest Methodology Executing Arbitrary Code &amp;amp; Executables in Read-Only FileSystems Terraform 1.5 brings config-driven import and checks Vault Secrets Operator for Kubernetes now GA Secure Connectivity from Public to Private: Introducing EC2 Instance Connect Endpoint AWS IAM Identity Center now supports automated user provisioning from Google Workspace Generally Available: Managed identity authentication in Azure Monitor container insights Millions of GitHub repos likely vulnerable to RepoJacking, researchers say Implement DevSecOps to Secure your CI/CD pipeline AWS CloudTrail cheat sheet Kubernetes Security Basics Series: Part II - Container Security Go 1.</description>
     </item>
     
   </channel>
