@@ -6,60 +6,42 @@
     <description>Recent content on d47zm3</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 04 Mar 2021 12:44:05 +0100</lastBuildDate><atom:link href="https://d47zm3.me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Mar 2021 12:44:05 +0100</lastBuildDate>
+    <atom:link href="https://d47zm3.me/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Personal Cybersecurity Checklist</title>
       <link>https://d47zm3.me/resources/personal-cybersecurity-list/</link>
       <pubDate>Thu, 04 Mar 2021 12:44:05 +0100</pubDate>
-      
       <guid>https://d47zm3.me/resources/personal-cybersecurity-list/</guid>
-      <description> HOW TO STAY SECURE IN DANGEROUS TIMES (2021 EDITION) This guide has few areas, where one can improve his security standards.
-HUMAN FACTOR each protection can be broken by human and cause of human mistake verify who are you talking to, callback to your bank to check if it&amp;rsquo;s their employee asking suspicious questions your friend on Facebook needs some money urgently, call his mobile and confirm it your real inbox can also be a target of attack, someone can try to trick you into some payment end-user education is a must in your company VPN can make tracking you harder, assuming provider itself is not some malicious actor allows to bypass restrictions like geographic or law ones if you&amp;rsquo;re using hotspot, encrypts your traffic so other cannot spy on you in this public network do not trust completely VPN providers, they aren&amp;rsquo;t always honest about &amp;ldquo;zero logs policy&amp;rdquo; and can be hacked as well best bet is to go with your own VPN and don&amp;rsquo;t store logs there, great tool for it is algo for shady stuff, you can always rent VPS with BitCoins and provision it with your VPN&amp;hellip; </description>
+      <description> HOW TO STAY SECURE IN DANGEROUS TIMES (2021 EDITION) This guide has few areas, where one can improve his security standards.&#xA;HUMAN FACTOR each protection can be broken by human and cause of human mistake verify who are you talking to, callback to your bank to check if it&amp;rsquo;s their employee asking suspicious questions your friend on Facebook needs some money urgently, call his mobile and confirm it your real inbox can also be a target of attack, someone can try to trick you into some payment end-user education is a must in your company VPN can make tracking you harder, assuming provider itself is not some malicious actor allows to bypass restrictions like geographic or law ones if you&amp;rsquo;re using hotspot, encrypts your traffic so other cannot spy on you in this public network do not trust completely VPN providers, they aren&amp;rsquo;t always honest about &amp;ldquo;zero logs policy&amp;rdquo; and can be hacked as well best bet is to go with your own VPN and don&amp;rsquo;t store logs there, great tool for it is algo for shady stuff, you can always rent VPS with BitCoins and provision it with your VPN&amp;hellip; </description>
     </item>
-    
     <item>
       <title>Workspace Environment</title>
       <link>https://d47zm3.me/resources/workspace-environment/</link>
       <pubDate>Thu, 04 Mar 2021 12:42:47 +0100</pubDate>
-      
       <guid>https://d47zm3.me/resources/workspace-environment/</guid>
-      <description>Will write about my workspace, tools, terminal and so on.
-CLI Applications That You Should Know!
-usql - is a universal command-line interface for PostgreSQL, MySQL, Oracle Database, SQLite3, Microsoft SQL Server, and many other databases including NoSQL and non-relational databases! exa - exa is a modern replacement for the venerable file-listing command-line program ls that ships with Unix and Linux operating systems, giving it more features and better defaults </description>
+      <description>Will write about my workspace, tools, terminal and so on.&#xA;CLI Applications That You Should Know!&#xA;usql - is a universal command-line interface for PostgreSQL, MySQL, Oracle Database, SQLite3, Microsoft SQL Server, and many other databases including NoSQL and non-relational databases! exa - exa is a modern replacement for the venerable file-listing command-line program ls that ships with Unix and Linux operating systems, giving it more features and better defaults </description>
     </item>
-    
     <item>
       <title>About</title>
       <link>https://d47zm3.me/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://d47zm3.me/about/</guid>
-      <description>Name: Damian
-Age: 30
-Job: DevOps Engineer
-Certifications:
-Offensive Security Certified Professional Certified Kubernetes Administrator Certified Kubernetes Security Specialist Google Cloud Associate Engineer AWS Certified Solutions Architect AWS Certified Security - Specialty </description>
+      <description>Name: Damian&#xA;Age: 30&#xA;Job: DevOps Engineer&#xA;Certifications:&#xA;Offensive Security Certified Professional Certified Kubernetes Administrator Certified Kubernetes Security Specialist Google Cloud Associate Engineer AWS Certified Solutions Architect AWS Certified Security - Specialty </description>
     </item>
-    
     <item>
       <title>Bookmarks</title>
       <link>https://d47zm3.me/bookmarks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://d47zm3.me/bookmarks/</guid>
-      <description>DevOps:
-DevOps Newsletters DevOps README Oh Shit, Git! Beginners Guide To Git Bisect HashiCorp Learn Technology Radar How to do a Code Review? HTOP Explained Project Awesome Automated Github Backups with ECS and S3 Kubernetes:
-Kubernetes README ClusterAPI Network Policy Editor for Kubernetes Kubernetes Failure Stories The Kubernetes Learning Resources List 33+ Kubernetes Security Tools Kube Academy GKE - Hardening Your&amp;rsquo;s Cluster Security Deep Dive into Real-World Kubernetes Threats AWS:</description>
+      <description>DevOps:&#xA;DevOps Newsletters DevOps README Oh Shit, Git! Beginners Guide To Git Bisect HashiCorp Learn Technology Radar How to do a Code Review? HTOP Explained Project Awesome Automated Github Backups with ECS and S3 Kubernetes:&#xA;Kubernetes README ClusterAPI Network Policy Editor for Kubernetes Kubernetes Failure Stories The Kubernetes Learning Resources List 33+ Kubernetes Security Tools Kube Academy GKE - Hardening Your&amp;rsquo;s Cluster Security Deep Dive into Real-World Kubernetes Threats AWS:</description>
     </item>
-    
     <item>
       <title>Linkbase</title>
       <link>https://d47zm3.me/linkbase/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://d47zm3.me/linkbase/</guid>
-      <description>13.11.2023 Gosh - Writing Go at the Command Line - Nick Wells - September Gophers OpenAI ChatGPT, GPT-3, GPT-4, DALL·E, Whisper API wrapper for Go Following attackers’ (Cloud)trail in AWS: Methodology and findings in the wild Attacking AWS Cognito with Pacu (p1) former2 - Generate CloudFormation / Terraform / Troposphere templates from your existing AWS resources. waf-btk - WAF bypass PoC Coalfire AWS RAMP/pak Reference Architecture Find origin servers of websites behind CloudFlare by using Internet-wide scan data from Censys.</description>
+      <description>03.01.2023 Fourteen Years of Go inshellisense- IDE style command line auto complete Arsenal is just a quick inventory and launcher for hacking programs Session Hijacking Visual Exploitation Key takeaways from the Wiz 2023 Kubernetes Security Report A Terraform module that makes it a snap to opt out of all AWS AI/ML data harvesting. A curated list of GPT agents for cybersecurity State of Cloud Security Bolstering Security &amp;amp; Automating Management of Target Australia’s EKS clusters Find your next security tool.</description>
     </item>
-    
   </channel>
 </rss>

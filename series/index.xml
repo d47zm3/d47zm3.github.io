@@ -5,6 +5,7 @@
     <link>https://d47zm3.me/series/</link>
     <description>Recent content in Series on d47zm3</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://d47zm3.me/series/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <atom:link href="https://d47zm3.me/series/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
