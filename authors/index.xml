@@ -4,7 +4,8 @@
     <title>Authors on d47zm3</title>
     <link>https://d47zm3.me/authors/</link>
     <description>Recent content in Authors on d47zm3</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://d47zm3.me/authors/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://d47zm3.me/authors/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
