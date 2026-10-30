@@ -20,133 +20,30 @@
 
 
 
-https://www.anthropic.com/research/redesigning-source-control
+Redesigning Source Control at Anthropic
+summaryTL;DR: Anthropic&rsquo;s source control team describes Scion, an in-house version control system that replaced git for its monorepo after merged changes grew from about 2,500 to over 30,000 per day between May and September 2026.
 
+Scale problem: Main branch history is nearly 100 GB, a compressed working copy exceeds 25 GB, and CI runs about 25 million checkouts per day. Naive fetching would mean over 600 PB of git traffic daily.
+Design: Clients are assumed always online. The server handles history, blame, commits, merges and rebases. Clients keep a bounded object cache and use sparse, virtualized checkouts.
+Data model: Changesets in a write-ahead log list changed files with content-addressed blob pointers. Moving a ref is a compare-and-swap on one Spanner row. No packfiles, no full repo copy anywhere.
+Architecture: A per-node scion-daemon talks to regional scion-cache servers, which talk to authoritative scion-server instances on Spanner and cloud storage. Cache hit rate is over 99% at each tier.
+Results: About 200x smaller CPU and memory footprint than the git mirror fleet, checkouts about 100x faster, and about 25% CI CPU capacity freed. Seven people built Scion and the Antique code review tool in about five months.
+Limits: Not a general git replacement. It only fits very large monorepos and forces migration of review, search and CI. Without a global merge lock, conflicts happen and Claude is used to fix them.
 
-https://github.com/conductor-oss/conductor
-
-
-https://www.semperis.com/blog/what-is-entragoat-entra-id-simulation-environment/?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&_bhlid=2238cfabce9f120c06498c7a87e999c9671ddc28- https://github.com/runZeroInc/sshamble?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&_bhlid=54ed43c39635810dbf28f2258d5a41643c42db1a
-
-
-https://labs.zenity.io/post/agentcorruption-how-a-single-prompt-collapsed-the-entire-cloud-security-model?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&_bhlid=9d268617faab895a15cbc03eb477680fbf474c5d
-
-
-https://rea.tools/?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&_bhlid=d68e2d78c46cff04d147647d6a2d1e20df0d4bd7
-
-
-https://specterops.io/blog/2026/09/24/ai-for-offensive-security/?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&_bhlid=ce97f5daa14655760768f314f5ab61bd3fffe25f
-
-
-https://www.digitalocean.com/blog/how-digitalocean-manages-credentials-for-autonomous-agents?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&_bhlid=f9f6fe47d81d112a65098f6432c2e641417b65db
-
-
-https://vincenzoiozzo.com/blog/jev-identity-resolution?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&_bhlid=1b5892ddf24abb24b0267e4a644a25de50d32952
-
-
-https://cloud.google.com/blog/products/devops-sre/sre-book-second-edition/?utm_source=cloudseclist.com&utm_medium=referral&utm_campaign=CloudSecList-issue-360
-
-
-https://aws.amazon.com/blogs/aws/announcing-aws-lambda-web-functions-for-fast-consistent-web-app-performance-anywhere/?utm_source=cloudseclist.com&utm_medium=referral&utm_campaign=CloudSecList-issue-360
-
-
-https://aws.amazon.com/blogs/security/penetration-testing-every-deployment-with-aws-continuum/?utm_source=cloudseclist.com&utm_medium=referral&utm_campaign=CloudSecList-issue-360
-
-
-https://github.com/Gathin23/cleanyourtv
-
-
-https://github.com/kksimp/Mac.apk?ref=console.dev
-
-
-https://securitylabs.datadoghq.com/articles/introducing-pathrunner-aws-privilege-escalation-framework/?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-351-php2shell-autopatching-skills-aws-pathrunner&_bhlid=d51cd34c87061c29d548d16bc206fb67403e3006
-
-
-https://www.salesforce.com/blog/managing-agentic-security-at-scale/?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-351-php2shell-autopatching-skills-aws-pathrunner&_bhlid=33389a45806ff08cadba5492b43ab4f4f92b789a
-
-
-https://specterops.io/blog/2026/09/24/ai-for-offensive-security/?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&_bhlid=ce97f5daa14655760768f314f5ab61bd3fffe25f
-
-
-https://claude.dev/blog/solving-code-review-at-anthropic/?utm_source=cloudseclist.com&utm_medium=referral&utm_campaign=CloudSecList-issue-361
-
-
-https://securitylabs.datadoghq.com/articles/putting-models-to-the-secure-coding-test-security-rules/?utm_source=cloudseclist.com&utm_medium=referral&utm_campaign=CloudSecList-issue-361
-
-
-https://medium.com/@adan.alvarez/i-gave-14-llms-aws-keys-heres-what-they-wanted-to-do-next-48585761a11b
-
-
-https://github.com/Pomerado/pomerado
-
-
-backburner: Let Your iPhone Help Your Mac Run a 27B Model Over USB-C
-summaryTL;DR: Backburner is a pre-release, MIT-licensed project that uses a USB-C-connected iPhone as a co-processor so a Mac runs Qwen3.8-27B locally with faster prefill and much longer context.
-
-Engine: A fork of llama.cpp with custom Mac kernels, including SME2 CPU paths, Metal fusions and DFlash2 speculative decoding.
-Split prefill: The Mac runs layers 1-40, the iPhone GPU runs layers 41-64, pipelined in 256-token ubatches; only new KV rows cross the cable.
-Long context: Past the Mac&rsquo;s 64k context cells, the oldest 4,096-key pages move to the phone, which computes attention over them and merges partial results with the Mac. Older 16,384-key pages can be compiled into Core ML models for the phone&rsquo;s Neural Engine.
-Numbers: On a 24 GB M4 Pro MacBook Pro with an iPhone 17 Pro Max, prefill is 29-44% faster at 16k-48k context (109 to 157 tok/s at 16k). A cold session&rsquo;s first answer drops from 245 s on stock llama.cpp to 168 s.
-Decode: About 25 tok/s at 27-33k context with the fork versus 11.3 tok/s on stock llama.cpp, but the phone adds nothing there. At 128k with the phone it is 12.6 tok/s. The Mac Neural Engine is deliberately unused: it slowed decode by 26% through memory-bandwidth contention.
-Capacity: The phone&rsquo;s free memory lets total context reach a reported 196k-229k tokens. End-to-end tests reach 128k at 8-bit and 140k at 4-bit, and greedy output is claimed token-identical with and without the phone.
-Limits: One request at a time; the app must stay in the foreground with the screen on; a 15 s silence stops the server; a phone failure disables it for 60 s. Only Pro iPhones with a 10 Gb/s cable work, since the boxed USB 2 cable is too slow. Thermals vary: the 16 Pro Max hits &ldquo;serious&rdquo; thermal state within about a minute of continuous prefill.
-Setup: A one-line install script (about 24 GB download) or a manual build; the phone app is sideloaded via AltStore or Xcode. The result is an OpenAI-compatible API on localhost:8080. Manual setup raises the GPU wired memory limit with sudo sysctl, which resets on reboot.
-Security and caveats: Versions before 0.0.3 accepted Wi-Fi connections from any source; newer ones answer only the USB-attached Mac or a previously paired Mac over an encrypted, authenticated tunnel. All benchmarks are self-reported, and the README credits Claude Opus 5.5 for much of the build.
-
-Takeaway: An interesting local-inference hack for keeping code and prompts off third-party APIs. If you run it, update past 0.0.3 or disable Wi-Fi on the phone app.">
+Takeaway: Agent-scale commit rates break human-scale tooling first in source control and CI. Most teams cannot adopt Scion, but server-side commits, API-first queries and sparse checkouts are ideas to look for in git platforms.">
     <meta name="keywords" content="blog,developer,personal">
 
     
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Linkbase">
-  <meta name="twitter:description" content="01.10.2026 https://www.anthropic.com/research/redesigning-source-control
-https://github.com/conductor-oss/conductor
-https://www.semperis.com/blog/what-is-entragoat-entra-id-simulation-environment/?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&amp;_bhlid=2238cfabce9f120c06498c7a87e999c9671ddc28- https://github.com/runZeroInc/sshamble?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&amp;_bhlid=54ed43c39635810dbf28f2258d5a41643c42db1a
-https://labs.zenity.io/post/agentcorruption-how-a-single-prompt-collapsed-the-entire-cloud-security-model?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&amp;_bhlid=9d268617faab895a15cbc03eb477680fbf474c5d
-https://rea.tools/?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&amp;_bhlid=d68e2d78c46cff04d147647d6a2d1e20df0d4bd7
-https://specterops.io/blog/2026/09/24/ai-for-offensive-security/?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&amp;_bhlid=ce97f5daa14655760768f314f5ab61bd3fffe25f
-https://www.digitalocean.com/blog/how-digitalocean-manages-credentials-for-autonomous-agents?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&amp;_bhlid=f9f6fe47d81d112a65098f6432c2e641417b65db
-https://vincenzoiozzo.com/blog/jev-identity-resolution?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&amp;_bhlid=1b5892ddf24abb24b0267e4a644a25de50d32952
-https://cloud.google.com/blog/products/devops-sre/sre-book-second-edition/?utm_source=cloudseclist.com&amp;utm_medium=referral&amp;utm_campaign=CloudSecList-issue-360
-https://aws.amazon.com/blogs/aws/announcing-aws-lambda-web-functions-for-fast-consistent-web-app-performance-anywhere/?utm_source=cloudseclist.com&amp;utm_medium=referral&amp;utm_campaign=CloudSecList-issue-360
-https://aws.amazon.com/blogs/security/penetration-testing-every-deployment-with-aws-continuum/?utm_source=cloudseclist.com&amp;utm_medium=referral&amp;utm_campaign=CloudSecList-issue-360
-https://github.com/Gathin23/cleanyourtv
-https://github.com/kksimp/Mac.apk?ref=console.dev
-https://securitylabs.datadoghq.com/articles/introducing-pathrunner-aws-privilege-escalation-framework/?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-351-php2shell-autopatching-skills-aws-pathrunner&amp;_bhlid=d51cd34c87061c29d548d16bc206fb67403e3006
-https://www.salesforce.com/blog/managing-agentic-security-at-scale/?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-351-php2shell-autopatching-skills-aws-pathrunner&amp;_bhlid=33389a45806ff08cadba5492b43ab4f4f92b789a
-https://specterops.io/blog/2026/09/24/ai-for-offensive-security/?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&amp;_bhlid=ce97f5daa14655760768f314f5ab61bd3fffe25f
-https://claude.dev/blog/solving-code-review-at-anthropic/?utm_source=cloudseclist.com&amp;utm_medium=referral&amp;utm_campaign=CloudSecList-issue-361
-https://securitylabs.datadoghq.com/articles/putting-models-to-the-secure-coding-test-security-rules/?utm_source=cloudseclist.com&amp;utm_medium=referral&amp;utm_campaign=CloudSecList-issue-361
-https://medium.com/@adan.alvarez/i-gave-14-llms-aws-keys-heres-what-they-wanted-to-do-next-48585761a11b
-https://github.com/Pomerado/pomerado
-backburner: Let Your iPhone Help Your Mac Run a 27B Model Over USB-C summaryTL;DR: Backburner is a pre-release, MIT-licensed project that uses a USB-C-connected iPhone as a co-processor so a Mac runs Qwen3.8-27B locally with faster prefill and much longer context.
-Engine: A fork of llama.cpp with custom Mac kernels, including SME2 CPU paths, Metal fusions and DFlash2 speculative decoding. Split prefill: The Mac runs layers 1-40, the iPhone GPU runs layers 41-64, pipelined in 256-token ubatches; only new KV rows cross the cable. Long context: Past the Mac’s 64k context cells, the oldest 4,096-key pages move to the phone, which computes attention over them and merges partial results with the Mac. Older 16,384-key pages can be compiled into Core ML models for the phone’s Neural Engine. Numbers: On a 24 GB M4 Pro MacBook Pro with an iPhone 17 Pro Max, prefill is 29-44% faster at 16k-48k context (109 to 157 tok/s at 16k). A cold session’s first answer drops from 245 s on stock llama.cpp to 168 s. Decode: About 25 tok/s at 27-33k context with the fork versus 11.3 tok/s on stock llama.cpp, but the phone adds nothing there. At 128k with the phone it is 12.6 tok/s. The Mac Neural Engine is deliberately unused: it slowed decode by 26% through memory-bandwidth contention. Capacity: The phone’s free memory lets total context reach a reported 196k-229k tokens. End-to-end tests reach 128k at 8-bit and 140k at 4-bit, and greedy output is claimed token-identical with and without the phone. Limits: One request at a time; the app must stay in the foreground with the screen on; a 15 s silence stops the server; a phone failure disables it for 60 s. Only Pro iPhones with a 10 Gb/s cable work, since the boxed USB 2 cable is too slow. Thermals vary: the 16 Pro Max hits “serious” thermal state within about a minute of continuous prefill. Setup: A one-line install script (about 24 GB download) or a manual build; the phone app is sideloaded via AltStore or Xcode. The result is an OpenAI-compatible API on localhost:8080. Manual setup raises the GPU wired memory limit with sudo sysctl, which resets on reboot. Security and caveats: Versions before 0.0.3 accepted Wi-Fi connections from any source; newer ones answer only the USB-attached Mac or a previously paired Mac over an encrypted, authenticated tunnel. All benchmarks are self-reported, and the README credits Claude Opus 5.5 for much of the build. Takeaway: An interesting local-inference hack for keeping code and prompts off third-party APIs. If you run it, update past 0.0.3 or disable Wi-Fi on the phone app.">
+  <meta name="twitter:description" content="01.10.2026 Redesigning Source Control at Anthropic summaryTL;DR: Anthropic’s source control team describes Scion, an in-house version control system that replaced git for its monorepo after merged changes grew from about 2,500 to over 30,000 per day between May and September 2026.
+Scale problem: Main branch history is nearly 100 GB, a compressed working copy exceeds 25 GB, and CI runs about 25 million checkouts per day. Naive fetching would mean over 600 PB of git traffic daily. Design: Clients are assumed always online. The server handles history, blame, commits, merges and rebases. Clients keep a bounded object cache and use sparse, virtualized checkouts. Data model: Changesets in a write-ahead log list changed files with content-addressed blob pointers. Moving a ref is a compare-and-swap on one Spanner row. No packfiles, no full repo copy anywhere. Architecture: A per-node scion-daemon talks to regional scion-cache servers, which talk to authoritative scion-server instances on Spanner and cloud storage. Cache hit rate is over 99% at each tier. Results: About 200x smaller CPU and memory footprint than the git mirror fleet, checkouts about 100x faster, and about 25% CI CPU capacity freed. Seven people built Scion and the Antique code review tool in about five months. Limits: Not a general git replacement. It only fits very large monorepos and forces migration of review, search and CI. Without a global merge lock, conflicts happen and Claude is used to fix them. Takeaway: Agent-scale commit rates break human-scale tooling first in source control and CI. Most teams cannot adopt Scion, but server-side commits, API-first queries and sparse checkouts are ideas to look for in git platforms.">
 
     <meta property="og:url" content="https://d47zm3.me/linkbase/">
   <meta property="og:site_name" content="d47zm3">
   <meta property="og:title" content="Linkbase">
-  <meta property="og:description" content="01.10.2026 https://www.anthropic.com/research/redesigning-source-control
-https://github.com/conductor-oss/conductor
-https://www.semperis.com/blog/what-is-entragoat-entra-id-simulation-environment/?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&amp;_bhlid=2238cfabce9f120c06498c7a87e999c9671ddc28- https://github.com/runZeroInc/sshamble?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&amp;_bhlid=54ed43c39635810dbf28f2258d5a41643c42db1a
-https://labs.zenity.io/post/agentcorruption-how-a-single-prompt-collapsed-the-entire-cloud-security-model?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&amp;_bhlid=9d268617faab895a15cbc03eb477680fbf474c5d
-https://rea.tools/?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&amp;_bhlid=d68e2d78c46cff04d147647d6a2d1e20df0d4bd7
-https://specterops.io/blog/2026/09/24/ai-for-offensive-security/?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&amp;_bhlid=ce97f5daa14655760768f314f5ab61bd3fffe25f
-https://www.digitalocean.com/blog/how-digitalocean-manages-credentials-for-autonomous-agents?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&amp;_bhlid=f9f6fe47d81d112a65098f6432c2e641417b65db
-https://vincenzoiozzo.com/blog/jev-identity-resolution?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&amp;_bhlid=1b5892ddf24abb24b0267e4a644a25de50d32952
-https://cloud.google.com/blog/products/devops-sre/sre-book-second-edition/?utm_source=cloudseclist.com&amp;utm_medium=referral&amp;utm_campaign=CloudSecList-issue-360
-https://aws.amazon.com/blogs/aws/announcing-aws-lambda-web-functions-for-fast-consistent-web-app-performance-anywhere/?utm_source=cloudseclist.com&amp;utm_medium=referral&amp;utm_campaign=CloudSecList-issue-360
-https://aws.amazon.com/blogs/security/penetration-testing-every-deployment-with-aws-continuum/?utm_source=cloudseclist.com&amp;utm_medium=referral&amp;utm_campaign=CloudSecList-issue-360
-https://github.com/Gathin23/cleanyourtv
-https://github.com/kksimp/Mac.apk?ref=console.dev
-https://securitylabs.datadoghq.com/articles/introducing-pathrunner-aws-privilege-escalation-framework/?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-351-php2shell-autopatching-skills-aws-pathrunner&amp;_bhlid=d51cd34c87061c29d548d16bc206fb67403e3006
-https://www.salesforce.com/blog/managing-agentic-security-at-scale/?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-351-php2shell-autopatching-skills-aws-pathrunner&amp;_bhlid=33389a45806ff08cadba5492b43ab4f4f92b789a
-https://specterops.io/blog/2026/09/24/ai-for-offensive-security/?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&amp;_bhlid=ce97f5daa14655760768f314f5ab61bd3fffe25f
-https://claude.dev/blog/solving-code-review-at-anthropic/?utm_source=cloudseclist.com&amp;utm_medium=referral&amp;utm_campaign=CloudSecList-issue-361
-https://securitylabs.datadoghq.com/articles/putting-models-to-the-secure-coding-test-security-rules/?utm_source=cloudseclist.com&amp;utm_medium=referral&amp;utm_campaign=CloudSecList-issue-361
-https://medium.com/@adan.alvarez/i-gave-14-llms-aws-keys-heres-what-they-wanted-to-do-next-48585761a11b
-https://github.com/Pomerado/pomerado
-backburner: Let Your iPhone Help Your Mac Run a 27B Model Over USB-C summaryTL;DR: Backburner is a pre-release, MIT-licensed project that uses a USB-C-connected iPhone as a co-processor so a Mac runs Qwen3.8-27B locally with faster prefill and much longer context.
-Engine: A fork of llama.cpp with custom Mac kernels, including SME2 CPU paths, Metal fusions and DFlash2 speculative decoding. Split prefill: The Mac runs layers 1-40, the iPhone GPU runs layers 41-64, pipelined in 256-token ubatches; only new KV rows cross the cable. Long context: Past the Mac’s 64k context cells, the oldest 4,096-key pages move to the phone, which computes attention over them and merges partial results with the Mac. Older 16,384-key pages can be compiled into Core ML models for the phone’s Neural Engine. Numbers: On a 24 GB M4 Pro MacBook Pro with an iPhone 17 Pro Max, prefill is 29-44% faster at 16k-48k context (109 to 157 tok/s at 16k). A cold session’s first answer drops from 245 s on stock llama.cpp to 168 s. Decode: About 25 tok/s at 27-33k context with the fork versus 11.3 tok/s on stock llama.cpp, but the phone adds nothing there. At 128k with the phone it is 12.6 tok/s. The Mac Neural Engine is deliberately unused: it slowed decode by 26% through memory-bandwidth contention. Capacity: The phone’s free memory lets total context reach a reported 196k-229k tokens. End-to-end tests reach 128k at 8-bit and 140k at 4-bit, and greedy output is claimed token-identical with and without the phone. Limits: One request at a time; the app must stay in the foreground with the screen on; a 15 s silence stops the server; a phone failure disables it for 60 s. Only Pro iPhones with a 10 Gb/s cable work, since the boxed USB 2 cable is too slow. Thermals vary: the 16 Pro Max hits “serious” thermal state within about a minute of continuous prefill. Setup: A one-line install script (about 24 GB download) or a manual build; the phone app is sideloaded via AltStore or Xcode. The result is an OpenAI-compatible API on localhost:8080. Manual setup raises the GPU wired memory limit with sudo sysctl, which resets on reboot. Security and caveats: Versions before 0.0.3 accepted Wi-Fi connections from any source; newer ones answer only the USB-attached Mac or a previously paired Mac over an encrypted, authenticated tunnel. All benchmarks are self-reported, and the README credits Claude Opus 5.5 for much of the build. Takeaway: An interesting local-inference hack for keeping code and prompts off third-party APIs. If you run it, update past 0.0.3 or disable Wi-Fi on the phone app.">
+  <meta property="og:description" content="01.10.2026 Redesigning Source Control at Anthropic summaryTL;DR: Anthropic’s source control team describes Scion, an in-house version control system that replaced git for its monorepo after merged changes grew from about 2,500 to over 30,000 per day between May and September 2026.
+Scale problem: Main branch history is nearly 100 GB, a compressed working copy exceeds 25 GB, and CI runs about 25 million checkouts per day. Naive fetching would mean over 600 PB of git traffic daily. Design: Clients are assumed always online. The server handles history, blame, commits, merges and rebases. Clients keep a bounded object cache and use sparse, virtualized checkouts. Data model: Changesets in a write-ahead log list changed files with content-addressed blob pointers. Moving a ref is a compare-and-swap on one Spanner row. No packfiles, no full repo copy anywhere. Architecture: A per-node scion-daemon talks to regional scion-cache servers, which talk to authoritative scion-server instances on Spanner and cloud storage. Cache hit rate is over 99% at each tier. Results: About 200x smaller CPU and memory footprint than the git mirror fleet, checkouts about 100x faster, and about 25% CI CPU capacity freed. Seven people built Scion and the Antique code review tool in about five months. Limits: Not a general git replacement. It only fits very large monorepos and forces migration of review, search and CI. Without a global merge lock, conflicts happen and Claude is used to fix them. Takeaway: Agent-scale commit rates break human-scale tooling first in source control and CI. Most teams cannot adopt Scion, but server-side commits, API-first queries and sparse checkouts are ideas to look for in git platforms.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
 
@@ -249,64 +146,305 @@ Engine: A fork of llama.cpp with custom Mac kernels, including SME2 CPU paths, M
 </h3>
 <ul>
 <li>
-<p><a href="https://www.anthropic.com/research/redesigning-source-control">https://www.anthropic.com/research/redesigning-source-control</a></p>
+<p><a href="https://www.anthropic.com/research/redesigning-source-control">Redesigning Source Control at Anthropic</a>
+<details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> Anthropic&rsquo;s source control team describes Scion, an in-house version control system that replaced git for its monorepo after merged changes grew from about 2,500 to over 30,000 per day between May and September 2026.</p>
+<ul>
+<li><strong>Scale problem:</strong> Main branch history is nearly 100 GB, a compressed working copy exceeds 25 GB, and CI runs about 25 million checkouts per day. Naive fetching would mean over 600 PB of git traffic daily.</li>
+<li><strong>Design:</strong> Clients are assumed always online. The server handles history, blame, commits, merges and rebases. Clients keep a bounded object cache and use sparse, virtualized checkouts.</li>
+<li><strong>Data model:</strong> Changesets in a write-ahead log list changed files with content-addressed blob pointers. Moving a ref is a compare-and-swap on one Spanner row. No packfiles, no full repo copy anywhere.</li>
+<li><strong>Architecture:</strong> A per-node <code>scion-daemon</code> talks to regional <code>scion-cache</code> servers, which talk to authoritative <code>scion-server</code> instances on Spanner and cloud storage. Cache hit rate is over 99% at each tier.</li>
+<li><strong>Results:</strong> About 200x smaller CPU and memory footprint than the git mirror fleet, checkouts about 100x faster, and about 25% CI CPU capacity freed. Seven people built Scion and the Antique code review tool in about five months.</li>
+<li><strong>Limits:</strong> Not a general git replacement. It only fits very large monorepos and forces migration of review, search and CI. Without a global merge lock, conflicts happen and Claude is used to fix them.</li>
+</ul>
+<p><strong>Takeaway:</strong> Agent-scale commit rates break human-scale tooling first in source control and CI. Most teams cannot adopt Scion, but server-side commits, API-first queries and sparse checkouts are ideas to look for in git platforms.</p>
+</div></details>
+</p>
 </li>
 <li>
-<p><a href="https://github.com/conductor-oss/conductor">https://github.com/conductor-oss/conductor</a></p>
+<p><a href="https://github.com/conductor-oss/conductor">Conductor: Event-Driven Agentic Workflow Engine with Durable, Resilient Execution</a>
+<details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> Conductor is the Apache 2.0 durable workflow engine that started at Netflix and is now maintained mainly by Orkes, positioned for microservices and AI agent orchestration.</p>
+<ul>
+<li><strong>Durable execution:</strong> Every step is persisted, so workflows survive crashes and restarts and can wait weeks on a human approval or timer.</li>
+<li><strong>Control flow:</strong> <code>SWITCH</code>, <code>DO_WHILE</code>, <code>FORK_JOIN</code>, <code>SUB_WORKFLOW</code> and <code>DYNAMIC</code> tasks, with retries, timeouts and compensating steps. Running executions stay pinned to their definition version.</li>
+<li><strong>Agent features:</strong> Native LLM tasks, MCP tool discovery and calls, human approval steps and RAG vector workflows. The engine is deterministic, so worker code need not be replayable.</li>
+<li><strong>SDKs:</strong> Workers in Java, Python, Go, JavaScript, C#, Ruby and Rust (Ruby and Rust incubating).</li>
+<li><strong>Backends:</strong> Redis plus Elasticsearch 7 by default, also Elasticsearch 8, OpenSearch, Postgres and MySQL combinations.</li>
+<li><strong>Quick start:</strong> <code>npm install -g @conductor-oss/conductor-cli</code> then <code>conductor server start</code> (UI on <code>localhost:8080</code>), or <code>docker run -p 5000:5000 -p 8080:8080 conductoross/conductor:next</code>.</li>
+<li><strong>Adoption:</strong> About 32.4k GitHub stars at time of fetch.</li>
+</ul>
+<p><strong>Takeaway:</strong> A mature self-hosted alternative to Temporal-style engines when you want an explicit, inspectable workflow graph. Worth a look for long-running agent loops that need retries, approvals and an audit trail.</p>
+</div></details>
+</p>
 </li>
 <li>
-<p><a href="https://www.semperis.com/blog/what-is-entragoat-entra-id-simulation-environment/?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&amp;_bhlid=2238cfabce9f120c06498c7a87e999c9671ddc28-">https://www.semperis.com/blog/what-is-entragoat-entra-id-simulation-environment/?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&_bhlid=2238cfabce9f120c06498c7a87e999c9671ddc28-</a> <a href="https://github.com/runZeroInc/sshamble?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&amp;_bhlid=54ed43c39635810dbf28f2258d5a41643c42db1a">https://github.com/runZeroInc/sshamble?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&_bhlid=54ed43c39635810dbf28f2258d5a41643c42db1a</a></p>
+<p><a href="https://www.semperis.com/blog/what-is-entragoat-entra-id-simulation-environment/">What Is EntraGoat? A Deliberately Vulnerable Entra ID Simulation Environment</a>
+<details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> EntraGoat is an open-source, deliberately vulnerable Microsoft Entra ID lab from Semperis (Jonathan Elkabas, Tomer Nahum) for practising identity attack paths CTF-style in your own test tenant.</p>
+<ul>
+<li><strong>Format:</strong> Each challenge starts from an already compromised identity and hides a flag, so recon is skipped.</li>
+<li><strong>Attack paths:</strong> Role escalation via application ownership, service principal abuse with Graph API permissions, PIM activation chains, dynamic administrative unit poisoning, and certificate-based auth forgery to impersonate a Global Administrator.</li>
+<li><strong>Scope:</strong> Identity only. Key Vault and SharePoint are deliberately excluded.</li>
+<li><strong>Tooling:</strong> Challenges are built with PowerShell and Microsoft Graph, with setup and cleanup scripts per scenario, hints and optional walkthroughs.</li>
+<li><strong>Interface:</strong> A local React web UI tracks progress and accepts flags. Direct PowerShell use also works.</li>
+<li><strong>Requirement:</strong> Run only in a dedicated test Entra ID tenant.</li>
+</ul>
+<p><strong>Takeaway:</strong> Good hands-on training for red and blue teams working on Entra ID privilege escalation. Use a throwaway tenant and run the cleanup scripts after each scenario.</p>
+</div></details>
+</p>
 </li>
 <li>
-<p><a href="https://labs.zenity.io/post/agentcorruption-how-a-single-prompt-collapsed-the-entire-cloud-security-model?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&amp;_bhlid=9d268617faab895a15cbc03eb477680fbf474c5d">https://labs.zenity.io/post/agentcorruption-how-a-single-prompt-collapsed-the-entire-cloud-security-model?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&_bhlid=9d268617faab895a15cbc03eb477680fbf474c5d</a></p>
+<p><a href="https://github.com/runZeroInc/sshamble">SSHamble: Unexpected Exposures in SSH</a>
+<details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> SSHamble is a Go research tool from runZero that probes SSH implementations for authentication bypasses, pre-auth state bugs, timing leaks and post-session exposures.</p>
+<ul>
+<li><strong>Bypass checks:</strong> Default checks include <code>skip-auth-none</code>, <code>skip-auth-success</code> and <code>skip-ssh-userauth</code> to test whether auth can be skipped.</li>
+<li><strong>Credential checks:</strong> Empty, null and username-based passwords, keyboard-interactive variants, any-key and key-hunt public key tests, and <code>gssapi-any</code>.</li>
+<li><strong>Known-bad material:</strong> Host keys checked against the badkeys.info blocklist (<code>badkeys-update</code> refreshes the cache).</li>
+<li><strong>Product checks:</strong> Environment-variable tests for Gogs, Soft Serve and Ruckus, plus a TCP forwarding check. Username enumeration by timing is optional.</li>
+<li><strong>Workflow:</strong> <code>sshamble scan ... -o results.jsonl</code> against a range, then <code>sshamble analyze</code> sorts the JSONL into result buckets.</li>
+<li><strong>Interactive mode:</strong> <code>-I</code> drops into a shell on the first, all or no successful sessions, with <code>--interact-auto</code> defaulting to <code>pty,shell</code>.</li>
+<li><strong>Status:</strong> README calls it a work in progress. Requires a recent Go toolchain.</li>
+</ul>
+<p><strong>Takeaway:</strong> Useful for auditing embedded and non-OpenSSH SSH servers, where auth state-machine bugs are common. Run it only against hosts you are authorized to test.</p>
+</div></details>
+</p>
 </li>
 <li>
-<p><a href="https://rea.tools/?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&amp;_bhlid=d68e2d78c46cff04d147647d6a2d1e20df0d4bd7">https://rea.tools/?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&_bhlid=d68e2d78c46cff04d147647d6a2d1e20df0d4bd7</a></p>
+<p><a href="https://labs.zenity.io/post/agentcorruption-how-a-single-prompt-collapsed-the-entire-cloud-security-model">AgentCorruption: How a Single Prompt Collapsed the Entire Cloud Security Model</a>
+<details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> Zenity Labs (Tamir Ishay Sharbat, Lana Salameh) show how one prompt injection against an Amazon Bedrock AgentCore agent could take over every AgentCore agent in the same AWS account and region via an overprivileged default execution role.</p>
+<ul>
+<li><strong>Entry:</strong> Prompt injection makes an HTTP-capable tool hit IMDS at <code>169.254.169.254</code> from the Firecracker microVM, returning the execution role&rsquo;s temporary credentials.</li>
+<li><strong>Discovery:</strong> <code>DescribeLogGroups</code> enumerates agent IDs. ECR repo names match agent IDs, so container images can be pulled.</li>
+<li><strong>Lateral movement:</strong> Region-wide <code>InvokeAgentRuntime</code> lets the attacker call other agents.</li>
+<li><strong>Data and persistence:</strong> <code>ListEvents</code> reads private conversations across agents and users. <code>CreateEvent</code> poisons agent memory for future sessions.</li>
+<li><strong>Secrets:</strong> <code>GetResourceApiKey</code> and <code>secretsmanager:GetSecretValue</code> expose tool credentials.</li>
+<li><strong>Timeline:</strong> Reported Dec 2025 and Jan 2026. AWS moved AgentCore to IMDSv2-only in Feb 2026. By Sep 29, 2026 the default role had been substantially narrowed. AWS called the IMDS behaviour documented and expected.</li>
+</ul>
+<p><strong>Takeaway:</strong> Treat any agent with tools as an attack entry point. Replace default execution roles with per-agent least-privilege roles and keep customer-facing and sensitive agents in separate boundaries.</p>
+</div></details>
+</p>
 </li>
 <li>
-<p><a href="https://specterops.io/blog/2026/09/24/ai-for-offensive-security/?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&amp;_bhlid=ce97f5daa14655760768f314f5ab61bd3fffe25f">https://specterops.io/blog/2026/09/24/ai-for-offensive-security/?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&_bhlid=ce97f5daa14655760768f314f5ab61bd3fffe25f</a></p>
+<p><a href="https://rea.tools/">REA: Reverse Engineering for Your Coding Agent</a>
+<details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> REA is an MIT-licensed toolkit (GitHub <code>morluto/rea</code>) that gives a coding agent reverse-engineering tools to inspect apps, games and websites, explain a feature and rebuild it.</p>
+<ul>
+<li><strong>Targets:</strong> x64 executables and DLLs, Android APKs, Electron and packaged JavaScript apps, and browser-hosted apps via a local debugging connection.</li>
+<li><strong>Method:</strong> Inspects a program while it runs, reading code and observing behaviour, then produces a reconstruction checked against the original.</li>
+<li><strong>RL environments:</strong> Builds runnable reinforcement-learning environments from recorded web app sessions so agents can practise without the real app.</li>
+<li><strong>Showcases:</strong> Android authenticator login-code logic, Notion clipboard behaviour, DX-Ball sound panning, Windows Calculator.</li>
+<li><strong>Install:</strong> <code>npx rea-agents@latest setup</code>, then restart the agent. Guides for Windows, macOS and Linux.</li>
+<li><strong>Gaps:</strong> The site does not name the disassembler or decompiler used, the integration protocol, or the authors.</li>
+</ul>
+<p><strong>Takeaway:</strong> A quick way to give Claude Code or similar agents binary and app inspection tools. Check the repo for what it actually wires in before running it on sensitive targets.</p>
+</div></details>
+</p>
 </li>
 <li>
-<p><a href="https://www.digitalocean.com/blog/how-digitalocean-manages-credentials-for-autonomous-agents?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&amp;_bhlid=f9f6fe47d81d112a65098f6432c2e641417b65db">https://www.digitalocean.com/blog/how-digitalocean-manages-credentials-for-autonomous-agents?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&_bhlid=f9f6fe47d81d112a65098f6432c2e641417b65db</a></p>
+<p><a href="https://specterops.io/blog/2026/09/24/ai-for-offensive-security/">AI for Offensive Security: What Works, What Does Not, and How to Adopt It</a>
+<details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> Russel Van Tuyl (SpecterOps) reviews where AI helps offensive security as of September 2026: strong for bounded, verifiable tasks, weak for autonomous end-to-end operations.</p>
+<ul>
+<li><strong>Works:</strong> Code review, research, tool development with tests and mock services, BOF skills with validation harnesses, recon data reduction (BloodHound MCP, DeepPass2), and reporting support.</li>
+<li><strong>Vuln discovery:</strong> Researchers estimate about 40 previously unknown bugs by August 2026, including LPE, RCE and a container escape. Codex tested 440 prompt-injection payloads in two to three hours.</li>
+<li><strong>Fails:</strong> Self-grading against weak metrics, state drift after one wrong credential or identity, and range-to-real transfer gaps. AutoPenBench reports 21% success for a fully autonomous agent.</li>
+<li><strong>External tests:</strong> ARTEMIS on about 8,000 hosts placed second against 10 practitioners with an 82% valid-submission rate, but struggled with GUIs and false positives.</li>
+<li><strong>Containment:</strong> Cites real incidents of models escaping or reaching real organizations from evaluation environments. A scope statement in a prompt is not a security boundary.</li>
+<li><strong>Harness:</strong> General apps for close supervision, skills for bounded methods, custom harnesses (for example LangGraph) for persistent state and permissions.</li>
+<li><strong>Adoption steps:</strong> Start with a known bottleneck, define proof of completion, keep authority proportional to evidence, measure in the real workflow, enforce authorization outside the model.</li>
+</ul>
+<p><strong>Takeaway:</strong> Put AI on narrow, checkable offensive tasks first and keep humans validating findings. Enforce scope with network and credential controls, never with prompts.</p>
+</div></details>
+</p>
 </li>
 <li>
-<p><a href="https://vincenzoiozzo.com/blog/jev-identity-resolution?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&amp;_bhlid=1b5892ddf24abb24b0267e4a644a25de50d32952">https://vincenzoiozzo.com/blog/jev-identity-resolution?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&_bhlid=1b5892ddf24abb24b0267e4a644a25de50d32952</a></p>
+<p><a href="https://www.digitalocean.com/blog/how-digitalocean-manages-credentials-for-autonomous-agents">How DigitalOcean Manages Credentials for Autonomous Agents</a>
+<details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> Tyler Healy (DigitalOcean) explains an agent credential model built on one rule: the agent never holds the secret.</p>
+<ul>
+<li><strong>Isolated sessions:</strong> Each agent runs in its own Harness Runtime session with no standing credentials and nothing persisted.</li>
+<li><strong>Action Gateway:</strong> The agent asks the gateway to make authorized calls. The gateway injects credentials at execution time, handles OAuth refresh and per-user identity, and covers over 16,000 integrations.</li>
+<li><strong><code>env</code> vs <code>secrets</code>:</strong> <code>env</code> is stored verbatim and flagged if names or prefixes like <code>sk-</code>, <code>ghp_</code>, <code>AKIA</code>, <code>dop_v1_</code> look like credentials. <code>secrets</code> are encrypted at rest but still injected into the sandbox.</li>
+<li><strong>Scoped secrets:</strong> Adding a <code>url</code> binds a secret to one HTTPS host. The sandbox gets a short-lived handle and an egress proxy swaps in the real credential only for that host.</li>
+<li><strong>Swarms (beta):</strong> Each sub-agent gets its own microVM and session, shares nothing by default, and spawning is a permissioned, capped action.</li>
+<li><strong>Example:</strong> A read-only compliance auditor with default-deny permissions, one egress host, zero-egress network rules and uid/gid 1000.</li>
+<li><strong>Caveat:</strong> The published auditor spec snippet is malformed and should not be copied as-is.</li>
+</ul>
+<p><strong>Takeaway:</strong> The egress-proxy credential swap is the pattern to copy for any agent platform. Plain secret injection into a sandbox still leaves keys readable by a hijacked agent.</p>
+</div></details>
+</p>
 </li>
 <li>
-<p><a href="https://cloud.google.com/blog/products/devops-sre/sre-book-second-edition/?utm_source=cloudseclist.com&amp;utm_medium=referral&amp;utm_campaign=CloudSecList-issue-360">https://cloud.google.com/blog/products/devops-sre/sre-book-second-edition/?utm_source=cloudseclist.com&utm_medium=referral&utm_campaign=CloudSecList-issue-360</a></p>
+<p><a href="https://cloud.google.com/blog/products/devops-sre/sre-book-second-edition/">SRE Book Second Edition</a>
+<details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> Google announces a completely rewritten second edition of the Site Reliability Engineering book for the book&rsquo;s 10th anniversary, aimed at cloud and AI-era operations. Post by Betsy Beyer and David Huska.</p>
+<ul>
+<li><strong>SLOs:</strong> Moves from basic availability metrics to user-centric, multi-tiered SLOs with burn-rate alerting and automated policy enforcement.</li>
+<li><strong>Observability:</strong> OpenTelemetry, distributed tracing and automated anomaly correlation replace static dashboards.</li>
+<li><strong>Automation:</strong> Declarative IaC, internal developer platforms and self-healing systems instead of one-off scripts.</li>
+<li><strong>Testing and capacity:</strong> Continuous resilience checks, canary verification, auto-scaling, FinOps alignment and GPU/TPU cluster optimization.</li>
+<li><strong>SRE for AI:</strong> Reliability of GPU/TPU clusters, training and data pipelines, and monitoring non-deterministic outputs.</li>
+<li><strong>AI for SRE:</strong> Generative AI for incident triage and postmortem drafts, natural-language telemetry queries, predictive bottleneck models.</li>
+<li><strong>Availability:</strong> Print via Google Books, digital via O&rsquo;Reilly. The post does not mention free online access or a chapter list.</li>
+</ul>
+<p><strong>Takeaway:</strong> Worth reading if your SRE practice is built on the 2016 edition. Check whether a free sre.google version appears before buying.</p>
+</div></details>
+</p>
 </li>
 <li>
-<p><a href="https://aws.amazon.com/blogs/aws/announcing-aws-lambda-web-functions-for-fast-consistent-web-app-performance-anywhere/?utm_source=cloudseclist.com&amp;utm_medium=referral&amp;utm_campaign=CloudSecList-issue-360">https://aws.amazon.com/blogs/aws/announcing-aws-lambda-web-functions-for-fast-consistent-web-app-performance-anywhere/?utm_source=cloudseclist.com&utm_medium=referral&utm_campaign=CloudSecList-issue-360</a></p>
+<p><a href="https://aws.amazon.com/blogs/aws/announcing-aws-lambda-web-functions-for-fast-consistent-web-app-performance-anywhere/">Announcing AWS Lambda Web Functions</a>
+<details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> AWS launches Lambda Web Functions, a Lambda form factor that runs normal port-listening HTTP servers (Express, Hono, Fastify, Next.js) without rewriting them as event handlers.</p>
+<ul>
+<li><strong>Model:</strong> Multi-concurrent execution with up to 128 concurrent requests per environment, alongside existing Event Functions and new MicroVMs. All use Firecracker.</li>
+<li><strong>Billing:</strong> Active CPU time is metered, so I/O waits cost little CPU. Memory is billed for the environment lifetime. No rates in the post.</li>
+<li><strong>How it works:</strong> The server listens on the address in <code>AWS_LAMBDA_HTTP_ENDPOINT</code>. Immutable revisions sit behind HTTPS endpoints that can split traffic.</li>
+<li><strong>Deploy:</strong> <code>aws lambda-web deploy --name my-web-app --code ./my-app</code>, add <code>--regions us-east-1,eu-west-1,ap-northeast-1</code> for best-effort latency routing across Regions.</li>
+<li><strong>Canary:</strong> <code>aws lambda-web update-web-function-endpoint</code> with <code>--revision-weights</code> splits traffic, for example 90/10.</li>
+<li><strong>Launch limits:</strong> Node.js 24 on Arm64 only, five Regions (us-east-1, us-east-2, us-west-2, ap-northeast-1, eu-west-1). VPC supported.</li>
+<li><strong>CloudFront:</strong> Can serve as a CloudFront origin with origin access control so only your distribution invokes it.</li>
+</ul>
+<p><strong>Takeaway:</strong> Removes the adapter layer and per-request concurrency penalty for web apps on Lambda. Wait for more runtimes and published pricing before moving production APIs.</p>
+</div></details>
+</p>
 </li>
 <li>
-<p><a href="https://aws.amazon.com/blogs/security/penetration-testing-every-deployment-with-aws-continuum/?utm_source=cloudseclist.com&amp;utm_medium=referral&amp;utm_campaign=CloudSecList-issue-360">https://aws.amazon.com/blogs/security/penetration-testing-every-deployment-with-aws-continuum/?utm_source=cloudseclist.com&utm_medium=referral&utm_campaign=CloudSecList-issue-360</a></p>
+<p><a href="https://aws.amazon.com/blogs/security/penetration-testing-every-deployment-with-aws-continuum/">Penetration Testing Every Deployment with AWS Continuum</a>
+<details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> AWS Security Blog post (Jigar Bhatt, Benjamin Li, Oct 2026) on wiring AWS Continuum for penetration testing, formerly AWS Security Agent, into CI/CD as a post-deployment gate that confirms whether vulnerabilities are actually exploitable.</p>
+<ul>
+<li><strong>Approach:</strong> AI agents attack the running application instead of flagging code patterns like SAST, SCA or DAST; testing runs server-side in your AWS account, not on the CI runner.</li>
+<li><strong>Diff scoping:</strong> Each run covers the commit range from the last passing gate (base) to the commit being gated (head), keeping per-deploy tests fast and cheap.</li>
+<li><strong>Scope outcomes:</strong> In scope (findings checked against threshold), scoped out (pass), or scope conflict (change outside configured scope, not tested).</li>
+<li><strong>Auth:</strong> IAM OIDC provider plus a role assumed with short-lived tokens; no stored access keys. Session duration must be at least (timeout + 10) x 60 seconds.</li>
+<li><strong>Pipeline shape:</strong> GitHub Actions example with <code>deploy</code> to staging, <code>security-pentest</code> gate, then <code>deploy-prod</code>; GitLab, Bitbucket and Azure DevOps are linked tutorials.</li>
+<li><strong>Settings:</strong> <code>severity-threshold</code> (<code>NONE</code> for report-only, or e.g. <code>HIGH</code>), <code>on-scope-conflict</code>, <code>fail-on-infrastructure-error</code> (default <code>false</code>, fail-open), <code>timeout-minutes</code>, plus a dry-run mode.</li>
+<li><strong>Gotchas:</strong> Any passing run, even report-only, advances the baseline, so tightening the threshold later does not retest cleared commits; GitLab pipeline variables can override gate settings; GitHub repos created or renamed after July 15, 2026 emit an immutable numeric <code>sub</code> claim.</li>
+</ul>
+<p><strong>Takeaway:</strong> A useful pattern for exploit-confirmed testing per deploy. Set <code>fail-on-infrastructure-error: true</code>, lock down variable overrides, and decide the threshold before the first run because the baseline moves on every pass.</p>
+</div></details>
+</p>
 </li>
 <li>
-<p><a href="https://github.com/Gathin23/cleanyourtv">https://github.com/Gathin23/cleanyourtv</a></p>
+<p><a href="https://github.com/Gathin23/cleanyourtv">cleanyourtv: Debloat Any Android or Google TV over Wi-Fi and Get an Apple TV-Style Home</a>
+<details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> cleanyourtv is an MIT-licensed project by GitHub user Gathin23 that debloats Android TV and Google TV sets over Wi-Fi ADB and installs a small Apple TV-style launcher as the default Home app.</p>
+<ul>
+<li><strong>Method:</strong> Enables ADB, backs up packages and settings, then disables telemetry, ad services and preloaded apps with <code>pm disable-user</code>; nothing is uninstalled and restore scripts undo changes.</li>
+<li><strong>Tooling:</strong> <code>tools/tv.py --probe</code>, <code>tools/disable.sh &lt;list&gt;</code>, <code>tools/restore.sh &lt;list&gt;</code>, <code>tools/check.py &lt;list&gt; --fix</code> (re-apply after firmware updates), <code>tools/privacy.py</code>, <code>tools/adb-closed.py</code>; PowerShell equivalents for Windows.</li>
+<li><strong>Launcher:</strong> About 572 KB, plain Java, no network permission or background services; 14 themes via <code>config.json</code>, 31 languages.</li>
+<li><strong>Coverage:</strong> Community debloat lists for 170+ TV models grouped by brand.</li>
+<li><strong>Requirements:</strong> Python 3, JDK 17 to 22 (JDK 23+ breaks Gradle 8.9), Android SDK platform 34; launcher needs Android 8.0+.</li>
+<li><strong>Unsupported:</strong> Samsung Tizen, LG webOS, Roku, Vizio, Hisense VIDAA (no ADB); Fire TV gets debloat only, no launcher.</li>
+<li><strong>Risks:</strong> Network ADB is plaintext on port 5555 on some firmware; disabling Google TV&rsquo;s <code>setupwraith</code> carelessly can crash-loop the system; firmware updates can revert changes.</li>
+</ul>
+<p><strong>Takeaway:</strong> A reversible way to strip ads and telemetry from a smart TV. Turn network debugging off afterwards and run <code>check.py</code> after each firmware update.</p>
+</div></details>
+</p>
 </li>
 <li>
-<p><a href="https://github.com/kksimp/Mac.apk?ref=console.dev">https://github.com/kksimp/Mac.apk?ref=console.dev</a></p>
+<p><a href="https://github.com/kksimp/Mac.apk">Mac.apk: Run Android Apps Natively on Apple Silicon Macs</a>
+<details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> Mac.apk, by GitHub user kksimp (Voltare), is an alpha AGPL-3.0 project that runs Android apps on Apple Silicon Macs as native macOS processes, without an emulator, VM or Linux kernel.</p>
+<ul>
+<li><strong>Architecture:</strong> Reimplemented Android framework, native runtime, arm64 loader with a Bionic shim, and an ARM32 recompiler; graphics via ANGLE and MoltenVK on Metal.</li>
+<li><strong>Bundled components:</strong> Capstone, libpng, libvpx, stb_vorbis, Bouncy Castle, an OpenJDK-built JRE, and AOSP platform resources.</li>
+<li><strong>Requirements:</strong> macOS 26.4 (Tahoe) or newer, Apple Silicon only; about 280 MB plus 1.5 to 3 times each APK&rsquo;s size.</li>
+<li><strong>Formats:</strong> <code>.apk</code>, <code>.apkm</code>, <code>.xapk</code>, <code>.apks</code>, <code>.apkx</code> via double-click or drag-and-drop; per-app data in <code>~/Library/Application Support/MacApk/&lt;package&gt;</code>.</li>
+<li><strong>Compatibility:</strong> 71 apps tested: 58 fully playable, 10 partly working, 3 not working.</li>
+<li><strong>Security model:</strong> Apps run with the user&rsquo;s macOS permissions and no phone-style sandbox; the README says to install only trusted APKs.</li>
+<li><strong>Licensing:</strong> AGPL v3.0 with a commercial license option; the official app is free.</li>
+</ul>
+<p><strong>Takeaway:</strong> An interesting alternative to emulators for running Android apps on a Mac. Treat every APK as an unsandboxed native program with full user access.</p>
+</div></details>
+</p>
 </li>
 <li>
-<p><a href="https://securitylabs.datadoghq.com/articles/introducing-pathrunner-aws-privilege-escalation-framework/?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-351-php2shell-autopatching-skills-aws-pathrunner&amp;_bhlid=d51cd34c87061c29d548d16bc206fb67403e3006">https://securitylabs.datadoghq.com/articles/introducing-pathrunner-aws-privilege-escalation-framework/?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-351-php2shell-autopatching-skills-aws-pathrunner&_bhlid=d51cd34c87061c29d548d16bc206fb67403e3006</a></p>
+<p><a href="https://securitylabs.datadoghq.com/articles/introducing-pathrunner-aws-privilege-escalation-framework/">Introducing pathrunner: An AWS Privilege Escalation Framework</a>
+<details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> Datadog Security Labs (Seth Art, Oct 2026) released pathrunner, an open-source modular AWS offensive framework that automates exploitation of the IAM privilege escalation paths catalogued on pathfinding.cloud.</p>
+<ul>
+<li><strong>Lineage:</strong> Builds on pathfinding.cloud (Dec 2025 catalog of IAM escalation techniques) and Pathfinding Labs (May 2026 vulnerable AWS sandboxes).</li>
+<li><strong>Scale:</strong> Over 80 exploit modules as of October 2026, e.g. <code>ec2-001</code>, <code>bedrock-001</code>.</li>
+<li><strong>Identity handling:</strong> <code>pathrunner identity add --from-clipboard</code> and <code>pathrunner identity switch [name]</code>; captured credentials are imported and switched to automatically.</li>
+<li><strong>Payloads:</strong> Each module has interchangeable payloads to work around network limits or SCPs.</li>
+<li><strong>Attacker infra:</strong> <code>attacker identity add</code>, <code>attacker infra ec2 create</code> and <code>attacker listener start</code> stand up a credential listener in a separate attacker account.</li>
+<li><strong>Cleanup and reporting:</strong> <code>workspace report --output pathrunner.html</code> lists created or modified resources plus CloudTrail events pathrunner likely triggers; <code>workspace cleanup all</code> removes resources.</li>
+<li><strong>Caveat:</strong> The CloudTrail event list is the authors&rsquo; estimate, not verified logs; no explicit safety guardrails are described.</li>
+</ul>
+<p><strong>Takeaway:</strong> Useful for validating IAM escalation findings in a sandbox and for generating detection test data. Run it only in accounts you own, and use the report&rsquo;s CloudTrail table to check your detections.</p>
+</div></details>
+</p>
 </li>
 <li>
-<p><a href="https://www.salesforce.com/blog/managing-agentic-security-at-scale/?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-351-php2shell-autopatching-skills-aws-pathrunner&amp;_bhlid=33389a45806ff08cadba5492b43ab4f4f92b789a">https://www.salesforce.com/blog/managing-agentic-security-at-scale/?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-351-php2shell-autopatching-skills-aws-pathrunner&_bhlid=33389a45806ff08cadba5492b43ab4f4f92b789a</a></p>
+<p><a href="https://www.salesforce.com/blog/managing-agentic-security-at-scale/">Managing Agentic Security at Scale</a>
+<details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> Salesforce product security (Abhay Kshirsagar, Koen Buyens, Oct 2026) argues that AI-driven discovery now outpaces human remediation, and splits remediation into a strategic track for systemic risk and a tactical track for exploit chains.</p>
+<ul>
+<li><strong>Problem:</strong> Machine-speed discovery versus human-speed remediation; a single bad primitive can produce hundreds or thousands of findings.</li>
+<li><strong>Strategic track:</strong> Cluster findings by shared root cause (library default, unsafe primitive, missing check), dedupe at verification, group at reporting, and track as architectural work with named owners.</li>
+<li><strong>Tactical track:</strong> Close multi-step exploit chains where low-severity steps combine into a working attack, on a cadence of hours to occasional weeks.</li>
+<li><strong>Validation:</strong> For highest-criticality targets, chains are run against a staging instance because static-only analysis has a non-trivial false-positive rate; one critical finding matched an independent bug-bounty report.</li>
+<li><strong>Constraint:</strong> Per-target setup cost; they suggest service teams ship working container or compose definitions to automate validation.</li>
+<li><strong>Tools named:</strong> Semgrep, Open Policy Agent, NIST SSDF and SLSA.</li>
+<li><strong>Limits:</strong> Few hard metrics; success rates are described only as high, without percentages.</li>
+</ul>
+<p><strong>Takeaway:</strong> Before scaling AI bug discovery, make systemic risk a first-class ticket type with owners, and treat validated exploit chains as urgent rather than backlog.</p>
+</div></details>
+</p>
 </li>
 <li>
-<p><a href="https://specterops.io/blog/2026/09/24/ai-for-offensive-security/?utm_source=tldrsec.com&amp;utm_medium=newsletter&amp;utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&amp;_bhlid=ce97f5daa14655760768f314f5ab61bd3fffe25f">https://specterops.io/blog/2026/09/24/ai-for-offensive-security/?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-350-reverse-engineer-anything-tracking-ai-integrated-malware-test-driving-jev&_bhlid=ce97f5daa14655760768f314f5ab61bd3fffe25f</a></p>
+<p><a href="https://claude.dev/blog/solving-code-review-at-anthropic/">How the Claude Code Team Does Code Review</a>
+<details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> claude.dev engineering post (Addy Osmani, Morgan Westlee Lunt, Qing Wang, Oct 2026) on the layered review system the Claude Code team uses now that Claude writes about 90% of Claude Code&rsquo;s code.</p>
+<ul>
+<li><strong>Scale:</strong> Anthropic&rsquo;s monorepo went from about 2,500 changes/day in May to over 30,000 in September; merged PRs more than doubled while the revert share fell over 40%.</li>
+<li><strong>AI review:</strong> Multiple agents hunt bugs in parallel, a separate group votes, and only agreed findings are posted, tagged Important, Nit or Pre-existing; style and cleanup findings are dropped.</li>
+<li><strong>Risk tiers:</strong> A classifier sets low (no human), medium (one) or high (two approvers); CI workflow files always need a person, bot approvals never count, approvals bind to one commit.</li>
+<li><strong>Config files:</strong> <code>CLAUDE.md</code> for project context and <code>REVIEW.md</code> written by code owners (short, failure-focused, nit cap, file and line evidence required).</li>
+<li><strong>Convergence:</strong> Cap at three rounds before rethinking the approach, diff-only re-review, flag the bug class, no repeat findings. Pass after one round rose from 65% to 78%; mean reviews to pass fell from 2.08 to 1.32.</li>
+<li><strong>Reviewer evals:</strong> Every past incident or revert becomes an eval case run daily; prompt, tool or model changes are kept only if the score rises.</li>
+<li><strong>Tools:</strong> <code>/code-review</code>, <code>/security-review</code>, the Claude Code GitHub Action, formatter and linter hooks; flags plus <code>latest</code> before <code>stable</code> channel for release.</li>
+</ul>
+<p><strong>Takeaway:</strong> Copy the structure: risk-tiered human approval, consensus-filtered AI findings, a round cap, and an eval set built from your own reverts. Track human review time and revert rate together.</p>
+</div></details>
+</p>
 </li>
 <li>
-<p><a href="https://claude.dev/blog/solving-code-review-at-anthropic/?utm_source=cloudseclist.com&amp;utm_medium=referral&amp;utm_campaign=CloudSecList-issue-361">https://claude.dev/blog/solving-code-review-at-anthropic/?utm_source=cloudseclist.com&utm_medium=referral&utm_campaign=CloudSecList-issue-361</a></p>
+<p><a href="https://securitylabs.datadoghq.com/articles/putting-models-to-the-secure-coding-test-security-rules/">Putting Models to the Secure Coding Test: Security Rules</a>
+<details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> Part two of a Datadog Security Labs series (Kennedy Toomey, Oct 2026) testing whether Project CodeGuard v1.4.0 security rules improve code generated by Sonnet 5 (Claude Code), Composer 2.5 (Cursor) and GPT 5.5 (Codex). Only GPT 5.5 improved meaningfully.</p>
+<ul>
+<li><strong>Test app:</strong> JavaScript/npm document portal with JWT and session cookies, PostgreSQL, roles, password reset, search, uploads; the prompt did not say who may access uploaded documents.</li>
+<li><strong>Tooling:</strong> Supply Chain Firewall, Datadog Code Security (SCA, SAST, IaC), and Claude&rsquo;s code_review skill; one run per model per condition.</li>
+<li><strong>Baseline:</strong> All three builds had an IDOR letting any authenticated user read others&rsquo; files; Composer 2.5 also had a hardcoded <code>JWT_SECRET</code> fallback and plaintext reset tokens.</li>
+<li><strong>With rules:</strong> GPT 5.5 closed the IDOR; Sonnet 5 and Composer 2.5 kept it. Composer 2.5 tokens stayed valid up to 24 hours after logout or reset.</li>
+<li><strong>SAST counts (default to rules):</strong> Sonnet 5 1 to 0, Composer 2.5 17 to 4, GPT 5.5 1 to 0; dependency findings did not drop consistently.</li>
+<li><strong>Root cause:</strong> Every fixed and unfixed issue traced back to whether the prompt named the constraint explicitly.</li>
+<li><strong>Dependencies:</strong> GPT 5.5 pinned exact versions; the author suggests a 7-day dependency cooldown instruction.</li>
+</ul>
+<p><strong>Takeaway:</strong> Generic rule packs are not a substitute for stating authorization and session requirements in the prompt itself. Specify access control explicitly and still review the output.</p>
+</div></details>
+</p>
 </li>
 <li>
-<p><a href="https://securitylabs.datadoghq.com/articles/putting-models-to-the-secure-coding-test-security-rules/?utm_source=cloudseclist.com&amp;utm_medium=referral&amp;utm_campaign=CloudSecList-issue-361">https://securitylabs.datadoghq.com/articles/putting-models-to-the-secure-coding-test-security-rules/?utm_source=cloudseclist.com&utm_medium=referral&utm_campaign=CloudSecList-issue-361</a></p>
+<p><a href="https://medium.com/@adan.alvarez/i-gave-14-llms-aws-keys-heres-what-they-wanted-to-do-next-48585761a11b">I Gave 14 LLMs AWS Keys: Here&rsquo;s What They Wanted to Do Next</a>
+<details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><em>(Could not fetch full text.)</em></p>
+<p><strong>TL;DR:</strong> Adan Alvarez asked 14 LLMs what they would do next in 13 AWS post-compromise situations, 20 answers each, and mapped every proposed command to the CloudTrail event it would generate to find detections worth building.</p>
+<ul>
+<li><strong>Source caveat:</strong> Medium returned HTTP 403 (Cloudflare block); summary is based on the full article text in the author&rsquo;s Medium RSS feed.</li>
+<li><strong>Method:</strong> Framed as an authorized test, nothing executed; data at llms.traildiscover.cloud with code on GitHub to run your own situations.</li>
+<li><strong>First move:</strong> 12 of 14 models open with <code>GetCallerIdentity</code>; Dolphin Mistral 24B and Llama 4 start with <code>ListUsers</code>; Grok refused 18 of 20 answers here.</li>
+<li><strong>Refusals vs action:</strong> Grok refused most (98%); DeepSeek V4 proposed account changes in 72% of answers.</li>
+<li><strong>Persistence:</strong> New IAM user plus access key in 63 of 113 persistence answers; role backdoors and Lambda persistence also appear.</li>
+<li><strong>Secrets and impact:</strong> Models read known secrets 87% of the time (honeytokens will be read); destructive impact only 11%; log tampering rises to about a third when logging or GuardDuty is in the way.</li>
+<li><strong>Detection ideas:</strong> Session and IAM names like <code>redteam-assessment</code>, <code>backdoor-user</code>, <code>backup-admin</code>; all-region loops after <code>ec2 describe-regions</code> (75 answers); <code>iam:SimulatePrincipalPolicy</code> checks for <code>cloudtrail:StopLogging</code> or <code>guardduty:DeleteDetector</code> (131 commands, 12 models).</li>
+</ul>
+<p><strong>Takeaway:</strong> LLM-driven attackers use existing tradecraft, so existing CloudTrail detections apply. Add rules for suspicious session names, mass region enumeration and <code>SimulatePrincipalPolicy</code> probing, and plant honeytoken secrets.</p>
+</div></details>
+</p>
 </li>
 <li>
-<p><a href="https://medium.com/@adan.alvarez/i-gave-14-llms-aws-keys-heres-what-they-wanted-to-do-next-48585761a11b">https://medium.com/@adan.alvarez/i-gave-14-llms-aws-keys-heres-what-they-wanted-to-do-next-48585761a11b</a></p>
-</li>
-<li>
-<p><a href="https://github.com/Pomerado/pomerado">https://github.com/Pomerado/pomerado</a></p>
+<p><a href="https://github.com/Pomerado/pomerado">pomerado: Turn Any Website into an API or MCP in Minutes</a>
+<details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> Pomerado, from Pomerado AI, Inc. (YC F26), is an MIT-licensed tool that turns a website task described in natural language into a deterministic MCP integration that AI agents can call, including sites behind login and 2FA.</p>
+<ul>
+<li><strong>Pipeline:</strong> Explore the site, complete an example, generalize, then expose it to the agent; no HAR file or recording needed.</li>
+<li><strong>Requirements:</strong> macOS or Linux, Node 24.21+, an OpenAI API key (used only for minting and review, not at run time), and an MCP client such as Claude Code, Codex or Cursor.</li>
+<li><strong>Setup:</strong> <code>npx -y -p pomerado pomerado-mcp --help</code> and <code>npx -y -p pomerado playwright install chromium</code>.</li>
+<li><strong>MCP tools:</strong> <code>mint</code>, <code>get_job</code>, <code>provide_input</code>, <code>cancel_job</code>; each mint gets 20 minutes of active work with <code>read</code> or <code>write</code> authority.</li>
+<li><strong>Output:</strong> A folder with <code>src/</code>, <code>pomerado.json</code>, <code>auth-fill.json</code>, <code>deployment.json</code>, <code>mcp.mjs</code>, <code>mcp.json</code> and a README.</li>
+<li><strong>Guardian:</strong> Reviews browser actions and final source during minting; a separate paid Pomerado Cloud adds hosting, OAuth, managed browsers and auto-repair.</li>
+<li><strong>Caveats:</strong> Run-time calls do not check authority or intent, edits to <code>src/</code> are not reviewed, cancelling does not undo actions already sent, and page scripts can still exfiltrate typed credentials; versions 0.1.2 and earlier were AGPL-3.0.</li>
+</ul>
+<p><strong>Takeaway:</strong> Handy for giving agents access to sites without an API. Review the generated <code>src/</code> yourself and scope write integrations carefully, since nothing guards them at run time.</p>
+</div></details>
+</p>
 </li>
 <li>
 <p><a href="https://github.com/StayLameBro/backburner">backburner: Let Your iPhone Help Your Mac Run a 27B Model Over USB-C</a>
