@@ -19,7 +19,6 @@
   
 
 
-
 Redesigning Source Control at Anthropic
 summaryTL;DR: Anthropic&rsquo;s source control team describes Scion, an in-house version control system that replaced git for its monorepo after merged changes grew from about 2,500 to over 30,000 per day between May and September 2026.
 
@@ -145,8 +144,7 @@ Scale problem: Main branch history is nearly 100 GB, a compressed working copy e
   </a>
 </h3>
 <ul>
-<li>
-<p><a href="https://www.anthropic.com/research/redesigning-source-control">Redesigning Source Control at Anthropic</a>
+<li><a href="https://www.anthropic.com/research/redesigning-source-control">Redesigning Source Control at Anthropic</a>
 <details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> Anthropic&rsquo;s source control team describes Scion, an in-house version control system that replaced git for its monorepo after merged changes grew from about 2,500 to over 30,000 per day between May and September 2026.</p>
 <ul>
 <li><strong>Scale problem:</strong> Main branch history is nearly 100 GB, a compressed working copy exceeds 25 GB, and CI runs about 25 million checkouts per day. Naive fetching would mean over 600 PB of git traffic daily.</li>
@@ -158,10 +156,8 @@ Scale problem: Main branch history is nearly 100 GB, a compressed working copy e
 </ul>
 <p><strong>Takeaway:</strong> Agent-scale commit rates break human-scale tooling first in source control and CI. Most teams cannot adopt Scion, but server-side commits, API-first queries and sparse checkouts are ideas to look for in git platforms.</p>
 </div></details>
-</p>
 </li>
-<li>
-<p><a href="https://github.com/conductor-oss/conductor">Conductor: Event-Driven Agentic Workflow Engine with Durable, Resilient Execution</a>
+<li><a href="https://github.com/conductor-oss/conductor">Conductor: Event-Driven Agentic Workflow Engine with Durable, Resilient Execution</a>
 <details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> Conductor is the Apache 2.0 durable workflow engine that started at Netflix and is now maintained mainly by Orkes, positioned for microservices and AI agent orchestration.</p>
 <ul>
 <li><strong>Durable execution:</strong> Every step is persisted, so workflows survive crashes and restarts and can wait weeks on a human approval or timer.</li>
@@ -174,10 +170,8 @@ Scale problem: Main branch history is nearly 100 GB, a compressed working copy e
 </ul>
 <p><strong>Takeaway:</strong> A mature self-hosted alternative to Temporal-style engines when you want an explicit, inspectable workflow graph. Worth a look for long-running agent loops that need retries, approvals and an audit trail.</p>
 </div></details>
-</p>
 </li>
-<li>
-<p><a href="https://www.semperis.com/blog/what-is-entragoat-entra-id-simulation-environment/">What Is EntraGoat? A Deliberately Vulnerable Entra ID Simulation Environment</a>
+<li><a href="https://www.semperis.com/blog/what-is-entragoat-entra-id-simulation-environment/">What Is EntraGoat? A Deliberately Vulnerable Entra ID Simulation Environment</a>
 <details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> EntraGoat is an open-source, deliberately vulnerable Microsoft Entra ID lab from Semperis (Jonathan Elkabas, Tomer Nahum) for practising identity attack paths CTF-style in your own test tenant.</p>
 <ul>
 <li><strong>Format:</strong> Each challenge starts from an already compromised identity and hides a flag, so recon is skipped.</li>
@@ -189,10 +183,8 @@ Scale problem: Main branch history is nearly 100 GB, a compressed working copy e
 </ul>
 <p><strong>Takeaway:</strong> Good hands-on training for red and blue teams working on Entra ID privilege escalation. Use a throwaway tenant and run the cleanup scripts after each scenario.</p>
 </div></details>
-</p>
 </li>
-<li>
-<p><a href="https://github.com/runZeroInc/sshamble">SSHamble: Unexpected Exposures in SSH</a>
+<li><a href="https://github.com/runZeroInc/sshamble">SSHamble: Unexpected Exposures in SSH</a>
 <details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> SSHamble is a Go research tool from runZero that probes SSH implementations for authentication bypasses, pre-auth state bugs, timing leaks and post-session exposures.</p>
 <ul>
 <li><strong>Bypass checks:</strong> Default checks include <code>skip-auth-none</code>, <code>skip-auth-success</code> and <code>skip-ssh-userauth</code> to test whether auth can be skipped.</li>
@@ -205,10 +197,8 @@ Scale problem: Main branch history is nearly 100 GB, a compressed working copy e
 </ul>
 <p><strong>Takeaway:</strong> Useful for auditing embedded and non-OpenSSH SSH servers, where auth state-machine bugs are common. Run it only against hosts you are authorized to test.</p>
 </div></details>
-</p>
 </li>
-<li>
-<p><a href="https://labs.zenity.io/post/agentcorruption-how-a-single-prompt-collapsed-the-entire-cloud-security-model">AgentCorruption: How a Single Prompt Collapsed the Entire Cloud Security Model</a>
+<li><a href="https://labs.zenity.io/post/agentcorruption-how-a-single-prompt-collapsed-the-entire-cloud-security-model">AgentCorruption: How a Single Prompt Collapsed the Entire Cloud Security Model</a>
 <details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> Zenity Labs (Tamir Ishay Sharbat, Lana Salameh) show how one prompt injection against an Amazon Bedrock AgentCore agent could take over every AgentCore agent in the same AWS account and region via an overprivileged default execution role.</p>
 <ul>
 <li><strong>Entry:</strong> Prompt injection makes an HTTP-capable tool hit IMDS at <code>169.254.169.254</code> from the Firecracker microVM, returning the execution role&rsquo;s temporary credentials.</li>
@@ -220,10 +210,8 @@ Scale problem: Main branch history is nearly 100 GB, a compressed working copy e
 </ul>
 <p><strong>Takeaway:</strong> Treat any agent with tools as an attack entry point. Replace default execution roles with per-agent least-privilege roles and keep customer-facing and sensitive agents in separate boundaries.</p>
 </div></details>
-</p>
 </li>
-<li>
-<p><a href="https://rea.tools/">REA: Reverse Engineering for Your Coding Agent</a>
+<li><a href="https://rea.tools/">REA: Reverse Engineering for Your Coding Agent</a>
 <details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> REA is an MIT-licensed toolkit (GitHub <code>morluto/rea</code>) that gives a coding agent reverse-engineering tools to inspect apps, games and websites, explain a feature and rebuild it.</p>
 <ul>
 <li><strong>Targets:</strong> x64 executables and DLLs, Android APKs, Electron and packaged JavaScript apps, and browser-hosted apps via a local debugging connection.</li>
@@ -235,10 +223,8 @@ Scale problem: Main branch history is nearly 100 GB, a compressed working copy e
 </ul>
 <p><strong>Takeaway:</strong> A quick way to give Claude Code or similar agents binary and app inspection tools. Check the repo for what it actually wires in before running it on sensitive targets.</p>
 </div></details>
-</p>
 </li>
-<li>
-<p><a href="https://specterops.io/blog/2026/09/24/ai-for-offensive-security/">AI for Offensive Security: What Works, What Does Not, and How to Adopt It</a>
+<li><a href="https://specterops.io/blog/2026/09/24/ai-for-offensive-security/">AI for Offensive Security: What Works, What Does Not, and How to Adopt It</a>
 <details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> Russel Van Tuyl (SpecterOps) reviews where AI helps offensive security as of September 2026: strong for bounded, verifiable tasks, weak for autonomous end-to-end operations.</p>
 <ul>
 <li><strong>Works:</strong> Code review, research, tool development with tests and mock services, BOF skills with validation harnesses, recon data reduction (BloodHound MCP, DeepPass2), and reporting support.</li>
@@ -251,10 +237,8 @@ Scale problem: Main branch history is nearly 100 GB, a compressed working copy e
 </ul>
 <p><strong>Takeaway:</strong> Put AI on narrow, checkable offensive tasks first and keep humans validating findings. Enforce scope with network and credential controls, never with prompts.</p>
 </div></details>
-</p>
 </li>
-<li>
-<p><a href="https://www.digitalocean.com/blog/how-digitalocean-manages-credentials-for-autonomous-agents">How DigitalOcean Manages Credentials for Autonomous Agents</a>
+<li><a href="https://www.digitalocean.com/blog/how-digitalocean-manages-credentials-for-autonomous-agents">How DigitalOcean Manages Credentials for Autonomous Agents</a>
 <details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> Tyler Healy (DigitalOcean) explains an agent credential model built on one rule: the agent never holds the secret.</p>
 <ul>
 <li><strong>Isolated sessions:</strong> Each agent runs in its own Harness Runtime session with no standing credentials and nothing persisted.</li>
@@ -267,10 +251,8 @@ Scale problem: Main branch history is nearly 100 GB, a compressed working copy e
 </ul>
 <p><strong>Takeaway:</strong> The egress-proxy credential swap is the pattern to copy for any agent platform. Plain secret injection into a sandbox still leaves keys readable by a hijacked agent.</p>
 </div></details>
-</p>
 </li>
-<li>
-<p><a href="https://cloud.google.com/blog/products/devops-sre/sre-book-second-edition/">SRE Book Second Edition</a>
+<li><a href="https://cloud.google.com/blog/products/devops-sre/sre-book-second-edition/">SRE Book Second Edition</a>
 <details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> Google announces a completely rewritten second edition of the Site Reliability Engineering book for the book&rsquo;s 10th anniversary, aimed at cloud and AI-era operations. Post by Betsy Beyer and David Huska.</p>
 <ul>
 <li><strong>SLOs:</strong> Moves from basic availability metrics to user-centric, multi-tiered SLOs with burn-rate alerting and automated policy enforcement.</li>
@@ -283,10 +265,8 @@ Scale problem: Main branch history is nearly 100 GB, a compressed working copy e
 </ul>
 <p><strong>Takeaway:</strong> Worth reading if your SRE practice is built on the 2016 edition. Check whether a free sre.google version appears before buying.</p>
 </div></details>
-</p>
 </li>
-<li>
-<p><a href="https://aws.amazon.com/blogs/aws/announcing-aws-lambda-web-functions-for-fast-consistent-web-app-performance-anywhere/">Announcing AWS Lambda Web Functions</a>
+<li><a href="https://aws.amazon.com/blogs/aws/announcing-aws-lambda-web-functions-for-fast-consistent-web-app-performance-anywhere/">Announcing AWS Lambda Web Functions</a>
 <details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> AWS launches Lambda Web Functions, a Lambda form factor that runs normal port-listening HTTP servers (Express, Hono, Fastify, Next.js) without rewriting them as event handlers.</p>
 <ul>
 <li><strong>Model:</strong> Multi-concurrent execution with up to 128 concurrent requests per environment, alongside existing Event Functions and new MicroVMs. All use Firecracker.</li>
@@ -299,10 +279,8 @@ Scale problem: Main branch history is nearly 100 GB, a compressed working copy e
 </ul>
 <p><strong>Takeaway:</strong> Removes the adapter layer and per-request concurrency penalty for web apps on Lambda. Wait for more runtimes and published pricing before moving production APIs.</p>
 </div></details>
-</p>
 </li>
-<li>
-<p><a href="https://aws.amazon.com/blogs/security/penetration-testing-every-deployment-with-aws-continuum/">Penetration Testing Every Deployment with AWS Continuum</a>
+<li><a href="https://aws.amazon.com/blogs/security/penetration-testing-every-deployment-with-aws-continuum/">Penetration Testing Every Deployment with AWS Continuum</a>
 <details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> AWS Security Blog post (Jigar Bhatt, Benjamin Li, Oct 2026) on wiring AWS Continuum for penetration testing, formerly AWS Security Agent, into CI/CD as a post-deployment gate that confirms whether vulnerabilities are actually exploitable.</p>
 <ul>
 <li><strong>Approach:</strong> AI agents attack the running application instead of flagging code patterns like SAST, SCA or DAST; testing runs server-side in your AWS account, not on the CI runner.</li>
@@ -315,10 +293,8 @@ Scale problem: Main branch history is nearly 100 GB, a compressed working copy e
 </ul>
 <p><strong>Takeaway:</strong> A useful pattern for exploit-confirmed testing per deploy. Set <code>fail-on-infrastructure-error: true</code>, lock down variable overrides, and decide the threshold before the first run because the baseline moves on every pass.</p>
 </div></details>
-</p>
 </li>
-<li>
-<p><a href="https://github.com/Gathin23/cleanyourtv">cleanyourtv: Debloat Any Android or Google TV over Wi-Fi and Get an Apple TV-Style Home</a>
+<li><a href="https://github.com/Gathin23/cleanyourtv">cleanyourtv: Debloat Any Android or Google TV over Wi-Fi and Get an Apple TV-Style Home</a>
 <details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> cleanyourtv is an MIT-licensed project by GitHub user Gathin23 that debloats Android TV and Google TV sets over Wi-Fi ADB and installs a small Apple TV-style launcher as the default Home app.</p>
 <ul>
 <li><strong>Method:</strong> Enables ADB, backs up packages and settings, then disables telemetry, ad services and preloaded apps with <code>pm disable-user</code>; nothing is uninstalled and restore scripts undo changes.</li>
@@ -331,10 +307,8 @@ Scale problem: Main branch history is nearly 100 GB, a compressed working copy e
 </ul>
 <p><strong>Takeaway:</strong> A reversible way to strip ads and telemetry from a smart TV. Turn network debugging off afterwards and run <code>check.py</code> after each firmware update.</p>
 </div></details>
-</p>
 </li>
-<li>
-<p><a href="https://github.com/kksimp/Mac.apk">Mac.apk: Run Android Apps Natively on Apple Silicon Macs</a>
+<li><a href="https://github.com/kksimp/Mac.apk">Mac.apk: Run Android Apps Natively on Apple Silicon Macs</a>
 <details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> Mac.apk, by GitHub user kksimp (Voltare), is an alpha AGPL-3.0 project that runs Android apps on Apple Silicon Macs as native macOS processes, without an emulator, VM or Linux kernel.</p>
 <ul>
 <li><strong>Architecture:</strong> Reimplemented Android framework, native runtime, arm64 loader with a Bionic shim, and an ARM32 recompiler; graphics via ANGLE and MoltenVK on Metal.</li>
@@ -347,10 +321,8 @@ Scale problem: Main branch history is nearly 100 GB, a compressed working copy e
 </ul>
 <p><strong>Takeaway:</strong> An interesting alternative to emulators for running Android apps on a Mac. Treat every APK as an unsandboxed native program with full user access.</p>
 </div></details>
-</p>
 </li>
-<li>
-<p><a href="https://securitylabs.datadoghq.com/articles/introducing-pathrunner-aws-privilege-escalation-framework/">Introducing pathrunner: An AWS Privilege Escalation Framework</a>
+<li><a href="https://securitylabs.datadoghq.com/articles/introducing-pathrunner-aws-privilege-escalation-framework/">Introducing pathrunner: An AWS Privilege Escalation Framework</a>
 <details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> Datadog Security Labs (Seth Art, Oct 2026) released pathrunner, an open-source modular AWS offensive framework that automates exploitation of the IAM privilege escalation paths catalogued on pathfinding.cloud.</p>
 <ul>
 <li><strong>Lineage:</strong> Builds on pathfinding.cloud (Dec 2025 catalog of IAM escalation techniques) and Pathfinding Labs (May 2026 vulnerable AWS sandboxes).</li>
@@ -363,10 +335,8 @@ Scale problem: Main branch history is nearly 100 GB, a compressed working copy e
 </ul>
 <p><strong>Takeaway:</strong> Useful for validating IAM escalation findings in a sandbox and for generating detection test data. Run it only in accounts you own, and use the report&rsquo;s CloudTrail table to check your detections.</p>
 </div></details>
-</p>
 </li>
-<li>
-<p><a href="https://www.salesforce.com/blog/managing-agentic-security-at-scale/">Managing Agentic Security at Scale</a>
+<li><a href="https://www.salesforce.com/blog/managing-agentic-security-at-scale/">Managing Agentic Security at Scale</a>
 <details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> Salesforce product security (Abhay Kshirsagar, Koen Buyens, Oct 2026) argues that AI-driven discovery now outpaces human remediation, and splits remediation into a strategic track for systemic risk and a tactical track for exploit chains.</p>
 <ul>
 <li><strong>Problem:</strong> Machine-speed discovery versus human-speed remediation; a single bad primitive can produce hundreds or thousands of findings.</li>
@@ -379,10 +349,8 @@ Scale problem: Main branch history is nearly 100 GB, a compressed working copy e
 </ul>
 <p><strong>Takeaway:</strong> Before scaling AI bug discovery, make systemic risk a first-class ticket type with owners, and treat validated exploit chains as urgent rather than backlog.</p>
 </div></details>
-</p>
 </li>
-<li>
-<p><a href="https://claude.dev/blog/solving-code-review-at-anthropic/">How the Claude Code Team Does Code Review</a>
+<li><a href="https://claude.dev/blog/solving-code-review-at-anthropic/">How the Claude Code Team Does Code Review</a>
 <details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> claude.dev engineering post (Addy Osmani, Morgan Westlee Lunt, Qing Wang, Oct 2026) on the layered review system the Claude Code team uses now that Claude writes about 90% of Claude Code&rsquo;s code.</p>
 <ul>
 <li><strong>Scale:</strong> Anthropic&rsquo;s monorepo went from about 2,500 changes/day in May to over 30,000 in September; merged PRs more than doubled while the revert share fell over 40%.</li>
@@ -395,10 +363,8 @@ Scale problem: Main branch history is nearly 100 GB, a compressed working copy e
 </ul>
 <p><strong>Takeaway:</strong> Copy the structure: risk-tiered human approval, consensus-filtered AI findings, a round cap, and an eval set built from your own reverts. Track human review time and revert rate together.</p>
 </div></details>
-</p>
 </li>
-<li>
-<p><a href="https://securitylabs.datadoghq.com/articles/putting-models-to-the-secure-coding-test-security-rules/">Putting Models to the Secure Coding Test: Security Rules</a>
+<li><a href="https://securitylabs.datadoghq.com/articles/putting-models-to-the-secure-coding-test-security-rules/">Putting Models to the Secure Coding Test: Security Rules</a>
 <details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> Part two of a Datadog Security Labs series (Kennedy Toomey, Oct 2026) testing whether Project CodeGuard v1.4.0 security rules improve code generated by Sonnet 5 (Claude Code), Composer 2.5 (Cursor) and GPT 5.5 (Codex). Only GPT 5.5 improved meaningfully.</p>
 <ul>
 <li><strong>Test app:</strong> JavaScript/npm document portal with JWT and session cookies, PostgreSQL, roles, password reset, search, uploads; the prompt did not say who may access uploaded documents.</li>
@@ -411,10 +377,8 @@ Scale problem: Main branch history is nearly 100 GB, a compressed working copy e
 </ul>
 <p><strong>Takeaway:</strong> Generic rule packs are not a substitute for stating authorization and session requirements in the prompt itself. Specify access control explicitly and still review the output.</p>
 </div></details>
-</p>
 </li>
-<li>
-<p><a href="https://medium.com/@adan.alvarez/i-gave-14-llms-aws-keys-heres-what-they-wanted-to-do-next-48585761a11b">I Gave 14 LLMs AWS Keys: Here&rsquo;s What They Wanted to Do Next</a>
+<li><a href="https://medium.com/@adan.alvarez/i-gave-14-llms-aws-keys-heres-what-they-wanted-to-do-next-48585761a11b">I Gave 14 LLMs AWS Keys: Here&rsquo;s What They Wanted to Do Next</a>
 <details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><em>(Could not fetch full text.)</em></p>
 <p><strong>TL;DR:</strong> Adan Alvarez asked 14 LLMs what they would do next in 13 AWS post-compromise situations, 20 answers each, and mapped every proposed command to the CloudTrail event it would generate to find detections worth building.</p>
 <ul>
@@ -428,10 +392,8 @@ Scale problem: Main branch history is nearly 100 GB, a compressed working copy e
 </ul>
 <p><strong>Takeaway:</strong> LLM-driven attackers use existing tradecraft, so existing CloudTrail detections apply. Add rules for suspicious session names, mass region enumeration and <code>SimulatePrincipalPolicy</code> probing, and plant honeytoken secrets.</p>
 </div></details>
-</p>
 </li>
-<li>
-<p><a href="https://github.com/Pomerado/pomerado">pomerado: Turn Any Website into an API or MCP in Minutes</a>
+<li><a href="https://github.com/Pomerado/pomerado">pomerado: Turn Any Website into an API or MCP in Minutes</a>
 <details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> Pomerado, from Pomerado AI, Inc. (YC F26), is an MIT-licensed tool that turns a website task described in natural language into a deterministic MCP integration that AI agents can call, including sites behind login and 2FA.</p>
 <ul>
 <li><strong>Pipeline:</strong> Explore the site, complete an example, generalize, then expose it to the agent; no HAR file or recording needed.</li>
@@ -444,10 +406,8 @@ Scale problem: Main branch history is nearly 100 GB, a compressed working copy e
 </ul>
 <p><strong>Takeaway:</strong> Handy for giving agents access to sites without an API. Review the generated <code>src/</code> yourself and scope write integrations carefully, since nothing guards them at run time.</p>
 </div></details>
-</p>
 </li>
-<li>
-<p><a href="https://github.com/StayLameBro/backburner">backburner: Let Your iPhone Help Your Mac Run a 27B Model Over USB-C</a>
+<li><a href="https://github.com/StayLameBro/backburner">backburner: Let Your iPhone Help Your Mac Run a 27B Model Over USB-C</a>
 <details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> Backburner is a pre-release, MIT-licensed project that uses a USB-C-connected iPhone as a co-processor so a Mac runs Qwen3.8-27B locally with faster prefill and much longer context.</p>
 <ul>
 <li><strong>Engine:</strong> A fork of llama.cpp with custom Mac kernels, including SME2 CPU paths, Metal fusions and DFlash2 speculative decoding.</li>
@@ -462,10 +422,8 @@ Scale problem: Main branch history is nearly 100 GB, a compressed working copy e
 </ul>
 <p><strong>Takeaway:</strong> An interesting local-inference hack for keeping code and prompts off third-party APIs. If you run it, update past 0.0.3 or disable Wi-Fi on the phone app.</p>
 </div></details>
-</p>
 </li>
-<li>
-<p><a href="https://github.com/Agent-Field/CodeAF">CodeAF: Open-Source Software Factory for Open Models</a>
+<li><a href="https://github.com/Agent-Field/CodeAF">CodeAF: Open-Source Software Factory for Open Models</a>
 <details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> CodeAF is an early-preview, Apache 2.0 coding harness from AgentField AI, a &ldquo;software factory for open models&rdquo; shipped as a single 53 MB Go binary.</p>
 <ul>
 <li><strong>Interface:</strong> One window replaces multiple agent terminals, with a home view of every project and conversation, tabs, and a jump-to-any-conversation shortcut.</li>
@@ -480,10 +438,8 @@ Scale problem: Main branch history is nearly 100 GB, a compressed working copy e
 </ul>
 <p><strong>Takeaway:</strong> Branch-isolated agent tasks with a checker gate, SARIF output for existing pipelines and a cheap headless CI mode are the useful ideas. Turn off telemetry and pool sharing and pin a version before trusting it.</p>
 </div></details>
-</p>
 </li>
-<li>
-<p><a href="https://cloud.google.com/blog/topics/threat-intelligence/vulnerability-discovery-and-exploitation-trends-in-the-ai-era">Vulnerability Discovery and Exploitation Trends in the AI Era</a>
+<li><a href="https://cloud.google.com/blog/topics/threat-intelligence/vulnerability-discovery-and-exploitation-trends-in-the-ai-era">Vulnerability Discovery and Exploitation Trends in the AI Era</a>
 <details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> Google Threat Intelligence Group (GTIG) analyses vulnerabilities disclosed January 2025 through August 2026 and argues AI is changing the pace of discovery and exploitation and the kind of bugs found.</p>
 <ul>
 <li><strong>Method:</strong> Ratings use GTIG&rsquo;s own risk scores, not CVSS.</li>
@@ -498,10 +454,8 @@ Scale problem: Main branch history is nearly 100 GB, a compressed working copy e
 </ul>
 <p><strong>Takeaway:</strong> Patch by exploitation and exposure, not CVE volume, and assume n-day windows of days. Treat self-hosted Langflow, LiteLLM, vLLM and Ollama as high-value internet-facing targets that must never sit unauthenticated on the network.</p>
 </div></details>
-</p>
 </li>
-<li>
-<p><a href="https://www.perplexity.ai/hub/blog/escaping-space-part-i">Escaping Space, Part I</a>
+<li><a href="https://www.perplexity.ai/hub/blog/escaping-space-part-i">Escaping Space, Part I</a>
 <details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> Perplexity red-teamed SPACE, the Firecracker-microVM sandbox behind Perplexity Computer, showing VM isolation and network confinement are separate boundaries that must be tested separately.</p>
 <ul>
 <li><strong>Setup:</strong> Each agent runs in a Firecracker microVM; a per-sandbox gateway enforces egress policy. Agents with root in the guest tried to steal an AWS honeytoken from the host (sandbox escape) or fetch a flag from a blocked callback URL (network bypass).</li>
@@ -516,10 +470,8 @@ Scale problem: Main branch history is nearly 100 GB, a compressed working copy e
 </ul>
 <p><strong>Takeaway:</strong> Never allowlist by destination IP on shared CDN infrastructure, keep DNS, SNI and Host consistent across layers, and drop spoofed source addresses from guests. A passing time-boxed test does not prove the boundary is sound.</p>
 </div></details>
-</p>
 </li>
-<li>
-<p><a href="https://www.anthropic.com/news/cyber-verification-program">Expanding the Cyber Verification Program</a>
+<li><a href="https://www.anthropic.com/news/cyber-verification-program">Expanding the Cyber Verification Program</a>
 <details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> On October 6, 2026 Anthropic expanded its Cyber Verification Program (CVP), giving vetted security professionals frontier models with fewer cyber-blocking classifiers.</p>
 <ul>
 <li><strong>Merger:</strong> Combines Project Glasswing (Claude Mythos access for critical-software organisations) with the original CVP (reduced safeguards on Opus and Sonnet for vetted teams).</li>
@@ -534,10 +486,8 @@ Scale problem: Main branch history is nearly 100 GB, a compressed working copy e
 </ul>
 <p><strong>Takeaway:</strong> Routine code review, patching known issues and alert triage still work on standard models. Malware analysis or red-team automation will hit blocks unless your team enrols, and enrolment means accepting data retention for misuse monitoring.</p>
 </div></details>
-</p>
 </li>
-<li>
-<p><a href="https://www.atlassian.com/blog/ai-at-work/ai-sdlc-transformation-playbook">The AI SDLC Transformation Playbook</a>
+<li><a href="https://www.atlassian.com/blog/ai-at-work/ai-sdlc-transformation-playbook">The AI SDLC Transformation Playbook</a>
 <details class="link-summary"><summary>summary</summary><div class="link-summary-body"><p><strong>TL;DR:</strong> Atlassian&rsquo;s playbook argues an AI-native SDLC is more than handing developers coding agents: once coding goes asynchronous and multi-threaded, the bottleneck moves to planning, design, review and maintenance.</p>
 <ul>
 <li><strong>Structure:</strong> Seven pillars, two platform investments and five workflow shifts, all depending on work being captured in systems of record.</li>
@@ -551,7 +501,6 @@ Scale problem: Main branch history is nearly 100 GB, a compressed working copy e
 </ul>
 <p><strong>Takeaway:</strong> The piece promotes Atlassian products, but the point holds: treating AI adoption as a licence purchase yields incremental gains. The leverage is permissioned context, centrally defined review standards, and measured, auditable agent automation for KTLO and vulnerability backlog work.</p>
 </div></details>
-</p>
 </li>
 </ul>
 <h3 id="15092026">
